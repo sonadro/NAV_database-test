@@ -11,27 +11,11 @@ const inntektFortidForm = document.querySelector('.inntektFortid');
 const inntekt2022Form = document.querySelector('.inntekt2022');
 
 // Kode
-const addDoc = function(fornavn, etternavn, fodselsdato, alder, status, endringStatus, ekteskap, ektefelle, barn, postnummer, land, botid, forelder1, forelder2) {
-    const obj = {
-        fornavn: fornavn,
-        etternavn: etternavn,
-        fodselsdato: fodselsdato,
-        alder: alder,
-        status: status,
-        endringStatus: endringStatus,
-        ekteskap: ekteskap,
-        ektefelle: ektefelle,
-        barn: barn,
-        postnummer: postnummer,
-        land: land,
-        botid: botid,
-        forelder1: forelder1,
-        forelder2: forelder2
-    }
-    db.collection('personer').add(obj).then(() => {
-        console.log('object added', obj);
-    }).catch(err => console.error(err));
-}
+// const addDoc = function() {
+//     db.collection('personer').add(obj).then(() => {
+//         console.log('object added', obj);
+//     }).catch(err => console.error(err));
+// }
 
 // Fetch dokumenter
 const getDocs = function() {
@@ -47,5 +31,5 @@ const getDocs = function() {
 inntekt2022.addEventListener('submit', e => {
     e.preventDefault();
 
-    addDoc(form.fornavn.value, form.etternavn.value, form.fodselsdato.value, form.alder.value, form.status.value, form.endringStatus.value, form.ekteskap.value, form.ektefelle.value, form.barn.value, form.postnummer.value, form.land.value, form.botid.value, form.forelder1.value, form.forelder2.value)
+    // addDoc();
 });

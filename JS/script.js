@@ -1,12 +1,24 @@
 const db = firebase.firestore();
+const form = document.querySelector('.addDocs');
 
-const addDoc = function(bool, num, text) {
+const addDoc = function(fornavn, etternavn, fodselsdato, alder, status, endringStatus, ekteskap, ektefelle, barn, postnummer, land, botid, forelder1, forelder2) {
     const obj = {
-        boolField: bool,
-        numField: num,
-        textField: text
+        fornavn: fornavn,
+        etternavn: etternavn,
+        fodselsdato: fodselsdato,
+        alder: alder,
+        status: status,
+        endringStatus: endringStatus,
+        ekteskap: ekteskap,
+        ektefelle: ektefelle,
+        barn: barn,
+        postnummer: postnummer,
+        land: land,
+        botid: botid,
+        forelder1: forelder1,
+        forelder2: forelder2
     }
-    db.collection('testCollection').add(obj).then(() => {
+    db.collection('personer').add(obj).then(() => {
         console.log('object added', obj);
     }).catch(err => console.error(err));
 }
@@ -19,3 +31,9 @@ const getDocs = function() {
         });
     }).catch(err => console.error(err));
 }
+
+form.addEventListener('submit', e => {
+    e.preventDefault();
+
+    addDoc(form.fornavn.value, form.etternavn.value, form.fodselsdato.value, form.alder.value, form.status.value, form.endringStatus.value, form.ekteskap.value, form.ektefelle.value, form.barn.value, form.postnummer.value, form.land.value, form.botid.value, form.forelder1.value, form.forelder2.value)
+});

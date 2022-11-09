@@ -1,5 +1,5 @@
 const db = firebase.firestore();
-const form = document.querySelector('.addUserInfoDocs');
+const form = document.querySelector('.grunnleggendeData');
 
 const addDoc = function(fornavn, etternavn, fodselsdato, alder, status, endringStatus, ekteskap, ektefelle, barn, postnummer, land, botid, forelder1, forelder2) {
     const obj = {

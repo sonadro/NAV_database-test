@@ -19,6 +19,21 @@
 
 
 .grunnleggendeData{
-    padding: 10px;
-    display:grid;
+    padding: 30px;
+    display: grid; 
+    grid-auto-columns: 1fr; 
+    grid-template-columns: 1.1fr; 
+    grid-template-rows: 1fr 1fr 1fr 1fr; 
+    gap: 0px 0px; 
+    grid-template-areas: 
+        "."
+        "."
+        "."
+        "."; 
+}
+.inputTitle{
+    padding-left: 20px;
+}
+.userInfoInput{
+    margin: 10px;
 }

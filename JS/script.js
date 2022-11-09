@@ -1,10 +1,10 @@
 const db = firebase.firestore();
 
-const addDoc = function() {
+const addDoc = function(bool, num, text) {
     const obj = {
-        boolField: true,
-        numField: 10,
-        textField: 'texters'
+        boolField: bool,
+        numField: num,
+        textField: text
     }
     db.collection('testCollection').add(obj).then(() => {
         console.log('object added', obj);

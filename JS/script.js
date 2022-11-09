@@ -46,4 +46,6 @@ const getDocs = function() {
 // Form event listeners
 inntekt2022.addEventListener('submit', e => {
     e.preventDefault();
+
+    addDoc(form.fornavn.value, form.etternavn.value, form.fodselsdato.value, form.alder.value, form.status.value, form.endringStatus.value, form.ekteskap.value, form.ektefelle.value, form.barn.value, form.postnummer.value, form.land.value, form.botid.value, form.forelder1.value, form.forelder2.value)
 });

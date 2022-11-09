@@ -16,3 +16,10 @@
     list-style-type:none;
     margin-top: 0px;
 }
+
+/*----------------------------------Styles for index form----------------------------------------*/
+
+.addUserInfoDocs{
+    padding: 10px;
+    display:grid;
+}

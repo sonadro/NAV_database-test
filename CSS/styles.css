@@ -2,4 +2,17 @@
     border: solid;
     border-radius: 20px;
     display: inline-block;
+    background-color: rgb(237, 237, 224);
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    margin: 20px 20px;
+    padding: 10px;
+}
+.cardNameHeader{
+    margin: 10px 10px;
+    font-size: 20px;
+}
+.cardInfoList{
+    padding: 10px;
+    list-style-type:none;
+    margin-top: 0px;
 }

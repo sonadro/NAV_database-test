@@ -37,49 +37,57 @@
         <form class="grunnleggendeData">
             <h3>Grunnleggende data:</h3>
 
-            <div>
+            <div class="quadInputField">
                 <p class="inputTitle">Fornavn:</p>
-                <input class="userInfoInput" type="text" id="fornavn">
-
                 <p class="inputTitle">Etternavn:</p>
+
+                <input class="userInfoInput" type="text" id="fornavn">
                 <input class="userInfoInput" type="text" id="etternavn">
 
                 <p class="inputTitle">Fødselsdato:</p>
-                <input class="userInfoInput" type="text" id="fodselsdato">
-
                 <p class="inputTitle">Alder:</p>
+
+                <input class="userInfoInput" type="text" id="fodselsdato">
                 <input class="userInfoInput" type="text" id="alder">
             </div>
-            
-            <p class="inputTitle">Livsstatus:</p>
-            <input class="userInfoInput" type="text" id="status">
 
-            <p class="inputTitle">Endring Livsstatus:</p>
-            <input class="userInfoInput" type="text" id="endringStatus">
+            <div class="quadInputField">
+                <p class="inputTitle">Livsstatus:</p>
+                <p class="inputTitle">Endring Livsstatus:</p>
+                
+                <input class="userInfoInput" type="text" id="status">
+                <input class="userInfoInput" type="text" id="endringStatus">
+                
+                <p class="inputTitle">Ekteskap:</p>
+                <p class="inputTitle">Ektefelle:</p>
+                
+                <input class="userInfoInput" type="text" id="ekteskap">
+                <input class="userInfoInput" type="text" id="ektefelle">
+            </div>
+            <div class="duoInputField">
+                <p class="inputTitle">Forelder 1:</p>
+                <p class="inputTitle">Forelder 2:</p>
+                
+                <input class="userInfoInput" type="text" id="forelder1">
+                <input class="userInfoInput" type="text" id="forelder2">
+            </div>
 
-            <p class="inputTitle">Ekteskap:</p>
-            <input class="userInfoInput" type="text" id="ekteskap">
+            <div class="oneInputField">
+                <p class="inputTitle">Barn:</p>
 
-            <p class="inputTitle">Ektefelle:</p>
-            <input class="userInfoInput" type="text" id="ektefelle">
+                <input class="userInfoInput" type="text" id="barn">
+            </div>
+            <!--Finish this last section and adjust sizes of gridboxes-->
+            <div>
+                <p class="inputTitle">Bosted post-nummer:</p>
+                <input class="userInfoInput" type="text" id="postnummer">
 
-            <p class="inputTitle">Barn:</p>
-            <input class="userInfoInput" type="text" id="barn">
+                <p class="inputTitle">Land:</p>
+                <input class="userInfoInput" type="text" id="land">
 
-            <p class="inputTitle">Bosted post-nummer:</p>
-            <input class="userInfoInput" type="text" id="postnummer">
-
-            <p class="inputTitle">Land:</p>
-            <input class="userInfoInput" type="text" id="land">
-
-            <p class="inputTitle">Botid:</p>
-            <input class="userInfoInput" type="text" id="botid">
-
-            <p class="inputTitle">Forelder 1:</p>
-            <input class="userInfoInput" type="text" id="forelder1">
-
-            <p class="inputTitle">Forelder 2:</p>
-            <input class="userInfoInput" type="text" id="forelder2"><br><br>
+                <p class="inputTitle">Botid:</p>
+                <input class="userInfoInput" type="text" id="botid">
+            </div>
 
             <button type="submit">Submit</button>
 

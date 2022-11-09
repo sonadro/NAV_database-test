@@ -37,3 +37,35 @@
 .userInfoInput{
     margin: 10px;
 }
+.quadInputField{
+    display: grid; 
+    grid-auto-columns: 1fr; 
+    grid-template-columns: 1fr 1fr; 
+    grid-template-rows: 0.7fr 1.3fr 0.7fr 1.3fr; 
+    gap: 0px 0px; 
+    grid-template-areas: 
+        ". ."
+        ". ."
+        ". ."
+        ". .";
+}
+.duoInputField{
+    display: grid; 
+    grid-auto-columns: 1fr; 
+    grid-template-columns: 1fr 1fr; 
+    grid-template-rows: 0.7fr 1.3fr; 
+    gap: 0px 0px; 
+    grid-template-areas: 
+        ". ."
+        ". .";
+}
+.oneInputField{
+    display: grid; 
+    grid-auto-columns: 1fr; 
+    grid-template-columns: 1fr; 
+    grid-template-rows: 0.7fr 1.3fr; 
+    gap: 0px 0px; 
+    grid-template-areas: 
+        "."
+        ".";
+}

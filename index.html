@@ -91,68 +91,78 @@
             </div>
         </form>
 
-        <form class="okonomiskeForhold">
+        <form class="okonomiskeForhold formArea">
             <h3>Økonomiske forhold:</h3>
 
-            <p>Bankkonto:</p>
-            <input type="number" id="bankkonto">
+            <div class="quadInputField inputArea">
+                <label class="inputTitle">Bankkonto:</label>
+                <label class="inputTitle">Kredittkort:</label>
 
-            <p>Kredittkort:</p>
-            <input type="number" id="kredittkort">
+                <input class="userInfoInput" type="number" id="bankkonto">
+                <input class="userInfoInput" type="number" id="kredittkort">
+    
+                <label class="inputTitle">Lån:</label>
+                <label class="inputTitle">Fullmakt til data:</label>
 
-            <p>Lån:</p>
-            <input type="number" id="lan">
-
-            <p>Fullmakt til data:</p>
-            <input type="number" id="fullmakt">
+                <input class="userInfoInput" type="number" id="lan">
+                <input class="userInfoInput" type="number" id="fullmakt">
+            </div>
         </form>
 
-        <form class="livsSituasjon">
+        <form class="livsSituasjon formArea">
             <h3>Livssituasjon:</h3>
+            <div class="duoInputField" inputArea noBotPadd">
+                <label class="inputTitle">Er alvorlig syk:</label>
+                <label class="inputTitle">Flyktning:</label>
 
-            <p>Er alvorlig syk:</p>
-            <input type="boolean" id="alvorligSyk">
-
-            <p>Flyktning:</p>
-            <input type="boolean" id="flyktning">
-
-            <p>Gravid:</p>
-            <input type="boolean" id="gravid">
+                <input class="userInfoInput" type="boolean" id="alvorligSyk">
+                <input class="userInfoInput" type="boolean" id="flyktning">
+            </div>
+            <div class="oneInputField inputArea">
+                <label class="inputTitle">Gravid:</label>
+                <input class="userInfoInput" type="boolean" id="gravid">
+            </div> 
         </form>
 
-        <form class="NAV">
+        <form class="NAV formArea">
             <h3>NAV:</h3>
 
-            <p>Medlem:</p>
-            <input type="boolean" id="medlem">
+            <div class="oneInputField inputArea">
+                <label class="inputTitle">Medlem:</label>
+                <input class="userInfoInput" type="boolean" id="medlem">    
+            </div>
+            <div class="duoInputField inputArea">
+                <label class="inputTitle">Ufør:</label>
+                <label class="inputTitle">Pensjonist:</label>
 
-            <p>Ufør:</p>
-            <input type="number" id="ufor">
+                <input class="userInfoInput" type="number" id="ufor">
+                <input class="userInfoInput" type="boolean" id="pensjonist">
+            </div>
+            <div class="duoInputField inputArea noBotPadd">
+                <label class="inputTitle">Yrkesskade:</label>
+                <label class="inputTitle">Dagpenger:</label>
 
-            <p>Pensjonist:</p>
-            <input type="boolean" id="pensjonist">
-
-            <p>Yrkesskade:</p>
-            <input type="boolean" id="yrkesskade">
-            
-            <p>Dagpenger:</p>
-            <input type="boolean" id="dagpenger">
-
-            <p>Sykepenger:</p>
-            <input type="number" id="sykepenger">
+                <input class="userInfoInput" type="boolean" id="yrkesskade">
+                <input class="userInfoInput" type="boolean" id="dagpenger">
+            </div>
+            <div class="oneInputField inputArea">
+                <label class="inputTitle">Sykepenger:</label>
+                <input class="userInfoInput" type="number" id="sykepenger">
+            </div>
         </form>
 
-        <form class="lanekassen">
+        <form class="lanekassen formArea">
             <h3>Lånekassen:</h3>
+            <div class="duoInputField inputArea">
+                <label class="inputTitle">Stipend:</label>
+                <label class="inputTitle">Studiested EU:</label>
 
-            <p>Stipend:</p>
-            <input type="boolean" id="stipend">
-
-            <p>Studiested EU:</p>
-            <input type="boolean" id="studiested">
+                <input class="userInfoInput" type="boolean" id="stipend">
+                <input class="userInfoInput" type="boolean" id="studiested">
+            </div>
         </form>
 
-        <form class="arbeidsforhold">
+        <form class="arbeidsForhold formArea">
             <h3>Arbeidsforhold:</h3>
 
             <p>Freelancer:</p>
@@ -171,7 +181,7 @@
             <input type="number" id="denneManed">
         </form>
 
-        <form class="inntektFortid">
+        <form class="inntektFortid formArea">
             <h3>Inntekt fortid:</h3>
 
             <p>Inntekt 2019:</p>
@@ -184,7 +194,7 @@
             <input type="number" id="inntekt2021">
         </form>
 
-        <form class="inntekt2022">
+        <form class="inntekt2022 formArea">
             <h3>Inntekt 2022:</h3>
 
             <p>Inntekt 1:</p>

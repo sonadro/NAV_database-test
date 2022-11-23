@@ -164,21 +164,23 @@
 
         <form class="arbeidsForhold formArea">
             <h3>Arbeidsforhold:</h3>
+            <div class="oneInputField inputArea">
+                <label class="inputTitle">Freelancer:</label>
+                <input class="userInfoInput" type="boolean" id="freelancer">
+            </div>
+            <div class="quadInputField inputArea">
+                <label class="inputTitle">Arbeidsforhold status:</label>
+                <label class="inputTitle">Sektor:</label>
 
-            <p>Freelancer:</p>
-            <input type="boolean" id="freelancer">
+                <input class="userInfoInput" type="number" id="forholdStatus">
+                <input class="userInfoInput" type="number" id="sektor">
 
-            <p>Arbeidsforhold status:</p>
-            <input type="number" id="forholdStatus">
+                <label class="inputTitle">Arbeidstid forrige måned:</label>
+                <label class="inputTitle">Arbeidstid denne måned</label>
 
-            <p>Sektor:</p>
-            <input type="number" id="sektor">
-
-            <p>Arbeidstid forrige måned:</p>
-            <input type="number" id="forrigeManed">
-
-            <p>Arbeidstid denne måned</p>
-            <input type="number" id="denneManed">
+                <input class="userInfoInput" type="number" id="forrigeManed">
+                <input class="userInfoInput" type="number" id="denneManed">
+            </div>
         </form>
 
         <form class="inntektFortid formArea">
@@ -221,7 +223,7 @@
             <p>Inntekt 8:</p>
             <input type="text" id="inntekt8"><br><br>
 
-            <button class="knapp" type="submit">Submit</button>
+            <button class="knapp submitKnapp" type="submit">Submit</button>
         </form>
 
     </main>

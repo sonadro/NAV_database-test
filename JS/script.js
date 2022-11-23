@@ -10,6 +10,8 @@ const arbeidsForholdForm = document.querySelector('.arbeidsForhold');
 const inntektFortidForm = document.querySelector('.inntektFortid');
 const inntekt2022Form = document.querySelector('.inntekt2022');
 
+const submitBtn = document.querySelector('.submitKnapp');
+
 // Kode
 // const addDoc = function(obj) {
 //     db.collection('personer').add(obj).then(() => {
@@ -30,35 +32,11 @@ const getDocs = function(id) {
 
 getDocs('1');
 
-// Form event listeners
-grunnleggendeDataForm.addEventListener('submit', e => {
-    e.preventDefault();
-});
+const onFormSubmit = function() {
 
-økonomiskeForholdForm.addEventListener('submit', e => {
-    e.preventDefault();
-});
+}
 
-livssituasjonForm.addEventListener('submit', e => {
-    e.preventDefault();
-});
-
-NAVForm.addEventListener('submit', e => {
-    e.preventDefault();
-});
-
-lånekassenForm.addEventListener('submit', e => {
-    e.preventDefault();
-});
-
-arbeidsForholdForm.addEventListener('submit', e => {
-    e.preventDefault();
-});
-
-inntektFortidForm.addEventListener('submit', e => {
-    e.preventDefault();
-});
-
-inntekt2022Form.addEventListener('submit', e => {
-    e.preventDefault();
+// Form event listener
+submitBtn.addEventListener('click', e => {
+    console.log(e);
 });

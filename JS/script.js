@@ -35,21 +35,21 @@ getDocs('1');
 // Form event listener
 submitBtn.addEventListener('click', e => {
     e.preventDefault();
-    const parents = [grunnleggendeDataForm.forelder1, grunnleggendeDataForm.forelder2];
+    const parents = [grunnleggendeDataForm.forelder1.value, grunnleggendeDataForm.forelder2.value];
     const userObject = {
-        firstName: grunnleggendeDataForm.fornavn,
-        lastName: grunnleggendeDataForm.etternavn,
-        DOB: grunnleggendeDataForm.fodselsdato,
-        age: grunnleggendeDataForm.alder,
-        deceased: grunnleggendeDataForm.status,
-        deceasedDate: grunnleggendeDataForm.endringStatus,
-        marriageState: grunnleggendeDataForm.ekteskap,
-        marriageWho: grunnleggendeDataForm.ektefelle,
+        firstName: grunnleggendeDataForm.fornavn.value,
+        lastName: grunnleggendeDataForm.etternavn.value,
+        DOB: grunnleggendeDataForm.fodselsdato.value,
+        age: grunnleggendeDataForm.alder.value,
+        deceased: grunnleggendeDataForm.status.value,
+        deceasedDate: grunnleggendeDataForm.endringStatus.value,
+        marriageState: grunnleggendeDataForm.ekteskap.value,
+        marriageWho: grunnleggendeDataForm.ektefelle.value,
         parent: parents,
-        children: grunnleggendeDataForm.barn,
-        postalCode: grunnleggendeDataForm.postnummer,
-        country: grunnleggendeDataForm.land,
-        homeYears: grunnleggendeDataForm.botid
+        children: grunnleggendeDataForm.barn.value,
+        postalCode: grunnleggendeDataForm.postnummer.value,
+        country: grunnleggendeDataForm.land.value,
+        homeYears: grunnleggendeDataForm.botid.value
     };
 
     addDoc(userObject, 'personer');

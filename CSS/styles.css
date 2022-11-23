@@ -1,3 +1,11 @@
+.knapp{
+    padding: 10px;
+    margin: 10px;
+    margin-top: 20px;
+    width: 250px;
+}
+
+
 .userCardContainer{
     border: solid;
     border-radius: 20px;
@@ -23,7 +31,7 @@
     display: grid; 
     grid-auto-columns: 1fr; 
     grid-template-columns: 1.1fr; 
-    grid-template-rows: 1fr 1fr 1fr 1fr; 
+    /*grid-template-rows: 1fr 1fr 1fr 1fr;*/ 
     gap: 0px 0px; 
     grid-template-areas: 
         "."
@@ -33,9 +41,11 @@
 }
 .inputTitle{
     padding-left: 20px;
+    margin-top: 20px;
 }
 .userInfoInput{
     margin: 10px;
+    padding: 10px;
 }
 .quadInputField{
     display: grid; 
@@ -53,16 +63,17 @@
     display: grid; 
     grid-auto-columns: 1fr; 
     grid-template-columns: 1fr 1fr; 
-    grid-template-rows: 0.7fr 1.3fr; 
+    grid-template-rows: 0.2fr 0.2fr; 
     gap: 0px 0px; 
     grid-template-areas: 
         ". ."
         ". .";
+    max-height: 100px;
 }
 .oneInputField{
     display: grid; 
     grid-auto-columns: 1fr; 
-    grid-template-columns: 1fr; 
+    grid-template-columns: 0.5fr; 
     grid-template-rows: 0.7fr 1.3fr; 
     gap: 0px 0px; 
     grid-template-areas: 

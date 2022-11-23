@@ -1,7 +1,22 @@
+@font-face {
+    font-family: 'Poppins-Medium';
+    src: url('../Fonts/Poppins-Medium.ttf');
+    font-weight: 500;
+}
+
+@font-face {
+    font-family: 'Poppins-Regular';
+    src: url('../Fonts/Poppins-Regular.ttf');
+    font-weight: 400;
+}
+
 body{
     font-family: Arial, Helvetica, sans-serif;
 }
 
+h3{
+    font-family: 'Poppins-Medium', Fallback, sans-serif;
+}
 
 .knapp{
     padding: 10px;

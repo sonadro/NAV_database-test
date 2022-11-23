@@ -40,7 +40,7 @@ h3{
 .submitKnapp{
     margin-left: 30px;
 }
-#infoDisplay{
+/*#infoDisplay{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
@@ -54,7 +54,7 @@ h3{
       ". . . . .";
     
       
-}
+}*/
 .userCardContainer{
     border: solid;
     border-radius: 10px;

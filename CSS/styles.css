@@ -16,6 +16,7 @@ body{
 }
 .knapp:hover{
     background-color: rgb(118, 118, 118);
+    cursor: pointer;
 }
 .userCardContainer{
     border: solid;
@@ -40,6 +41,9 @@ body{
     background-color: beige;
     border: none;
     border-radius: 5px;
+}
+.inputArea{
+    padding: 20px 0px;
 }
 .grunnleggendeData{
     padding: 30px;
@@ -97,4 +101,12 @@ body{
     grid-template-areas: 
         "."
         ".";
+    padding-top: 0px;
+}
+
+
+/*------------------------------Stiler for mindre klasser med begrenset bruk------------------------------------------*/
+
+.noBotPadd{
+    padding-bottom: 0px;
 }

@@ -95,14 +95,14 @@
             <h3>Økonomiske forhold:</h3>
 
             <div class="quadInputField inputArea">
-                <label class="inputTitle">Bankkonto:</label>
-                <label class="inputTitle">Kredittkort:</label>
+                <label for="bankkonto" class="inputTitle">Bankkonto:</label>
+                <label for="kredittkort" class="inputTitle">Kredittkort:</label>
 
                 <input class="userInfoInput" type="number" id="bankkonto">
                 <input class="userInfoInput" type="number" id="kredittkort">
     
-                <label class="inputTitle">Lån:</label>
-                <label class="inputTitle">Fullmakt til data:</label>
+                <label for="lan" class="inputTitle">Lån:</label>
+                <label for="fullmakt" class="inputTitle">Fullmakt til data:</label>
 
                 <input class="userInfoInput" type="number" id="lan">
                 <input class="userInfoInput" type="number" id="fullmakt">
@@ -112,14 +112,14 @@
         <form class="livsSituasjon formArea">
             <h3>Livssituasjon:</h3>
             <div class="duoInputField" inputArea noBotPadd">
-                <label class="inputTitle">Er alvorlig syk:</label>
-                <label class="inputTitle">Flyktning:</label>
+                <label for="alvorligSyk" class="inputTitle">Er alvorlig syk:</label>
+                <label for="flyktning" class="inputTitle">Flyktning:</label>
 
                 <input class="userInfoInput" type="boolean" id="alvorligSyk">
                 <input class="userInfoInput" type="boolean" id="flyktning">
             </div>
             <div class="oneInputField inputArea">
-                <label class="inputTitle">Gravid:</label>
+                <label for="gravid" class="inputTitle">Gravid:</label>
                 <input class="userInfoInput" type="boolean" id="gravid">
             </div> 
         </form>
@@ -128,25 +128,25 @@
             <h3>NAV:</h3>
 
             <div class="oneInputField inputArea">
-                <label class="inputTitle">Medlem:</label>
+                <label for="medlem" class="inputTitle">Medlem:</label>
                 <input class="userInfoInput" type="boolean" id="medlem">    
             </div>
             <div class="duoInputField inputArea">
-                <label class="inputTitle">Ufør:</label>
-                <label class="inputTitle">Pensjonist:</label>
+                <label for="ufor" class="inputTitle">Ufør:</label>
+                <label for="pensjonist" class="inputTitle">Pensjonist:</label>
 
                 <input class="userInfoInput" type="number" id="ufor">
                 <input class="userInfoInput" type="boolean" id="pensjonist">
             </div>
             <div class="duoInputField inputArea noBotPadd">
-                <label class="inputTitle">Yrkesskade:</label>
-                <label class="inputTitle">Dagpenger:</label>
+                <label for="yrkesskade" class="inputTitle">Yrkesskade:</label>
+                <label for="dagpenger" class="inputTitle">Dagpenger:</label>
 
                 <input class="userInfoInput" type="boolean" id="yrkesskade">
                 <input class="userInfoInput" type="boolean" id="dagpenger">
             </div>
             <div class="oneInputField inputArea">
-                <label class="inputTitle">Sykepenger:</label>
+                <label for="sykepenger" class="inputTitle">Sykepenger:</label>
                 <input class="userInfoInput" type="number" id="sykepenger">
             </div>
         </form>
@@ -154,8 +154,8 @@
         <form class="lanekassen formArea">
             <h3>Lånekassen:</h3>
             <div class="duoInputField inputArea">
-                <label class="inputTitle">Stipend:</label>
-                <label class="inputTitle">Studiested EU:</label>
+                <label for="stipend" class="inputTitle">Stipend:</label>
+                <label for="studiested" class="inputTitle">Studiested EU:</label>
 
                 <input class="userInfoInput" type="boolean" id="stipend">
                 <input class="userInfoInput" type="boolean" id="studiested">
@@ -165,18 +165,18 @@
         <form class="arbeidsForhold formArea">
             <h3>Arbeidsforhold:</h3>
             <div class="oneInputField inputArea">
-                <label class="inputTitle">Freelancer:</label>
+                <label for="freelancer" class="inputTitle">Freelancer:</label>
                 <input class="userInfoInput" type="boolean" id="freelancer">
             </div>
             <div class="quadInputField inputArea">
-                <label class="inputTitle">Arbeidsforhold status:</label>
-                <label class="inputTitle">Sektor:</label>
+                <label for="forholdStatus" class="inputTitle">Arbeidsforhold status:</label>
+                <label for="sektor" class="inputTitle">Sektor:</label>
 
                 <input class="userInfoInput" type="number" id="forholdStatus">
                 <input class="userInfoInput" type="number" id="sektor">
 
-                <label class="inputTitle">Arbeidstid forrige måned:</label>
-                <label class="inputTitle">Arbeidstid denne måned</label>
+                <label for="forrigeManed" class="inputTitle">Arbeidstid forrige måned:</label>
+                <label for="denneManed" class="inputTitle">Arbeidstid denne måned</label>
 
                 <input class="userInfoInput" type="number" id="forrigeManed">
                 <input class="userInfoInput" type="number" id="denneManed">
@@ -186,42 +186,48 @@
         <form class="inntektFortid formArea">
             <h3>Inntekt fortid:</h3>
 
-            <p>Inntekt 2019:</p>
-            <input type="number" id="inntekt2019">
+            <div class="duoInputField inputArea noBotPadd">
+                <label for="inntekt2019" class="inputTitle">Inntekt 2019:</label>
+                <label for="inntekt2020" class="inputTitle">Inntekt 2020:</label>
 
-            <p>Inntekt 2020:</p>
-            <input type="number" id="inntekt2020">
-
-            <p>Inntekt 2021:</p>
-            <input type="number" id="inntekt2021">
+                <input class="userInfoInput" type="number" id="inntekt2019">
+                <input class="userInfoInput" type="number" id="inntekt2020">
+            </div>
+            <div class="oneInputField inputArea">
+                <label for="inntekt2021" class="inputTitle">Inntekt 2021:</label>
+                <input class="userInfoInput" type="number" id="inntekt2021">
+            </div>
         </form>
 
         <form class="inntekt2022 formArea">
             <h3>Inntekt 2022:</h3>
 
-            <p>Inntekt 1:</p>
-            <input type="text" id="inntekt1">
+            <div class="quadInputField inputArea noBotPadd">
+                <label for="inntekt1" class="inputTitle">Inntekt 1:</label>
+                <label for="inntekt2" class="inputTitle">Inntekt 2:</label>
 
-            <p>Inntekt 2:</p>
-            <input type="text" id="inntekt2">
+                <input class="userInfoInput" type="text" id="inntekt1">
+                <input class="userInfoInput" type="text" id="inntekt2">
 
-            <p>Inntekt 3:</p>
-            <input type="text" id="inntekt3">
+                <label for="inntekt3" class="inputTitle">Inntekt 3:</label>
+                <label for="inntekt4" class="inputTitle">Inntekt 4:</label>
 
-            <p>Inntekt 4:</p>
-            <input type="text" id="inntekt4">
+                <input class="userInfoInput" type="text" id="inntekt3">
+                <input class="userInfoInput" type="text" id="inntekt4">
+            </div>
+            <div class="quadInputField inputArea noTopPadd">
+                <label for="inntekt5" class="inputTitle">Inntekt 5:</label>
+                <label for="inntekt6" class="inputTitle">Inntekt 6:</label>
 
-            <p>Inntekt 5:</p>
-            <input type="text" id="inntekt5">
+                <input class="userInfoInput" type="text" id="inntekt5">
+                <input class="userInfoInput" type="text" id="inntekt6">
 
-            <p>Inntekt 6:</p>
-            <input type="text" id="inntekt6">
+                <label for="inntekt7" class="inputTitle">Inntekt 7:</label>
+                <label for="inntekt8" class="inputTitle">Inntekt 8:</label>
 
-            <p>Inntekt 7:</p>
-            <input type="text" id="inntekt7">
-
-            <p>Inntekt 8:</p>
-            <input type="text" id="inntekt8"><br><br>
+                <input class="userInfoInput" type="text" id="inntekt7">
+                <input class="userInfoInput" type="text" id="inntekt8"><br><br>
+            </div>
 
             <button class="knapp submitKnapp" type="submit">Submit</button>
         </form>

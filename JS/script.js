@@ -28,7 +28,7 @@ const getDocs = function() {
 }
 
 // Form event listeners
-inntekt2022.addEventListener('submit', e => {
+inntekt2022Form.addEventListener('submit', e => {
     e.preventDefault();
 
     // addDoc();

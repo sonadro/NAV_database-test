@@ -35,60 +35,61 @@
 
 
         <form class="grunnleggendeData">
-            <h3>Grunnleggende data:</h3>
+            <h3 style="max-height: 10px;">Grunnleggende data:</h3>
 
             <div class="quadInputField">
-                <p class="inputTitle">Fornavn:</p>
-                <p class="inputTitle">Etternavn:</p>
+                <label class="inputTitle">Fornavn:</label>
+                <label class="inputTitle">Etternavn:</label>
 
                 <input class="userInfoInput" type="text" id="fornavn">
                 <input class="userInfoInput" type="text" id="etternavn">
 
-                <p class="inputTitle">Fødselsdato:</p>
-                <p class="inputTitle">Alder:</p>
+                <label class="inputTitle">Fødselsdato:</label>
+                <label class="inputTitle">Alder:</label>
 
                 <input class="userInfoInput" type="text" id="fodselsdato">
                 <input class="userInfoInput" type="text" id="alder">
             </div>
 
             <div class="quadInputField">
-                <p class="inputTitle">Livsstatus:</p>
-                <p class="inputTitle">Endring Livsstatus:</p>
+                <label class="inputTitle">Livsstatus:</label>
+                <label class="inputTitle">Endring Livsstatus:</label>
                 
                 <input class="userInfoInput" type="text" id="status">
                 <input class="userInfoInput" type="text" id="endringStatus">
                 
-                <p class="inputTitle">Ekteskap:</p>
-                <p class="inputTitle">Ektefelle:</p>
+                <label class="inputTitle">Ekteskap:</label>
+                <label class="inputTitle">Ektefelle:</label>
                 
                 <input class="userInfoInput" type="text" id="ekteskap">
                 <input class="userInfoInput" type="text" id="ektefelle">
             </div>
             <div class="duoInputField">
-                <p class="inputTitle">Forelder 1:</p>
-                <p class="inputTitle">Forelder 2:</p>
+                <label class="inputTitle">Forelder 1:</label>
+                <label class="inputTitle">Forelder 2:</label>
                 
                 <input class="userInfoInput" type="text" id="forelder1">
                 <input class="userInfoInput" type="text" id="forelder2">
             </div>
 
             <div class="oneInputField">
-                <p class="inputTitle">Barn:</p>
+                <label class="inputTitle">Barn:</label>
 
                 <input class="userInfoInput" type="text" id="barn">
             </div>
             <!--Finish this last section and adjust sizes of gridboxes-->
-            <div>
-                <p class="inputTitle">Bosted post-nummer:</p>
+            <div class="duoInputField">
+                <label class="inputTitle">Bosted post-nummer:</label>
+                <label class="inputTitle">Land:</label>
+
                 <input class="userInfoInput" type="text" id="postnummer">
-
-                <p class="inputTitle">Land:</p>
                 <input class="userInfoInput" type="text" id="land">
-
-                <p class="inputTitle">Botid:</p>
-                <input class="userInfoInput" type="text" id="botid">
             </div>
-            <button type="submit">Submit</button>
+            <div class="oneInputField">
+                <label class="inputTitle">Botid:</label>
+                <input class="userInfoInput" type="text" id="botid"> 
+            </div>
+            <button class="knapp" type="submit">Submit</button>
         </form>
 
         <form class="okonomiskeForhold">

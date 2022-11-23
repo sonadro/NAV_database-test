@@ -35,9 +35,22 @@ getDocs('1');
 // Form event listener
 submitBtn.addEventListener('click', e => {
     e.preventDefault();
+    const parents = [grunnleggendeDataForm.forelder1, grunnleggendeDataForm.forelder2];
     const userObject = {
-        firstName: grunnleggendeDataForm.fornavn
+        firstName: grunnleggendeDataForm.fornavn,
+        lastName: grunnleggendeDataForm.etternavn,
+        DOB: grunnleggendeDataForm.fodselsdato,
+        age: grunnleggendeDataForm.alder,
+        deceased: grunnleggendeDataForm.status,
+        deceasedDate: grunnleggendeDataForm.endringStatus,
+        marriageState: grunnleggendeDataForm.ekteskap,
+        marriageWho: grunnleggendeDataForm.ektefelle,
+        parent: parents,
+        children: grunnleggendeDataForm.barn,
+        postalCode: grunnleggendeDataForm.postnummer,
+        country: grunnleggendeDataForm.land,
+        homeYears: grunnleggendeDataForm.botid
     };
 
-    // addDoc(userObject, 'personer');
+    addDoc(userObject, 'personer');
 });

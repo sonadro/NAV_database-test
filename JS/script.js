@@ -11,7 +11,7 @@ const inntektFortidForm = document.querySelector('.inntektFortid');
 const inntekt2022Form = document.querySelector('.inntekt2022');
 
 // Kode
-// const addDoc = function() {
+// const addDoc = function(obj) {
 //     db.collection('personer').add(obj).then(() => {
 //         console.log('object added', obj);
 //     }).catch(err => console.error(err));
@@ -19,16 +19,19 @@ const inntekt2022Form = document.querySelector('.inntekt2022');
 
 // Fetch dokumenter
 const getDocs = function() {
-    db.collection('testCollection').get().then(snapshot => {
+    db.collection('personer').get().then(snapshot => {
+        // console.log(snapshot.ref.collection('info').get());
         snapshot.docs.forEach(doc => {
             const data = doc.data();
-            console.log(data);
+            console.log(doc);
         });
     }).catch(err => console.error(err));
 }
 
+getDocs();
+
 // Form event listeners
-inntekt2022.addEventListener('submit', e => {
+inntekt2022Form.addEventListener('submit', e => {
     e.preventDefault();
 
     // addDoc();

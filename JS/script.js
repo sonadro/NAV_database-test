@@ -13,11 +13,11 @@ const inntekt2022Form = document.querySelector('.inntekt2022');
 const submitBtn = document.querySelector('.submitKnapp');
 
 // Kode
-// const addDoc = function(obj) {
-//     db.collection('personer').add(obj).then(() => {
-//         console.log('object added', obj);
-//     }).catch(err => console.error(err));
-// }
+const addDoc = function(obj, collection) {
+    db.collection('personer').add(obj).then(() => {
+        console.log('object added', obj);
+    }).catch(err => console.error(err));
+}
 
 // Fetch dokumenter
 const getDocs = function(id) {
@@ -25,18 +25,19 @@ const getDocs = function(id) {
         // console.log(snapshot);
         snapshot.forEach(doc => {
             const data = doc.data();
-            console.log(data.id, data);
+            console.log(doc.id, data);
         });
     }).catch(err => console.error(err));
 }
 
 getDocs('1');
 
-const onFormSubmit = function() {
-
-}
-
 // Form event listener
 submitBtn.addEventListener('click', e => {
-    console.log(e);
+    e.preventDefault();
+    const userObject = {
+        firstName: grunnleggendeDataForm.fornavn
+    };
+
+    // addDoc(userObject, 'personer');
 });

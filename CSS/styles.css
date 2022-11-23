@@ -40,11 +40,19 @@ h3{
 .userCardContainer{
     border: solid;
     border-radius: 10px;
+    border-width: 1px;
     display: inline-block;
     background-color: beige;
     font-family:Arial, Helvetica, sans-serif;
     margin: 20px 20px;
     padding: 10px;
+    transform: scale(1.0);
+    transition-duration: 0.1s;
+}
+.userCardContainer:hover{
+    box-shadow: 10px 10px 5px gray;
+    transform: scale(1.1);
+    transition-duration: 0.1s;
 }
 .cardNameHeader{
     margin: 10px 10px;

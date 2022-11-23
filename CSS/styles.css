@@ -41,12 +41,13 @@ body{
     background-color: beige;
     border: none;
     border-radius: 5px;
+    padding: 30px;
+    margin: 20px 0px;
 }
 .inputArea{
     padding: 20px 0px;
 }
 .grunnleggendeData{
-    padding: 30px;
     display: grid; 
     grid-auto-columns: 1fr; 
     grid-template-columns: 1.1fr; 

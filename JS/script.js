@@ -14,7 +14,7 @@ const submitBtn = document.querySelector('.submitKnapp');
 
 // Kode
 const addDoc = function(obj, collection) {
-    db.collection('personer').add(obj).then(() => {
+    db.collection(`${collection}`).add(obj).then(() => {
         console.log('object added', obj);
     }).catch(err => console.error(err));
 }

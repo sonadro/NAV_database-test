@@ -16,6 +16,7 @@ body{
 
 h3{
     font-family: 'Poppins-Medium', Fallback, sans-serif;
+    font-size: 25px;
 }
 
 .knapp{
@@ -33,9 +34,12 @@ h3{
     background-color: rgb(118, 118, 118);
     cursor: pointer;
 }
+.submitKnapp{
+    margin-left: 30px;
+}
 .userCardContainer{
     border: solid;
-    border-radius: 20px;
+    border-radius: 10px;
     display: inline-block;
     background-color: beige;
     font-family:Arial, Helvetica, sans-serif;

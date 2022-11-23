@@ -19,13 +19,10 @@ const inntekt2022Form = document.querySelector('.inntekt2022');
 
 // Fetch dokumenter
 const getDocs = function() {
-    db.collection('personer').get().then(snapshot => {
-        // console.log(snapshot.ref.collection('info').get());
-        snapshot.docs.forEach(doc => {
-            console.log(snapshot);
-            console.log(snapshot._snapshot.docChanges[0]);
-            var info = snapshot.ref.collection('info').get();
-            console.log(info.docs.map(doc => doc.data()));
+    db.collection('Users/1/advancedInfo').get().then(snapshot => {
+        snapshot.forEach(doc => {
+            const data = doc.data();
+            console.log(data);
         });
     }).catch(err => console.error(err));
 }

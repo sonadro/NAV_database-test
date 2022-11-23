@@ -40,7 +40,7 @@ h3{
 .submitKnapp{
     margin-left: 30px;
 }
-#infoDisplay{
+/*#infoDisplay{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
@@ -54,7 +54,7 @@ h3{
       ". . . . .";
     
       
-}
+}*/
 .userCardContainer{
     border: solid;
     border-radius: 10px;
@@ -71,6 +71,7 @@ h3{
     box-shadow: 10px 10px 5px gray;
     transform: scale(1.1);
     transition-duration: 0.1s;
+    cursor: pointer;
 }
 .cardNameHeader{
     margin: 10px 10px;
@@ -156,7 +157,9 @@ h3{
     padding-top: 0px;
 }
 
-
+.Per:hover{
+    cursor: none;
+}
 /*------------------------------Stiler for mindre klasser med begrenset bruk------------------------------------------*/
 
 .noBotPadd{

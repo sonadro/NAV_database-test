@@ -54,13 +54,13 @@ const genTemplate = function(obj, id) {
 getDocs();
 
 infoDisplay.addEventListener('click', e => {
-    if (e.target.getAttribute('class') == 'userCardContainer'){
+    if (e.target.getAttribute('class') === 'userCardContainer'){
         console.log(e.target.getAttribute('id'));
         openAdvancedInfo();
-    }else if(e.target.parentElement.getAttribute('class') == 'userCardContainer'){
+    }else if(e.target.parentElement.getAttribute('class') === 'userCardContainer'){
         console.log(e.target.getAttribute('id'));
         openAdvancedInfo();
-    }else if(e.target.parentElement.parentElement.getAttribute('class') == 'userCardContainer'){
+    }else if(e.target.parentElement.parentElement.getAttribute('class') === 'userCardContainer'){
         console.log(e.target.getAttribute('id'));
         openAdvancedInfo();
     }

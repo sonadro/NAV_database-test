@@ -53,7 +53,9 @@ const genTemplate = function(obj) {
 getDocs();
 
 infoDisplay.addEventListener('click', e => {
-    console.log(e.target.getAttribute('id'));
+    if (e.target.getAttribute('class') == 'userCardContainer'){
+        console.log(e.target.getAttribute('id'));
+    }
 });
 
 // Form event listener

@@ -52,46 +52,54 @@
                 <label for="alder" class="inputTitle" type="number">Alder:</label>
 
                 <input class="userInfoInput" type="text" id="fodselsdato">
-                <input class="userInfoInput" type="text" id="alder">
+                <input class="userInfoInput" type="number" id="alder">
             </div>
 
             <div class="quadInputField inputArea">
                 <label for="status" class="inputTitle">Livsstatus:</label>
                 <label for="endringStatus" class="inputTitle">Endring Livsstatus:</label>
                 
-                <input class="userInfoInput" type="text" id="status">
+                <select autocomplete="off" class="userInfoInput" type="text" id="status">
+                    <option disabled selected value>Velg...</option>
+                    <option value="0">Levende</option>
+                    <option value="1">Død</option>
+                </select>
                 <input class="userInfoInput" type="text" id="endringStatus">
                 
                 <label for="ekteskap" class="inputTitle">Ekteskap:</label>
                 <label for="ektefelle" class="inputTitle">Ektefelle:</label>
                 
-                <input class="userInfoInput" type="text" id="ekteskap">
-                <input class="userInfoInput" type="text" id="ektefelle">
+                <select autocomplete="off" class="userInfoInput" type="text" id="ekteskap">
+                    <option disabled selected value>Velg...</option>
+                    <option value="0">Enslig</option>
+                    <option value="1">Gift</option>
+                    <option value="2">Skilt</option>
+                </select>
+                <input class="userInfoInput" type="number" id="ektefelle">
             </div>
             <div class="duoInputField inputArea noBotPadd">
                 <label for="forelder1" class="inputTitle">Forelder 1:</label>
                 <label for="forelder2" class="inputTitle">Forelder 2:</label>
                 
-                <input class="userInfoInput" type="text" id="forelder1">
-                <input class="userInfoInput" type="text" id="forelder2">
+                <input class="userInfoInput" type="number" id="forelder1">
+                <input class="userInfoInput" type="number" id="forelder2">
             </div>
 
             <div class="oneInputField inputArea">
                 <label for="barn" class="inputTitle">Barn:</label>
-
-                <input class="userInfoInput" type="text" id="barn">
+                <input class="userInfoInput" type="number" id="barn">
             </div>
             <!--Finish this last section and adjust sizes of gridboxes-->
             <div class="duoInputField inputArea noBotPadd">
                 <label for="postnummer" class="inputTitle">Bosted post-nummer:</label>
                 <label for="land" class="inputTitle">Land:</label>
 
-                <input class="userInfoInput" type="text" id="postnummer">
-                <input class="userInfoInput" type="text" id="land">
+                <input class="userInfoInput" type="number" id="postnummer">
+                <input class="userInfoInput" type="number" id="land">
             </div>
             <div class="oneInputField inputArea">
                 <label for="botid" class="inputTitle">Botid:</label>
-                <input class="userInfoInput" type="text" id="botid"> 
+                <input class="userInfoInput" type="number" id="botid"> 
             </div>
         </form>
 
@@ -119,8 +127,16 @@
                 <label for="alvorligSyk" class="inputTitle">Er alvorlig syk:</label>
                 <label for="flyktning" class="inputTitle">Flyktning:</label>
 
-                <input class="userInfoInput" type="boolean" id="alvorligSyk">
-                <input class="userInfoInput" type="boolean" id="flyktning">
+                <select autocomplete="off" class="userInfoInput" type="text" id="alvorligSyk">
+                    <option disabled selected value>Velg...</option>
+                    <option value="1">Ja</option>
+                    <option value="0">Nei</option>
+                </select>
+                <select autocomplete="off" class="userInfoInput" type="text" id="flyktning">
+                    <option disabled selected value>Velg...</option>
+                    <option value="1">Ja</option>
+                    <option value="0">Nei</option>
+                </select>
             </div>
             <div class="oneInputField inputArea">
                 <label for="gravid" class="inputTitle">Gravid:</label>
@@ -133,21 +149,41 @@
 
             <div class="oneInputField inputArea">
                 <label for="medlem" class="inputTitle">Medlem:</label>
-                <input class="userInfoInput" type="boolean" id="medlem">    
+                <select autocomplete="off" class="userInfoInput" type="text" id="medlem">
+                    <option disabled selected value>Velg...</option>
+                    <option value="1">Ja</option>
+                    <option value="0">Nei</option>
+                </select>   
             </div>
             <div class="duoInputField inputArea">
                 <label for="ufor" class="inputTitle">Ufør:</label>
                 <label for="pensjonist" class="inputTitle">Pensjonist:</label>
 
-                <input class="userInfoInput" type="number" id="ufor">
-                <input class="userInfoInput" type="boolean" id="pensjonist">
+                <select autocomplete="off" class="userInfoInput" type="text" id="ufor">
+                    <option disabled selected value>Velg...</option>
+                    <option value="1">Ja</option>
+                    <option value="0">Nei</option>
+                </select>
+                <select autocomplete="off" class="userInfoInput" type="text" id="pensjonist">
+                    <option disabled selected value>Velg...</option>
+                    <option value="1">Ja</option>
+                    <option value="0">Nei</option>
+                </select>
             </div>
             <div class="duoInputField inputArea noBotPadd">
                 <label for="yrkesskade" class="inputTitle">Yrkesskade:</label>
                 <label for="dagpenger" class="inputTitle">Dagpenger:</label>
 
-                <input class="userInfoInput" type="boolean" id="yrkesskade">
-                <input class="userInfoInput" type="boolean" id="dagpenger">
+                <select autocomplete="off" class="userInfoInput" type="text" id="yrkesskade">
+                    <option disabled selected value>Velg...</option>
+                    <option value="1">Ja</option>
+                    <option value="0">Nei</option>
+                </select>
+                <select autocomplete="off" class="userInfoInput" type="text" id="dagpenger">
+                    <option disabled selected value>Velg...</option>
+                    <option value="1">Ja</option>
+                    <option value="0">Nei</option>
+                </select>
             </div>
             <div class="oneInputField inputArea">
                 <label for="sykepenger" class="inputTitle">Sykepenger:</label>
@@ -161,8 +197,16 @@
                 <label for="stipend" class="inputTitle">Stipend:</label>
                 <label for="studiested" class="inputTitle">Studiested EU:</label>
 
-                <input class="userInfoInput" type="boolean" id="stipend">
-                <input class="userInfoInput" type="boolean" id="studiested">
+                <select autocomplete="off" class="userInfoInput" type="text" id="stipend">
+                    <option disabled selected value>Velg...</option>
+                    <option value="1">Ja</option>
+                    <option value="0">Nei</option>
+                </select>
+                <select autocomplete="off" class="userInfoInput" type="text" id="studiested">
+                    <option disabled selected value>Velg...</option>
+                    <option value="1">Ja</option>
+                    <option value="0">Nei</option>
+                </select>
             </div>
         </form>
 
@@ -170,14 +214,26 @@
             <h3>Arbeidsforhold:</h3>
             <div class="oneInputField inputArea">
                 <label for="freelancer" class="inputTitle">Freelancer:</label>
-                <input class="userInfoInput" type="boolean" id="freelancer">
+                <select autocomplete="off" class="userInfoInput" type="text" id="freelancer">
+                    <option disabled selected value>Velg...</option>
+                    <option value="1">Ja</option>
+                    <option value="0">Nei</option>
+                </select>
             </div>
             <div class="quadInputField inputArea">
                 <label for="forholdStatus" class="inputTitle">Arbeidsforhold status:</label>
                 <label for="sektor" class="inputTitle">Sektor:</label>
 
-                <input class="userInfoInput" type="number" id="forholdStatus">
-                <input class="userInfoInput" type="number" id="sektor">
+                <select autocomplete="off" class="userInfoInput" type="text" id="forholdStatus">
+                    <option disabled selected value>Velg...</option>
+                    <option value="0">Ansatt</option>
+                    <option value="1">Opphørt</option>
+                </select>
+                <select autocomplete="off" class="userInfoInput" type="text" id="sektor">
+                    <option disabled selected value>Velg...</option>
+                    <option value="0">Privat</option>
+                    <option value="1">Stat</option>
+                </select>
 
                 <label for="forrigeManed" class="inputTitle">Arbeidstid forrige måned:</label>
                 <label for="denneManed" class="inputTitle">Arbeidstid denne måned</label>

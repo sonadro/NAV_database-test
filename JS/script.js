@@ -14,6 +14,24 @@ const submitBtn = document.querySelector('.submitKnapp');
 const infoDisplay = document.querySelector('#infoDisplay');
 const advancedInfoCard = document.querySelector(".advancedInfoCard");
 
+const advancedInfoGrunnleggende = document.querySelector('#advInfoGrunnleggende');
+const advancedInfoØkonomiskeForhold = document.querySelector('#advInfoOkonomiskeForhold');
+const advancedInfoLivssituasjon = document.querySelector('#advInfoLissituasjon');
+const advancedInfoNAV = document.querySelector('#advInfoNAV');
+const advancedInfoLånekassen = document.querySelector('#advInfoLanekassen');
+const advancedInfoArbeidsforhold = document.querySelector('#advInfoArbeidsforhold');
+const advancedInfoInntektFortid = document.querySelector('#advInfoInntektFortid');
+const advancedInfoInntekt = document.querySelector('#advInfoInntekt2022');
+
+const advInfoButtonGrunnleggende = document.querySelector('#advInfoTog-grunnleggende');
+const advInfoButtonØkonomiskeForhold = document.querySelector('#advInfoTog-okonomiskeForhold');
+const advInfoButtonLivssituasjon = document.querySelector('#advInfoTog-livssituasjon');
+const advInfoButtonNAV = document.querySelector('#advInfoTog-NAV');
+const advInfoButtonLånekassen = document.querySelector('#advInfoTog-lanekassen');
+const advInfoButtonArbeidsforhold = document.querySelector('#advInfoTog-arbeidsforhold');
+const advInfoButtonInntektFortid = document.querySelector('#advInfoTog-inntektFortid');
+const advInfoButtonInntekt2022 = document.querySelector('#advInfoTog-inntekt2022');
+
 // Kode
 const addDoc = function(obj, collection) {
     db.collection(`${collection}`).add(obj).then(() => {
@@ -65,6 +83,11 @@ infoDisplay.addEventListener('click', e => {
         openAdvancedInfo();
     }
 });
+
+advancedInfoCard.addEventListener('click', e => {
+    let target = e.target;
+    console.log(target);
+})
 
 let openAdvancedInfo = () => {
     advancedInfoCard.style.display = 'block';

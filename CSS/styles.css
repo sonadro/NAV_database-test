@@ -183,7 +183,7 @@ h3{
     padding-top: 0px;
 }
 
-.Per:hover{
+.Per:hover, .pål:hover{
     cursor: none;
 }
 /*------------------------------Stiler for mindre klasser med begrenset bruk------------------------------------------*/

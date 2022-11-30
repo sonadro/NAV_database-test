@@ -22,7 +22,7 @@ const addDoc = function(obj, collection) {
 
 // Fetch dokumenter
 const getDocs = function() {
-    db.collection(`personer`).get().then(snapshot => {
+    db.collection(`brukere`).get().then(snapshot => {
         // console.log(snapshot);
         snapshot.forEach(doc => {
             const data = doc.data();
@@ -131,5 +131,5 @@ submitBtn.addEventListener('click', e => {
         avansertInfo
     };
 
-    addDoc(brukerObjekt, 'personer');
+    addDoc(brukerObjekt, 'brukere');
 });

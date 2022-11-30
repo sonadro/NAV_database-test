@@ -33,9 +33,9 @@ const getDocs = function() {
 }
 
 const genTemplate = function(obj, id) {
-    let status = 'Lever';
-    if (JSON.parse(obj.status)) {
-        status = 'Død'
+    let status = 'Død';
+    if (obj.status) {
+        status = 'Lever'
     }
     const template = `
         <div class="userCardContainer" id="${id}">
@@ -43,7 +43,7 @@ const genTemplate = function(obj, id) {
             <ul class="cardInfoList" id="${id}">
                 <li class="cardInfoListElement" id="${id}">Alder: ${obj.alder}</li>
                 <li class="cardInfoListElement" id="${id}">Livsstatus: ${status}</li>
-                <li class="cardInfoListElement" id="${id}"Postnummer: ${obj.postnummer}</li>
+                <li class="cardInfoListElement" id="${id}">Postnummer: ${obj.postnummer}</li>
             </ul>
         </div>
     `;

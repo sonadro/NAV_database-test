@@ -22,7 +22,7 @@ const addDoc = function(obj, collection) {
 
 // Fetch dokumenter
 const getDocs = function() {
-    db.collection(`Users`).get().then(snapshot => {
+    db.collection(`personer`).get().then(snapshot => {
         // console.log(snapshot);
         snapshot.forEach(doc => {
             const data = doc.data();

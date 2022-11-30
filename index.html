@@ -47,7 +47,7 @@
                     <li>Botid: <span class="advInfoField" id="advInfo-botid"></span></li>
                 </ul>
             </div>
-            <button class="advInfoCatSelect" id="advInfoTog-okonomiskeForhold">Økonomiske forhold</button>
+            <button class="advInfoCatSelect" id="advInfoTog-okonomiskeForhold">Økonomiske forhold <img src="img/chevron-right-solid.svg" width="15px"></button>
             <div id="advInfoOkonomiskeForhold" class="advInfoCatView hidden">
                 <ul>
                     <li>Bankkonto: <span class="advInfoField" id="advInfo-bankkonto"></span></li>
@@ -56,7 +56,7 @@
                     <li>Fullmakt til data: <span class="advInfoField" id="advInfo-datafullmakt"></span></li>
                 </ul>
             </div>
-            <button class="advInfoCatSelect" id="advInfoTog-livssituasjon">Livssituasjon</button>
+            <button class="advInfoCatSelect" id="advInfoTog-livssituasjon">Livssituasjon <img src="img/chevron-right-solid.svg" width="15px"></button>
             <div id="advInfoLissituasjon" class="advInfoCatView hidden">
                 <ul>
                     <li>Er alvorlig syk: <span class="advInfoField" id="advInfo-alvorligsyk"></span></li>
@@ -64,7 +64,7 @@
                     <li>Gravid: <span class="advInfoField" id="advInfo-gravid"></span></li>
                 </ul>
             </div>
-            <button class="advInfoCatSelect" id="advInfoTog-NAV">NAV</button>
+            <button class="advInfoCatSelect" id="advInfoTog-NAV">NAV <img src="img/chevron-right-solid.svg" width="15px"></button>
             <div id="advInfoNAV" class="advInfoCatView hidden">
                 <ul>
                     <li>Medlen: <span class="advInfoField" id="advInfo-medlen"></span></li>
@@ -77,14 +77,14 @@
                     <li>Sykepenger: <span class="advInfoField" id="advInfo-sykepenger"></span></li>
                 </ul>
             </div>
-            <button class="advInfoCatSelect" id="advInfoTog-lanekassen">Lånekassen</button>
+            <button class="advInfoCatSelect" id="advInfoTog-lanekassen">Lånekassen <img src="img/chevron-right-solid.svg" width="15px"></button>
             <div id="advInfoLanekassen" class="advInfoCatView hidden">
                 <ul>
                     <li>Stipend: <span class="advInfoField" id="advInfo-stipend"></span></li>
                     <li>Studiested EU: <span class="advInfoField" id="advInfo-studiested"></span></li>
                 </ul>
             </div>
-            <button class="advInfoCatSelect" id="advInfoTog-arbeidsforhold">Arbeidsforhold</button>
+            <button class="advInfoCatSelect" id="advInfoTog-arbeidsforhold">Arbeidsforhold <img src="img/chevron-right-solid.svg" width="15px"></button>
             <div id="advInfoArbeidsforhold" class="advInfoCatView hidden">
                 <ul>
                     <li>Freelancer: <span class="advInfoField" id="advInfo-freelancer"></span></li>
@@ -95,7 +95,7 @@
                     <li>Arbeidstid denne måneden: <span class="advInfoField" id="advInfo-arbtiddennemaned"></span></li>
                 </ul>
             </div>
-            <button class="advInfoCatSelect" id="advInfoTog-inntektFortid">Inntekt fortid</button>
+            <button class="advInfoCatSelect" id="advInfoTog-inntektFortid">Inntekt fortid <img src="img/chevron-right-solid.svg" width="15px"></button>
             <div id="advInfoInntektFortid" class="advInfoCatView hidden">
                 <ul>
                     <li>Inntekt 2019: <span class="advInfoField" id="advInfo-inntekt2019"></span></li>
@@ -103,7 +103,7 @@
                     <li>Inntekt 2021: <span class="advInfoField" id="advInfo-inntekt2021"></span></li>
                 </ul>
             </div>
-            <button class="advInfoCatSelect" id="advInfoTog-inntekt2022">Inntekt 2022</button>
+            <button class="advInfoCatSelect" id="advInfoTog-inntekt2022">Inntekt 2022 <img src="img/chevron-right-solid.svg" width="15px"></button>
             <div id="advInfoInntekt2022" class="advInfoCatView hidden">
                 <ul>
                     <li>Inntekt 1: <span class="advInfoField" id="advInfo-inntekt1"></span></li>
@@ -232,7 +232,11 @@
             </div>
             <div class="oneInputField inputArea">
                 <label for="gravid" class="inputTitle">Gravid:</label>
-                <input class="userInfoInput" type="boolean" id="gravid">
+                <select autocomplete="off" class="userInfoInput" type="text" id="medlem">
+                    <option disabled selected value>Velg...</option>
+                    <option value="1">Ja</option>
+                    <option value="0">Nei</option>
+                </select>   
             </div> 
         </form>
 

@@ -68,6 +68,7 @@ advancedInfoCard.addEventListener('click', e => {
     if(target.classList.contains('advInfoCatSelect')){
         //console.log(e.target.nextElementSibling);
         e.target.nextElementSibling.classList.toggle('hidden');
+        e.target.lastChild.classList.toggle('rotateArrow');
     }
     /*if(target == advInfoButtonGrunnleggende){
         advancedInfoGrunnleggende.classList.toggle('hidden');

@@ -55,6 +55,10 @@ getDocs();
 infoDisplay.addEventListener('click', e => {
     if (e.target.getAttribute('class') == 'userCardContainer'){
         console.log(e.target.getAttribute('id'));
+    }else if(e.target.parentElement.getAttribute('class') == 'userCardContainer'){
+        console.log(e.target.getAttribute('id'));
+    }else if(e.target.parentElement.parentElement.getAttribute('class') == 'userCardContainer'){
+        console.log(e.target.getAttribute('id'));
     }
 });
 

@@ -27,23 +27,23 @@ const getDocs = function() {
         snapshot.forEach(doc => {
             const data = doc.data();
             console.log(doc.id, data);
-            genTemplate(data); // Displays an info card of the data
+            genTemplate(data, doc.id); // Displays an info card of the data
         });
     }).catch(err => console.error(err));
 }
 
-const genTemplate = function(obj) {
+const genTemplate = function(obj, id) {
     let status = 'Lever';
     if (JSON.parse(obj.status)) {
         status = 'Død'
     }
     const template = `
-        <div class="userCardContainer" id="test">
-            <h5 class="cardNameHeader" id="test">${obj.fornavn} ${obj.etternavn}</h5>
-            <ul class="cardInfoList" id="test">
-                <li class="cardInfoListElement" id="test">Alder: ${obj.alder}</li>
-                <li class="cardInfoListElement" id="test">Livsstatus: ${status}</li>
-                <li class="cardInfoListElement" id="test"Postnummer: ${obj.postnummer}</li>
+        <div class="userCardContainer" id="${id}">
+            <h5 class="cardNameHeader" id="${id}">${obj.fornavn} ${obj.etternavn}</h5>
+            <ul class="cardInfoList" id="${id}">
+                <li class="cardInfoListElement" id="${id}">Alder: ${obj.alder}</li>
+                <li class="cardInfoListElement" id="${id}">Livsstatus: ${status}</li>
+                <li class="cardInfoListElement" id="${id}"Postnummer: ${obj.postnummer}</li>
             </ul>
         </div>
     `;

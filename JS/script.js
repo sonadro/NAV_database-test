@@ -12,6 +12,7 @@ const inntekt2022Form = document.querySelector('.inntekt2022');
 
 const submitBtn = document.querySelector('.submitKnapp');
 const infoDisplay = document.querySelector('#infoDisplay');
+const advancedInfoCard = document.querySelector(".advancedInfoCard");
 
 // Kode
 const addDoc = function(obj, collection) {
@@ -61,6 +62,10 @@ infoDisplay.addEventListener('click', e => {
         console.log(e.target.getAttribute('id'));
     }
 });
+
+let openAdvancedInfo = () => {
+    advancedInfoCard.style.display = 'block';
+}
 
 // Form event listener
 submitBtn.addEventListener('click', e => {

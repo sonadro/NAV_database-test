@@ -59,77 +59,77 @@ infoDisplay.addEventListener('click', e => {
 // Form event listener
 submitBtn.addEventListener('click', e => {
     e.preventDefault();
-    const parents = [grunnleggendeDataForm.forelder1.value, grunnleggendeDataForm.forelder2.value];
+    const foreldre = [grunnleggendeDataForm.forelder1.value, grunnleggendeDataForm.forelder2.value];
     const NAV = {
-        member: NAVForm.medlem.value,
-        disabled: NAVForm.ufor.value,
-        pensioner: NAVForm.pensjonist.value,
-        workInjury: NAVForm.yrkesskade.value,
-        bonusJobPay: NAVForm.dagpenger.value,
-        sickPay: NAVForm.sykepenger.value
+        medlem: NAVForm.medlem.value,
+        ufor: NAVForm.ufor.value,
+        pensjonist: NAVForm.pensjonist.value,
+        yrkesskade: NAVForm.yrkesskade.value,
+        dagpenger: NAVForm.dagpenger.value,
+        sykepenger: NAVForm.sykepenger.value
     };
 
-    const economicStatus = {
-        bankAccount: økonomiskeForholdForm.bankkonto.value,
-        creditCard: økonomiskeForholdForm.kredittkort.value,
-        loan: økonomiskeForholdForm.lan.value,
-        accessToData: økonomiskeForholdForm.fullmakt.value
+    const økonomiskeForhold = {
+        bankkonto: økonomiskeForholdForm.bankkonto.value,
+        kredittkort: økonomiskeForholdForm.kredittkort.value,
+        lan: økonomiskeForholdForm.lan.value,
+        fullmakt: økonomiskeForholdForm.fullmakt.value
     };
 
-    const incomeCurrent = {
-        income1: inntekt2022Form.inntekt1.value,
-        income2: inntekt2022Form.inntekt2.value,
-        income3: inntekt2022Form.inntekt3.value,
-        income4: inntekt2022Form.inntekt4.value,
-        income5: inntekt2022Form.inntekt5.value,
-        income6: inntekt2022Form.inntekt6.value,
-        income7: inntekt2022Form.inntekt7.value,
-        income8: inntekt2022Form.inntekt8.value
+    const inntekt2022 = {
+        inntekt1: inntekt2022Form.inntekt2.value,
+        inntekt2: inntekt2022Form.inntekt1.value,
+        inntekt3: inntekt2022Form.inntekt3.value,
+        inntekt4: inntekt2022Form.inntekt4.value,
+        inntekt5: inntekt2022Form.inntekt5.value,
+        inntekt6: inntekt2022Form.inntekt6.value,
+        inntekt7: inntekt2022Form.inntekt7.value,
+        inntekt8: inntekt2022Form.inntekt8.value
     };
 
-    const incomePast = {
-        income2019: inntektFortidForm.inntekt2019.value,
-        income2020: inntektFortidForm.inntekt2020.value,
-        income2021: inntektFortidForm.inntekt2021.value
+    const inntektFortid = {
+        inntekt2019: inntektFortidForm.inntekt2019.value,
+        inntekt2020: inntektFortidForm.inntekt2020.value,
+        inntekt2021: inntektFortidForm.inntekt2021.value
     };
 
-    const lifeStatus = {
-        horriblySick: livssituasjonForm.alvorligSyk.value,
-        refugee: livssituasjonForm.flyktning.value,
-        pregnant: livssituasjonForm.gravid.value
+    const livssituasjon = {
+        alvorligSyk: livssituasjonForm.alvorligSyk.value,
+        flyktning: livssituasjonForm.flyktning.value,
+        gravid: livssituasjonForm.gravid.value
     };
 
     const lånekassen = {
-        scholarship: lånekassenForm.stipend.value,
-        studyInEU: lånekassenForm.studiested.value
+        stipend: lånekassenForm.stipend.value,
+        studiested: lånekassenForm.studiested.value
     };
 
-    const work = {
+    const arbeidsForhold = {
         freelancer: arbeidsForholdForm.freelancer.value,
-        jobStatus: arbeidsForholdForm.forholdStatus.value,
-        sector: arbeidsForholdForm.sektor.value,
-        workHoursLast: arbeidsForholdForm.forrigeManed.value,
-        workHoursCurrent: arbeidsForholdForm.denneManed.value
+        forholdStatus: arbeidsForholdForm.forholdStatus.value,
+        sektor: arbeidsForholdForm.sektor.value,
+        forrigeManed: arbeidsForholdForm.forrigeManed.value,
+        denneManed: arbeidsForholdForm.denneManed.value
     };
 
-    const advancedInfo = [economicStatus, lifeStatus, NAV, lånekassen, work, incomePast, incomeCurrent];
+    const avansertInfo = [økonomiskeForhold, livssituasjon, NAV, lånekassen, arbeidsForhold, inntektFortid, inntekt2022];
 
-    const userObject = {
-        firstName: grunnleggendeDataForm.fornavn.value,
-        lastName: grunnleggendeDataForm.etternavn.value,
-        DOB: grunnleggendeDataForm.fodselsdato.value,
-        age: grunnleggendeDataForm.alder.value,
-        deceased: grunnleggendeDataForm.status.value,
-        deceasedDate: grunnleggendeDataForm.endringStatus.value,
-        marriageState: grunnleggendeDataForm.ekteskap.value,
-        marriageWho: grunnleggendeDataForm.ektefelle.value,
-        parent: parents,
-        children: grunnleggendeDataForm.barn.value,
-        postalCode: grunnleggendeDataForm.postnummer.value,
-        country: grunnleggendeDataForm.land.value,
-        homeYears: grunnleggendeDataForm.botid.value,
-        advancedInfo: advancedInfo
+    const brukerObjekt = {
+        fornavn: grunnleggendeDataForm.fornavn.value,
+        etternavn: grunnleggendeDataForm.etternavn.value,
+        fodselsdato: grunnleggendeDataForm.fodselsdato.value,
+        alder: grunnleggendeDataForm.alder.value,
+        status: grunnleggendeDataForm.status.value,
+        endringStatus: grunnleggendeDataForm.endringStatus.value,
+        ekteskap: grunnleggendeDataForm.ekteskap.value,
+        ektefelle: grunnleggendeDataForm.ektefelle.value,
+        foreldre,
+        barn: grunnleggendeDataForm.barn.value,
+        postnummer: grunnleggendeDataForm.postnummer.value,
+        land: grunnleggendeDataForm.land.value,
+        botid: grunnleggendeDataForm.botid.value,
+        avansertInfo
     };
 
-    addDoc(userObject, 'personer');
+    addDoc(brukerObjekt, 'Users');
 });

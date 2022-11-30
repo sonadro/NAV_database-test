@@ -14,7 +14,7 @@ const submitBtn = document.querySelector('.submitKnapp');
 const infoDisplay = document.querySelector('#infoDisplay');
 const advancedInfoCard = document.querySelector(".advancedInfoCard");
 
-const advancedInfoGrunnleggende = document.querySelector('#advInfoGrunnleggende');
+/*const advancedInfoGrunnleggende = document.querySelector('#advInfoGrunnleggende');
 const advancedInfoØkonomiskeForhold = document.querySelector('#advInfoOkonomiskeForhold');
 const advancedInfoLivssituasjon = document.querySelector('#advInfoLissituasjon');
 const advancedInfoNAV = document.querySelector('#advInfoNAV');
@@ -30,7 +30,7 @@ const advInfoButtonNAV = document.querySelector('#advInfoTog-NAV');
 const advInfoButtonLånekassen = document.querySelector('#advInfoTog-lanekassen');
 const advInfoButtonArbeidsforhold = document.querySelector('#advInfoTog-arbeidsforhold');
 const advInfoButtonInntektFortid = document.querySelector('#advInfoTog-inntektFortid');
-const advInfoButtonInntekt2022 = document.querySelector('#advInfoTog-inntekt2022');
+const advInfoButtonInntekt2022 = document.querySelector('#advInfoTog-inntekt2022');*/
 
 // Kode
 const addDoc = function(obj, collection) {
@@ -86,7 +86,16 @@ infoDisplay.addEventListener('click', e => {
 
 advancedInfoCard.addEventListener('click', e => {
     let target = e.target;
-    console.log(target);
+    //console.log(target);
+    if(target.classList.contains('advInfoCatSelect')){
+        //console.log(e.target.nextElementSibling);
+        e.target.nextElementSibling.classList.toggle('hidden');
+        
+    }
+    /*if(target == advInfoButtonGrunnleggende){
+        advancedInfoGrunnleggende.classList.toggle('hidden');
+    }*/
+
 })
 
 let openAdvancedInfo = () => {

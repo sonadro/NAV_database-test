@@ -39,11 +39,11 @@ const genTemplate = function(obj) {
     }
     const template = `
         <div class="userCardContainer" id="test">
-            <h5 class="cardNameHeader">${obj.fornavn} ${obj.etternavn}</h5>
-            <ul class="cardInfoList">
-                <li class="cardInfoListElement">Alder: ${obj.alder}</li>
-                <li class="cardInfoListElement">Livsstatus: ${status}</li>
-                <li class="cardInfoListElement">Postnummer: ${obj.postnummer}</li>
+            <h5 class="cardNameHeader" id="test">${obj.fornavn} ${obj.etternavn}</h5>
+            <ul class="cardInfoList" id="test">
+                <li class="cardInfoListElement" id="test">Alder: ${obj.alder}</li>
+                <li class="cardInfoListElement" id="test">Livsstatus: ${status}</li>
+                <li class="cardInfoListElement" id="test"Postnummer: ${obj.postnummer}</li>
             </ul>
         </div>
     `;

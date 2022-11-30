@@ -87,7 +87,11 @@ h3{
     background-color: beige;
     position: absolute;
     z-index: 2;
-    display: none;
+    display: block;
+    margin: 10px;
+    border: solid;
+    border-radius: 10px;
+    padding: 20px;
 }
 
 .formArea{
@@ -189,4 +193,7 @@ h3{
 }
 .noTopPadd{
     padding-top: 0px;
+}
+.hidden {
+    display: none;
 }

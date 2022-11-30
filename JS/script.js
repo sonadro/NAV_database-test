@@ -33,17 +33,17 @@ const getDocs = function() {
 }
 
 const genTemplate = function(obj) {
-    let deceased = 'Lever';
-    if (JSON.parse(obj.deceased)) {
-        deceased = 'Død'
+    let status = 'Lever';
+    if (JSON.parse(obj.status)) {
+        status = 'Død'
     }
     const template = `
         <div class="userCardContainer" id="test">
-            <h5 class="cardNameHeader">${obj.firstName} ${obj.lastName}</h5>
+            <h5 class="cardNameHeader">${obj.fornavn} ${obj.etternavn}</h5>
             <ul class="cardInfoList">
-                <li class="cardInfoListElement">Alder: ${obj.age}</li>
-                <li class="cardInfoListElement">Livsstatus: ${deceased}</li>
-                <li class="cardInfoListElement">Postnummer: ${obj.postalCode}</li>
+                <li class="cardInfoListElement">Alder: ${obj.alder}</li>
+                <li class="cardInfoListElement">Livsstatus: ${status}</li>
+                <li class="cardInfoListElement">Postnummer: ${obj.postnummer}</li>
             </ul>
         </div>
     `;
@@ -131,5 +131,5 @@ submitBtn.addEventListener('click', e => {
         avansertInfo
     };
 
-    addDoc(brukerObjekt, 'brukere');
+    addDoc(JSON.stringify(brukerObjekt), 'brukere');
 });

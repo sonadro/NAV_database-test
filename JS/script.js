@@ -133,5 +133,5 @@ submitBtn.addEventListener('click', e => {
         avansertInfo
     };
 
-    addDoc(JSON.stringify(brukerObjekt), 'brukere');
+    addDoc(brukerObjekt, 'brukere');
 });

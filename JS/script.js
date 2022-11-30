@@ -38,7 +38,7 @@ const genTemplate = function(obj) {
         deceased = 'Død'
     }
     const template = `
-        <div class="userCardContainer">
+        <div class="userCardContainer" id="test">
             <h5 class="cardNameHeader">${obj.firstName} ${obj.lastName}</h5>
             <ul class="cardInfoList">
                 <li class="cardInfoListElement">Alder: ${obj.age}</li>
@@ -51,6 +51,10 @@ const genTemplate = function(obj) {
 }
 
 getDocs();
+
+infoDisplay.addEventListener('click', e => {
+    console.log(e.target.getAttribute('id'));
+});
 
 // Form event listener
 submitBtn.addEventListener('click', e => {

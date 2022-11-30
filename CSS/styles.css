@@ -83,6 +83,12 @@ h3{
     list-style-type:none;
     margin-top: 0px;
 }
+.advancedInfoCard{
+    background-color: beige;
+    position: absolute;
+    z-index: 2;
+    display: none;
+}
 
 .formArea{
     background-color: beige;

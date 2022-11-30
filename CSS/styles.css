@@ -108,13 +108,21 @@ h3{
 .advInfoCatSelect{
     background: none;
     border: none;
-    font-size: 15px;
+    font-size: 20px;
     text-decoration: underline;
-    font-family: 'Poppins-Medium';
+    text-underline-offset: 20%;
+    font-family: 'Poppins-Medium', Fallback, sans-serif;
+    transition-duration: 0.1s;
+}
+.advInfoCatSelect img{
     transition-duration: 0.1s;
 }
 .advInfoCatSelect:hover{
     cursor: pointer;
+}
+.rotateArrow{
+    transform: rotate(180deg);
+    transition-duration: 0.1s;
 }
 
 .formArea{

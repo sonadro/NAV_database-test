@@ -115,14 +115,14 @@ h3{
     transition-duration: 0.1s;
 }
 .advInfoCatSelect img{
-    transition-duration: 0.1s;
+    transition-duration: 0.6s;
 }
 .advInfoCatSelect:hover{
     cursor: pointer;
 }
 .rotateArrow{
     transform: rotate(180deg);
-    transition-duration: 0.1s;
+    transition-duration: 0.6s;
 }
 
 .formArea{

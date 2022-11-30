@@ -90,7 +90,6 @@ advancedInfoCard.addEventListener('click', e => {
     if(target.classList.contains('advInfoCatSelect')){
         //console.log(e.target.nextElementSibling);
         e.target.nextElementSibling.classList.toggle('hidden');
-        
     }
     /*if(target == advInfoButtonGrunnleggende){
         advancedInfoGrunnleggende.classList.toggle('hidden');
@@ -101,6 +100,9 @@ advancedInfoCard.addEventListener('click', e => {
 let openAdvancedInfo = () => {
     advancedInfoCard.style.display = 'block';
     console.log("Card opened");
+}
+let closeAdvancedInfo = () => {
+    advancedInfoCard.style.display = 'none';
 }
 
 // Form event listener

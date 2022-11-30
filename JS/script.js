@@ -56,15 +56,19 @@ getDocs();
 infoDisplay.addEventListener('click', e => {
     if (e.target.getAttribute('class') == 'userCardContainer'){
         console.log(e.target.getAttribute('id'));
+        openAdvancedInfo();
     }else if(e.target.parentElement.getAttribute('class') == 'userCardContainer'){
         console.log(e.target.getAttribute('id'));
+        openAdvancedInfo();
     }else if(e.target.parentElement.parentElement.getAttribute('class') == 'userCardContainer'){
         console.log(e.target.getAttribute('id'));
+        openAdvancedInfo();
     }
 });
 
 let openAdvancedInfo = () => {
     advancedInfoCard.style.display = 'block';
+    console.log("Card opened");
 }
 
 // Form event listener

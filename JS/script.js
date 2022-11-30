@@ -131,5 +131,5 @@ submitBtn.addEventListener('click', e => {
         avansertInfo
     };
 
-    addDoc(brukerObjekt, 'Users');
+    addDoc(brukerObjekt, 'personer');
 });

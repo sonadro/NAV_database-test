@@ -24,17 +24,17 @@ const addDoc = function(obj, collection) {
             const data = doc.data();
             counter = data.count + 1;
             console.log(counter);
-            counter++;
-            console.log(counter);
         });
     });
 
-    db.collection('databaseValues').doc('generalUserData').set({
-        count: counter
-    });
+    setTimeout(() => {
+        db.collection('databaseValues').doc('generalUserData').set({
+            count: counter
+        });
 
-    // Add document
-    // db.collection(`${collection}`).doc(`${Number(currentUserCount)}`).set(obj);
+        // Add document
+        db.collection(`${collection}`).doc(`${counter}`).set(obj);
+    }, 1000);
 }
 
 // Fetch dokumenter

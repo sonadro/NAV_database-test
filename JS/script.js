@@ -87,6 +87,14 @@ let openAdvancedInfo = id => {
     const alderElm = advancedInfoCard.querySelector('#advInfo-alder');
     const livsstatusElm = advancedInfoCard.querySelector('#advInfo-livsstatus');
     const endringStatusElm = advancedInfoCard.querySelector('#advInfo-endringLivsstatus');
+    const ekteskapElm = advancedInfoCard.querySelector('#advInfo-ekteskap');
+    const ektefelleElm = advancedInfoCard.querySelector('#advInfo-ektefelle');
+    const forelder1Elm = advancedInfoCard.querySelector('#advInfo-forelder1');
+    const forelder2Elm = advancedInfoCard.querySelector('#advInfo-forelder2');
+    const barnElm = advancedInfoCard.querySelector('#advInfo-barn');
+    const postnummerElm = advancedInfoCard.querySelector('#advInfo-postnummer');
+    const landElm = advancedInfoCard.querySelector('#advInfo-land');
+    const botidElm = advancedInfoCard.querySelector('#advInfo-botid');
 
     // fetch data
     db.collection('brukere').get().then(snapshot => {
@@ -102,6 +110,14 @@ let openAdvancedInfo = id => {
                 alderElm.textContent = data.alder;
                 livsstatusElm.textContent = data.status;
                 endringStatusElm.textContent = data.endringStatus;
+                ekteskapElm.textContent = data.ekteskap;
+                ektefelleElm.textContent = data.ektefelle;
+                forelder1Elm.textContent = data.foreldre[0];
+                forelder2Elm.textContent = data.foreldre[1];
+                barnElm.textContent = data.barn;
+                postnummerElm.textContent = data.postnummer;
+                landElm.textContent  = data.land;
+                botidElm.textContent = data.botid;
             }
         });
     });

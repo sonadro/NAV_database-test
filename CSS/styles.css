@@ -83,6 +83,28 @@ h3{
     list-style-type:none;
     margin-top: 0px;
 }
+.advInfoCardContainer { 
+    width: 100vw;
+    height: 100vh; 
+    display: grid;
+    grid-template-columns: 0.5fr 2fr 0.5fr;
+    grid-template-rows: 0.5fr 2fr 0.5fr;
+    gap: 0px 0px;
+    grid-auto-flow: row;
+    grid-template-areas:
+      ". . ."
+      ". advancedInfoCard ."
+      ". . .";
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    justify-content: center; 
+    align-content: center; 
+    justify-items: center; 
+    align-items: center;
+    z-index: -1;
+    background-color: rgb(0, 0, 0, 0);
+}
 .advancedInfoCard{
     background-color: beige;
     position: fixed;
@@ -92,6 +114,11 @@ h3{
     border: solid;
     border-radius: 10px;
     padding: 20px;
+    grid-area: advancedInfoCard;
+}
+.advancedInfoCard ul{
+    list-style-type: none;
+    padding: 10px;
 }
 .advInfoClose{
     position: absolute;
@@ -227,4 +254,10 @@ h3{
 }
 .hidden {
     display: none;
+}
+.noScroll{
+    overflow: hidden;
+}
+.cardViewBackground{
+    background-color: black;
 }

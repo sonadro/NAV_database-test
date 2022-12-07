@@ -78,6 +78,7 @@ infoDisplay.addEventListener('click', e => {
     }
 });
 
+// eventlistener for toggling user information inside advanced info cards
 advancedInfoCard.addEventListener('click', e => {
     let target = e.target;
     //console.log(target);
@@ -92,6 +93,8 @@ advancedInfoCard.addEventListener('click', e => {
 
 })
 
+
+// function for opening the advanced info cards
 let openAdvancedInfo = id => {
     // show card
     advancedInfoCard.style.display = 'block';
@@ -149,6 +152,12 @@ let closeAdvancedInfo = () => {
     advancedInfoCardContainer.style.zIndex = "-1";
     advancedInfoCardContainer.style.backgroundColor = "rgb(0, 0, 0, 0)";
 }
+advancedInfoCardContainer.addEventListener('click', e => {
+    //console.log(e.target);
+    if (e.target == advancedInfoCardContainer){
+        closeAdvancedInfo();
+    }
+})
 
 // Form event listener
 submitBtn.addEventListener('click', e => {

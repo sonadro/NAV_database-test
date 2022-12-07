@@ -18,9 +18,23 @@ const body = document.querySelector("body");
 
 // Kode
 const addDoc = function(obj, collection) {
-    db.collection(`${collection}`).add(obj).then(() => {
-        console.log('object added', obj);
-    }).catch(err => console.error(err));
+    let counter = 0;
+    db.collection('databaseValues').get().then(snapshot => {
+        snapshot.docs.forEach(doc => {
+            const data = doc.data();
+            counter = data.count + 1;
+            console.log(counter);
+            counter++;
+            console.log(counter);
+        });
+    });
+
+    db.collection('databaseValues').doc('generalUserData').set({
+        count: counter
+    });
+
+    // Add document
+    // db.collection(`${collection}`).doc(`${Number(currentUserCount)}`).set(obj);
 }
 
 // Fetch dokumenter
@@ -212,23 +226,5 @@ submitBtn.addEventListener('click', e => {
     };
 
 
-    addDoc(brukerObjekt, 'brukere', userID);
+    addDoc(brukerObjekt, 'brukere');
 });
-
-const increment = firebase.firestore.FieldValue.increment(1);
-
-db.collection("databaseValues").doc("generalUserData").get().then((doc) => {
-    if (doc.exists) {
-        currentUserCount = doc.data().count;
-        console.log(currentUserCount);
-    } else {
-        // doc.data() will be undefined in this case
-        console.log("No such document!");
-    }
-}).catch((error) => {
-    console.log("Error getting document:", error);
-});
-
-db.collection('databaseValues').doc('generalUserData').update({
-    count: increment
-  });

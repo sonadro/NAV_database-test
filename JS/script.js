@@ -82,6 +82,7 @@ let openAdvancedInfo = id => {
     // show card
     advancedInfoCard.style.display = 'block';
     advancedInfoCardContainer.style.zIndex = "2";
+    advancedInfoCardContainer.style.backgroundColor = "rgb(0, 0, 0, 53%)";
 
     // define elements
     const fornavnElm = advancedInfoCard.querySelector('#advInfo-fornavn');
@@ -132,6 +133,7 @@ let closeAdvancedInfo = () => {
     advancedInfoCard.style.display = 'none';
     body.classList.toggle("noScroll");
     advancedInfoCardContainer.style.zIndex = "-1";
+    advancedInfoCardContainer.style.backgroundColor = "rgb(0, 0, 0, 0)";
 }
 
 // Form event listener

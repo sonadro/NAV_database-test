@@ -95,7 +95,7 @@ h3{
       ". . ."
       ". advancedInfoCard ."
       ". . .";
-    position: absolute;
+    position: fixed;
     top: 0px;
     left: 0px;
     justify-content: center; 
@@ -103,6 +103,7 @@ h3{
     justify-items: center; 
     align-items: center;
     z-index: -1;
+    background-color: rgb(0, 0, 0, 0);
 }
 .advancedInfoCard{
     background-color: beige;

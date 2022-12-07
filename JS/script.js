@@ -101,7 +101,7 @@ let openAdvancedInfo = id => {
     advancedInfoCardContainer.style.zIndex = "2";
     advancedInfoCardContainer.style.backgroundColor = "rgb(0, 0, 0, 53%)";
 
-    // define elements
+    // define elements --- grunnleggende data
     const fornavnElm = advancedInfoCard.querySelector('#advInfo-fornavn');
     const etternavnElm = advancedInfoCard.querySelector('#advInfo-etternavn');
     const fodselsdatoElm = advancedInfoCard.querySelector('#advInfo-fodselsdato');
@@ -117,6 +117,51 @@ let openAdvancedInfo = id => {
     const landElm = advancedInfoCard.querySelector('#advInfo-land');
     const botidElm = advancedInfoCard.querySelector('#advInfo-botid');
 
+    // økonomiske forhold
+    const bankkontoElm = advancedInfoCard.querySelector('#advInfo-bankkonto');
+    const kredittkortElm = advancedInfoCard.querySelector('#advInfo-kredittkort');
+    const lanElm = advancedInfoCard.querySelector('#advInfo-lan')
+    const datafullMaktElm = advancedInfoCard.querySelector('#advInfo-datafullmakt');
+
+    // livssituasjon
+    const alvorligSykElm = advancedInfoCard.querySelector('#advInfo-alvorligsyk');
+    const flyktningElm = advancedInfoCard.querySelector('#advInfo-flyktning');
+    const gravidElm = advancedInfoCard.querySelector('#advInfo-gravid');
+
+    // NAV
+    const medlemElm = advancedInfoCard.querySelector('#advInfo-medlem');
+    const uforElm = advancedInfoCard.querySelector('#advInfo-ufor');
+    const pensjonistElm = advancedInfoCard.querySelector('#advInfo-pensjonist');
+    const yrkesskadeElm = advancedInfoCard.querySelector('#advInfo-yrkesskade');
+    const dagpengerElm = advancedInfoCard.querySelector('#advInfo-dagpenger');
+    const sykepengerElm = advancedInfoCard.querySelector('#advInfo-sykepenger');
+
+    // lånekassen
+    const stipendElm = advancedInfoCard.querySelector('#advInfo-stipend');
+    const studiestedElm = advancedInfoCard.querySelector('#advInfo-studiested');
+
+    // arbeidsforhold
+    const freelancerElm = advancedInfoCard.querySelector('#advInfo-freelancer');
+    const arbforholdstatusElm = advancedInfoCard.querySelector('#advInfo-arbforholdstatus');
+    const sektorElm = advancedInfoCard.querySelector('#advInfo-sektor');
+    const arbtidforrigemanedElm = advancedInfoCard.querySelector('#advInfo-arbtidforrigemaned');
+    const arbtiddennemanedElm = advancedInfoCard.querySelector('#advInfo-arbtiddennemaned');
+
+    // inntekt fortid
+    const inntekt2019Elm = advancedInfoCard.querySelector('#advInfo-inntekt2019');
+    const inntekt2020Elm = advancedInfoCard.querySelector('#advInfo-inntekt2020');
+    const inntekt2021Elm = advancedInfoCard.querySelector('#advInfo-inntekt2021');
+
+    // inntekt nåtid
+    const inntekt1Elm = advancedInfoCard.querySelector('#advInfo-inntekt1');
+    const inntekt2Elm = advancedInfoCard.querySelector('#advInfo-inntekt2');
+    const inntekt3Elm = advancedInfoCard.querySelector('#advInfo-inntekt3');
+    const inntekt4Elm = advancedInfoCard.querySelector('#advInfo-inntekt4');
+    const inntekt5Elm = advancedInfoCard.querySelector('#advInfo-inntekt5');
+    const inntekt6Elm = advancedInfoCard.querySelector('#advInfo-inntekt6');
+    const inntekt7Elm = advancedInfoCard.querySelector('#advInfo-inntekt7');
+    const inntekt8Elm = advancedInfoCard.querySelector('#advInfo-inntekt8');
+
     // Prevent further scrolling
     body.classList.toggle("noScroll");
 
@@ -127,7 +172,7 @@ let openAdvancedInfo = id => {
             if (doc.id === id) {
                 const data = doc.data();
 
-                // load data
+                // load data -- grunnleggende data
                 fornavnElm.textContent = data.fornavn;
                 etternavnElm.textContent = data.etternavn;
                 fodselsdatoElm.textContent = data.fodselsdato;
@@ -142,6 +187,51 @@ let openAdvancedInfo = id => {
                 postnummerElm.textContent = data.postnummer;
                 landElm.textContent  = data.land;
                 botidElm.textContent = data.botid;
+
+                // økonomiske forhold
+                bankkontoElm.textContent = data.bankkonto;
+                kredittkortElm.textContent = data.kredittkort;
+                lanElm.textContent = data.lan;
+                datafullMaktElm.textContent = data.fullmakt;
+
+                // livssituasjon
+                alvorligSykElm.textContent = data.alvorligSyk;
+                flyktningElm.textContent = data.flyktning;
+                gravidElm.textContent = data.gravid;
+
+                // nav
+                medlemElm.textContent = data.medlem;
+                uforElm.textContent = data.ufor;
+                pensjonistElm.textContent = data.pensjonist;
+                yrkesskadeElm.textContent = data.yrkesskade;
+                dagpengerElm.textContent = data.dagpenger;
+                sykepengerElm.textContent = data.sykepenger;
+
+                // lånekassen
+                stipendElm.textContent = data.stipend;
+                studiestedElm.textContent = data.studiested;
+
+                // arbeidsforhold
+                freelancerElm.textContent = data.freelancer;
+                arbforholdstatusElm.textContent = data.forholdStatus;
+                sektorElm.textContent = data.sektor;
+                arbtidforrigemanedElm.textContent = data.forrigeManed;
+                arbtiddennemanedElm.textContent = data.denneManed;
+
+                // inntekt fortid
+                inntekt2019Elm.textContent = data.inntekt2019;
+                inntekt2020Elm.textContent = data.inntekt2020;
+                inntekt2021Elm.textContent = data.inntekt2021;
+
+                // inntekt nåtid
+                inntekt1Elm.textContent = data.inntekt1;
+                inntekt2Elm.textContent = data.inntekt2;
+                inntekt3Elm.textContent = data.inntekt3;
+                inntekt4Elm.textContent = data.inntekt4;
+                inntekt5Elm.textContent = data.inntekt5;
+                inntekt6Elm.textContent = data.inntekt6;
+                inntekt7Elm.textContent = data.inntekt7;
+                inntekt8Elm.textContent = data.inntekt8;
             }
         });
     });

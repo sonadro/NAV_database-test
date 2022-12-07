@@ -50,7 +50,7 @@ const getDocs = function() {
 
 const genTemplate = function(obj, id) {
     let status = 'Død';
-    if (obj.status) {
+    if (obj.status == 0) {
         status = 'Lever'
     }
     const template = `

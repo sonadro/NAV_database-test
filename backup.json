@@ -13,7 +13,10 @@
         "Land": "Norge",
         "Botid": "4",
         "Foreldre1": "55",
-        "Foreldre2": "56"
+        "Foreldre2": "56",
+        "avansertInfo": [{
+            
+        }, {}, {}, {}, {}, {}, ]
     },
     {
         "Fornavn": "Ole ",

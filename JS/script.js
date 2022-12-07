@@ -13,6 +13,8 @@ const inntekt2022Form = document.querySelector('.inntekt2022');
 const submitBtn = document.querySelector('.submitKnapp');
 const infoDisplay = document.querySelector('#infoDisplay');
 const advancedInfoCard = document.querySelector(".advancedInfoCard");
+const advancedInfoCardContainer = document.querySelector(".advInfoCardContainer");
+const body = document.querySelector("body");
 
 // Kode
 const addDoc = function(obj, collection) {
@@ -79,6 +81,7 @@ advancedInfoCard.addEventListener('click', e => {
 let openAdvancedInfo = id => {
     // show card
     advancedInfoCard.style.display = 'block';
+    advancedInfoCardContainer.style.zIndex = "2";
 
     // define elements
     const fornavnElm = advancedInfoCard.querySelector('#advInfo-fornavn');
@@ -95,6 +98,9 @@ let openAdvancedInfo = id => {
     const postnummerElm = advancedInfoCard.querySelector('#advInfo-postnummer');
     const landElm = advancedInfoCard.querySelector('#advInfo-land');
     const botidElm = advancedInfoCard.querySelector('#advInfo-botid');
+
+    // Prevent further scrolling
+    body.classList.toggle("noScroll");
 
     // fetch data
     db.collection('brukere').get().then(snapshot => {
@@ -124,6 +130,8 @@ let openAdvancedInfo = id => {
 }
 let closeAdvancedInfo = () => {
     advancedInfoCard.style.display = 'none';
+    body.classList.toggle("noScroll");
+    advancedInfoCardContainer.style.zIndex = "-1";
 }
 
 // Form event listener

@@ -209,5 +209,24 @@ submitBtn.addEventListener('click', e => {
         avansertInfo
     };
 
-    addDoc(brukerObjekt, 'brukere');
+
+    addDoc(brukerObjekt, 'brukere', userID);
 });
+
+const increment = firebase.firestore.FieldValue.increment(1);
+
+db.collection("databaseValues").doc("generalUserData").get().then((doc) => {
+    if (doc.exists) {
+        currentUserCount = doc.data().count;
+        console.log(currentUserCount);
+    } else {
+        // doc.data() will be undefined in this case
+        console.log("No such document!");
+    }
+}).catch((error) => {
+    console.log("Error getting document:", error);
+});
+
+db.collection('databaseValues').doc('generalUserData').update({
+    count: increment
+  });

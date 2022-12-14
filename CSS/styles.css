@@ -260,3 +260,35 @@ h3{
 .cardViewBackground{
     background-color: black;
 }
+
+/*------------------------------Media queries-------------------------------*/
+@media screen and (max-width: 990px) {
+    #infoDisplay {  
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-auto-columns: 1fr;
+        gap: 0px 0px;
+        grid-auto-flow: row;
+        justify-content: center;
+        align-content: center;
+        justify-items: center;
+        align-items: center;
+        grid-template-areas:
+          ". . . .";
+    }
+}
+@media screen and (max-width: 800px) {
+    #infoDisplay {  
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-auto-columns: 1fr;
+        gap: 0px 0px;
+        grid-auto-flow: row;
+        justify-content: center;
+        align-content: center;
+        justify-items: center;
+        align-items: center;
+        grid-template-areas:
+          ". . .";
+    }
+}

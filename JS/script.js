@@ -53,9 +53,11 @@ const genTemplate = function(obj, id) {
     if (obj.status == 0) {
         status = 'Lever'
     }
+    console.log(id);
+
     const template = `
         <div class="userCardContainer" id="${id}">
-            <h5 class="cardNameHeader" id="${id}">${obj.fornavn} ${obj.etternavn}</h5>
+            <h5 class="cardNameHeader" id="${id}">${id} - ${obj.fornavn} ${obj.etternavn}</h5>
             <ul class="cardInfoList" id="${id}">
                 <li class="cardInfoListElement" id="${id}">Alder: ${obj.alder}</li>
                 <li class="cardInfoListElement" id="${id}">Livsstatus: ${status}</li>
@@ -102,6 +104,10 @@ let openAdvancedInfo = id => {
     advancedInfoCardContainer.style.backgroundColor = "rgb(0, 0, 0, 53%)";
 
     // define elements --- grunnleggende data
+    const fornavnHeadElm = advancedInfoCard.querySelector('#advInfoHead-fornavn');
+    const etternavnHeadElm = advancedInfoCard.querySelector('#advInfoHead-etternavn');
+    const idHeadElm = advancedInfoCard.querySelector('#advInfoHead-ID');
+
     const fornavnElm = advancedInfoCard.querySelector('#advInfo-fornavn');
     const etternavnElm = advancedInfoCard.querySelector('#advInfo-etternavn');
     const fodselsdatoElm = advancedInfoCard.querySelector('#advInfo-fodselsdato');
@@ -173,6 +179,10 @@ let openAdvancedInfo = id => {
                 const data = doc.data();
 
                 // load data -- grunnleggende data
+                fornavnHeadElm.textContent = data.fornavn;
+                etternavnHeadElm.textContent = data.etternavn;
+                idHeadElm.textContent = id;
+
                 fornavnElm.textContent = data.fornavn;
                 etternavnElm.textContent = data.etternavn;
                 fodselsdatoElm.textContent = data.fodselsdato;

@@ -41,9 +41,15 @@ const addDoc = function(obj, collection) {
 const getDocs = function() {
     db.collection(`brukere`).get().then(snapshot => {
         // console.log(snapshot);
+        let dataArr = [];
         snapshot.forEach(doc => {
-            const data = doc.data();
-            genTemplate(data, doc.id); // Displays an info card of the data
+            let data = doc.data();
+            data.id = doc.id;
+            dataArr.push(data);
+        });
+        dataArr.sort((a, b) => a.id - b.id);
+        dataArr.forEach(dat => {
+            genTemplate(dat, dat.id); // Displays an info card of the data
         });
     }).catch(err => console.error(err));
 }
@@ -53,7 +59,6 @@ const genTemplate = function(obj, id) {
     if (obj.status == 0) {
         status = 'Lever'
     }
-    console.log(id);
 
     const template = `
         <div class="userCardContainer" id="${id}">

@@ -100,6 +100,7 @@ advancedInfoCard.addEventListener('click', e => {
 
 })
 
+let advInfoCheck;
 
 // function for opening the advanced info cards
 let openAdvancedInfo = id => {
@@ -250,16 +251,27 @@ let openAdvancedInfo = id => {
             }
         });
     });
+    advInfoCheck = true;
+    //console.log(advInfoCheck);
 }
 let closeAdvancedInfo = () => {
     advancedInfoCard.style.display = 'none';
     body.classList.toggle("noScroll");
     advancedInfoCardContainer.style.zIndex = "-1";
     advancedInfoCardContainer.style.backgroundColor = "rgb(0, 0, 0, 0)";
+    advInfoCheck = false;
 }
 advancedInfoCardContainer.addEventListener('click', e => {
     //console.log(e.target);
     if (e.target == advancedInfoCardContainer){
+        closeAdvancedInfo();
+    }
+});
+
+window.addEventListener('keydown', e => {
+    //console.log(e.key);
+    if(e.key == 'Escape' && advInfoCheck == true){
+        //console.log(e.key);
         closeAdvancedInfo();
     }
 })

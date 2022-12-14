@@ -242,7 +242,7 @@ h3{
 }
 
 .Per:hover, .pål:hover{
-    cursor: none;
+    cursor:progress;
 }
 /*------------------------------Stiler for mindre klasser med begrenset bruk------------------------------------------*/
 

@@ -242,6 +242,9 @@ h3{
 
 .Per:hover, .pål:hover{
     cursor:progress;
+    transition-duration: 50s;
+    transform: scale(30.0);
+    transform-origin: left;
 }
 /*------------------------------Stiler for mindre klasser med begrenset bruk------------------------------------------*/
 

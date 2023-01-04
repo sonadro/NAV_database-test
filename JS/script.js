@@ -54,6 +54,7 @@ const getDocs = function() {
                 parentList.sort((a, b) => a - b);
             }
         });
+        addParents();
         dataArr.sort((a, b) => a.id - b.id);
         dataArr.forEach(dat => {
             genTemplate(dat, dat.id); // Displays an info card of the data
@@ -362,6 +363,21 @@ submitBtn.addEventListener('click', e => {
     addDoc(brukerObjekt, 'brukere');
 });
 
-function findParents(){
-
+function addParents(){
+    let parentField1 = document.querySelector('#forelder1');
+    let parentField2 = document.querySelector('#forelder2');
+    //console.log(parentField1.innerHTML);
+    for(i = 0; i < parentList.length; i++){
+        //console.log(parentList);
+        let parentID = parentList[i];
+        //console.log(parentID);
+        let html = `
+        <option value="${parentID}">${parentID}</option>
+        `
+        parentField1.innerHTML += html;
+        parentField2.innerHTML += html;
+    }
+    //console.log(parentField1.innerHTML);
 }
+
+//setTimeout(addParents(), 5000);

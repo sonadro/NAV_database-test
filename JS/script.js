@@ -364,15 +364,17 @@ submitBtn.addEventListener('click', e => {
 });
 
 function addParents(){
-    let parentField1 = document.querySelector('#forelder1');
-    let parentField2 = document.querySelector('#forelder2');
+    let parentField1 = document.querySelector('.suggestions1');
+    let parentField2 = document.querySelector('.suggestions2');
     //console.log(parentField1.innerHTML);
     for(i = 0; i < parentList.length; i++){
         //console.log(parentList);
         let parentID = parentList[i];
         //console.log(parentID);
         let html = `
-        <option value="${parentID}">${parentID}</option>
+        <div class="suggestion">
+            <button id="${parentID}">${parentID}</button>
+        </div>
         `
         parentField1.innerHTML += html;
         parentField2.innerHTML += html;
@@ -380,4 +382,12 @@ function addParents(){
     //console.log(parentField1.innerHTML);
 }
 
-//setTimeout(addParents(), 5000);
+const toggle1Btn = document.querySelector('.suggestions1DropBtn');
+const toggle2Btn = document.querySelector('.suggestions2DropBtn');
+
+toggle1Btn.addEventListener('click', e => {
+    e.preventDefault();
+    const suggestions1Div = document.querySelector('.suggestions1');
+    suggestions1Div.classList.toggle('hidden');
+    console.log('a');
+});

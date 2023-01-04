@@ -66,6 +66,10 @@ h3{
     padding: 10px;
     transform: scale(1.0);
     transition-duration: 0.1s;
+    width: 200px;
+    max-width: 200px;
+    height: 200px;
+    max-height: 200px;
 }
 .userCardContainer:hover{
     box-shadow: 10px 10px 5px gray;

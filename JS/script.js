@@ -1,5 +1,8 @@
 const db = firebase.firestore(); // Databasen vår
 
+//foreldre array
+let parentList = [];
+
 // FORMS deklarasjon
 const grunnleggendeDataForm = document.querySelector('.grunnleggendeData');
 const økonomiskeForholdForm = document.querySelector('.okonomiskeForhold');
@@ -46,6 +49,10 @@ const getDocs = function() {
             let data = doc.data();
             data.id = doc.id;
             dataArr.push(data);
+            if(data.barn){
+                parentList.push(doc.id);
+                parentList.sort((a, b) => a - b);
+            }
         });
         dataArr.sort((a, b) => a.id - b.id);
         dataArr.forEach(dat => {
@@ -354,3 +361,7 @@ submitBtn.addEventListener('click', e => {
 
     addDoc(brukerObjekt, 'brukere');
 });
+
+function findParents(){
+
+}

@@ -389,5 +389,9 @@ toggle1Btn.addEventListener('click', e => {
     e.preventDefault();
     const suggestions1Div = document.querySelector('.suggestions1');
     suggestions1Div.classList.toggle('hidden');
-    console.log('a');
+});
+toggle2Btn.addEventListener('click', e => {
+    e.preventDefault();
+    const suggestions2Div = document.querySelector('.suggestions2');
+    suggestions2Div.classList.toggle('hidden');
 });

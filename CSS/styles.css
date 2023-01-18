@@ -41,20 +41,32 @@ h3{
 .submitKnapp{
     margin-left: 30px;
 }
-#infoDisplay {  
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-    /*grid-template-rows: 1fr 1fr 1fr 1fr 1fr;*/
-    grid-auto-columns: 1fr;
-    gap: 0px 0px;
-    grid-auto-flow: row;
+
+#infoDisplay {
+    height: fit-content;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
     justify-content: center;
-    align-content: center;
-    justify-items: center;
-    align-items: center;
-    grid-template-areas:
-      ". . . . .";
+    margin: 20px;
+    width: 100%;
+    overflow: hidden;
 }
+
+#infoDisplay div {  
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    margin: 16px;
+    padding: 12px;
+    width: 300px;
+    height: 200px;
+    /* border-radius: 12px;  */
+    transition: all 0.2s ease-in-out;
+    cursor: default;
+    box-shadow: 1px 1px 5px rgba(68, 68, 68, 0.212);
+}
+
 .userCardContainer{
     border: solid;
     border-radius: 10px;
@@ -64,11 +76,8 @@ h3{
     font-family:Arial, Helvetica, sans-serif;
     margin: 20px 20px;
     padding: 10px;
-    transform: scale(1.0);
     transition-duration: 0.1s;
-    width: 200px;
     max-width: 200px;
-    height: 200px;
     max-height: 200px;
 }
 .userCardContainer:hover{
@@ -322,33 +331,3 @@ h3{
   
 
 /*------------------------------Media queries-------------------------------*/
-@media screen and (max-width: 990px) {
-    #infoDisplay {  
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr 1fr;
-        grid-auto-columns: 1fr;
-        gap: 0px 0px;
-        grid-auto-flow: row;
-        justify-content: center;
-        align-content: center;
-        justify-items: center;
-        align-items: center;
-        grid-template-areas:
-          ". . . .";
-    }
-}
-@media screen and (max-width: 800px) {
-    #infoDisplay {  
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
-        grid-auto-columns: 1fr;
-        gap: 0px 0px;
-        grid-auto-flow: row;
-        justify-content: center;
-        align-content: center;
-        justify-items: center;
-        align-items: center;
-        grid-template-areas:
-          ". . .";
-    }
-}

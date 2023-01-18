@@ -65,6 +65,8 @@ h3{
     transition: all 0.2s ease-in-out;
     cursor: default;
     box-shadow: 1px 1px 5px rgba(68, 68, 68, 0.212);
+    cursor: pointer;
+
 }
 
 .userCardContainer{
@@ -84,7 +86,6 @@ h3{
     box-shadow: 10px 10px 5px gray;
     transform: scale(1.1);
     transition-duration: 0.1s;
-    cursor: pointer;
 }
 .cardNameHeader{
     margin: 10px 10px;

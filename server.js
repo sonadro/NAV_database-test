@@ -21,4 +21,4 @@ server.get('/', (req, res) => res.redirect('/form'));
 server.get('/form', (req, res) => res.render('index'));
 
 // 404
-server.use((req, res) => res.status(404).render())
+server.use((req, res) => res.status(404).render('404.ejs'));

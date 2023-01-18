@@ -187,7 +187,6 @@ h3{
     border: solid;
     border-width: 1px;
     border-radius: 5px;
-    transition-duration: 0.1s;
     height: fit-content;
     background-color: white;
 }
@@ -204,9 +203,8 @@ h3{
 }
 
 .userInfoInput:hover{
-    border-width: 3px;
-    padding: 8px 10px;
-    transition-duration: 0.1s;
+    margin: 9px;
+    border-width: 2px;
     overflow: hidden;
 }
 .quadInputField{

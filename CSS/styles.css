@@ -283,7 +283,7 @@ h3{
       ".";
 }
 .inputScalableSelection {  
-    display: grid;
+    /* display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: 0.7fr 1.3fr 1fr;
     grid-auto-columns: 1fr;
@@ -293,8 +293,26 @@ h3{
       "."
       "."
       ".";
-    padding-bottom: 100px;
-  }
+    padding-bottom: 100px; */
+    display: grid; 
+    grid-auto-columns: 1fr; 
+    grid-template-columns: 1.7fr 0.3fr; 
+    grid-template-rows: 0.7fr 1.3fr; 
+    gap: 0px 0px; 
+    grid-template-areas: 
+        "label empty"
+        "input button"; 
+}
+
+.inputScalableSelection .inputTitle{
+    grid-area: label;
+}
+.inputScalableSelection .userInfoInput{
+    grid-area: input;
+}
+.inputScalableSelection .suggestions1Contain, .inputScalableSelection .suggestions2Contain{
+    grid-area: button;
+}
   
 .oneInputScalable {  
     display: grid;
@@ -310,13 +328,42 @@ h3{
     grid-template-areas:
       ". .";
 }
-.suggestions1DropBtn, .suggestions2DropBtn {
-    padding: 5px;
+.suggestions1Contain, .suggestions2Contain{
     position: relative;
-    top: 10px;
+}
+.suggestions1DropBtn, .suggestions2DropBtn {
+    padding: 10px;
+    margin: 10px;
+    border-radius: 5px;
+    border-width: 1px;
+    transition-duration: 0.05s;
+}
+.suggestions1DropBtn:hover, .suggestions2DropBtn:hover{
+    background: gray;
+    transition-duration: 0.05s;
+    cursor: pointer;
 }
 .suggestions1, .suggestions2{
     position: absolute;
+    background-color: white;
+    padding: 0px;
+    text-align: left;
+    /* padding-right: 40px; */
+    border: none;
+    border-radius: 10px;
+}
+.suggestion button{
+    padding: 10px;
+    background: none;
+    border: none;
+    width: 100px;
+    height: 30px;
+    display: inline-block;
+    text-align: left;
+}
+.suggestion button:hover{
+    background: gray;
+    cursor: pointer; 
 }
 
 /* TODO: Fix */

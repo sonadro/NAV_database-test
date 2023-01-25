@@ -3,6 +3,9 @@ const db = firebase.firestore(); // Databasen vår
 //foreldre array
 let parentList = [];
 
+//livsstatus variable
+//let statusField;
+
 // FORMS deklarasjon
 const grunnleggendeDataForm = document.querySelector('.grunnleggendeData');
 const økonomiskeForholdForm = document.querySelector('.okonomiskeForhold');
@@ -80,6 +83,26 @@ const genTemplate = function(obj, id) {
     `;
     infoDisplay.innerHTML += template;
 }
+
+
+let statusField = document.querySelector("#status");
+let statusFieldDead = document.querySelector("#statusDead");
+
+let statusChangeField = document.querySelector("#endringStatus");
+let statusChangeFieldLabel = document.querySelector("#endringStatusLabel");
+
+console.log(statusField, statusFieldDead);
+
+statusField.addEventListener("input", e => {
+    console.log(e);
+    if(statusField.value == statusFieldDead.value){
+        statusChangeField.classList.remove("hidden");
+        statusChangeFieldLabel.classList.remove("hidden");
+    }else{
+        statusChangeField.classList.add("hidden");
+        statusChangeFieldLabel.classList.add("hidden");
+    }
+})
 
 getDocs();
 

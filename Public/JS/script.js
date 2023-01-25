@@ -364,7 +364,7 @@ submitBtn.addEventListener('click', e => {
 });
 
 
-//TODO: Legg til verdien fra dropdown-menyen til input-feltet når knappen blir trykket på
+// vis foreldre
 function addParents(){
     let parentField1 = document.querySelector('.suggestions1');
     let parentField2 = document.querySelector('.suggestions2');
@@ -381,7 +381,17 @@ function addParents(){
         parentField1.innerHTML += html;
         parentField2.innerHTML += html;
     }
-    //console.log(parentField1.innerHTML);
+    
+    // legg til verdien i input-felt
+    parentField1.addEventListener('click', e => {
+        e.preventDefault();
+        grunnleggendeDataForm.forelder1.value = e.target.id;
+    });
+
+    parentField2.addEventListener('click', e => {
+        e.preventDefault();
+        grunnleggendeDataForm.forelder2.value = e.target.id;
+    });
 }
 
 const toggle1Btn = document.querySelector('.suggestions1DropBtn');

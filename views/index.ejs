@@ -148,27 +148,32 @@
                 <input class="userInfoInput" type="number" id="alder">
             </div>
 
-            <div class="quadInputField inputArea">
-                <label for="status" class="inputTitle">Livsstatus:</label>
-                <label for="endringStatus" class="inputTitle" id="endringStatusLabel">Endring Livsstatus:</label>
-                
-                <select autocomplete="off" class="userInfoInput" type="text" id="status">
-                    <option disabled selected value>Velg...</option>
-                    <option value="0">Levende</option>
-                    <option value="1" id="statusDead">Død</option>
-                </select>
-                <input class="userInfoInput" type="text" id="endringStatus">
-                
-                <label for="ekteskap" class="inputTitle">Ekteskap:</label>
-                <label for="ektefelle" class="inputTitle ektefelleLabel hidden">Ektefelle:</label>
-                
-                <select autocomplete="off" class="userInfoInput" type="text" id="ekteskap">
-                    <option disabled selected value>Velg...</option>
-                    <option value="0">Enslig</option>
-                    <option value="1">Gift</option>
-                    <option value="2">Skilt</option>
-                </select>
-                <input class="userInfoInput hidden" type="number" id="ektefelle">
+            <div class="quadInputFieldScaleable inputArea">
+                <div class="inputScalable">
+                    <label for="status" class="inputTitle">Livsstatus:</label>
+                    <select autocomplete="off" class="userInfoInput" type="text" id="status">
+                        <option disabled selected value>Velg...</option>
+                        <option value="0">Levende</option>
+                        <option value="1" id="statusDead">Død</option>
+                    </select>
+                </div>
+                <div class="inputScalable">
+                    <label for="endringStatus" class="inputTitle hidden" id="endringStatusLabel">Endring Livsstatus:</label>
+                    <input class="userInfoInput hidden" type="text" id="endringStatus">
+                </div>
+                <div class="inputScalable">
+                    <label for="ekteskap" class="inputTitle">Ekteskap:</label>
+                    <select autocomplete="off" class="userInfoInput" type="text" id="ekteskap">
+                        <option disabled selected value>Velg...</option>
+                        <option value="0">Enslig</option>
+                        <option value="1">Gift</option>
+                        <option value="2">Skilt</option>
+                    </select>
+                </div>
+                <div class="inputScalable">
+                    <label for="ektefelle" class="inputTitle ektefelleLabel hidden">Ektefelle:</label>
+                    <input class="userInfoInput hidden" type="number" id="ektefelle">
+                </div>
             </div>
             <div class="duoInputField inputArea noBotPadd">
                 <div class="inputScalableSelection">

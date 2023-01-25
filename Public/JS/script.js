@@ -91,8 +91,6 @@ let statusFieldDead = document.querySelector("#statusDead");
 let statusChangeField = document.querySelector("#endringStatus");
 let statusChangeFieldLabel = document.querySelector("#endringStatusLabel");
 
-console.log(statusField, statusFieldDead);
-
 statusField.addEventListener("input", e => {
     console.log(e);
     if(statusField.value == statusFieldDead.value){
@@ -420,7 +418,6 @@ function addParents(){
 // ektefelle felt bare vises hvis personen er gift
 grunnleggendeDataForm.ekteskap.addEventListener('input', e => {
     const label = document.querySelector('.ektefelleLabel');
-    console.log(grunnleggendeDataForm.ekteskap.value);
     if (grunnleggendeDataForm.ekteskap.value === '1') {
         label.classList.remove('hidden');
         grunnleggendeDataForm.ektefelle.classList.remove('hidden');

@@ -363,6 +363,8 @@ submitBtn.addEventListener('click', e => {
     addDoc(brukerObjekt, 'brukere');
 });
 
+
+//TODO: Legg til verdien fra dropdown-menyen til input-feltet når knappen blir trykket på
 function addParents(){
     let parentField1 = document.querySelector('.suggestions1');
     let parentField2 = document.querySelector('.suggestions2');

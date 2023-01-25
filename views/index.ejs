@@ -1,24 +1,12 @@
-<!DOCTYPE html>
-<html lang="no">
-
-<head>
-
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<%- include('partials/header'); -%>
 
     <title>Database Testing</title>
 
     <link rel="stylesheet" href="CSS/styles.css">
-    <link rel="icon" href="img/nav logo.png" type="image">
     <script src="JS/script.js" defer></script>
 
-</head>
-<body class="">
+<%- include('partials/nav'); -%>
 
-    <header>
-        <h1 id="mainHead">Test av database</h1>        
-    </header>
     <main>
         <h2>Dette er en side for testing av databaser</h2>
         <div class="cardViewBackground"></div>
@@ -194,7 +182,7 @@
             <div class="duoInputField inputArea noBotPadd">
                 <div class="inputScalableSelection">
                     <label for="forelder1" class="inputTitle">Forelder 1:</label>
-                    <input name="forelder1" class="forelder1Input userInfoInput" type="number">
+                    <input id="forelder1" class="forelder1Input userInfoInput" type="number">
                     <div class="suggestions1Contain">
                         <button class="suggestions1DropBtn">toggle1</button>
                         <div class="suggestions1 hidden"></div>
@@ -203,7 +191,7 @@
 
                 <div class="inputScalableSelection">
                     <label for="forelder2" class="inputTitle">Forelder 2:</label>
-                    <input name="forelder2" class="forelder2Input userInfoInput" type="number">
+                    <input id="forelder2" class="forelder2Input userInfoInput" type="number">
                     <div class="suggestions2Contain">
                         <button class="suggestions2DropBtn">toggle2</button>
                         <div class="suggestions2 hidden"></div>
@@ -446,5 +434,4 @@
         };
         firebase.initializeApp(config);
     </script>
-</body>
-</html>
+<%- include('partials/footer') -%>

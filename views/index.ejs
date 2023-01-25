@@ -151,12 +151,12 @@
 
             <div class="quadInputField inputArea">
                 <label for="status" class="inputTitle">Livsstatus:</label>
-                <label for="endringStatus" class="inputTitle">Endring Livsstatus:</label>
+                <label for="endringStatus" class="inputTitle" id="endringStatusLabel">Endring Livsstatus:</label>
                 
                 <select autocomplete="off" class="userInfoInput" type="text" id="status">
                     <option disabled selected value>Velg...</option>
                     <option value="0">Levende</option>
-                    <option value="1">Død</option>
+                    <option value="1" id="statusDead">Død</option>
                 </select>
                 <input class="userInfoInput" type="text" id="endringStatus">
                 

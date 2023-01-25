@@ -19,6 +19,7 @@ server.get('/', (req, res) => res.redirect('/form'));
 
 // routes
 server.get('/form', (req, res) => res.render('index'));
+server.get('/om-siden', (req, res) => res.render('om'));
 
 // 404
 server.use((req, res) => res.status(404).render('404.ejs'));

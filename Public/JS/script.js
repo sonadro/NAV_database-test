@@ -394,6 +394,19 @@ function addParents(){
     });
 }
 
+// ektefelle felt bare vises hvis personen er gift
+grunnleggendeDataForm.ekteskap.addEventListener('input', e => {
+    const label = document.querySelector('.ektefelleLabel');
+    console.log(grunnleggendeDataForm.ekteskap.value);
+    if (grunnleggendeDataForm.ekteskap.value === '1') {
+        label.classList.remove('hidden');
+        grunnleggendeDataForm.ektefelle.classList.remove('hidden');
+    } else {
+        label.classList.add('hidden');
+        grunnleggendeDataForm.ektefelle.classList.add('hidden');
+    }
+});
+
 const toggle1Btn = document.querySelector('.suggestions1DropBtn');
 const toggle2Btn = document.querySelector('.suggestions2DropBtn');
 

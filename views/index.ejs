@@ -11,7 +11,6 @@
         <h2>Dette er en side for testing av databaser</h2>
         <div class="cardViewBackground"></div>
         <div class="advInfoCardContainer">
-            <div></div>
             <div class="advancedInfoCard">
                 <img class="advInfoClose" src="img/xmark-solid.svg" width="20px" onclick="closeAdvancedInfo()" alt="">
                 <h3>Info: <span id="advInfoHead-fornavn"></span> <span id="advInfoHead-etternavn"></span> (<span id="advInfoHead-ID"></span>)</h3>
@@ -161,7 +160,7 @@
                 <input class="userInfoInput" type="text" id="endringStatus">
                 
                 <label for="ekteskap" class="inputTitle">Ekteskap:</label>
-                <label for="ektefelle" class="inputTitle">Ektefelle:</label>
+                <label for="ektefelle" class="inputTitle ektefelleLabel hidden">Ektefelle:</label>
                 
                 <select autocomplete="off" class="userInfoInput" type="text" id="ekteskap">
                     <option disabled selected value>Velg...</option>
@@ -169,7 +168,7 @@
                     <option value="1">Gift</option>
                     <option value="2">Skilt</option>
                 </select>
-                <input class="userInfoInput" type="number" id="ektefelle">
+                <input class="userInfoInput hidden" type="number" id="ektefelle">
             </div>
             <div class="duoInputField inputArea noBotPadd">
                 <div class="inputScalableSelection">

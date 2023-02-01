@@ -208,6 +208,22 @@ toggle2Btn.addEventListener('click', e => {
     suggestions2Div.classList.toggle('hidden');
 });
 
+//-------------------------------------------Forms regex listeners-------------------------------------------
+
+grunnleggendeDataForm.fornavn.addEventListener('input', e => {
+    let element = grunnleggendeDataForm.fornavn
+    let name = element.value;
+    console.log(name);
+    let nameRegex = /^[a-zæøåÆØÅ]{2,}$/i;
+    if(nameRegex.test(name) == true){
+        console.log("Valid name");
+        element.classList.remove("ugyldig")
+    }else{
+        console.log("Ugyldig navn");
+        element.classList.add("ugyldig");
+    }
+})
+
 // kall funksjoner
 getDocs();
 addParents();

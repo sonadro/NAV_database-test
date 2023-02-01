@@ -22,6 +22,27 @@ let statusFieldDead = document.querySelector("#statusDead");
 let statusChangeField = document.querySelector("#endringStatus");
 let statusChangeFieldLabel = document.querySelector("#endringStatusLabel");
 
+// få dagens dato
+const date = new Date();
+
+let day = date.getDate();
+if (day.toString().length == "1") {
+    day = "0" + day
+    console.log(day);
+} 
+let month = date.getMonth() + 1;
+if (month.toString().length == "1") {
+    month = "0" + month
+    console.log(month);
+} 
+let year = date.getFullYear();
+
+// This arrangement can be altered based on how we want the date's format to appear.
+let currentDate = `${year}-${month}-${day}`;
+grunnleggendeDataForm.fodselsdato.setAttribute("max", currentDate)
+
+console.log(currentDate); // "17-6-2022"
+
 // funksjoner
 const addDoc = function(obj, collection) {
     let counter = 0;
@@ -166,7 +187,7 @@ submitBtn.addEventListener('click', e => {
         fornavn: grunnleggendeDataForm.fornavn.value,
         etternavn: grunnleggendeDataForm.etternavn.value,
         fodselsdato: grunnleggendeDataForm.fodselsdato.value,
-        alder: grunnleggendeDataForm.alder.value,
+        // alder: grunnleggendeDataForm.alder.value,
         status: grunnleggendeDataForm.status.value,
         endringStatus: grunnleggendeDataForm.endringStatus.value,
         ekteskap: grunnleggendeDataForm.ekteskap.value,

@@ -1,105 +1,23 @@
 const db = firebase.firestore(); // Databasen vår
 
-//foreldre array
-let parentList = [];
-
+// deklarasjoner
 const infoDisplay = document.querySelector('#infoDisplay');
 const advancedInfoCard = document.querySelector(".advancedInfoCard");
 const advancedInfoCardContainer = document.querySelector(".advInfoCardContainer");
 const body = document.querySelector("body");
 
-// Kode
-const addDoc = function(obj, collection) {
-    let counter = 0;
-    db.collection('databaseValues').get().then(snapshot => {
-        snapshot.docs.forEach(doc => {
-            const data = doc.data();
-            counter = data.count + 1;
-            console.log(counter);
-        });
-    });
-
-    setTimeout(() => {
-        db.collection('databaseValues').doc('generalUserData').set({
-            count: counter
-        });
-
-        // Add document
-        db.collection(`${collection}`).doc(`${counter}`).set(obj);
-    }, 1000);
+// funksjoner
+let closeAdvancedInfo = () => {
+    advancedInfoCard.style.display = 'none';
+    body.classList.toggle("noScroll");
+    advancedInfoCardContainer.style.zIndex = "-1";
+    advancedInfoCardContainer.style.backgroundColor = "rgb(0, 0, 0, 0)";
+    advInfoCheck = false;
 }
-
-// Fetch dokumenter
-const getDocs = function() {
-    db.collection(`brukere`).get().then(snapshot => {
-        // console.log(snapshot);
-        let dataArr = [];
-        snapshot.forEach(doc => {
-            let data = doc.data();
-            data.id = doc.id;
-            dataArr.push(data);
-            if(data.barn){
-                parentList.push(doc.id);
-                parentList.sort((a, b) => a - b);
-            }
-        });
-        dataArr.sort((a, b) => a.id - b.id);
-        dataArr.forEach(dat => {
-            genTemplate(dat, dat.id); // Displays an info card of the data
-        });
-    }).catch(err => console.error(err));
-}
-
-const genTemplate = function(obj, id) {
-    let status = 'Lever';
-    if (obj.status == 0) {
-        status = 'Død'
-    }
-
-    const template = `
-        <div class="userCardContainer" id="${id}">
-            <h5 class="cardNameHeader" id="${id}">${id} - ${obj.fornavn} ${obj.etternavn}</h5>
-            <ul class="cardInfoList" id="${id}">
-                <li class="cardInfoListElement" id="${id}">Alder: ${obj.alder}</li>
-                <li class="cardInfoListElement" id="${id}">Livsstatus: ${status}</li>
-                <li class="cardInfoListElement" id="${id}">Postnummer: ${obj.postnummer}</li>
-            </ul>
-        </div>
-    `;
-    infoDisplay.innerHTML += template;
-}
-
-getDocs();
-
-infoDisplay.addEventListener('click', e => {
-    if (e.target.getAttribute('class') === 'userCardContainer'){
-        openAdvancedInfo(e.target.getAttribute('id'));
-    }else if(e.target.parentElement.getAttribute('class') === 'userCardContainer'){
-        openAdvancedInfo(e.target.getAttribute('id'));
-    }else if(e.target.parentElement.parentElement.getAttribute('class') === 'userCardContainer'){
-        openAdvancedInfo(e.target.getAttribute('id'));
-    }
-});
-
-// eventlistener for toggling user information inside advanced info cards
-advancedInfoCard.addEventListener('click', e => {
-    let target = e.target;
-    //console.log(target);
-    if(target.classList.contains('advInfoCatSelect')){
-        //console.log(e.target.nextElementSibling);
-        e.target.nextElementSibling.classList.toggle('hidden');
-        e.target.lastChild.classList.toggle('rotateArrow');
-    }
-    /*if(target == advInfoButtonGrunnleggende){
-        advancedInfoGrunnleggende.classList.toggle('hidden');
-    }*/
-
-})
-
-let advInfoCheck;
 
 // function for opening the advanced info cards
-let openAdvancedInfo = id => {
+let advInfoCheck;
+const openAdvancedInfo = id => {
     // show card
     advancedInfoCard.style.display = 'block';
     advancedInfoCardContainer.style.zIndex = "2";
@@ -250,13 +168,70 @@ let openAdvancedInfo = id => {
     advInfoCheck = true;
     //console.log(advInfoCheck);
 }
-let closeAdvancedInfo = () => {
-    advancedInfoCard.style.display = 'none';
-    body.classList.toggle("noScroll");
-    advancedInfoCardContainer.style.zIndex = "-1";
-    advancedInfoCardContainer.style.backgroundColor = "rgb(0, 0, 0, 0)";
-    advInfoCheck = false;
+
+// HTML-injection
+const genTemplate = function(obj, id) {
+    let status = 'Lever';
+    if (obj.status == 0) {
+        status = 'Død'
+    }
+
+    const template = `
+        <div class="userCardContainer" id="${id}">
+            <h5 class="cardNameHeader" id="${id}">${id} - ${obj.fornavn} ${obj.etternavn}</h5>
+            <ul class="cardInfoList" id="${id}">
+                <li class="cardInfoListElement" id="${id}">Alder: ${obj.alder}</li>
+                <li class="cardInfoListElement" id="${id}">Livsstatus: ${status}</li>
+                <li class="cardInfoListElement" id="${id}">Postnummer: ${obj.postnummer}</li>
+            </ul>
+        </div>
+    `;
+    infoDisplay.innerHTML += template;
 }
+
+// Fetch dokumenter
+const getDocs = function() {
+    db.collection(`brukere`).get().then(snapshot => {
+        // console.log(snapshot);
+        let dataArr = [];
+        snapshot.forEach(doc => {
+            let data = doc.data();
+            data.id = doc.id;
+            dataArr.push(data);
+        });
+        dataArr.sort((a, b) => a.id - b.id);
+        dataArr.forEach(dat => {
+            genTemplate(dat, dat.id); // Displays an info card of the data
+        });
+    }).catch(err => console.error(err));
+}
+
+// event listeners
+infoDisplay.addEventListener('click', e => {
+    if (e.target.getAttribute('class') === 'userCardContainer'){
+        openAdvancedInfo(e.target.getAttribute('id'));
+    }else if(e.target.parentElement.getAttribute('class') === 'userCardContainer'){
+        openAdvancedInfo(e.target.getAttribute('id'));
+    }else if(e.target.parentElement.parentElement.getAttribute('class') === 'userCardContainer'){
+        openAdvancedInfo(e.target.getAttribute('id'));
+    }
+});
+
+// eventlistener for toggling user information inside advanced info cards
+advancedInfoCard.addEventListener('click', e => {
+    let target = e.target;
+    //console.log(target);
+    if(target.classList.contains('advInfoCatSelect')){
+        //console.log(e.target.nextElementSibling);
+        e.target.nextElementSibling.classList.toggle('hidden');
+        e.target.lastChild.classList.toggle('rotateArrow');
+    }
+    /*if(target == advInfoButtonGrunnleggende){
+        advancedInfoGrunnleggende.classList.toggle('hidden');
+    }*/
+
+})
+
 advancedInfoCardContainer.addEventListener('click', e => {
     //console.log(e.target);
     if (e.target == advancedInfoCardContainer){
@@ -271,3 +246,6 @@ window.addEventListener('keydown', e => {
         closeAdvancedInfo();
     }
 })
+
+// kall funksjoner
+getDocs();

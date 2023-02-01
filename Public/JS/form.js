@@ -13,8 +13,35 @@ const arbeidsForholdForm = document.querySelector('.arbeidsForhold');
 const inntektFortidForm = document.querySelector('.inntektFortid');
 const inntekt2022Form = document.querySelector('.inntekt2022');
 
-// deklarasjoner
+// andre deklarasjoner
 const submitBtn = document.querySelector('.submitKnapp');
+const toggle1Btn = document.querySelector('.suggestions1DropBtn');
+const toggle2Btn = document.querySelector('.suggestions2DropBtn');
+let statusField = document.querySelector("#status");
+let statusFieldDead = document.querySelector("#statusDead");
+let statusChangeField = document.querySelector("#endringStatus");
+let statusChangeFieldLabel = document.querySelector("#endringStatusLabel");
+
+// funksjoner
+const addDoc = function(obj, collection) {
+    let counter = 0;
+    db.collection('databaseValues').get().then(snapshot => {
+        snapshot.docs.forEach(doc => {
+            const data = doc.data();
+            counter = data.count + 1;
+            console.log(counter);
+        });
+    });
+
+    setTimeout(() => {
+        db.collection('databaseValues').doc('generalUserData').set({
+            count: counter
+        });
+
+        // Add document
+        db.collection(`${collection}`).doc(`${counter}`).set(obj);
+    }, 1000);
+}
 
 // Fetch dokumenter
 const getDocs = function() {
@@ -35,16 +62,37 @@ const getDocs = function() {
     }).catch(err => console.error(err));
 }
 
-getDocs();
+// vis foreldre
+function addParents(){
+    let parentField1 = document.querySelector('.suggestions1');
+    let parentField2 = document.querySelector('.suggestions2');
+    //console.log(parentField1.innerHTML);
+    for(i = 0; i < parentList.length; i++){
+        //console.log(parentList);
+        let parentID = parentList[i];
+        //console.log(parentID);
+        let html = `
+        <div class="suggestion">
+            <button id="${parentID}">${parentID}</button>
+        </div>
+        `
+        parentField1.innerHTML += html;
+        parentField2.innerHTML += html;
+    }
+    
+    // legg til verdien i input-felt
+    parentField1.addEventListener('click', e => {
+        e.preventDefault();
+        grunnleggendeDataForm.forelder1.value = e.target.id;
+    });
 
-let statusField = document.querySelector("#status");
-let statusFieldDead = document.querySelector("#statusDead");
+    parentField2.addEventListener('click', e => {
+        e.preventDefault();
+        grunnleggendeDataForm.forelder2.value = e.target.id;
+    });
+}
 
-let statusChangeField = document.querySelector("#endringStatus");
-let statusChangeFieldLabel = document.querySelector("#endringStatusLabel");
-
-//console.log(statusField, statusFieldDead);
-
+// event listeners
 statusField.addEventListener("input", e => {
     //console.log(e);
     if(statusField.value == statusFieldDead.value){
@@ -135,39 +183,6 @@ submitBtn.addEventListener('click', e => {
     addDoc(brukerObjekt, 'brukere');
 });
 
-
-// vis foreldre
-function addParents(){
-    let parentField1 = document.querySelector('.suggestions1');
-    let parentField2 = document.querySelector('.suggestions2');
-    //console.log(parentField1.innerHTML);
-    for(i = 0; i < parentList.length; i++){
-        //console.log(parentList);
-        let parentID = parentList[i];
-        //console.log(parentID);
-        let html = `
-        <div class="suggestion">
-            <button id="${parentID}">${parentID}</button>
-        </div>
-        `
-        parentField1.innerHTML += html;
-        parentField2.innerHTML += html;
-    }
-    
-    // legg til verdien i input-felt
-    parentField1.addEventListener('click', e => {
-        e.preventDefault();
-        grunnleggendeDataForm.forelder1.value = e.target.id;
-    });
-
-    parentField2.addEventListener('click', e => {
-        e.preventDefault();
-        grunnleggendeDataForm.forelder2.value = e.target.id;
-    });
-}
-
-addParents();
-
 // ektefelle felt bare vises hvis personen er gift
 grunnleggendeDataForm.ekteskap.addEventListener('input', e => {
     const label = document.querySelector('.ektefelleLabel');
@@ -181,9 +196,6 @@ grunnleggendeDataForm.ekteskap.addEventListener('input', e => {
     }
 });
 
-const toggle1Btn = document.querySelector('.suggestions1DropBtn');
-const toggle2Btn = document.querySelector('.suggestions2DropBtn');
-
 toggle1Btn.addEventListener('click', e => {
     e.preventDefault();
     const suggestions1Div = document.querySelector('.suggestions1');
@@ -195,3 +207,7 @@ toggle2Btn.addEventListener('click', e => {
     const suggestions2Div = document.querySelector('.suggestions2');
     suggestions2Div.classList.toggle('hidden');
 });
+
+// kall funksjoner
+getDocs();
+addParents();

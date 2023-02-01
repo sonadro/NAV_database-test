@@ -37,6 +37,25 @@ const getDocs = function() {
 
 getDocs();
 
+let statusField = document.querySelector("#status");
+let statusFieldDead = document.querySelector("#statusDead");
+
+let statusChangeField = document.querySelector("#endringStatus");
+let statusChangeFieldLabel = document.querySelector("#endringStatusLabel");
+
+//console.log(statusField, statusFieldDead);
+
+statusField.addEventListener("input", e => {
+    //console.log(e);
+    if(statusField.value == statusFieldDead.value){
+        statusChangeField.classList.remove("hidden");
+        statusChangeFieldLabel.classList.remove("hidden");
+    }else{
+        statusChangeField.classList.add("hidden");
+        statusChangeFieldLabel.classList.add("hidden");
+    }
+})
+
 // Form event listener
 submitBtn.addEventListener('click', e => {
     e.preventDefault();

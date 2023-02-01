@@ -43,7 +43,6 @@ const getDocs = function() {
                 parentList.sort((a, b) => a - b);
             }
         });
-        // addParents();
         dataArr.sort((a, b) => a.id - b.id);
         dataArr.forEach(dat => {
             genTemplate(dat, dat.id); // Displays an info card of the data

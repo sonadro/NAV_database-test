@@ -3,9 +3,6 @@ const db = firebase.firestore(); // Databasen vår
 //foreldre array
 let parentList = [];
 
-//livsstatus variable
-//let statusField;
-
 const infoDisplay = document.querySelector('#infoDisplay');
 const advancedInfoCard = document.querySelector(".advancedInfoCard");
 const advancedInfoCardContainer = document.querySelector(".advInfoCardContainer");

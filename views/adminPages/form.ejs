@@ -3,7 +3,6 @@
     <title>Personsskjema</title>
 
     <link rel="stylesheet" href="CSS/styles.css">
-    <script src="JS/script.js" defer></script>
 
 <%- include('../partials/nav'); -%>
 
@@ -285,3 +284,10 @@
         <h3>Legg til person:</h3>
         <button class="knapp submitKnapp" type="submit">Submit</button>
     </div>
+
+<%- include('../partials/firebase') -%>
+
+    <!-- scripts -->
+    <script src="JS/form.js"></script>
+
+<%- include('../partials/footer') -%>

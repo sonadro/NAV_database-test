@@ -426,6 +426,7 @@ h3{
 
 .ugyldig{
     border-color: red;
+    border-width: 4px;
 }
 
 /* TODO: Fix */

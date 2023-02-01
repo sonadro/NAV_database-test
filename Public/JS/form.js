@@ -252,6 +252,20 @@ grunnleggendeDataForm.fornavn.addEventListener('input', e => {
     }
 })
 
+grunnleggendeDataForm.etternavn.addEventListener('input', e => {
+    let element = grunnleggendeDataForm.etternavn
+    let name = element.value;
+    console.log(name);
+    let nameRegex = /^[a-zæøåÆØÅ]{2,}$/i;
+    if(nameRegex.test(name) == true){
+        console.log("Valid etternavn");
+        element.classList.remove("ugyldig")
+    }else{
+        console.log("Ugyldig etternavn");
+        element.classList.add("ugyldig");
+    }
+})
+
 // fødselsdato felt fyller ut alder automatisk
 grunnleggendeDataForm.fodselsdato.addEventListener('input', () => {
     const args = grunnleggendeDataForm.fodselsdato.value.split('-');

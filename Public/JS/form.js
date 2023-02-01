@@ -1,6 +1,8 @@
 // database
 const db = firebase.firestore();
 
+let parentList = [];
+
 // FORMS deklarasjon
 const grunnleggendeDataForm = document.querySelector('.grunnleggendeData');
 const økonomiskeForholdForm = document.querySelector('.okonomiskeForhold');
@@ -13,6 +15,27 @@ const inntekt2022Form = document.querySelector('.inntekt2022');
 
 // deklarasjoner
 const submitBtn = document.querySelector('.submitKnapp');
+
+// Fetch dokumenter
+const getDocs = function() {
+    db.collection(`brukere`).get().then(snapshot => {
+        // console.log(snapshot);
+        let dataArr = [];
+        snapshot.forEach(doc => {
+            let data = doc.data();
+            data.id = doc.id;
+            dataArr.push(data);
+            if(data.barn){
+                parentList.push(doc.id);
+                parentList.sort((a, b) => a - b);
+            }
+        });
+        addParents();
+        dataArr.sort((a, b) => a.id - b.id);
+    }).catch(err => console.error(err));
+}
+
+getDocs();
 
 // Form event listener
 submitBtn.addEventListener('click', e => {
@@ -124,6 +147,8 @@ function addParents(){
     });
 }
 
+addParents();
+
 // ektefelle felt bare vises hvis personen er gift
 grunnleggendeDataForm.ekteskap.addEventListener('input', e => {
     const label = document.querySelector('.ektefelleLabel');
@@ -145,6 +170,7 @@ toggle1Btn.addEventListener('click', e => {
     const suggestions1Div = document.querySelector('.suggestions1');
     suggestions1Div.classList.toggle('hidden');
 });
+
 toggle2Btn.addEventListener('click', e => {
     e.preventDefault();
     const suggestions2Div = document.querySelector('.suggestions2');

@@ -1,7 +1,9 @@
 // database
 const db = firebase.firestore();
 
+// global variables
 let parentList = [];
+let age;
 
 // FORMS deklarasjon
 const grunnleggendeDataForm = document.querySelector('.grunnleggendeData');
@@ -41,6 +43,31 @@ const addDoc = function(obj, collection) {
         // Add document
         db.collection(`${collection}`).doc(`${counter}`).set(obj);
     }, 1000);
+}
+
+// getdate
+const getDate = function() {
+    // få dagens dato
+    const date = new Date();
+
+    let day = date.getDate();
+    if (day.toString().length == '1') {
+        day = "0" + day;
+    }
+
+    let month = date.getMonth() + 1;
+    if (month.toString().length == '1') {
+        month = "0" + month;
+    }
+
+    const year = date.getFullYear();
+
+    // This arrangement can be altered based on how we want the date's format to appear.
+    const currentDate = `${year}-${month}-${day}`;
+    const earliestDate = `${year - 150}-${month}-${day}`;
+
+    grunnleggendeDataForm.fodselsdato.setAttribute('max', currentDate);
+    grunnleggendeDataForm.fodselsdato.setAttribute('min', earliestDate);
 }
 
 // Fetch dokumenter
@@ -166,7 +193,7 @@ submitBtn.addEventListener('click', e => {
         fornavn: grunnleggendeDataForm.fornavn.value,
         etternavn: grunnleggendeDataForm.etternavn.value,
         fodselsdato: grunnleggendeDataForm.fodselsdato.value,
-        // alder: grunnleggendeDataForm.alder.value,
+        alder: age,
         status: grunnleggendeDataForm.status.value,
         endringStatus: grunnleggendeDataForm.endringStatus.value,
         ekteskap: grunnleggendeDataForm.ekteskap.value,
@@ -196,6 +223,7 @@ grunnleggendeDataForm.ekteskap.addEventListener('input', e => {
     }
 });
 
+// foreldre felt
 toggle1Btn.addEventListener('click', e => {
     e.preventDefault();
     const suggestions1Div = document.querySelector('.suggestions1');
@@ -224,6 +252,29 @@ grunnleggendeDataForm.fornavn.addEventListener('input', e => {
     }
 })
 
+// fødselsdato felt fyller ut alder automatisk
+grunnleggendeDataForm.fodselsdato.addEventListener('input', () => {
+    const args = grunnleggendeDataForm.fodselsdato.value.split('-');
+
+    // fødselsdato
+    const bornDay = args[2];
+    const bornMonth = args[1];
+    const bornYear = args[0];
+    
+    // dagens dato
+    const currentDate = new Date();
+    const currentDay = currentDate.getDate();
+    const currentMonth = currentDate.getMonth() + 1;
+    const currentYear = currentDate.getFullYear();
+    
+    // definer alder
+    age = currentYear - bornYear;
+    if (bornMonth >= currentMonth && bornDay >= currentDay) {
+        age++;
+    }
+});
+
 // kall funksjoner
+getDate();
 getDocs();
 addParents();

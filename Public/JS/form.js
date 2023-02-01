@@ -118,7 +118,7 @@ submitBtn.addEventListener('click', e => {
         fornavn: grunnleggendeDataForm.fornavn.value,
         etternavn: grunnleggendeDataForm.etternavn.value,
         fodselsdato: grunnleggendeDataForm.fodselsdato.value,
-        alder: grunnleggendeDataForm.alder.value,
+        // alder: grunnleggendeDataForm.alder.value,
         status: grunnleggendeDataForm.status.value,
         endringStatus: grunnleggendeDataForm.endringStatus.value,
         ekteskap: grunnleggendeDataForm.ekteskap.value,

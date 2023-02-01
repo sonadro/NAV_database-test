@@ -1,3 +1,10 @@
+// todo
+// fødselsdato felt fyller ut alder automatisk
+// fødselsdato felt viser hvilket format man skal skrive inn
+// knapp for å legge til flere barn-felt
+// feedback til brukeren - farge grønn hvis gyldig data, farge rød hvis ugyldig data
+// fiks form
+
 const db = firebase.firestore(); // Databasen vår
 
 //foreldre array

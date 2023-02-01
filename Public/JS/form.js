@@ -196,6 +196,14 @@ grunnleggendeDataForm.ekteskap.addEventListener('input', e => {
     }
 });
 
+// fødselsdato felt fyller ut alder felt automatisk
+grunnleggendeDataForm.fodselsdato.addEventListener('input', () => {
+    const currentYear = new Date().getFullYear();
+
+    console.log(currentYear);
+});
+
+// foreldre felt
 toggle1Btn.addEventListener('click', e => {
     e.preventDefault();
     const suggestions1Div = document.querySelector('.suggestions1');

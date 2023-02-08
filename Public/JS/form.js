@@ -272,7 +272,7 @@ grunnleggendeDataForm.forelder1.addEventListener('input', e => {
     let element = grunnleggendeDataForm.forelder1
     let num = element.value;
     console.log(num);
-    let nameRegex = /^[0-9]{0,}[^,.e]$/;
+    let nameRegex = /^[0-9]+$/;
     if(nameRegex.test(num) == true){
         console.log("Gyldig forelder");
         element.classList.remove("ugyldig")
@@ -286,7 +286,7 @@ grunnleggendeDataForm.forelder2.addEventListener('input', e => {
     let element = grunnleggendeDataForm.forelder2
     let num = element.value;
     console.log(num);
-    let nameRegex = /^[0-9]{0,}[^,.e]$/;
+    let nameRegex = /^[0-9]+$/;
     if(nameRegex.test(num) == true){
         console.log("Gyldig forelder");
         element.classList.remove("ugyldig")
@@ -300,7 +300,7 @@ grunnleggendeDataForm.barn.addEventListener('input', e => {
     let element = grunnleggendeDataForm.barn
     let num = element.value;
     console.log(num);
-    let nameRegex = /^[0-9]{0,}[^,.e]$/;
+    let nameRegex = /^[0-9]+$/;
     if(nameRegex.test(num) == true){
         console.log("Gyldig barn");
         element.classList.remove("ugyldig")
@@ -314,7 +314,7 @@ grunnleggendeDataForm.postnummer.addEventListener('input', e => {
     let element = grunnleggendeDataForm.postnummer
     let num = element.value;
     console.log(num);
-    let nameRegex = /^[0-9]{0,}[^,.e]$/;
+    let nameRegex = /^[0-9]+$/;
     if(nameRegex.test(num) == true){
         console.log("Gyldig postnummer");
         element.classList.remove("ugyldig")
@@ -342,7 +342,7 @@ grunnleggendeDataForm.botid.addEventListener('input', e => {
     let element = grunnleggendeDataForm.botid
     let num = element.value;
     console.log(num);
-    let nameRegex = /^[0-9]{0,}[^,.e]$/;
+    let nameRegex = /^[0-9]+$/;
     if(nameRegex.test(num) == true){
         console.log("Gyldig botid");
         element.classList.remove("ugyldig")
@@ -372,7 +372,7 @@ grunnleggendeDataForm.botid.addEventListener('input', e => {
     let element = økonomiskeForholdForm.kredittkort
     let num = element.value;
     console.log(num);
-    let nameRegex = /^[0-9][^,.e]{0,}$/;
+    let nameRegex = /^[0-9]+$/;
     if(nameRegex.test(num) == true){
         console.log("Gyldig kredittkort");
         element.classList.remove("ugyldig")
@@ -386,7 +386,7 @@ grunnleggendeDataForm.botid.addEventListener('input', e => {
     let element = økonomiskeForholdForm.lan
     let num = element.value;
     console.log(num);
-    let nameRegex = /^[0-9][^,.e]{0,}$/;
+    let nameRegex = /^[0-9]+$/;
     if(nameRegex.test(num) == true){
         console.log("Gyldig lån");
         element.classList.remove("ugyldig")
@@ -400,7 +400,7 @@ grunnleggendeDataForm.botid.addEventListener('input', e => {
     let element = økonomiskeForholdForm.fullmakt
     let num = element.value;
     console.log(num);
-    let nameRegex = /^[0-9][^,.e]{0,}$/;
+    let nameRegex =/^[0-9]+$/;
     if(nameRegex.test(num) == true){
         console.log("Gyldig fullmakt");
         element.classList.remove("ugyldig")
@@ -410,7 +410,209 @@ grunnleggendeDataForm.botid.addEventListener('input', e => {
     }
 })
 
-//Livssituasjon
+//NAV
+
+NAVForm.sykepenger.addEventListener('input', e => {
+    let element = NAVForm.sykepenger
+    let num = element.value;
+    console.log(num);
+    let nameRegex =/^[0-9]+$/;
+    if(nameRegex.test(num) == true){
+        console.log("Gyldig sykepengeverdi");
+        element.classList.remove("ugyldig")
+    }else{
+        console.log("Ugyldig sykepengeverdi");
+        element.classList.add("ugyldig");
+    }
+})
+
+//Arbeidsforhold
+
+arbeidsForholdForm.forrigeManed.addEventListener('input', e => {
+    let element = arbeidsForholdForm.forrigeManed
+    let num = element.value;
+    console.log(num);
+    let nameRegex =/^[0-9]+$/;
+    if(nameRegex.test(num) == true){
+        console.log("Gyldig arbeidstid");
+        element.classList.remove("ugyldig")
+    }else{
+        console.log("Ugyldig arbeidstid");
+        element.classList.add("ugyldig");
+    }
+})
+
+arbeidsForholdForm.denneManed.addEventListener('input', e => {
+    let element = arbeidsForholdForm.denneManed
+    let num = element.value;
+    console.log(num);
+    let nameRegex =/^[0-9]+$/;
+    if(nameRegex.test(num) == true){
+        console.log("Gyldig arbeidstid");
+        element.classList.remove("ugyldig")
+    }else{
+        console.log("Ugyldig arbeidstid");
+        element.classList.add("ugyldig");
+    }
+})
+
+//Inntekt fortid
+
+inntektFortidForm.inntekt2019.addEventListener('input', e => {
+    let element = inntektFortidForm.inntekt2019
+    let num = element.value;
+    console.log(num);
+    let nameRegex =/^[0-9]+$/;
+    if(nameRegex.test(num) == true){
+        console.log("Gyldig inntekt");
+        element.classList.remove("ugyldig")
+    }else{
+        console.log("Ugyldig inntekt");
+        element.classList.add("ugyldig");
+    }
+})
+
+inntektFortidForm.inntekt2020.addEventListener('input', e => {
+    let element = inntektFortidForm.inntekt2020
+    let num = element.value;
+    console.log(num);
+    let nameRegex =/^[0-9]+$/;
+    if(nameRegex.test(num) == true){
+        console.log("Gyldig inntekt");
+        element.classList.remove("ugyldig")
+    }else{
+        console.log("Ugyldig inntekt");
+        element.classList.add("ugyldig");
+    }
+})
+
+inntektFortidForm.inntekt2021.addEventListener('input', e => {
+    let element = inntektFortidForm.inntekt2021
+    let num = element.value;
+    console.log(num);
+    let nameRegex =/^[0-9]+$/;
+    if(nameRegex.test(num) == true){
+        console.log("Gyldig inntekt");
+        element.classList.remove("ugyldig")
+    }else{
+        console.log("Ugyldig inntekt");
+        element.classList.add("ugyldig");
+    }
+})
+
+//Inntekt 2022
+
+inntekt2022Form.inntekt1.addEventListener('input', e => {
+    let element = inntekt2022Form.inntekt1
+    let num = element.value;
+    console.log(num);
+    let nameRegex =/^[0-9]+$/;
+    if(nameRegex.test(num) == true){
+        console.log("Gyldig inntekt");
+        element.classList.remove("ugyldig")
+    }else{
+        console.log("Ugyldig inntekt");
+        element.classList.add("ugyldig");
+    }
+})
+
+inntekt2022Form.inntekt2.addEventListener('input', e => {
+    let element = inntekt2022Form.inntekt2
+    let num = element.value;
+    console.log(num);
+    let nameRegex =/^[0-9]+$/;
+    if(nameRegex.test(num) == true){
+        console.log("Gyldig inntekt");
+        element.classList.remove("ugyldig")
+    }else{
+        console.log("Ugyldig inntekt");
+        element.classList.add("ugyldig");
+    }
+})
+
+inntekt2022Form.inntekt3.addEventListener('input', e => {
+    let element = inntekt2022Form.inntekt3
+    let num = element.value;
+    console.log(num);
+    let nameRegex =/^[0-9]+$/;
+    if(nameRegex.test(num) == true){
+        console.log("Gyldig inntekt");
+        element.classList.remove("ugyldig")
+    }else{
+        console.log("Ugyldig inntekt");
+        element.classList.add("ugyldig");
+    }
+})
+
+inntekt2022Form.inntekt4.addEventListener('input', e => {
+    let element = inntekt2022Form.inntekt4
+    let num = element.value;
+    console.log(num);
+    let nameRegex =/^[0-9]+$/;
+    if(nameRegex.test(num) == true){
+        console.log("Gyldig inntekt");
+        element.classList.remove("ugyldig")
+    }else{
+        console.log("Ugyldig inntekt");
+        element.classList.add("ugyldig");
+    }
+})
+
+inntekt2022Form.inntekt5.addEventListener('input', e => {
+    let element = inntekt2022Form.inntekt5
+    let num = element.value;
+    console.log(num);
+    let nameRegex =/^[0-9]+$/;
+    if(nameRegex.test(num) == true){
+        console.log("Gyldig inntekt");
+        element.classList.remove("ugyldig")
+    }else{
+        console.log("Ugyldig inntekt");
+        element.classList.add("ugyldig");
+    }
+})
+
+inntekt2022Form.inntekt6.addEventListener('input', e => {
+    let element = inntekt2022Form.inntekt6
+    let num = element.value;
+    console.log(num);
+    let nameRegex =/^[0-9]+$/;
+    if(nameRegex.test(num) == true){
+        console.log("Gyldig inntekt");
+        element.classList.remove("ugyldig")
+    }else{
+        console.log("Ugyldig inntekt");
+        element.classList.add("ugyldig");
+    }
+})
+
+inntekt2022Form.inntekt7.addEventListener('input', e => {
+    let element = inntekt2022Form.inntekt7
+    let num = element.value;
+    console.log(num);
+    let nameRegex =/^[0-9]+$/;
+    if(nameRegex.test(num) == true){
+        console.log("Gyldig inntekt");
+        element.classList.remove("ugyldig")
+    }else{
+        console.log("Ugyldig inntekt");
+        element.classList.add("ugyldig");
+    }
+})
+
+inntekt2022Form.inntekt8.addEventListener('input', e => {
+    let element = inntekt2022Form.inntekt8
+    let num = element.value;
+    console.log(num);
+    let nameRegex =/^[0-9]+$/;
+    if(nameRegex.test(num) == true){
+        console.log("Gyldig inntekt");
+        element.classList.remove("ugyldig")
+    }else{
+        console.log("Ugyldig inntekt");
+        element.classList.add("ugyldig");
+    }
+})
 
 // fødselsdato felt fyller ut alder automatisk
 grunnleggendeDataForm.fodselsdato.addEventListener('input', () => {

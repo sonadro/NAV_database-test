@@ -79,14 +79,14 @@ h3{
 /*------------------------------Stiler for mindre klasser med begrenset bruk------------------------------------------*/
 
 .noBotPadd{
-    padding-bottom: 0px;
+    padding-bottom: 0px !important;
 }
 .noTopPadd{
-    padding-top: 0px;
+    padding-top: 0px !important;
 }
 .hidden {
-    display: none;
+    display: none !important;
 }
 .noScroll{
-    overflow: hidden;
+    overflow: hidden !important;
 }

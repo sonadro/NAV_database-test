@@ -197,6 +197,9 @@
         ".";
     padding-top: 0px;
 }
+
+/*Mindre, begrensede stiler*/
+
 .ugyldig{
     outline-color: #ff0000;
     outline-width: 2px;

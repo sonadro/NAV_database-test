@@ -2,12 +2,20 @@ module.exports.home_get = (req, res) => {
     res.render('index');
 }
 
-module.exports.forgot_get = (req, res) => {
-    res.render('forgot');
+module.exports.om_get = (req, res) => {
+    res.render('om');
 }
 
-module.exports.logged_get = (req, res) => {
-    res.render('logged');
+module.exports.adminMain_get = (req, res) => {
+    res.render('adminPages/admin');
+}
+
+module.exports.adminForm_get = (req, res) => {
+    res.render('adminPages/form');
+}
+
+module.exports.login_get = (req, res) => {
+    res.render('login');
 }
 
 module.exports.create_get = (req, res) => {

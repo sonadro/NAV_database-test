@@ -1,0 +1,18 @@
+<%- include('partials/header'); -%>
+
+<div class="intro">
+    <h2>Forgot password?</h2>
+</div>
+
+
+    <input class="newPass" id="newPassField" autocomplete="new-password" type="password" placeholder="New password"/>
+    <input class="newPass" id="newConfirmPassField" autocomplete="new-password" type="password" placeholder="Confirm new password"/>
+    <button class="login" type="button" onclick="resetPass()">Reset password</button>
+    <p id="statusMessage"></p>
+
+
+    <script src="https://www.gstatic.com/firebasejs/5.9.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.9.1/firebase-firestore.js"></script>
+    <script src="js/db.js"></script>
+    <script src="js/reset.js" defer></script>
+<%- include('partials/footer'); -%>

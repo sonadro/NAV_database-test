@@ -1,67 +1,7 @@
 .submitKnapp{
     margin-left: 30px;
 }
-.inputScalable {  
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 0.7fr 1.3fr;
-    grid-auto-columns: 1fr;
-    gap: 0px 0px;
-    grid-auto-flow: row;
-    /*justify-content: left;
-    align-content: left;
-    justify-items: left;
-    align-items: left;*/
-    grid-template-areas:
-      "."
-      ".";
-}
-.inputScalableSelection {  
-    /* display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 0.7fr 1.3fr 1fr;
-    grid-auto-columns: 1fr;
-    gap: 0px 0px;
-    grid-auto-flow: row;
-    grid-template-areas:
-      "."
-      "."
-      ".";
-    padding-bottom: 100px; */
-    display: grid; 
-    grid-auto-columns: 1fr; 
-    grid-template-columns: 1.7fr 0.3fr; 
-    grid-template-rows: 0.7fr 1.3fr; 
-    gap: 0px 0px; 
-    grid-template-areas: 
-        "label empty"
-        "input button"; 
-}
 
-.inputScalableSelection .inputTitle{
-    grid-area: label;
-}
-.inputScalableSelection .userInfoInput{
-    grid-area: input;
-}
-.inputScalableSelection .suggestions1Contain, .inputScalableSelection .suggestions2Contain{
-    grid-area: button;
-}
-  
-.oneInputScalable {  
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr;
-    grid-auto-columns: 1fr;
-    gap: 0px 0px;
-    grid-auto-flow: row;
-    /*justify-content: center;
-    align-content: center;
-    justify-items: center;
-    align-items: center;*/
-    grid-template-areas:
-      ". .";
-}
 .suggestions1Contain, .suggestions2Contain{
     position: relative;
 }
@@ -152,18 +92,6 @@
     outline-width: 3px;
     /* overflow: hidden; */
 }
-.quadInputField{
-    display: grid; 
-    grid-auto-columns: 1fr; 
-    grid-template-columns: 1fr 1fr; 
-    grid-template-rows: 0.7fr 1.3fr 0.7fr 1.3fr; 
-    gap: 0px 0px; 
-    grid-template-areas: 
-        ". ."
-        ". ."
-        ". ."
-        ". .";
-}
 .quadInputFieldScaleable {  
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -174,17 +102,17 @@
     grid-template-areas:
       ". ."
       ". .";
-}  
-.duoInputField{
+}
+.duoInputFieldScaleable{
     display: grid; 
     grid-auto-columns: 1fr; 
     grid-template-columns: 1fr 1fr; 
-    grid-template-rows: 0.2fr 0.2fr; 
+    grid-template-rows: 1fr; 
+    grid-auto-flow: row;
     gap: 0px 0px; 
     grid-template-areas: 
-        ". ."
         ". .";
-    max-height: 100px;
+    /* max-height: 100px; */
 }
 .oneInputField{
     display: grid; 
@@ -197,6 +125,66 @@
         ".";
     padding-top: 0px;
 }
+
+.inputScalable {  
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 0.7fr 1.3fr;
+    grid-auto-columns: 1fr;
+    gap: 0px 0px;
+    grid-auto-flow: row;
+    grid-template-areas:
+      "."
+      ".";
+}
+.inputScalableSelection {  
+    display: grid; 
+    grid-auto-columns: 1fr; 
+    grid-template-columns: 1.7fr 0.3fr; 
+    grid-template-rows: 0.7fr 1.3fr;
+    grid-auto-flow: row;
+    gap: 0px 0px; 
+    grid-template-areas: 
+        "label empty"
+        "input button"; 
+}
+
+.inputScalableSelection .inputTitle{
+    grid-area: label;
+}
+.inputScalableSelection .userInfoInput{
+    grid-area: input;
+}
+.inputScalableSelection .suggestions1Contain, .inputScalableSelection .suggestions2Contain{
+    grid-area: button;
+}
+  
+.oneInputScalable {  
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    grid-auto-columns: 1fr;
+    gap: 0px 0px;
+    grid-auto-flow: row;
+    /*justify-content: center;
+    align-content: center;
+    justify-items: center;
+    align-items: center;*/
+    grid-template-areas:
+      ". .";
+}
+
+/*Flexbox grids | Discontinued*/
+
+/* .quadInputFieldFlex{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+}
+.inputFlexible{
+    width: 50%;
+} */
 
 /*Mindre, begrensede stiler*/
 

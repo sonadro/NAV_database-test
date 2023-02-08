@@ -358,7 +358,7 @@ grunnleggendeDataForm.botid.addEventListener('input', e => {
     let element = økonomiskeForholdForm.bankkonto
     let num = element.value;
     console.log(num);
-    let nameRegex = /^[0-9][^,.e]{0,}$/;
+    let nameRegex = /^[0-9]+$/;
     if(nameRegex.test(num) == true){
         console.log("Gyldig bankkonto");
         element.classList.remove("ugyldig")

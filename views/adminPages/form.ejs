@@ -9,18 +9,19 @@
 
     <form class="grunnleggendeData formArea">
         <h3>Grunnleggende data:</h3>
-
-        <div class="duoInputField noBotPadd inputArea">
-            <label for="fornavn" class="inputTitle">Fornavn:</label>
-            <label for="etternavn" class="inputTitle">Etternavn:</label>
-
-            <input class="userInfoInput" type="text" id="fornavn">
-            <input class="userInfoInput" type="text" id="etternavn">
-        </div>
-        <div class="oneInputField">
-            <label for="fodselsdato" class="inputTitle">Fødselsdato:</label>
-
-            <input class="userInfoInput" type="date" id="fodselsdato">
+        <div class="quadInputFieldScaleable noBotPadd inputArea">
+            <div class="inputScalable">
+                <label for="fornavn" class="inputTitle">Fornavn:</label>
+                <input class="userInfoInput" type="text" id="fornavn">
+            </div>
+            <div class="inputScalable">
+                <label for="etternavn" class="inputTitle">Etternavn:</label>
+                <input class="userInfoInput" type="text" id="etternavn">
+            </div>
+            <div class="inputScalable">
+                <label for="fodselsdato" class="inputTitle">Fødselsdato:</label>
+                <input class="userInfoInput" type="date" id="fodselsdato">
+            </div>
         </div>
         <div class="quadInputFieldScaleable inputArea">
             <div class="inputScalable">
@@ -49,7 +50,7 @@
                 <input class="userInfoInput hidden" type="text" id="ektefelle">
             </div>
         </div>
-        <div class="duoInputField inputArea noBotPadd">
+        <div class="duoInputFieldScaleable inputArea noBotPadd">
             <div class="inputScalableSelection">
                 <label for="forelder1" class="inputTitle">Forelder 1:</label>
                 <input id="forelder1" class="forelder1Input userInfoInput" type="text">
@@ -67,6 +68,7 @@
                     <div class="suggestions2 hidden"></div>
                 </div>
             </div>
+
         </div>
 
         <div class="oneInputScalable inputArea noTopPadd">
@@ -75,62 +77,72 @@
                 <input class="userInfoInput" type="text" id="barn">
             </div>
         </div>
-        <!--Finish this last section and adjust sizes of gridboxes-->
-        <div class="duoInputField inputArea noBotPadd">
-            <label for="postnummer" class="inputTitle">Bosted post-nummer:</label>
-            <label for="land" class="inputTitle">Land:</label>
-
-            <input class="userInfoInput" type="text" id="postnummer">
-            <input class="userInfoInput" type="text" id="land">
-        </div>
-        <div class="oneInputField inputArea">
-            <label for="botid" class="inputTitle">Botid:</label>
-            <input class="userInfoInput" type="text" id="botid"> 
+        <div class="quadInputFieldScaleable inputArea">
+            <div class="inputScalable">
+                <label for="postnummer" class="inputTitle">Bosted post-nummer:</label>
+                <input class="userInfoInput" type="text" id="postnummer">
+            </div>
+            <div class="inputScalable">
+                <label for="land" class="inputTitle">Land:</label>
+                <input class="userInfoInput" type="text" id="land">
+            </div>
+            <div class="inputScalable">
+                <label for="botid" class="inputTitle">Botid:</label>
+                <input class="userInfoInput" type="text" id="botid">
+            </div>
         </div>
     </form>
 
     <form class="okonomiskeForhold formArea">
         <h3>Økonomiske forhold:</h3>
 
-        <div class="quadInputField inputArea">
-            <label for="bankkonto" class="inputTitle">Bankkonto:</label>
-            <label for="kredittkort" class="inputTitle">Kredittkort:</label>
-
-            <input class="userInfoInput" type="text" id="bankkonto">
-            <input class="userInfoInput" type="text" id="kredittkort">
-
-            <label for="lan" class="inputTitle">Lån:</label>
-            <label for="fullmakt" class="inputTitle">Fullmakt til data:</label><!--Finn ut hva fullmakt til data egentlig skal bety-->
-
-            <input class="userInfoInput" type="text" id="lan">
-            <input class="userInfoInput" type="text" id="fullmakt">
+        <div class="quadInputFieldScaleable inputArea">
+            <div class="inputScalable">
+                <label for="bankkonto" class="inputTitle">Bankkonto:</label>
+                <input class="userInfoInput" type="text" id="bankkonto">
+            </div>
+            <div class="inputScalable">
+                <label for="kredittkort" class="inputTitle">Kredittkort:</label>
+                <input class="userInfoInput" type="text" id="kredittkort">
+            </div>
+            <div class="inputScalable">
+                <label for="lan" class="inputTitle">Lån:</label>
+                <input class="userInfoInput" type="text" id="lan">
+            </div>
+            <div class="inputScalable">
+                <label for="fullmakt" class="inputTitle">Fullmakt til data:</label><!--Finn ut hva fullmakt til data egentlig skal bety-->
+                <input class="userInfoInput" type="text" id="fullmakt">
+            </div>
         </div>
     </form>
 
     <form class="livsSituasjon formArea">
         <h3>Livssituasjon:</h3>
-        <div class="duoInputField" inputArea noBotPadd">
-            <label for="alvorligSyk" class="inputTitle">Er alvorlig syk:</label>
-            <label for="flyktning" class="inputTitle">Flyktning:</label>
-
-            <select autocomplete="off" class="userInfoInput" type="text" id="alvorligSyk">
-                <option disabled selected value>Velg...</option>
-                <option value="1">Ja</option>
-                <option value="0">Nei</option>
-            </select>
-            <select autocomplete="off" class="userInfoInput" type="text" id="flyktning">
-                <option disabled selected value>Velg...</option>
-                <option value="1">Ja</option>
-                <option value="0">Nei</option>
-            </select>
-        </div>
-        <div class="oneInputField inputArea">
-            <label for="gravid" class="inputTitle">Gravid:</label>
-            <select autocomplete="off" class="userInfoInput" type="text" id="gravid">
-                <option disabled selected value>Velg...</option>
-                <option value="1">Ja</option>
-                <option value="0">Nei</option>
-            </select>   
+        <div class="quadInputFieldScaleable inputArea">
+            <div class="inputScalable">
+                <label for="alvorligSyk" class="inputTitle">Er alvorlig syk:</label>
+                <select autocomplete="off" class="userInfoInput" type="text" id="alvorligSyk">
+                    <option disabled selected value>Velg...</option>
+                    <option value="1">Ja</option>
+                    <option value="0">Nei</option>
+                </select>
+            </div>
+            <div class="inputScalable">
+                <label for="flyktning" class="inputTitle">Flyktning:</label>
+                <select autocomplete="off" class="userInfoInput" type="text" id="flyktning">
+                    <option disabled selected value>Velg...</option>
+                    <option value="1">Ja</option>
+                    <option value="0">Nei</option>
+                </select>
+            </div>
+            <div class="inputScalable">
+                <label for="gravid" class="inputTitle">Gravid:</label>
+                <select autocomplete="off" class="userInfoInput" type="text" id="gravid">
+                    <option disabled selected value>Velg...</option>
+                    <option value="1">Ja</option>
+                    <option value="0">Nei</option>
+                </select>   
+            </div>
         </div> 
     </form>
 
@@ -145,58 +157,67 @@
                 <option value="0">Nei</option>
             </select>   
         </div>
-        <div class="duoInputField inputArea">
-            <label for="ufor" class="inputTitle">Ufør:</label>
-            <label for="pensjonist" class="inputTitle">Pensjonist:</label>
-
-            <select autocomplete="off" class="userInfoInput" type="text" id="ufor">
-                <option disabled selected value>Velg...</option>
-                <option value="1">Ja</option>
-                <option value="0">Nei</option>
-            </select>
-            <select autocomplete="off" class="userInfoInput" type="text" id="pensjonist">
-                <option disabled selected value>Velg...</option>
-                <option value="1">Ja</option>
-                <option value="0">Nei</option>
-            </select>
+        <div class="duoInputFieldScaleable inputArea">
+            <div class="inputScalable">
+                <label for="ufor" class="inputTitle">Ufør:</label>
+                <select autocomplete="off" class="userInfoInput" type="text" id="ufor">
+                    <option disabled selected value>Velg...</option>
+                    <option value="1">Ja</option>
+                    <option value="0">Nei</option>
+                </select>
+            </div>
+            <div class="inputScalable">
+                <label for="pensjonist" class="inputTitle">Pensjonist:</label>
+                <select autocomplete="off" class="userInfoInput" type="text" id="pensjonist">
+                    <option disabled selected value>Velg...</option>
+                    <option value="1">Ja</option>
+                    <option value="0">Nei</option>
+                </select>
+            </div>
         </div>
-        <div class="duoInputField inputArea noBotPadd">
-            <label for="yrkesskade" class="inputTitle">Yrkesskade:</label>
-            <label for="dagpenger" class="inputTitle">Dagpenger:</label>
-
-            <select autocomplete="off" class="userInfoInput" type="text" id="yrkesskade">
-                <option disabled selected value>Velg...</option>
-                <option value="1">Ja</option>
-                <option value="0">Nei</option>
-            </select>
-            <select autocomplete="off" class="userInfoInput" type="text" id="dagpenger">
-                <option disabled selected value>Velg...</option>
-                <option value="1">Ja</option>
-                <option value="0">Nei</option>
-            </select>
-        </div>
-        <div class="oneInputField inputArea">
-            <label for="sykepenger" class="inputTitle">Sykepenger:</label>
-            <input class="userInfoInput" type="text" id="sykepenger">
+        <div class="quadInputFieldScaleable inputArea">
+            <div class="inputScalable">
+                <label for="yrkesskade" class="inputTitle">Yrkesskade:</label>
+                <select autocomplete="off" class="userInfoInput" type="text" id="yrkesskade">
+                    <option disabled selected value>Velg...</option>
+                    <option value="1">Ja</option>
+                    <option value="0">Nei</option>
+                </select>
+            </div>
+            <div class="inputScalable">
+                <label for="dagpenger" class="inputTitle">Dagpenger:</label>
+                <select autocomplete="off" class="userInfoInput" type="text" id="dagpenger">
+                    <option disabled selected value>Velg...</option>
+                    <option value="1">Ja</option>
+                    <option value="0">Nei</option>
+                </select>
+            </div>
+            <div class="inputScalable">
+                <label for="sykepenger" class="inputTitle">Sykepenger:</label>
+                <input class="userInfoInput" type="text" id="sykepenger">
+            </div>
         </div>
     </form>
 
     <form class="lanekassen formArea">
         <h3>Lånekassen:</h3>
-        <div class="duoInputField inputArea">
-            <label for="stipend" class="inputTitle">Stipend:</label>
-            <label for="studiested" class="inputTitle">Studiested EU:</label>
-
-            <select autocomplete="off" class="userInfoInput" type="text" id="stipend">
-                <option disabled selected value>Velg...</option>
-                <option value="1">Ja</option>
-                <option value="0">Nei</option>
-            </select>
-            <select autocomplete="off" class="userInfoInput" type="text" id="studiested">
-                <option disabled selected value>Velg...</option>
-                <option value="1">Ja</option>
-                <option value="0">Nei</option>
-            </select>
+        <div class="duoInputFieldScaleable inputArea">
+            <div class="inputScalable">
+                <label for="stipend" class="inputTitle">Stipend:</label>
+                <select autocomplete="off" class="userInfoInput" type="text" id="stipend">
+                    <option disabled selected value>Velg...</option>
+                    <option value="1">Ja</option>
+                    <option value="0">Nei</option>
+                </select>
+            </div>
+            <div class="inputScalable">
+                <label for="studiested" class="inputTitle">Studiested EU:</label>
+                <select autocomplete="off" class="userInfoInput" type="text" id="studiested">
+                    <option disabled selected value>Velg...</option>
+                    <option value="1">Ja</option>
+                    <option value="0">Nei</option>
+                </select>
+            </div>
         </div>
     </form>
 
@@ -210,73 +231,89 @@
                 <option value="0">Nei</option>
             </select>
         </div>
-        <div class="quadInputField inputArea">
-            <label for="forholdStatus" class="inputTitle">Arbeidsforhold status:</label>
-            <label for="sektor" class="inputTitle">Sektor:</label>
-
-            <select autocomplete="off" class="userInfoInput" type="text" id="forholdStatus">
-                <option disabled selected value>Velg...</option>
-                <option value="0">Ansatt</option>
-                <option value="1">Opphørt</option>
-            </select>
-            <select autocomplete="off" class="userInfoInput" type="text" id="sektor">
-                <option disabled selected value>Velg...</option>
-                <option value="0">Privat</option>
-                <option value="1">Stat</option>
-            </select>
-
-            <label for="forrigeManed" class="inputTitle">Arbeidstid forrige måned:</label>
-            <label for="denneManed" class="inputTitle">Arbeidstid denne måned</label>
-
-            <input class="userInfoInput" type="text" id="forrigeManed">
-            <input class="userInfoInput" type="text" id="denneManed">
+        <div class="quadInputFieldScaleable inputArea">
+            <div class="inputScalable">
+                <label for="forholdStatus" class="inputTitle">Arbeidsforhold status:</label>
+                <select autocomplete="off" class="userInfoInput" type="text" id="forholdStatus">
+                    <option disabled selected value>Velg...</option>
+                    <option value="0">Ansatt</option>
+                    <option value="1">Opphørt</option>
+                </select>
+            </div>
+            <div class="inputScalable">
+                <label for="sektor" class="inputTitle">Sektor:</label>
+                <select autocomplete="off" class="userInfoInput" type="text" id="sektor">
+                    <option disabled selected value>Velg...</option>
+                    <option value="0">Privat</option>
+                    <option value="1">Stat</option>
+                </select>
+            </div>
+            <div class="inputScalable">
+                <label for="forrigeManed" class="inputTitle">Arbeidstid forrige måned:</label>
+                <input class="userInfoInput" type="text" id="forrigeManed">
+            </div>
+            <div class="inputScalable">
+                <label for="denneManed" class="inputTitle">Arbeidstid denne måned</label>
+                <input class="userInfoInput" type="text" id="denneManed">
+            </div>
         </div>
     </form>
 
     <form class="inntektFortid formArea">
         <h3>Inntekt fortid:</h3>
 
-        <div class="duoInputField inputArea noBotPadd">
-            <label for="inntekt2019" class="inputTitle">Inntekt 2019:</label>
-            <label for="inntekt2020" class="inputTitle">Inntekt 2020:</label>
-
-            <input class="userInfoInput" type="text" id="inntekt2019">
-            <input class="userInfoInput" type="text" id="inntekt2020">
-        </div>
-        <div class="oneInputField inputArea">
-            <label for="inntekt2021" class="inputTitle">Inntekt 2021:</label>
-            <input class="userInfoInput" type="text" id="inntekt2021">
+        <div class="quadInputFieldScaleable inputArea">
+            <div class="inputScalable">
+                <label for="inntekt2019" class="inputTitle">Inntekt 2019:</label>
+                <input class="userInfoInput" type="text" id="inntekt2019">
+            </div>
+            <div class="inputScalable">
+                <label for="inntekt2020" class="inputTitle">Inntekt 2020:</label>
+                <input class="userInfoInput" type="text" id="inntekt2020">
+            </div>
+            <div class="inputScalable">
+                <label for="inntekt2021" class="inputTitle">Inntekt 2021:</label>
+                <input class="userInfoInput" type="text" id="inntekt2021">
+            </div>
         </div>
     </form>
 
     <form class="inntekt2022 formArea">
         <h3>Inntekt 2022:</h3>
 
-        <div class="quadInputField inputArea noBotPadd">
-            <label for="inntekt1" class="inputTitle">Inntekt 1:</label>
-            <label for="inntekt2" class="inputTitle">Inntekt 2:</label>
-
-            <input class="userInfoInput" type="text" id="inntekt1">
-            <input class="userInfoInput" type="text" id="inntekt2">
-
-            <label for="inntekt3" class="inputTitle">Inntekt 3:</label>
-            <label for="inntekt4" class="inputTitle">Inntekt 4:</label>
-
-            <input class="userInfoInput" type="text" id="inntekt3">
-            <input class="userInfoInput" type="text" id="inntekt4">
-        </div>
-        <div class="quadInputField inputArea noTopPadd">
-            <label for="inntekt5" class="inputTitle">Inntekt 5:</label>
-            <label for="inntekt6" class="inputTitle">Inntekt 6:</label>
-
-            <input class="userInfoInput" type="text" id="inntekt5">
-            <input class="userInfoInput" type="text" id="inntekt6">
-
-            <label for="inntekt7" class="inputTitle">Inntekt 7:</label>
-            <label for="inntekt8" class="inputTitle">Inntekt 8:</label>
-
-            <input class="userInfoInput" type="text" id="inntekt7">
-            <input class="userInfoInput" type="text" id="inntekt8">
+        <div class="quadInputFieldScaleable inputArea">
+            <div class="inputScalable">
+                <label for="inntekt1" class="inputTitle">Inntekt 1:</label>
+                <input class="userInfoInput" type="text" id="inntekt1">
+            </div>
+            <div class="inputScalable">
+                <label for="inntekt2" class="inputTitle">Inntekt 2:</label>
+                <input class="userInfoInput" type="text" id="inntekt2">
+            </div>
+            <div class="inputScalable">
+                <label for="inntekt3" class="inputTitle">Inntekt 3:</label>
+                <input class="userInfoInput" type="text" id="inntekt3">
+            </div>
+            <div class="inputScalable">
+                <label for="inntekt4" class="inputTitle">Inntekt 4:</label>
+                <input class="userInfoInput" type="text" id="inntekt4">
+            </div>
+            <div class="inputScalable">
+                <label for="inntekt5" class="inputTitle">Inntekt 5:</label>
+                <input class="userInfoInput" type="text" id="inntekt5">
+            </div>
+            <div class="inputScalable">
+                <label for="inntekt6" class="inputTitle">Inntekt 6:</label>
+                <input class="userInfoInput" type="text" id="inntekt6">
+            </div>
+            <div class="inputScalable">
+                <label for="inntekt7" class="inputTitle">Inntekt 7:</label>
+                <input class="userInfoInput" type="text" id="inntekt7">
+            </div>
+            <div class="inputScalable">
+                <label for="inntekt8" class="inputTitle">Inntekt 8:</label>
+                <input class="userInfoInput" type="text" id="inntekt8">
+            </div>
         </div>
     </form>
     <div class="formArea">

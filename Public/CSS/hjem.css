@@ -1,0 +1,136 @@
+#infoDisplay {
+    height: fit-content;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 20px;
+    overflow: hidden;
+}
+
+#infoDisplay div {  
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    margin: 16px;
+    padding: 12px;
+    width: 300px;
+    height: 200px;
+    /* border-radius: 12px;  */
+    transition: all 0.2s ease-in-out;
+    cursor: default;
+    box-shadow: 1px 1px 5px rgba(68, 68, 68, 0.212);
+    cursor: pointer;
+}
+
+.userCardContainer{
+    border: solid;
+    border-radius: 10px;
+    border-width: 1px;
+    display: inline-block;
+    background-color: beige;
+    font-family:Arial, Helvetica, sans-serif;
+    margin: 20px 20px;
+    padding: 10px;
+    transition-duration: 0.1s;
+    max-width: 200px;
+    max-height: 200px;
+}
+.userCardContainer:hover{
+    box-shadow: 10px 10px 5px gray;
+    transform: scale(1.1);
+    transition-duration: 0.1s;
+}
+.cardNameHeader{
+    margin: 10px 10px;
+    font-size: 20px;
+}
+.cardInfoList{
+    padding: 10px;
+    list-style-type:none;
+    margin-top: 0px;
+}
+.advInfoCardContainer { 
+    width: 100vw;
+    height: 100vh; 
+    display: grid;
+    grid-template-columns: 0.5fr 2fr 0.5fr;
+    grid-template-rows: 0.5fr 2fr 0.5fr;
+    gap: 0px 0px;
+    grid-auto-flow: row;
+    grid-template-areas:
+      ". . ."
+      ". advancedInfoCard ."
+      ". . .";
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    justify-content: center; 
+    align-content: center; 
+    justify-items: center; 
+    align-items: center;
+    z-index: -1;
+    background-color: rgb(0, 0, 0, 0);
+}
+.advancedInfoCard{
+    background-color: beige;
+    position: fixed;
+    z-index: 2;
+    display: none;
+    margin: 10px;
+    border: solid;
+    border-radius: 10px;
+    padding: 20px;
+    grid-area: advancedInfoCard;
+    height: 75%;
+    width: 400px;
+    /* width: 25%; */
+    overflow: auto;
+    /* hide scrollbar for explorer & edge */
+    -ms-overflow-style: none;
+
+    /* firefox hide scrollbar */
+    scrollbar-width: none;
+}
+
+/* hide scrollbar on .advancedInfoCard */
+.advancedInfoCard::-webkit-scrollbar {
+    display: none;
+}
+.advancedInfoCard ul{
+    list-style-type: none;
+    padding: 10px;
+}
+.advInfoClose{
+    position: sticky;
+    float: right;
+    top: 0px;
+    transition-duration: 0.1s;
+}
+.advInfoClose:hover{
+    cursor: pointer;
+    transform: scale(1.2);
+    transition-duration: 0.1s;
+}
+.advInfoCatSelect{
+    background: none;
+    border: none;
+    font-size: 20px;
+    text-decoration: underline;
+    text-underline-offset: 20%;
+    font-family: 'Poppins-Medium', Fallback, sans-serif;
+    transition-duration: 0.1s;
+}
+.advInfoCatSelect img{
+    transition-duration: 0.6s;
+}
+.advInfoCatSelect:hover{
+    cursor: pointer;
+}
+.rotateArrow{
+    transform: rotate(180deg);
+    transition-duration: 0.6s;
+}
+.cardViewBackground{
+    background-color: black;
+}

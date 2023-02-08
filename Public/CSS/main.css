@@ -1,0 +1,92 @@
+@font-face {
+    font-family: 'Poppins-Medium';
+    src: url('../Fonts/Poppins-Medium.ttf');
+    font-weight: 500;
+}
+
+@font-face {
+    font-family: 'Poppins-Regular';
+    src: url('../Fonts/Poppins-Regular.ttf');
+    font-weight: 400;
+}
+#mainNav{
+    display: inline;
+}
+#mainNav ul{
+    overflow: hidden;
+    list-style-type: none;
+    padding: 10px;
+    margin: 0;
+    background-color: beige;
+}
+#mainNav ul li{
+    display: inline-block;
+    padding: 15px 20px;
+    padding-left: 0px;
+}
+#mainNav ul li a, #mainNav ul li h1, #mainNav ul li img{
+    text-decoration: none;
+    color: black;
+    text-align: center;
+    vertical-align: middle;
+}
+#mainNav ul li a:hover{
+    text-decoration: underline;
+}
+.navRight{
+    float: right;
+}
+.navLeft{
+    float: left;
+}
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    box-sizing: border-box;
+    margin: 0;
+}
+main{
+    margin: 10px;
+}
+h1#mainHead{
+    margin: 0;
+    /* font-size: 15px; */
+}
+h3{
+    font-family: 'Poppins-Medium', Fallback, sans-serif;
+    font-size: 25px;
+}
+
+.knapp{
+    padding: 10px;
+    margin: 10px;
+    margin-top: 20px;
+    width: 250px;
+    font-size: 15px;
+    border: solid;
+    border-radius: 5px;
+    border-width: 1px;
+    background-color: rgb(241, 241, 241);
+    transition-duration: 0.1s;
+}
+.knapp:hover{
+    background-color: rgb(118, 118, 118);
+    cursor: pointer;
+    transition-duration: 0.1s;
+    color: white;
+}
+
+/*------------------------------Stiler for mindre klasser med begrenset bruk------------------------------------------*/
+
+.noBotPadd{
+    padding-bottom: 0px;
+}
+.noTopPadd{
+    padding-top: 0px;
+}
+.hidden {
+    display: none;
+}
+.noScroll{
+    overflow: hidden;
+}

@@ -1,0 +1,18 @@
+<%- include('partials/header'); -%>
+
+<div class="intro">
+    <h2>Forgot password?</h2>
+    </div>
+
+<form class="login">
+    <input class="email" id="emailField" autocomplete="email" type="text" placeholder="email"/>
+    <button class="login" type="button" onclick="sendResetPass()">Reset Password</button>
+    <p id="statusMessage"></p>
+</form>
+
+<script src="https://www.gstatic.com/firebasejs/5.9.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.9.1/firebase-firestore.js"></script>
+<script src="js/db.js"></script>
+<script src="js/forgot.js" defer></script>
+
+<%- include('partials/footer'); -%>

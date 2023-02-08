@@ -1,14 +1,33 @@
 // express
 const express = require('express');
 const server = express();
+const path = require('path');
 const authRoutes = require("./routes/authRoutes")
 const bcrypt = require('bcrypt');
 const saltRounds = 10;
 const bodyParser = require("body-parser");
 const cookieParser = require("cookie-parser")
 const jwt = require("jsonwebtoken")
-const app = express();
 const nodemailer = require("nodemailer");
+
+const { initializeApp, applicationDefault, cert } = require('firebase-admin/app');
+const { getFirestore, Timestamp, FieldValue } = require('firebase-admin/firestore');
+
+var admin = require("firebase-admin");
+
+const serviceAccount = require('./the.json');
+const { get } = require('http');
+const { create } = require('domain');
+const { query } = require('express');
+
+let userLoggedIn = false;
+
+admin.initializeApp({
+  credential: admin.credential.cert(serviceAccount)
+});
+
+
+const db = getFirestore();
 
 // middleware
 server.use(express.static('public'));
@@ -16,6 +35,7 @@ server.use(express.json());
 
 // view engine
 server.set('view engine', 'ejs');
+server.set('views', path.join(__dirname, '/views'));
 
 // listen for requests
 const port = 80;
@@ -24,21 +44,13 @@ console.log(`Listening for request on port ${port}`);
 
 // redirects
 
-app.use(authRoutes)
+server.use(authRoutes)
 
+// server.get('/om-siden', (req, res) => res.render('om'));
 
-server.get('/', (req, res) => res.redirect('/hjem'));
+// server.get('/admin', (req, res) => res.render('adminPages/admin'));
+// server.get('/form', (req, res) => res.render('adminPages/form'));
 
-// routes
-server.get('/hjem', (req, res) => res.render('index'));
-server.get('/om-siden', (req, res) => res.render('om'));
-
-// admin routes
-server.get('/admin', (req, res) => res.render('adminPages/admin'));
-server.get('/form', (req, res) => res.render('adminPages/form'));
-
-// 404
-server.use((req, res) => res.status(404).render('404.ejs'));
 
 const createToken = (id, maxAge) => {
     return jwt.sign({ id }, 'n0!Ds[Lfs*2Bs!TsSd', {
@@ -92,7 +104,7 @@ async function mail(userDetails) {
     // Preview URL: https://ethereal.email/message/WaQKMgKddxQDoou...
   }
 
-app.post('/hashing', (req, res) => {
+server.post('/hashing', (req, res) => {
     const {parcel} = req.body;
     console.log(parcel.email);
     console.log(parcel.password);
@@ -121,7 +133,7 @@ app.post('/hashing', (req, res) => {
 })
 
 
-app.post('/login', (req, res) => {
+server.post('/login', (req, res) => {
     const {parcel} = req.body;
     console.log(parcel);
     
@@ -132,7 +144,7 @@ app.post('/login', (req, res) => {
             // jwtest = createToken(parcel)
 
             
-            db.collection("users").where("username", "==", parcel.username).get().then((querySnapshot) => {
+            db.collection("adminCol").where("username", "==", parcel.username).get().then((querySnapshot) => {
                 querySnapshot.forEach((doc) => {
                     // doc.data() is never undefined for query doc snapshots
                     const userDetails = doc.data()
@@ -170,8 +182,8 @@ app.post('/login', (req, res) => {
 
 })
 
-app.post('/sendResetPass', async function (req, res) {
-    const userRef = db.collection("users");
+server.post('/sendResetPass', async function (req, res) {
+    const userRef = db.collection("adminCol");
     const {parcel} = req.body;
     let email = parcel.email
     let userDetails;
@@ -201,8 +213,8 @@ app.post('/sendResetPass', async function (req, res) {
 
 })
 
-app.post('/resetPass', async function (req, res) {
-    const userRef = db.collection("users");
+server.post('/resetPass', async function (req, res) {
+    const userRef = db.collection("adminCol");
     const {parcel} = req.body;
     let email = parcel.email
     let password = parcel.password
@@ -231,7 +243,7 @@ app.post('/resetPass', async function (req, res) {
         
         
 
-                        db.collection("users").where("email", "==", parcel.email).get().then((querySnapshot) => {
+                        db.collection("adminCol").where("email", "==", parcel.email).get().then((querySnapshot) => {
                             querySnapshot.forEach((doc) => {
                                 // doc.data() is never undefined for query doc snapshots
                                 userId = doc.id
@@ -239,7 +251,7 @@ app.post('/resetPass', async function (req, res) {
 
                                 console.log(userId);
 
-                                db.collection("users").doc(userId).update({
+                                db.collection("adminCol").doc(userId).update({
                                     password: hash
                                 });
                             });
@@ -266,4 +278,4 @@ app.post('/resetPass', async function (req, res) {
 
 })
 // page not found
-app.use((req, res) => res.status(404).render('404'));
+server.use((req, res) => res.status(404).render('404'));

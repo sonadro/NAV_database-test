@@ -19,7 +19,7 @@
     /* border-radius: 12px;  */
     transition: all 0.2s ease-in-out;
     cursor: default;
-    box-shadow: 1px 1px 5px rgba(68, 68, 68, 0.212);
+    /* box-shadow: 1px 1px 5px rgba(68, 68, 68, 0.212); */
     cursor: pointer;
 }
 
@@ -32,14 +32,15 @@
     font-family:Arial, Helvetica, sans-serif;
     margin: 20px 20px;
     padding: 10px;
-    transition-duration: 0.1s;
+    transition-duration: 0.05s;
     max-width: 200px;
     max-height: 200px;
+    box-shadow: 1px 1px 5px rgba(68, 68, 68, 0.212);
 }
 .userCardContainer:hover{
-    box-shadow: 10px 10px 5px gray;
+    box-shadow: 10px 10px 5px rgb(68, 68, 68);
     transform: scale(1.1);
-    transition-duration: 0.1s;
+    transition-duration: 0.05s;
 }
 .cardNameHeader{
     margin: 10px 10px;

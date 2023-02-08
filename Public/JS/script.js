@@ -125,43 +125,43 @@ const openAdvancedInfo = id => {
                 datafullMaktElm.textContent = data.avansertInfo[0].fullmakt;
 
                 // livssituasjon
-                alvorligSykElm.textContent = data.avansertInfo[0].alvorligSyk;
-                flyktningElm.textContent = data.avansertInfo[0].flyktning;
-                gravidElm.textContent = data.avansertInfo[0].gravid;
+                alvorligSykElm.textContent = data.avansertInfo[1].alvorligSyk;
+                flyktningElm.textContent = data.avansertInfo[1].flyktning;
+                gravidElm.textContent = data.avansertInfo[1].gravid;
 
                 // nav
-                medlemElm.textContent = data.avansertInfo[0].medlem;
-                uforElm.textContent = data.avansertInfo[0].ufor;
-                pensjonistElm.textContent = data.avansertInfo[0].pensjonist;
-                yrkesskadeElm.textContent = data.avansertInfo[0].yrkesskade;
-                dagpengerElm.textContent = data.avansertInfo[0].dagpenger;
-                sykepengerElm.textContent = data.avansertInfo[0].sykepenger;
+                medlemElm.textContent = data.avansertInfo[2].medlem;
+                uforElm.textContent = data.avansertInfo[2].ufor;
+                pensjonistElm.textContent = data.avansertInfo[2].pensjonist;
+                yrkesskadeElm.textContent = data.avansertInfo[2].yrkesskade;
+                dagpengerElm.textContent = data.avansertInfo[2].dagpenger;
+                sykepengerElm.textContent = data.avansertInfo[2].sykepenger;
 
                 // lånekassen
-                stipendElm.textContent = data.avansertInfo[0].stipend;
-                studiestedElm.textContent = data.avansertInfo[0].studiested;
+                stipendElm.textContent = data.avansertInfo[3].stipend;
+                studiestedElm.textContent = data.avansertInfo[3].studiested;
 
                 // arbeidsforhold
-                freelancerElm.textContent = data.avansertInfo[0].freelancer;
-                arbforholdstatusElm.textContent = data.avansertInfo[0].forholdStatus;
-                sektorElm.textContent = data.avansertInfo[0].sektor;
-                arbtidforrigemanedElm.textContent = data.avansertInfo[0].forrigeManed;
-                arbtiddennemanedElm.textContent = data.avansertInfo[0].denneManed;
+                freelancerElm.textContent = data.avansertInfo[4].freelancer;
+                arbforholdstatusElm.textContent = data.avansertInfo[4].forholdStatus;
+                sektorElm.textContent = data.avansertInfo[4].sektor;
+                arbtidforrigemanedElm.textContent = data.avansertInfo[4].forrigeManed;
+                arbtiddennemanedElm.textContent = data.avansertInfo[4].denneManed;
 
                 // inntekt fortid
-                inntekt2019Elm.textContent = data.avansertInfo[0].inntekt2019;
-                inntekt2020Elm.textContent = data.avansertInfo[0].inntekt2020;
-                inntekt2021Elm.textContent = data.avansertInfo[0].inntekt2021;
+                inntekt2019Elm.textContent = data.avansertInfo[5].inntekt2019;
+                inntekt2020Elm.textContent = data.avansertInfo[5].inntekt2020;
+                inntekt2021Elm.textContent = data.avansertInfo[5].inntekt2021;
 
                 // inntekt nåtid
-                inntekt1Elm.textContent = data.avansertInfo[0].inntekt1;
-                inntekt2Elm.textContent = data.avansertInfo[0].inntekt2;
-                inntekt3Elm.textContent = data.avansertInfo[0].inntekt3;
-                inntekt4Elm.textContent = data.avansertInfo[0].inntekt4;
-                inntekt5Elm.textContent = data.avansertInfo[0].inntekt5;
-                inntekt6Elm.textContent = data.avansertInfo[0].inntekt6;
-                inntekt7Elm.textContent = data.avansertInfo[0].inntekt7;
-                inntekt8Elm.textContent = data.avansertInfo[0].inntekt8;
+                inntekt1Elm.textContent = data.avansertInfo[6].inntekt1;
+                inntekt2Elm.textContent = data.avansertInfo[6].inntekt2;
+                inntekt3Elm.textContent = data.avansertInfo[6].inntekt3;
+                inntekt4Elm.textContent = data.avansertInfo[6].inntekt4;
+                inntekt5Elm.textContent = data.avansertInfo[6].inntekt5;
+                inntekt6Elm.textContent = data.avansertInfo[6].inntekt6;
+                inntekt7Elm.textContent = data.avansertInfo[6].inntekt7;
+                inntekt8Elm.textContent = data.avansertInfo[6].inntekt8;
             }
         });
     });

@@ -198,6 +198,6 @@
     padding-top: 0px;
 }
 .ugyldig{
-    outline-color: red;
-    outline-width: 3px;
+    outline-color: #ff0000;
+    outline-width: 2px;
 }

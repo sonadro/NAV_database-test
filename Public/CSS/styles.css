@@ -1,0 +1,450 @@
+@font-face {
+    font-family: 'Poppins-Medium';
+    src: url('../Fonts/Poppins-Medium.ttf');
+    font-weight: 500;
+}
+
+@font-face {
+    font-family: 'Poppins-Regular';
+    src: url('../Fonts/Poppins-Regular.ttf');
+    font-weight: 400;
+}
+#mainNav{
+    display: inline;
+}
+#mainNav ul{
+    overflow: hidden;
+    list-style-type: none;
+    padding: 10px;
+    margin: 0;
+    background-color: beige;
+}
+#mainNav ul li{
+    display: inline-block;
+    padding: 15px 20px;
+    padding-left: 0px;
+}
+#mainNav ul li a, #mainNav ul li h1, #mainNav ul li img{
+    text-decoration: none;
+    color: black;
+    text-align: center;
+    vertical-align: middle;
+}
+#mainNav ul li a:hover{
+    text-decoration: underline;
+}
+.navRight{
+    float: right;
+}
+.navLeft{
+    float: left;
+}
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    box-sizing: border-box;
+    margin: 0;
+}
+main{
+    margin: 10px;
+}
+h1#mainHead{
+    margin: 0;
+    /* font-size: 15px; */
+}
+h3{
+    font-family: 'Poppins-Medium', Fallback, sans-serif;
+    font-size: 25px;
+}
+
+.knapp{
+    padding: 10px;
+    margin: 10px;
+    margin-top: 20px;
+    width: 250px;
+    font-size: 15px;
+    border: solid;
+    border-radius: 5px;
+    border-width: 1px;
+    background-color: rgb(241, 241, 241);
+    transition-duration: 0.1s;
+}
+.knapp:hover{
+    background-color: rgb(118, 118, 118);
+    cursor: pointer;
+    transition-duration: 0.1s;
+    color: white;
+}
+.submitKnapp{
+    margin-left: 30px;
+}
+
+#infoDisplay {
+    height: fit-content;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 20px;
+    overflow: hidden;
+}
+
+#infoDisplay div {  
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    margin: 16px;
+    padding: 12px;
+    width: 300px;
+    height: 200px;
+    /* border-radius: 12px;  */
+    transition: all 0.2s ease-in-out;
+    cursor: default;
+    box-shadow: 1px 1px 5px rgba(68, 68, 68, 0.212);
+    cursor: pointer;
+}
+
+.userCardContainer{
+    border: solid;
+    border-radius: 10px;
+    border-width: 1px;
+    display: inline-block;
+    background-color: beige;
+    font-family:Arial, Helvetica, sans-serif;
+    margin: 20px 20px;
+    padding: 10px;
+    transition-duration: 0.1s;
+    max-width: 200px;
+    max-height: 200px;
+}
+.userCardContainer:hover{
+    box-shadow: 10px 10px 5px gray;
+    transform: scale(1.1);
+    transition-duration: 0.1s;
+}
+.cardNameHeader{
+    margin: 10px 10px;
+    font-size: 20px;
+}
+.cardInfoList{
+    padding: 10px;
+    list-style-type:none;
+    margin-top: 0px;
+}
+.advInfoCardContainer { 
+    width: 100vw;
+    height: 100vh; 
+    display: grid;
+    grid-template-columns: 0.5fr 2fr 0.5fr;
+    grid-template-rows: 0.5fr 2fr 0.5fr;
+    gap: 0px 0px;
+    grid-auto-flow: row;
+    grid-template-areas:
+      ". . ."
+      ". advancedInfoCard ."
+      ". . .";
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    justify-content: center; 
+    align-content: center; 
+    justify-items: center; 
+    align-items: center;
+    z-index: -1;
+    background-color: rgb(0, 0, 0, 0);
+}
+.advancedInfoCard{
+    background-color: beige;
+    position: fixed;
+    z-index: 2;
+    display: none;
+    margin: 10px;
+    border: solid;
+    border-radius: 10px;
+    padding: 20px;
+    grid-area: advancedInfoCard;
+    height: 75%;
+    width: 400px;
+    /* width: 25%; */
+    overflow: auto;
+    /* hide scrollbar for explorer & edge */
+    -ms-overflow-style: none;
+
+    /* firefox hide scrollbar */
+    scrollbar-width: none;
+}
+
+/* hide scrollbar on .advancedInfoCard */
+.advancedInfoCard::-webkit-scrollbar {
+    display: none;
+}
+.advancedInfoCard ul{
+    list-style-type: none;
+    padding: 10px;
+}
+.advInfoClose{
+    position: sticky;
+    float: right;
+    top: 0px;
+    transition-duration: 0.1s;
+}
+.advInfoClose:hover{
+    cursor: pointer;
+    transform: scale(1.2);
+    transition-duration: 0.1s;
+}
+.advInfoCatSelect{
+    background: none;
+    border: none;
+    font-size: 20px;
+    text-decoration: underline;
+    text-underline-offset: 20%;
+    font-family: 'Poppins-Medium', Fallback, sans-serif;
+    transition-duration: 0.1s;
+}
+.advInfoCatSelect img{
+    transition-duration: 0.6s;
+}
+.advInfoCatSelect:hover{
+    cursor: pointer;
+}
+.rotateArrow{
+    transform: rotate(180deg);
+    transition-duration: 0.6s;
+}
+
+.formArea{
+    background-color: beige;
+    border: none;
+    border-radius: 5px;
+    padding: 30px;
+    margin: 20px 0px;
+}
+.inputArea{
+    padding: 20px 0px;
+}
+.grunnleggendeData{
+    display: grid; 
+    grid-auto-columns: 1fr; 
+    grid-template-columns: 1.1fr; 
+    /*grid-template-rows: 1fr 1fr 1fr 1fr;*/ 
+    gap: 0px 0px; 
+    grid-template-areas: 
+        "."
+        "."
+        "."
+        "."; 
+}
+.inputTitle{
+    padding-left: 20px;
+    margin-top: 20px;
+}
+.userInfoInput{
+    margin: 10px;
+    padding: 10px;
+    outline: solid;
+    outline-width: 0.6px;
+    border-radius: 3px;
+    height: fit-content;
+    background-color: white;
+    border: none;
+}
+
+.userInfoInput::-webkit-outer-spin-button,
+.userInfoInput::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+.userInfoInput[type=number] {
+  -moz-appearance: textfield;
+}
+
+.userInfoInput:hover{
+    /* margin: 9px; */
+    outline-width: 3px;
+    /* overflow: hidden; */
+}
+.quadInputField{
+    display: grid; 
+    grid-auto-columns: 1fr; 
+    grid-template-columns: 1fr 1fr; 
+    grid-template-rows: 0.7fr 1.3fr 0.7fr 1.3fr; 
+    gap: 0px 0px; 
+    grid-template-areas: 
+        ". ."
+        ". ."
+        ". ."
+        ". .";
+}
+.quadInputFieldScaleable {  
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-auto-columns: 1fr;
+    gap: 0px 0px;
+    grid-auto-flow: row;
+    grid-template-areas:
+      ". ."
+      ". .";
+}  
+.duoInputField{
+    display: grid; 
+    grid-auto-columns: 1fr; 
+    grid-template-columns: 1fr 1fr; 
+    grid-template-rows: 0.2fr 0.2fr; 
+    gap: 0px 0px; 
+    grid-template-areas: 
+        ". ."
+        ". .";
+    max-height: 100px;
+}
+.oneInputField{
+    display: grid; 
+    grid-auto-columns: 1fr; 
+    grid-template-columns: 0.5fr; 
+    grid-template-rows: 0.7fr 1.3fr; 
+    gap: 0px 0px; 
+    grid-template-areas: 
+        "."
+        ".";
+    padding-top: 0px;
+}
+
+.Per:hover, .pål:hover{
+    cursor:progress;
+    transition-duration: 50s;
+    transform: scale(30.0);
+    transform-origin: left;
+}
+/*------------------------------Stiler for mindre klasser med begrenset bruk------------------------------------------*/
+
+.noBotPadd{
+    padding-bottom: 0px;
+}
+.noTopPadd{
+    padding-top: 0px;
+}
+.hidden {
+    display: none;
+}
+.noScroll{
+    overflow: hidden;
+}
+.cardViewBackground{
+    background-color: black;
+}
+.inputScalable {  
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 0.7fr 1.3fr;
+    grid-auto-columns: 1fr;
+    gap: 0px 0px;
+    grid-auto-flow: row;
+    /*justify-content: left;
+    align-content: left;
+    justify-items: left;
+    align-items: left;*/
+    grid-template-areas:
+      "."
+      ".";
+}
+.inputScalableSelection {  
+    /* display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 0.7fr 1.3fr 1fr;
+    grid-auto-columns: 1fr;
+    gap: 0px 0px;
+    grid-auto-flow: row;
+    grid-template-areas:
+      "."
+      "."
+      ".";
+    padding-bottom: 100px; */
+    display: grid; 
+    grid-auto-columns: 1fr; 
+    grid-template-columns: 1.7fr 0.3fr; 
+    grid-template-rows: 0.7fr 1.3fr; 
+    gap: 0px 0px; 
+    grid-template-areas: 
+        "label empty"
+        "input button"; 
+}
+
+.inputScalableSelection .inputTitle{
+    grid-area: label;
+}
+.inputScalableSelection .userInfoInput{
+    grid-area: input;
+}
+.inputScalableSelection .suggestions1Contain, .inputScalableSelection .suggestions2Contain{
+    grid-area: button;
+}
+  
+.oneInputScalable {  
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    grid-auto-columns: 1fr;
+    gap: 0px 0px;
+    grid-auto-flow: row;
+    /*justify-content: center;
+    align-content: center;
+    justify-items: center;
+    align-items: center;*/
+    grid-template-areas:
+      ". .";
+}
+.suggestions1Contain, .suggestions2Contain{
+    position: relative;
+}
+.suggestions1DropBtn, .suggestions2DropBtn {
+    padding: 10px;
+    margin: 10px;
+    border-radius: 5px;
+    border-width: 1px;
+    transition-duration: 0.05s;
+}
+.suggestions1DropBtn:hover, .suggestions2DropBtn:hover{
+    background: gray;
+    transition-duration: 0.05s;
+    cursor: pointer;
+}
+.suggestions1, .suggestions2{
+    position: absolute;
+    background-color: white;
+    padding: 0px;
+    text-align: left;
+    /* padding-right: 40px; */
+    border: none;
+    border-radius: 10px;
+}
+.suggestion button{
+    padding: 10px;
+    background: none;
+    border: none;
+    width: 100px;
+    height: 30px;
+    display: inline-block;
+    text-align: left;
+}
+.suggestion button:hover{
+    background: gray;
+    cursor: pointer; 
+}
+
+.bomb {
+    margin-top: 1000px;
+}
+
+.ugyldig{
+    outline-color: red;
+    outline-width: 2px;
+}
+
+/* TODO: Fix */
+  
+  
+
+/*------------------------------Media queries-------------------------------*/

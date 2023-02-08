@@ -163,16 +163,29 @@ h3{
     border-radius: 10px;
     padding: 20px;
     grid-area: advancedInfoCard;
+    height: 75%;
+    width: 400px;
+    /* width: 25%; */
+    overflow: auto;
+    /* hide scrollbar for explorer & edge */
+    -ms-overflow-style: none;
+
+    /* firefox hide scrollbar */
+    scrollbar-width: none;
+}
+
+/* hide scrollbar on .advancedInfoCard */
+.advancedInfoCard::-webkit-scrollbar {
+    display: none;
 }
 .advancedInfoCard ul{
     list-style-type: none;
     padding: 10px;
 }
 .advInfoClose{
-    position: absolute;
+    position: sticky;
+    float: right;
     top: 0px;
-    right: 10px;
-    margin: 20px;
     transition-duration: 0.1s;
 }
 .advInfoClose:hover{

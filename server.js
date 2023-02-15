@@ -32,6 +32,7 @@ const db = getFirestore();
 // middleware
 server.use(express.static('public'));
 server.use(express.json());
+server.use(cookieParser())
 
 // view engine
 server.set('view engine', 'ejs');
@@ -83,9 +84,9 @@ async function mail(userDetails) {
   
     // send mail with defined transport object
     let info = await transporter.sendMail({
-      from: '"Konrad Password services" <foo@example.com>', // sender address
+      from: '"NAVTest Password services" <foo@example.com>', // sender address
       to: userDetails.email, // list of receivers
-      subject: "KonradTestSite - Password reset request", // Subject line
+      subject: "NAVTestSite - Password reset request", // Subject line
       text: `Hello ${userDetails.username}
       <br><br>
       here is your password reset link: http://localhost/reset?email=${userDetails.email}&token=${token}

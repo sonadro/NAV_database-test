@@ -1,4 +1,5 @@
 const jwt = require("jsonwebtoken")
+const cookieParser = require("cookie-parser")
 
 const requireAuth = (req, res, next) => {
 

@@ -9,7 +9,7 @@ router.get('/om-siden', authController.om_get);
 router.get('/admin', authController.adminMain_get);
 router.get('/admin/form', authController.adminForm_get);
 router.get('/login', authController.login_get);
-router.get('/create', authController.create_get);
+router.get('/create', requireAuth, authController.create_get);
 router.get('/logout', authController.logout_get);
 router.get('/reset', authController.reset_get);
 

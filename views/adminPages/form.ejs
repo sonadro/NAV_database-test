@@ -7,6 +7,18 @@
 
 <%- include('../partials/nav'); -%>
 
+    <div class="ugyldigInputContainer">
+        <div class="ugyldigInputPopup hidden">
+            <p>Oops! Du har skrevet noe feil i feltene. Bruk knappene under for å navigere til feltene dette gjelder.</p>
+            <br>
+            <p>Index: <span class="index">-1</span></p>
+            <div>
+                <button class="forrige">Forrige felt</button>
+                <button class="neste">Neste felt</button>
+            </div>
+        </div>
+    </div>
+
     <form class="grunnleggendeData formArea">
         <h3>Grunnleggende data:</h3>
         <div class="quadInputFieldScaleable noBotPadd inputArea">
@@ -326,5 +338,6 @@
     <!-- scripts -->
     <script src="/JS/form.js"></script>
     <script src="/JS/regex.js"></script>
+    <script src="/JS/formInvalidInputCheck.js"></script>
 
 <%- include('../partials/footer') -%>

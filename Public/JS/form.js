@@ -119,20 +119,8 @@ function addParents(){
     });
 }
 
-// event listeners
-statusField.addEventListener("input", e => {
-    //console.log(e);
-    if(statusField.value == statusFieldDead.value){
-        statusChangeField.classList.remove("hidden");
-        statusChangeFieldLabel.classList.remove("hidden");
-    }else{
-        statusChangeField.classList.add("hidden");
-        statusChangeFieldLabel.classList.add("hidden");
-    }
-})
-
-// Form event listener
-submitBtn.addEventListener('click', e => {
+// ON SUBMIT FUNKSJON -------------------------------
+const onSubmit = function() {
     e.preventDefault();
     const foreldre = [grunnleggendeDataForm.forelder1.value, grunnleggendeDataForm.forelder2.value];
     const NAV = {
@@ -208,7 +196,19 @@ submitBtn.addEventListener('click', e => {
 
 
     addDoc(brukerObjekt, 'brukere');
-});
+}
+
+// event listeners
+statusField.addEventListener("input", e => {
+    //console.log(e);
+    if(statusField.value == statusFieldDead.value){
+        statusChangeField.classList.remove("hidden");
+        statusChangeFieldLabel.classList.remove("hidden");
+    }else{
+        statusChangeField.classList.add("hidden");
+        statusChangeFieldLabel.classList.add("hidden");
+    }
+})
 
 // ektefelle felt bare vises hvis personen er gift
 grunnleggendeDataForm.ekteskap.addEventListener('input', e => {

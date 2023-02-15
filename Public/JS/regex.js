@@ -14,6 +14,7 @@ grunnleggendeDataForm.fornavn.addEventListener('input', e => {
         console.log("Ugyldig navn");
         element.classList.add("ugyldig");
     }
+    getNewInvalids();
 })
 
 grunnleggendeDataForm.etternavn.addEventListener('input', e => {
@@ -28,6 +29,7 @@ grunnleggendeDataForm.etternavn.addEventListener('input', e => {
         console.log("Ugyldig etternavn");
         element.classList.add("ugyldig");
     }
+    getNewInvalids();
 })
 
 grunnleggendeDataForm.forelder1.addEventListener('input', e => {
@@ -42,6 +44,7 @@ grunnleggendeDataForm.forelder1.addEventListener('input', e => {
         console.log("Ugyldig forelder");
         element.classList.add("ugyldig");
     }
+    getNewInvalids();
 })
 
 grunnleggendeDataForm.forelder2.addEventListener('input', e => {
@@ -56,6 +59,7 @@ grunnleggendeDataForm.forelder2.addEventListener('input', e => {
         console.log("Ugyldig forelder");
         element.classList.add("ugyldig");
     }
+    getNewInvalids();
 })
 
 grunnleggendeDataForm.barn.addEventListener('input', e => {
@@ -70,6 +74,7 @@ grunnleggendeDataForm.barn.addEventListener('input', e => {
         console.log("Ugyldig barn");
         element.classList.add("ugyldig");
     }
+    getNewInvalids();
 })
 
 grunnleggendeDataForm.postnummer.addEventListener('input', e => {
@@ -84,6 +89,7 @@ grunnleggendeDataForm.postnummer.addEventListener('input', e => {
         console.log("Ugyldig postnummer");
         element.classList.add("ugyldig");
     }
+    getNewInvalids();
 })
 
 grunnleggendeDataForm.land.addEventListener('input', e => {
@@ -98,6 +104,7 @@ grunnleggendeDataForm.land.addEventListener('input', e => {
         console.log("Ugyldig land");
         element.classList.add("ugyldig");
     }
+    getNewInvalids();
 })
 
 grunnleggendeDataForm.botid.addEventListener('input', e => {
@@ -112,6 +119,7 @@ grunnleggendeDataForm.botid.addEventListener('input', e => {
         console.log("Ugyldig botid");
         element.classList.add("ugyldig");
     }
+    getNewInvalids();
 })  
 
 //Økonomiske forhold
@@ -128,6 +136,7 @@ grunnleggendeDataForm.botid.addEventListener('input', e => {
         console.log("Ugyldig bankkonto");
         element.classList.add("ugyldig");
     }
+    getNewInvalids();
 })
 
 økonomiskeForholdForm.kredittkort.addEventListener('input', e => {
@@ -142,6 +151,7 @@ grunnleggendeDataForm.botid.addEventListener('input', e => {
         console.log("Ugyldig kredittkort");
         element.classList.add("ugyldig");
     }
+    getNewInvalids();
 })
 
 økonomiskeForholdForm.lan.addEventListener('input', e => {
@@ -156,6 +166,7 @@ grunnleggendeDataForm.botid.addEventListener('input', e => {
         console.log("Ugyldig lån");
         element.classList.add("ugyldig");
     }
+    getNewInvalids();
 })
 
 økonomiskeForholdForm.fullmakt.addEventListener('input', e => {
@@ -170,6 +181,7 @@ grunnleggendeDataForm.botid.addEventListener('input', e => {
         console.log("Ugyldig fullmakt");
         element.classList.add("ugyldig");
     }
+    getNewInvalids();
 })
 
 //NAV
@@ -186,6 +198,7 @@ NAVForm.sykepenger.addEventListener('input', e => {
         console.log("Ugyldig sykepengeverdi");
         element.classList.add("ugyldig");
     }
+    getNewInvalids();
 })
 
 //Arbeidsforhold
@@ -202,6 +215,7 @@ arbeidsForholdForm.forrigeManed.addEventListener('input', e => {
         console.log("Ugyldig arbeidstid");
         element.classList.add("ugyldig");
     }
+    getNewInvalids();
 })
 
 arbeidsForholdForm.denneManed.addEventListener('input', e => {
@@ -216,6 +230,7 @@ arbeidsForholdForm.denneManed.addEventListener('input', e => {
         console.log("Ugyldig arbeidstid");
         element.classList.add("ugyldig");
     }
+    getNewInvalids();
 })
 
 //Inntekt fortid
@@ -232,6 +247,7 @@ inntektFortidForm.inntekt2019.addEventListener('input', e => {
         console.log("Ugyldig inntekt");
         element.classList.add("ugyldig");
     }
+    getNewInvalids();
 })
 
 inntektFortidForm.inntekt2020.addEventListener('input', e => {
@@ -246,6 +262,7 @@ inntektFortidForm.inntekt2020.addEventListener('input', e => {
         console.log("Ugyldig inntekt");
         element.classList.add("ugyldig");
     }
+    getNewInvalids();
 })
 
 inntektFortidForm.inntekt2021.addEventListener('input', e => {
@@ -260,6 +277,7 @@ inntektFortidForm.inntekt2021.addEventListener('input', e => {
         console.log("Ugyldig inntekt");
         element.classList.add("ugyldig");
     }
+    getNewInvalids();
 })
 
 //Inntekt 2022
@@ -276,6 +294,7 @@ inntekt2022Form.inntekt1.addEventListener('input', e => {
         console.log("Ugyldig inntekt");
         element.classList.add("ugyldig");
     }
+    getNewInvalids();
 })
 
 inntekt2022Form.inntekt2.addEventListener('input', e => {
@@ -290,6 +309,7 @@ inntekt2022Form.inntekt2.addEventListener('input', e => {
         console.log("Ugyldig inntekt");
         element.classList.add("ugyldig");
     }
+    getNewInvalids();
 })
 
 inntekt2022Form.inntekt3.addEventListener('input', e => {
@@ -304,6 +324,7 @@ inntekt2022Form.inntekt3.addEventListener('input', e => {
         console.log("Ugyldig inntekt");
         element.classList.add("ugyldig");
     }
+    getNewInvalids();
 })
 
 inntekt2022Form.inntekt4.addEventListener('input', e => {
@@ -318,6 +339,7 @@ inntekt2022Form.inntekt4.addEventListener('input', e => {
         console.log("Ugyldig inntekt");
         element.classList.add("ugyldig");
     }
+    getNewInvalids();
 })
 
 inntekt2022Form.inntekt5.addEventListener('input', e => {
@@ -332,6 +354,7 @@ inntekt2022Form.inntekt5.addEventListener('input', e => {
         console.log("Ugyldig inntekt");
         element.classList.add("ugyldig");
     }
+    getNewInvalids();
 })
 
 inntekt2022Form.inntekt6.addEventListener('input', e => {
@@ -346,6 +369,7 @@ inntekt2022Form.inntekt6.addEventListener('input', e => {
         console.log("Ugyldig inntekt");
         element.classList.add("ugyldig");
     }
+    getNewInvalids();
 })
 
 inntekt2022Form.inntekt7.addEventListener('input', e => {
@@ -360,6 +384,7 @@ inntekt2022Form.inntekt7.addEventListener('input', e => {
         console.log("Ugyldig inntekt");
         element.classList.add("ugyldig");
     }
+    getNewInvalids();
 })
 
 inntekt2022Form.inntekt8.addEventListener('input', e => {
@@ -374,4 +399,5 @@ inntekt2022Form.inntekt8.addEventListener('input', e => {
         console.log("Ugyldig inntekt");
         element.classList.add("ugyldig");
     }
+    getNewInvalids();
 })

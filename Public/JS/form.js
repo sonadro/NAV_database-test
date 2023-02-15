@@ -40,8 +40,16 @@ const addDoc = function(obj, collection) {
             count: counter
         });
 
-        // Add document
-        db.collection(`${collection}`).doc(`${counter}`).set(obj);
+        try {
+            // Add document
+            db.collection(`${collection}`).doc(`${counter}`).set(obj);
+        } catch (err) {
+            console.error(err);
+
+            db.collection('databaseValues').doc('generalUserData').set({
+                count: counter - 1
+            });
+        }
     }, 1000);
 }
 
@@ -120,8 +128,7 @@ function addParents(){
 }
 
 // ON SUBMIT FUNKSJON -------------------------------
-const onSubmit = function() {
-    e.preventDefault();
+function onSubmit() {
     const foreldre = [grunnleggendeDataForm.forelder1.value, grunnleggendeDataForm.forelder2.value];
     const NAV = {
         medlem: NAVForm.medlem.value,

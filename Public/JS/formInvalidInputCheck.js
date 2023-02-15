@@ -1,20 +1,55 @@
 const popup = document.querySelector('.ugyldigInputPopup');
-const indexText = document.querySelector('.index');
+
+let submitted = false;
 
 let invalidInputs;
-let ugyldigIndex = -1;
+let ugyldigIndex = 0;
+
+function getNewInvalids() {
+    invalidInputs = Array.from(document.querySelectorAll('.ugyldig'));
+
+    allInputs = Array.from(document.querySelectorAll('.userInfoInput'));
+
+    allInputs.forEach(input => {
+        if (!input.classList.contains('ugyldig')) {
+            input.classList.remove('popupHighlight');
+        }
+    });
+
+    if (!invalidInputs.length) return;
+
+    if (submitted) {
+        try {
+            invalidInputs[ugyldigIndex].classList.add('popupHighlight');
+        } catch (err) {
+            console.error(err)
+        }
+    }
+
+    if (submitted) {
+        if (invalidInputs.length) {
+            popup.classList.remove('hidden');
+        } else {
+            popup.classList.add('hidden');
+        }
+    }
+}
 
 // Form event listener
 submitBtn.addEventListener('click', e => {
-    // alle invalid inputs
-    invalidInputs = Array.from(document.querySelectorAll('.ugyldig'));
+    invalidInputs[ugyldigIndex].classList.add('popupHighlight');
+    invalidInputs[ugyldigIndex].scrollIntoView();
+    scrollBy(0, -150);
+
+    submitted = true;
 
     popup.classList.add('hidden');
     if (invalidInputs.length) {
         popup.classList.remove('hidden');
         console.log(invalidInputs);
+    } else {
+        onSubmit();
     }
-    // onSubmit();
 });
 
 const prevBtn = document.querySelector('.forrige');
@@ -46,6 +81,4 @@ function handleIndexChange(increment) {
     invalidInputs[ugyldigIndex].classList.add('popupHighlight');
     invalidInputs[ugyldigIndex].scrollIntoView();
     scrollBy(0, -150);
-
-    indexText.textContent = ugyldigIndex;
 }

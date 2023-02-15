@@ -144,8 +144,8 @@ grunnleggendeDataForm.land.addEventListener('input', e => {
     }else{
         console.log("Ugyldig land");
         element.classList.add("ugyldig");
-        getNewInvalids();
     }
+    getNewInvalids();
 })
 
 grunnleggendeDataForm.botid.addEventListener('input', e => {

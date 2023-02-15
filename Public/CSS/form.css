@@ -218,6 +218,10 @@
     outline-color: #ff0000;
     outline-width: 2px;
 }
+
+input[disabled]{
+    background-color: rgb(165, 165, 165);
+}
 .popupHighlight {
     background: yellow;
 }

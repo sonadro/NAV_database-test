@@ -1,3 +1,17 @@
+//Last inn land-databasen
+let landArray = [];
+let selectedLand;
+db.collection("land").get().then(snapshot => {
+    snapshot.docs.forEach((doc) => {
+        let land = {
+            navn: doc.data().navn,
+            post: doc.data().postRegex
+        }
+        landArray.push(land);
+    })
+    console.log(landArray);
+})
+
 //-------------------------------------------Forms regex listeners-------------------------------------------
 
 //Grunnleggende data
@@ -77,11 +91,38 @@ grunnleggendeDataForm.barn.addEventListener('input', e => {
     getNewInvalids();
 })
 
+
+grunnleggendeDataForm.land.addEventListener('input', e => {
+    let element = grunnleggendeDataForm.land
+    let name = element.value;
+    console.log(name);
+    let nameRegex = /^[a-zæøåÆØÅ ]{2,}$/i;
+    for(i = 0; i < landArray.length; i++){
+        grunnleggendeDataForm.postnummer.value = "";
+        if(nameRegex.test(name) == true && landArray[i].navn == name){
+            console.log("Gyldig land");
+            selectedLand = landArray[i];
+            element.classList.remove("ugyldig")
+            grunnleggendeDataForm.postnummer.removeAttribute('disabled');
+            break;
+        }else{
+            console.log("Ugyldig land");
+            selectedLand = undefined;
+            element.classList.add("ugyldig");
+            grunnleggendeDataForm.postnummer.setAttribute('disabled', true);
+        }
+    }
+    getNewInvalids();
+})
+
 grunnleggendeDataForm.postnummer.addEventListener('input', e => {
     let element = grunnleggendeDataForm.postnummer
     let num = element.value;
     console.log(num);
-    let nameRegex = /^[0-9]+$/;
+    let temp = `^${selectedLand.post}$`;
+    console.log(temp);
+    let nameRegex = new RegExp(`${temp}`);// /^[0-9]+$/;
+    console.log(typeof nameRegex, nameRegex)
     if(nameRegex.test(num) == true){
         console.log("Gyldig postnummer");
         element.classList.remove("ugyldig")
@@ -103,8 +144,8 @@ grunnleggendeDataForm.land.addEventListener('input', e => {
     }else{
         console.log("Ugyldig land");
         element.classList.add("ugyldig");
+        getNewInvalids();
     }
-    getNewInvalids();
 })
 
 grunnleggendeDataForm.botid.addEventListener('input', e => {

@@ -23,6 +23,7 @@ let statusField = document.querySelector("#status");
 let statusFieldDead = document.querySelector("#statusDead");
 let statusChangeField = document.querySelector("#endringStatus");
 let statusChangeFieldLabel = document.querySelector("#endringStatusLabel");
+const countryField = grunnleggendeDataForm.land;
 
 // funksjoner
 const addDoc = function(obj, collection) {

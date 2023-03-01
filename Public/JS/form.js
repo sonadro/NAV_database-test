@@ -44,6 +44,7 @@ const addDoc = function(obj, collection) {
         try {
             // Add document
             db.collection(`${collection}`).doc(`${counter}`).set(obj);
+            console.log(obj);
         } catch (err) {
             console.error(err);
 
@@ -77,6 +78,9 @@ const getDate = function() {
 
     grunnleggendeDataForm.fodselsdato.setAttribute('max', currentDate);
     grunnleggendeDataForm.fodselsdato.setAttribute('min', earliestDate);
+
+    grunnleggendeDataForm.endringStatus.setAttribute('max', currentDate);
+    grunnleggendeDataForm.endringStatus.setAttribute('min', earliestDate);
 }
 
 // Fetch dokumenter
@@ -130,6 +134,20 @@ function addParents(){
 
 // ON SUBMIT FUNKSJON -------------------------------
 function onSubmit() {
+    // fødselsdato
+    const args = grunnleggendeDataForm.fodselsdato.value.split('-');
+
+    const bornDay = args[2];
+    const bornMonth = args[1];
+    const bornYear = args[0];
+
+    // endringstatus
+    const endringStatusArgs = grunnleggendeDataForm.endringStatus.value.split('-');
+
+    const endringDag = endringStatusArgs[2];
+    const endringMåned = endringStatusArgs[1];
+    const endringÅr = endringStatusArgs[0];
+
     const foreldre = [grunnleggendeDataForm.forelder1.value, grunnleggendeDataForm.forelder2.value];
     const NAV = {
         medlem: NAVForm.medlem.value,
@@ -188,10 +206,10 @@ function onSubmit() {
     const brukerObjekt = {
         fornavn: grunnleggendeDataForm.fornavn.value,
         etternavn: grunnleggendeDataForm.etternavn.value,
-        fodselsdato: grunnleggendeDataForm.fodselsdato.value,
+        fodselsdato: `${bornDay}.${bornMonth}.${bornYear}`,
         alder: age,
         status: grunnleggendeDataForm.status.value,
-        endringStatus: grunnleggendeDataForm.endringStatus.value,
+        endringStatus: `${endringDag}.${endringMåned}.${endringÅr}`,
         ekteskap: grunnleggendeDataForm.ekteskap.value,
         ektefelle: grunnleggendeDataForm.ektefelle.value,
         foreldre,

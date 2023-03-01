@@ -2,7 +2,7 @@ const popup = document.querySelector('.ugyldigInputPopup');
 
 let submitted = false;
 
-let invalidInputs;
+let invalidInputs = 'nothing-yet';
 let ugyldigIndex = 0;
 
 function getNewInvalids() {
@@ -37,14 +37,17 @@ function getNewInvalids() {
 
 // Form event listener
 submitBtn.addEventListener('click', e => {
-    invalidInputs[ugyldigIndex].classList.add('popupHighlight');
-    invalidInputs[ugyldigIndex].scrollIntoView();
-    scrollBy(0, -150);
+    if (!invalidInputs === 'nothing-yet') {
+        invalidInputs[ugyldigIndex].classList.add('popupHighlight');
+        invalidInputs[ugyldigIndex].scrollIntoView();
+        scrollBy(0, -150);
+    }
 
     submitted = true;
 
     popup.classList.add('hidden');
-    if (invalidInputs.length) {
+
+    if (typeof invalidInputs === 'array') {
         popup.classList.remove('hidden');
         console.log(invalidInputs);
     } else {

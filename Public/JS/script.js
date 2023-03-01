@@ -100,6 +100,178 @@ const openAdvancedInfo = id => {
 
                 console.log(data);
 
+                // sjekkene under er for å passe på at dataen vises riktig, f.eks død/lever i stedet for 0/1. så spares litt lagringsplass i databasen
+
+                // livsstatus sjekk
+                switch(data.status) {
+                    case "0":
+                        data.status = 'Død';
+                        break;
+                    case "1":
+                        data.status = 'Lever';
+                        break;
+                    default:
+                        data.status = 'Ugyldig';
+                        break;
+                }
+
+                // ektefelle sjekk
+                switch(data.ekteskap) {
+                    case "0":
+                        data.ekteskap = 'Enslig';
+                        break;
+                    case "1":
+                        data.ekteskap = 'Gift';
+                        break;
+                    case "2":
+                        data.ekteskap = 'Skilt';
+                        break;
+                    default:
+                        data.ekteskap = 'Ugyldig';
+                        break;
+                }
+
+                // alvorlig syk sjekk
+                switch(data.avansertInfo[1].alvorligSyk) {
+                    case "0":
+                        data.avansertInfo[1].alvorligSyk = 'Nei';
+                        break;
+                    case "1":
+                        data.avansertInfo[1].alvorligSyk = 'Ja';
+                        break;
+                    default:
+                        data.avansertInfo[1].flyktning = 'Ugyldig';
+                        break;
+                }
+
+                // flyktning sjekk
+                switch(data.avansertInfo[1].flyktning) {
+                    case "0":
+                        data.avansertInfo[1].flyktning = 'Nei';
+                        break;
+                    case "1":
+                        data.avansertInfo[1].flyktning = 'Ja';
+                        break;
+                    default:
+                        data.avansertInfo[1].flyktning = 'Ugyldig';
+                        break;
+                }
+
+                // gravid sjekk
+                switch(data.avansertInfo[1].gravid) {
+                    case "0":
+                        data.avansertInfo[1].gravid = 'Nei';
+                        break;
+                    case "1":
+                        data.avansertInfo[1].gravid = 'Ja';
+                        break;
+                    default:
+                        data.avansertInfo[1].gravid = 'Ugyldig';
+                }
+
+                // NAV medlem sjekk
+                switch(data.avansertInfo[2].medlem) {
+                    case "0":
+                        data.avansertInfo[2].medlem = 'Nei';
+                        break;
+                    case "1":
+                        data.avansertInfo[2].medlem = 'Ja';
+                        break;
+                    default:
+                        data.avansertInfo[2].medlem = 'Ugyldig';
+                        break;
+                }
+
+                // ufør sjekk
+                switch(data.avansertInfo[2].ufor) {
+                    case "0":
+                        data.avansertInfo[2].ufor = 'Nei';
+                        break;
+                    case "1":
+                        data.avansertInfo[2].ufor = 'Ja';
+                        break;
+                    default:
+                        data.avansertInfo[2].ufor = 'Ugyldig';
+                }
+
+                // pensjonist sjekk
+                switch(data.avansertInfo[2].pensjonist) {
+                    case "0":
+                        data.avansertInfo[2].pensjonist = 'Nei';
+                        break;
+                    case "1":
+                        data.avansertInfo[2].pensjonist = 'Ja';
+                        break;
+                    default:
+                        data.avansertInfo[2].pensjonist = 'Ugyldig';
+                        break;
+                }
+
+                // yrkesskade sjekk
+                switch (data.avansertInfo[2].yrkesskade) {
+                    case "0":
+                        data.avansertInfo[2].yrkesskade = 'Nei';
+                        break;
+                    case "1":
+                        data.avansertInfo[2].yrkesskade = 'Ja';
+                        break;
+                    default:
+                        data.avansertInfo[2].yrkesskade = 'Ugyldig';
+                        break;
+                }
+
+                // dagpenger sjekk
+                switch (data.avansertInfo[2].dagpenger) {
+                    case "0":
+                        data.avansertInfo[2].dagpenger = 'Nei';
+                        break;
+                    case "1":
+                        data.avansertInfo[2].dagpenger = 'Ja';
+                        break;
+                    default:
+                        data.avansertInfo[2].dagpenger = 'Ugyldig';
+                        break;
+                }
+
+                // stipend sjekk
+                switch(data.avansertInfo[3].stipend) {
+                    case "0":
+                        data.avansertInfo[3].stipend = 'Nei';
+                        break;
+                    case "1":
+                        data.avansertInfo[3].stipend = 'Ja';
+                        break;
+                    default:
+                        data.avansertInfo[3].stipend= 'Ugyldig';
+                        break;
+                }
+
+                // studiested sjekk
+                switch(data.avansertInfo[3].studiested) {
+                    case "0":
+                        data.avansertInfo[3].studiested = 'Nei';
+                        break;
+                    case "1":
+                        data.avansertInfo[3].studiested = 'Ja';
+                        break;
+                    default:
+                        data.avansertInfo[3].studiested = 'Ugyldig';
+                        break;
+                }
+
+                // freelancer sjekk
+                switch (data.avansertInfo[4].freelancer) {
+                    case "0":
+                        data.avansertInfo[4].freelancer = 'Nei';
+                        break;
+                    case "1":
+                        data.avansertInfo[4].freelancer = 'Ja';
+                        break;
+                    default:
+                        data.avansertInfo[4].freelancer = 'Ugyldig';
+                        break;
+                }
+
                 // indexes
                 let loadIndexes = [];
 
@@ -190,17 +362,12 @@ const openAdvancedInfo = id => {
 
 // HTML-injection
 const genTemplate = function(obj, id) {
-    let status = 'Lever';
-    if (obj.status == 0) {
-        status = 'Død'
-    }
-
     const template = `
         <div class="userCardContainer" id="${id}">
             <h5 class="cardNameHeader" id="${id}">${id} - ${obj.fornavn} ${obj.etternavn}</h5>
             <ul class="cardInfoList" id="${id}">
                 <li class="cardInfoListElement" id="${id}">Alder: ${obj.alder}</li>
-                <li class="cardInfoListElement" id="${id}">Livsstatus: ${status}</li>
+                <li class="cardInfoListElement" id="${id}">Livsstatus: ${obj.status}</li>
                 <li class="cardInfoListElement" id="${id}">Postnummer: ${obj.postnummer}</li>
             </ul>
         </div>
@@ -216,6 +383,14 @@ const getDocs = function() {
         snapshot.forEach(doc => {
             let data = doc.data();
             data.id = doc.id;
+
+            // livsstatus sjekk
+            if (data.status === "0") {
+                data.status = 'Død';
+            } else {
+                data.status = 'Lever';
+            }
+
             dataArr.push(data);
         });
         dataArr.sort((a, b) => a.id - b.id);

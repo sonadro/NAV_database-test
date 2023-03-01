@@ -15,11 +15,12 @@ async function register() {
     if ((password == confirm)){
 
         let query = await adminRef.where("email", "==", email).get();
-        let query2 = await adminRef.where("username", "==", username.toLowerCase()).get();
+        let query2 = await adminRef.where("username", "==", username).get();
 
 
         console.log(query.empty);
         console.log(query2.empty);
+        console.log(query2);
 
         if (query.empty && query2.empty) {
 
@@ -42,14 +43,14 @@ async function register() {
             const data = await res.json()
     
             const details = {
-                email: email,
+                email: email.toLowerCase(),
                 username: username,
+                usernameLowerCase: username.toLowerCase(),
                 created_at: firebase.firestore.Timestamp.fromDate(now),
                 password: data.pass
             };
     
             console.log(details);
-            // console.log("duplicate counter: "+ await checkDuplicate());
             
             
                 // db.collection("adminCol").add(details).then(() => {

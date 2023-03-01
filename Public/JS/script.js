@@ -181,6 +181,14 @@ const openAdvancedInfo = id => {
                 inntekt6Elm.textContent = data.avansertInfo[loadIndexes[6]].inntekt6;
                 inntekt7Elm.textContent = data.avansertInfo[loadIndexes[6]].inntekt7;
                 inntekt8Elm.textContent = data.avansertInfo[loadIndexes[6]].inntekt8;
+
+                // hvis et felt i databasen er tomt, gi det en verdi
+                let allFields = Array.from(document.querySelectorAll('.advInfoField'));
+                allFields.forEach((field) => {
+                    if(!field.textContent){
+                        field.textContent = 'Ikke definert';
+                    }
+                });
             }
         });
     });

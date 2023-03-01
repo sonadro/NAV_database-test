@@ -2,19 +2,26 @@ const db = firebase.firestore();
 
 async function register() {
     const adminRef = db.collection("adminCol");
-    let email = document.getElementById("emailField").value
+    let email = document.getElementById("emailField").value.toLowerCase();
     let username = document.getElementById("usernameField").value
     let password = document.getElementById("passwordField").value
     let confirm = document.getElementById("confirmField").value
     let confirmWarning = document.getElementById("confirmWarning")
+    
+    console.log(email);
 
     confirmWarning.innerText = (password != confirm) ? "Your confirmation does not match!" : "";
 
     if ((password == confirm)){
 
         let query = await adminRef.where("email", "==", email).get();
+        let query2 = await adminRef.where("username", "==", username.toLowerCase()).get();
 
-        if (query.empty) {
+
+        console.log(query.empty);
+        console.log(query2.empty);
+
+        if (query.empty && query2.empty) {
 
             const now = new Date();
 

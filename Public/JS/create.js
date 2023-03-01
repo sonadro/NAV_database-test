@@ -1,27 +1,7 @@
 const db = firebase.firestore();
 
-
-async function checkDuplicate(username, email) {
-    var duplicate = 0;
-
-    db.collection("adminCol").where("username", "==", username).get().then(async (querySnapshot) => {
-        querySnapshot.forEach((doc) => {
-            // doc.data() is never undefined for query doc snapshots
-            const userDetails = doc.data()
-            duplicate += 1
-            console.log(userDetails);
-        });
-    }).then(() => {
-        console.log(duplicate);
-        return duplicate;
-    }).catch((error) => {
-        console.log("Error getting documents: ", error);
-    });
-    return duplicate;
-
-    }
-
 async function register() {
+    const adminRef = db.collection("adminCol");
     let email = document.getElementById("emailField").value
     let username = document.getElementById("usernameField").value
     let password = document.getElementById("passwordField").value
@@ -32,11 +12,9 @@ async function register() {
 
     if ((password == confirm)){
 
-    await checkDuplicate(username, email)
+        let query = await adminRef.where("email", "==", email).get();
 
-        console.log("duplicate counter: "+duplicate);
-
-        if (duplicate != 1) {
+        if (query.empty) {
 
             const now = new Date();
 
@@ -74,9 +52,10 @@ async function register() {
                 // });
 
         }
-        else if (duplicate >= 1) {
+        else {
             console.log("duplicate credentials detected!");
-        }
+          }  
+
 
       }
 }

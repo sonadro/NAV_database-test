@@ -285,6 +285,19 @@ grunnleggendeDataForm.fodselsdato.addEventListener('input', () => {
     }
 });
 
+function addChild() {
+    let childFields = grunnleggendeDataForm.barn.parentElement
+    console.log(childFields);
+
+    template = `<input class="userInfoInput" type="text">`
+    childFields.innerHTML += template
+}
+
+document.getElementById("addBarn").addEventListener("click", function(event){
+    addChild();
+    event.preventDefault()
+  });
+
 // kall funksjoner
 getDate();
 getDocs();

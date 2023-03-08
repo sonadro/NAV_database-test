@@ -20,11 +20,12 @@ grunnleggendeDataForm.fornavn.addEventListener('input', e => {
     let name = element.value;
     let nameRegex = /^[a-zæøåÆØÅ ]{2,}$/i;
     if(nameRegex.test(name) == true){
-        element.classList.remove("ugyldig")
+        element.classList.remove("ugyldig");
+        element.classList.remove('popupHighlight');
     }else{
         element.classList.add("ugyldig");
     }
-    getNewInvalids();
+    popup.getNewInvalidFields();
 })
 
 grunnleggendeDataForm.etternavn.addEventListener('input', e => {
@@ -32,11 +33,12 @@ grunnleggendeDataForm.etternavn.addEventListener('input', e => {
     let name = element.value;
     let nameRegex = /^.[a-zæøåÆØÅ ]{2,}$/i;
     if(nameRegex.test(name) == true){
-        element.classList.remove("ugyldig")
+        element.classList.remove("ugyldig");
+element.classList.remove('popupHighlight');
     }else{
         element.classList.add("ugyldig");
     }
-    getNewInvalids();
+    popup.getNewInvalidFields();
 })
 
 grunnleggendeDataForm.forelder1.addEventListener('input', e => {
@@ -44,11 +46,12 @@ grunnleggendeDataForm.forelder1.addEventListener('input', e => {
     let num = element.value;
     let nameRegex = /^[0-9]+$/;
     if(nameRegex.test(num) == true){
-        element.classList.remove("ugyldig")
+        element.classList.remove("ugyldig");
+element.classList.remove('popupHighlight');
     }else{
         element.classList.add("ugyldig");
     }
-    getNewInvalids();
+    popup.getNewInvalidFields();
 })
 
 grunnleggendeDataForm.forelder2.addEventListener('input', e => {
@@ -56,11 +59,12 @@ grunnleggendeDataForm.forelder2.addEventListener('input', e => {
     let num = element.value;
     let nameRegex = /^[0-9]+$/;
     if(nameRegex.test(num) == true){
-        element.classList.remove("ugyldig")
+        element.classList.remove("ugyldig");
+element.classList.remove('popupHighlight');
     }else{
         element.classList.add("ugyldig");
     }
-    getNewInvalids();
+    popup.getNewInvalidFields();
 })
 
 grunnleggendeDataForm.barn.addEventListener('input', e => {
@@ -68,11 +72,12 @@ grunnleggendeDataForm.barn.addEventListener('input', e => {
     let num = element.value;
     let nameRegex = /^[0-9]+$/;
     if(nameRegex.test(num) == true){
-        element.classList.remove("ugyldig")
+        element.classList.remove("ugyldig");
+element.classList.remove('popupHighlight');
     }else{
         element.classList.add("ugyldig");
     }
-    getNewInvalids();
+    popup.getNewInvalidFields();
 })
 
 
@@ -84,7 +89,8 @@ grunnleggendeDataForm.land.addEventListener('input', e => {
         grunnleggendeDataForm.postnummer.value = "";
         if(nameRegex.test(name) == true && landArray[i].navn == name){
             selectedLand = landArray[i];
-            element.classList.remove("ugyldig")
+            element.classList.remove("ugyldig");
+element.classList.remove('popupHighlight');
             grunnleggendeDataForm.postnummer.removeAttribute('disabled');
             break;
         }else{
@@ -93,7 +99,7 @@ grunnleggendeDataForm.land.addEventListener('input', e => {
             grunnleggendeDataForm.postnummer.setAttribute('disabled', true);
         }
     }
-    getNewInvalids();
+    popup.getNewInvalidFields();
 })
 
 grunnleggendeDataForm.postnummer.addEventListener('input', e => {
@@ -102,11 +108,12 @@ grunnleggendeDataForm.postnummer.addEventListener('input', e => {
     let temp = `^${selectedLand.post}$`;
     let nameRegex = new RegExp(`${temp}`);// /^[0-9]+$/;
     if(nameRegex.test(num) == true){
-        element.classList.remove("ugyldig")
+        element.classList.remove("ugyldig");
+element.classList.remove('popupHighlight');
     }else{
         element.classList.add("ugyldig");
     }
-    getNewInvalids();
+    popup.getNewInvalidFields();
 })
 
 grunnleggendeDataForm.land.addEventListener('input', e => {
@@ -114,11 +121,12 @@ grunnleggendeDataForm.land.addEventListener('input', e => {
     let name = element.value;
     let nameRegex = /^[a-zæøåÆØÅ ]{2,}$/i;
     if(nameRegex.test(name) == true){
-        element.classList.remove("ugyldig")
+        element.classList.remove("ugyldig");
+element.classList.remove('popupHighlight');
     }else{
         element.classList.add("ugyldig");
     }
-    getNewInvalids();
+    popup.getNewInvalidFields();
 })
 
 grunnleggendeDataForm.botid.addEventListener('input', e => {
@@ -126,11 +134,12 @@ grunnleggendeDataForm.botid.addEventListener('input', e => {
     let num = element.value;
     let nameRegex = /^[0-9]+$/;
     if(nameRegex.test(num) == true){
-        element.classList.remove("ugyldig")
+        element.classList.remove("ugyldig");
+element.classList.remove('popupHighlight');
     }else{
         element.classList.add("ugyldig");
     }
-    getNewInvalids();
+    popup.getNewInvalidInputFields();
 })  
 
 //Økonomiske forhold
@@ -140,11 +149,12 @@ grunnleggendeDataForm.botid.addEventListener('input', e => {
     let num = element.value;
     let nameRegex = /^[0-9]+$/;
     if(nameRegex.test(num) == true){
-        element.classList.remove("ugyldig")
+        element.classList.remove("ugyldig");
+element.classList.remove('popupHighlight');
     }else{
         element.classList.add("ugyldig");
     }
-    getNewInvalids();
+    popup.getNewInvalidInputFields();
 })
 
 økonomiskeForholdForm.kredittkort.addEventListener('input', e => {
@@ -152,11 +162,12 @@ grunnleggendeDataForm.botid.addEventListener('input', e => {
     let num = element.value;
     let nameRegex = /^[0-9]+$/;
     if(nameRegex.test(num) == true){
-        element.classList.remove("ugyldig")
+        element.classList.remove("ugyldig");
+element.classList.remove('popupHighlight');
     }else{
         element.classList.add("ugyldig");
     }
-    getNewInvalids();
+    popup.getNewInvalidInputFields();
 })
 
 økonomiskeForholdForm.lan.addEventListener('input', e => {
@@ -164,11 +175,12 @@ grunnleggendeDataForm.botid.addEventListener('input', e => {
     let num = element.value;
     let nameRegex = /^[0-9]+$/;
     if(nameRegex.test(num) == true){
-        element.classList.remove("ugyldig")
+        element.classList.remove("ugyldig");
+element.classList.remove('popupHighlight');
     }else{
         element.classList.add("ugyldig");
     }
-    getNewInvalids();
+    popup.getNewInvalidInputFields();
 })
 
 økonomiskeForholdForm.fullmakt.addEventListener('input', e => {
@@ -176,11 +188,12 @@ grunnleggendeDataForm.botid.addEventListener('input', e => {
     let num = element.value;
     let nameRegex =/^[0-9]+$/;
     if(nameRegex.test(num) == true){
-        element.classList.remove("ugyldig")
+        element.classList.remove("ugyldig");
+element.classList.remove('popupHighlight');
     }else{
         element.classList.add("ugyldig");
     }
-    getNewInvalids();
+    popup.getNewInvalidInputFields();
 })
 
 //NAV
@@ -190,11 +203,12 @@ NAVForm.sykepenger.addEventListener('input', e => {
     let num = element.value;
     let nameRegex =/^[0-9]+$/;
     if(nameRegex.test(num) == true){
-        element.classList.remove("ugyldig")
+        element.classList.remove("ugyldig");
+element.classList.remove('popupHighlight');
     }else{
         element.classList.add("ugyldig");
     }
-    getNewInvalids();
+    popup.getNewInvalidInputFields();
 })
 
 //Arbeidsforhold
@@ -204,11 +218,12 @@ arbeidsForholdForm.forrigeManed.addEventListener('input', e => {
     let num = element.value;
     let nameRegex =/^[0-9]+$/;
     if(nameRegex.test(num) == true){
-        element.classList.remove("ugyldig")
+        element.classList.remove("ugyldig");
+element.classList.remove('popupHighlight');
     }else{
         element.classList.add("ugyldig");
     }
-    getNewInvalids();
+    popup.getNewInvalidInputFields();
 })
 
 arbeidsForholdForm.denneManed.addEventListener('input', e => {
@@ -216,11 +231,12 @@ arbeidsForholdForm.denneManed.addEventListener('input', e => {
     let num = element.value;
     let nameRegex =/^[0-9]+$/;
     if(nameRegex.test(num) == true){
-        element.classList.remove("ugyldig")
+        element.classList.remove("ugyldig");
+element.classList.remove('popupHighlight');
     }else{
         element.classList.add("ugyldig");
     }
-    getNewInvalids();
+    popup.getNewInvalidInputFields();
 })
 
 //Inntekt fortid
@@ -230,11 +246,12 @@ inntektFortidForm.inntekt2019.addEventListener('input', e => {
     let num = element.value;
     let nameRegex =/^[0-9]+$/;
     if(nameRegex.test(num) == true){
-        element.classList.remove("ugyldig")
+        element.classList.remove("ugyldig");
+element.classList.remove('popupHighlight');
     }else{
         element.classList.add("ugyldig");
     }
-    getNewInvalids();
+    popup.getNewInvalidInputFields();
 })
 
 inntektFortidForm.inntekt2020.addEventListener('input', e => {
@@ -242,11 +259,12 @@ inntektFortidForm.inntekt2020.addEventListener('input', e => {
     let num = element.value;
     let nameRegex =/^[0-9]+$/;
     if(nameRegex.test(num) == true){ 
-        element.classList.remove("ugyldig")
+        element.classList.remove("ugyldig");
+element.classList.remove('popupHighlight');
     }else{
         element.classList.add("ugyldig");
     }
-    getNewInvalids();
+    popup.getNewInvalidInputFields();
 })
 
 inntektFortidForm.inntekt2021.addEventListener('input', e => {
@@ -254,11 +272,12 @@ inntektFortidForm.inntekt2021.addEventListener('input', e => {
     let num = element.value;
     let nameRegex =/^[0-9]+$/;
     if(nameRegex.test(num) == true){
-        element.classList.remove("ugyldig")
+        element.classList.remove("ugyldig");
+element.classList.remove('popupHighlight');
     }else{
         element.classList.add("ugyldig");
     }
-    getNewInvalids();
+    popup.getNewInvalidInputFields();
 })
 
 //Inntekt 2022
@@ -268,11 +287,12 @@ inntekt2022Form.inntekt1.addEventListener('input', e => {
     let num = element.value;
     let nameRegex =/^[0-9]+$/;
     if(nameRegex.test(num) == true){
-        element.classList.remove("ugyldig")
+        element.classList.remove("ugyldig");
+element.classList.remove('popupHighlight');
     }else{
         element.classList.add("ugyldig");
     }
-    getNewInvalids();
+    popup.getNewInvalidInputFields();
 })
 
 inntekt2022Form.inntekt2.addEventListener('input', e => {
@@ -280,11 +300,12 @@ inntekt2022Form.inntekt2.addEventListener('input', e => {
     let num = element.value;
     let nameRegex =/^[0-9]+$/;
     if(nameRegex.test(num) == true){
-        element.classList.remove("ugyldig")
+        element.classList.remove("ugyldig");
+element.classList.remove('popupHighlight');
     }else{
         element.classList.add("ugyldig");
     }
-    getNewInvalids();
+    popup.getNewInvalidInputFields();
 })
 
 inntekt2022Form.inntekt3.addEventListener('input', e => {
@@ -292,11 +313,12 @@ inntekt2022Form.inntekt3.addEventListener('input', e => {
     let num = element.value;
     let nameRegex =/^[0-9]+$/;
     if(nameRegex.test(num) == true){
-        element.classList.remove("ugyldig")
+        element.classList.remove("ugyldig");
+element.classList.remove('popupHighlight');
     }else{
         element.classList.add("ugyldig");
     }
-    getNewInvalids();
+    popup.getNewInvalidInputFields();
 })
 
 inntekt2022Form.inntekt4.addEventListener('input', e => {
@@ -304,11 +326,12 @@ inntekt2022Form.inntekt4.addEventListener('input', e => {
     let num = element.value;
     let nameRegex =/^[0-9]+$/;
     if(nameRegex.test(num) == true){
-        element.classList.remove("ugyldig")
+        element.classList.remove("ugyldig");
+element.classList.remove('popupHighlight');
     }else{
         element.classList.add("ugyldig");
     }
-    getNewInvalids();
+    popup.getNewInvalidInputFields();
 })
 
 inntekt2022Form.inntekt5.addEventListener('input', e => {
@@ -316,11 +339,12 @@ inntekt2022Form.inntekt5.addEventListener('input', e => {
     let num = element.value;
     let nameRegex =/^[0-9]+$/;
     if(nameRegex.test(num) == true){
-        element.classList.remove("ugyldig")
+        element.classList.remove("ugyldig");
+element.classList.remove('popupHighlight');
     }else{
         element.classList.add("ugyldig");
     }
-    getNewInvalids();
+    popup.getNewInvalidInputFields();
 })
 
 inntekt2022Form.inntekt6.addEventListener('input', e => {
@@ -328,11 +352,12 @@ inntekt2022Form.inntekt6.addEventListener('input', e => {
     let num = element.value;
     let nameRegex =/^[0-9]+$/;
     if(nameRegex.test(num) == true){
-        element.classList.remove("ugyldig")
+        element.classList.remove("ugyldig");
+element.classList.remove('popupHighlight');
     }else{
         element.classList.add("ugyldig");
     }
-    getNewInvalids();
+    popup.getNewInvalidInputFields();
 })
 
 inntekt2022Form.inntekt7.addEventListener('input', e => {
@@ -340,11 +365,12 @@ inntekt2022Form.inntekt7.addEventListener('input', e => {
     let num = element.value;
     let nameRegex =/^[0-9]+$/;
     if(nameRegex.test(num) == true){
-        element.classList.remove("ugyldig")
+        element.classList.remove("ugyldig");
+element.classList.remove('popupHighlight');
     }else{
         element.classList.add("ugyldig");
     }
-    getNewInvalids();
+    popup.getNewInvalidFields();
 })
 
 inntekt2022Form.inntekt8.addEventListener('input', e => {
@@ -352,11 +378,12 @@ inntekt2022Form.inntekt8.addEventListener('input', e => {
     let num = element.value;
     let nameRegex =/^[0-9]+$/;
     if(nameRegex.test(num) == true){
-        element.classList.remove("ugyldig")
+        element.classList.remove("ugyldig");
+element.classList.remove('popupHighlight');
     }else{
         element.classList.add("ugyldig");
     }
-    getNewInvalids();
+    popup.getNewInvalidFields();
 })
 
 //-------------------------------------------Forms regex onfocusout listeners-------------------------------------------
@@ -368,11 +395,12 @@ grunnleggendeDataForm.fornavn.addEventListener('focusout', e => {
     let name = element.value;
     let nameRegex = /^[a-zæøåÆØÅ ]{2,}$/i;
     if(nameRegex.test(name) == true){
-        element.classList.remove("ugyldig")
+        element.classList.remove("ugyldig");
+element.classList.remove('popupHighlight');
     }else{
         element.classList.add("ugyldig");
     }
-    getNewInvalids();
+    popup.getNewInvalidFields();
 })
 
 grunnleggendeDataForm.etternavn.addEventListener('focusout', e => {
@@ -380,11 +408,12 @@ grunnleggendeDataForm.etternavn.addEventListener('focusout', e => {
     let name = element.value;
     let nameRegex = /^.[a-zæøåÆØÅ ]{2,}$/i;
     if(nameRegex.test(name) == true){
-        element.classList.remove("ugyldig")
+        element.classList.remove("ugyldig");
+element.classList.remove('popupHighlight');
     }else{
         element.classList.add("ugyldig");
     }
-    getNewInvalids();
+    popup.getNewInvalidFields();
 })
 
 grunnleggendeDataForm.forelder1.addEventListener('focusout', e => {
@@ -392,11 +421,12 @@ grunnleggendeDataForm.forelder1.addEventListener('focusout', e => {
     let num = element.value;
     let nameRegex = /^[0-9]+$/;
     if(nameRegex.test(num) == true){
-        element.classList.remove("ugyldig")
+        element.classList.remove("ugyldig");
+element.classList.remove('popupHighlight');
     }else{
         element.classList.add("ugyldig");
     }
-    getNewInvalids();
+    popup.getNewInvalidFields();
 })
 
 grunnleggendeDataForm.forelder2.addEventListener('focusout', e => {
@@ -404,11 +434,12 @@ grunnleggendeDataForm.forelder2.addEventListener('focusout', e => {
     let num = element.value;
     let nameRegex = /^[0-9]+$/;
     if(nameRegex.test(num) == true){
-        element.classList.remove("ugyldig")
+        element.classList.remove("ugyldig");
+element.classList.remove('popupHighlight');
     }else{
         element.classList.add("ugyldig");
     }
-    getNewInvalids();
+    popup.getNewInvalidFields();
 })
 
 grunnleggendeDataForm.barn.addEventListener('focusout', e => {
@@ -416,11 +447,12 @@ grunnleggendeDataForm.barn.addEventListener('focusout', e => {
     let num = element.value;
     let nameRegex = /^[0-9]+$/;
     if(nameRegex.test(num) == true){
-        element.classList.remove("ugyldig")
+        element.classList.remove("ugyldig");
+element.classList.remove('popupHighlight');
     }else{
         element.classList.add("ugyldig");
     }
-    getNewInvalids();
+    popup.getNewInvalidFields();
 })
 
 
@@ -432,7 +464,8 @@ grunnleggendeDataForm.land.addEventListener('focusout', e => {
         grunnleggendeDataForm.postnummer.value = "";
         if(nameRegex.test(name) == true && landArray[i].navn == name){
             selectedLand = landArray[i];
-            element.classList.remove("ugyldig")
+            element.classList.remove("ugyldig");
+element.classList.remove('popupHighlight');
             grunnleggendeDataForm.postnummer.removeAttribute('disabled');
             break;
         }else{
@@ -441,7 +474,7 @@ grunnleggendeDataForm.land.addEventListener('focusout', e => {
             grunnleggendeDataForm.postnummer.setAttribute('disabled', true);
         }
     }
-    getNewInvalids();
+    popup.getNewInvalidFields();
 })
 
 grunnleggendeDataForm.postnummer.addEventListener('focusout', e => {
@@ -450,11 +483,12 @@ grunnleggendeDataForm.postnummer.addEventListener('focusout', e => {
     let temp = `^${selectedLand.post}$`;
     let nameRegex = new RegExp(`${temp}`);// /^[0-9]+$/;
     if(nameRegex.test(num) == true){
-        element.classList.remove("ugyldig")
+        element.classList.remove("ugyldig");
+element.classList.remove('popupHighlight');
     }else{
         element.classList.add("ugyldig");
     }
-    getNewInvalids();
+    popup.getNewInvalidFields();
 })
 
 grunnleggendeDataForm.land.addEventListener('focusout', e => {
@@ -462,11 +496,12 @@ grunnleggendeDataForm.land.addEventListener('focusout', e => {
     let name = element.value;
     let nameRegex = /^[a-zæøåÆØÅ ]{2,}$/i;
     if(nameRegex.test(name) == true){
-        element.classList.remove("ugyldig")
+        element.classList.remove("ugyldig");
+element.classList.remove('popupHighlight');
     }else{
         element.classList.add("ugyldig");
     }
-    getNewInvalids();
+    popup.getNewInvalidFields();
 })
 
 grunnleggendeDataForm.botid.addEventListener('focusout', e => {
@@ -474,11 +509,12 @@ grunnleggendeDataForm.botid.addEventListener('focusout', e => {
     let num = element.value;
     let nameRegex = /^[0-9]+$/;
     if(nameRegex.test(num) == true){
-        element.classList.remove("ugyldig")
+        element.classList.remove("ugyldig");
+element.classList.remove('popupHighlight');
     }else{
         element.classList.add("ugyldig");
     }
-    getNewInvalids();
+    popup.getNewInvalidFields();
 })  
 
 //Økonomiske forhold
@@ -488,11 +524,12 @@ grunnleggendeDataForm.botid.addEventListener('focusout', e => {
     let num = element.value;
     let nameRegex = /^[0-9]+$/;
     if(nameRegex.test(num) == true){
-        element.classList.remove("ugyldig")
+        element.classList.remove("ugyldig");
+element.classList.remove('popupHighlight');
     }else{
         element.classList.add("ugyldig");
     }
-    getNewInvalids();
+    popup.getNewInvalidFields();
 })
 
 økonomiskeForholdForm.kredittkort.addEventListener('focusout', e => {
@@ -500,11 +537,12 @@ grunnleggendeDataForm.botid.addEventListener('focusout', e => {
     let num = element.value;
     let nameRegex = /^[0-9]+$/;
     if(nameRegex.test(num) == true){
-        element.classList.remove("ugyldig")
+        element.classList.remove("ugyldig");
+element.classList.remove('popupHighlight');
     }else{
         element.classList.add("ugyldig");
     }
-    getNewInvalids();
+    popup.getNewInvalidFields();
 })
 
 økonomiskeForholdForm.lan.addEventListener('focusout', e => {
@@ -512,11 +550,12 @@ grunnleggendeDataForm.botid.addEventListener('focusout', e => {
     let num = element.value;
     let nameRegex = /^[0-9]+$/;
     if(nameRegex.test(num) == true){
-        element.classList.remove("ugyldig")
+        element.classList.remove("ugyldig");
+element.classList.remove('popupHighlight');
     }else{
         element.classList.add("ugyldig");
     }
-    getNewInvalids();
+    popup.getNewInvalidFields();
 })
 
 økonomiskeForholdForm.fullmakt.addEventListener('focusout', e => {
@@ -524,11 +563,12 @@ grunnleggendeDataForm.botid.addEventListener('focusout', e => {
     let num = element.value;
     let nameRegex =/^[0-9]+$/;
     if(nameRegex.test(num) == true){
-        element.classList.remove("ugyldig")
+        element.classList.remove("ugyldig");
+element.classList.remove('popupHighlight');
     }else{
         element.classList.add("ugyldig");
     }
-    getNewInvalids();
+    popup.getNewInvalidFields();
 })
 
 //NAV
@@ -538,11 +578,12 @@ NAVForm.sykepenger.addEventListener('focusout', e => {
     let num = element.value;
     let nameRegex =/^[0-9]+$/;
     if(nameRegex.test(num) == true){
-        element.classList.remove("ugyldig")
+        element.classList.remove("ugyldig");
+element.classList.remove('popupHighlight');
     }else{
         element.classList.add("ugyldig");
     }
-    getNewInvalids();
+    popup.getNewInvalidFields();
 })
 
 //Arbeidsforhold
@@ -552,11 +593,12 @@ arbeidsForholdForm.forrigeManed.addEventListener('focusout', e => {
     let num = element.value;
     let nameRegex =/^[0-9]+$/;
     if(nameRegex.test(num) == true){
-        element.classList.remove("ugyldig")
+        element.classList.remove("ugyldig");
+element.classList.remove('popupHighlight');
     }else{
         element.classList.add("ugyldig");
     }
-    getNewInvalids();
+    popup.getNewInvalidFields();
 })
 
 arbeidsForholdForm.denneManed.addEventListener('focusout', e => {
@@ -564,11 +606,12 @@ arbeidsForholdForm.denneManed.addEventListener('focusout', e => {
     let num = element.value;
     let nameRegex =/^[0-9]+$/;
     if(nameRegex.test(num) == true){
-        element.classList.remove("ugyldig")
+        element.classList.remove("ugyldig");
+element.classList.remove('popupHighlight');
     }else{
         element.classList.add("ugyldig");
     }
-    getNewInvalids();
+    popup.getNewInvalidFields();
 })
 
 //Inntekt fortid
@@ -578,11 +621,12 @@ inntektFortidForm.inntekt2019.addEventListener('focusout', e => {
     let num = element.value;
     let nameRegex =/^[0-9]+$/;
     if(nameRegex.test(num) == true){
-        element.classList.remove("ugyldig")
+        element.classList.remove("ugyldig");
+element.classList.remove('popupHighlight');
     }else{
         element.classList.add("ugyldig");
     }
-    getNewInvalids();
+    popup.getNewInvalidFields();
 })
 
 inntektFortidForm.inntekt2020.addEventListener('focusout', e => {
@@ -590,11 +634,12 @@ inntektFortidForm.inntekt2020.addEventListener('focusout', e => {
     let num = element.value;
     let nameRegex =/^[0-9]+$/;
     if(nameRegex.test(num) == true){ 
-        element.classList.remove("ugyldig")
+        element.classList.remove("ugyldig");
+element.classList.remove('popupHighlight');
     }else{
         element.classList.add("ugyldig");
     }
-    getNewInvalids();
+    popup.getNewInvalidFields();
 })
 
 inntektFortidForm.inntekt2021.addEventListener('focusout', e => {
@@ -602,11 +647,12 @@ inntektFortidForm.inntekt2021.addEventListener('focusout', e => {
     let num = element.value;
     let nameRegex =/^[0-9]+$/;
     if(nameRegex.test(num) == true){
-        element.classList.remove("ugyldig")
+        element.classList.remove("ugyldig");
+element.classList.remove('popupHighlight');
     }else{
         element.classList.add("ugyldig");
     }
-    getNewInvalids();
+    popup.getNewInvalidFields();
 })
 
 //Inntekt 2022
@@ -616,11 +662,12 @@ inntekt2022Form.inntekt1.addEventListener('focusout', e => {
     let num = element.value;
     let nameRegex =/^[0-9]+$/;
     if(nameRegex.test(num) == true){
-        element.classList.remove("ugyldig")
+        element.classList.remove("ugyldig");
+element.classList.remove('popupHighlight');
     }else{
         element.classList.add("ugyldig");
     }
-    getNewInvalids();
+    popup.getNewInvalidFields();
 })
 
 inntekt2022Form.inntekt2.addEventListener('focusout', e => {
@@ -628,11 +675,12 @@ inntekt2022Form.inntekt2.addEventListener('focusout', e => {
     let num = element.value;
     let nameRegex =/^[0-9]+$/;
     if(nameRegex.test(num) == true){
-        element.classList.remove("ugyldig")
+        element.classList.remove("ugyldig");
+element.classList.remove('popupHighlight');
     }else{
         element.classList.add("ugyldig");
     }
-    getNewInvalids();
+    popup.getNewInvalidFields();
 })
 
 inntekt2022Form.inntekt3.addEventListener('focusout', e => {
@@ -640,11 +688,12 @@ inntekt2022Form.inntekt3.addEventListener('focusout', e => {
     let num = element.value;
     let nameRegex =/^[0-9]+$/;
     if(nameRegex.test(num) == true){
-        element.classList.remove("ugyldig")
+        element.classList.remove("ugyldig");
+element.classList.remove('popupHighlight');
     }else{
         element.classList.add("ugyldig");
     }
-    getNewInvalids();
+    popup.getNewInvalidFields();
 })
 
 inntekt2022Form.inntekt4.addEventListener('focusout', e => {
@@ -652,11 +701,12 @@ inntekt2022Form.inntekt4.addEventListener('focusout', e => {
     let num = element.value;
     let nameRegex =/^[0-9]+$/;
     if(nameRegex.test(num) == true){
-        element.classList.remove("ugyldig")
+        element.classList.remove("ugyldig");
+element.classList.remove('popupHighlight');
     }else{
         element.classList.add("ugyldig");
     }
-    getNewInvalids();
+    popup.getNewInvalidFields();
 })
 
 inntekt2022Form.inntekt5.addEventListener('focusout', e => {
@@ -664,11 +714,12 @@ inntekt2022Form.inntekt5.addEventListener('focusout', e => {
     let num = element.value;
     let nameRegex =/^[0-9]+$/;
     if(nameRegex.test(num) == true){
-        element.classList.remove("ugyldig")
+        element.classList.remove("ugyldig");
+element.classList.remove('popupHighlight');
     }else{
         element.classList.add("ugyldig");
     }
-    getNewInvalids();
+    popup.getNewInvalidFields();
 })
 
 inntekt2022Form.inntekt6.addEventListener('focusout', e => {
@@ -676,11 +727,12 @@ inntekt2022Form.inntekt6.addEventListener('focusout', e => {
     let num = element.value;
     let nameRegex =/^[0-9]+$/;
     if(nameRegex.test(num) == true){
-        element.classList.remove("ugyldig")
+        element.classList.remove("ugyldig");
+element.classList.remove('popupHighlight');
     }else{
         element.classList.add("ugyldig");
     }
-    getNewInvalids();
+    popup.getNewInvalidFields();
 })
 
 inntekt2022Form.inntekt7.addEventListener('focusout', e => {
@@ -688,11 +740,12 @@ inntekt2022Form.inntekt7.addEventListener('focusout', e => {
     let num = element.value;
     let nameRegex =/^[0-9]+$/;
     if(nameRegex.test(num) == true){
-        element.classList.remove("ugyldig")
+        element.classList.remove("ugyldig");
+element.classList.remove('popupHighlight');
     }else{
         element.classList.add("ugyldig");
     }
-    getNewInvalids();
+    popup.getNewInvalidFields();
 })
 
 inntekt2022Form.inntekt8.addEventListener('focusout', e => {
@@ -700,17 +753,18 @@ inntekt2022Form.inntekt8.addEventListener('focusout', e => {
     let num = element.value;
     let nameRegex =/^[0-9]+$/;
     if(nameRegex.test(num) == true){
-        element.classList.remove("ugyldig")
+        element.classList.remove("ugyldig");
+element.classList.remove('popupHighlight');
     }else{
         element.classList.add("ugyldig");
     }
-    getNewInvalids();
+    popup.getNewInvalidFields();
 })
 
 //-------------------------------------------Forms dropdown listeners-------------------------------------------
 
 let dropDowns = Array.from(document.querySelectorAll("form select"));
-//let func = getNewInvalids();
+//let func = popup.getNewInvalidFields();
 
 ['input', 'blur'].forEach(event => {
     dropDowns.forEach(dropdown => {
@@ -722,68 +776,68 @@ let dropDowns = Array.from(document.querySelectorAll("form select"));
             }else{
                 dropdown.classList.remove("ugyldig");
             }
-            getNewInvalids();
+            popup.getNewInvalidFields();
         });
     })
 })
 
 
 // grunnleggendeDataForm.status.addEventListener('input', e => {
-//     getNewInvalids();
+//     popup.getNewInvalidFields();
 // })
 
 // grunnleggendeDataForm.ekteskap.addEventListener('input', e => {
-//     getNewInvalids();
+//     popup.getNewInvalidFields();
 // })
 
 // livssituasjonForm.alvorligSyk.addEventListener('input', e => {
-//     getNewInvalids();
+//     popup.getNewInvalidFields();
 // })
 
 // livssituasjonForm.flyktning.addEventListener('input', e => {
-//     getNewInvalids();
+//     popup.getNewInvalidFields();
 // })
 
 // livssituasjonForm.gravid.addEventListener('input', e => {
-//     getNewInvalids();
+//     popup.getNewInvalidFields();
 // })
 
 // NAVForm.medlem.addEventListener('input', e => {
-//     getNewInvalids();
+//     popup.getNewInvalidFields();
 // })
 
 // NAVForm.ufor.addEventListener('input', e => {
-//     getNewInvalids();
+//     popup.getNewInvalidFields();
 // })
 
 // NAVForm.pensjonist.addEventListener('input', e => {
-//     getNewInvalids();
+//     popup.getNewInvalidFields();
 // })
 
 // NAVForm.yrkesskade.addEventListener('input', e => {
-//     getNewInvalids();
+//     popup.getNewInvalidFields();
 // })
 
 // NAVForm.dagpenger.addEventListener('input', e => {
-//     getNewInvalids();
+//     popup.getNewInvalidFields();
 // })
 
 // lånekassenForm.stipend.addEventListener('input', e => {
-//     getNewInvalids();
+//     popup.getNewInvalidFields();
 // })
 
 // lånekassenForm.studiested.addEventListener('input', e => {
-//     getNewInvalids();
+//     popup.getNewInvalidFields();
 // })
 
 // arbeidsForholdForm.freelancer.addEventListener('input', e => {
-//     getNewInvalids();
+//     popup.getNewInvalidFields();
 // })
 
 // arbeidsForholdForm.forholdStatus.addEventListener('input', e => {
-//     getNewInvalids();
+//     popup.getNewInvalidFields();
 // })
 
 // arbeidsForholdForm.sektor.addEventListener('input', e => {
-//     getNewInvalids();
+//     popup.getNewInvalidFields();
 // })

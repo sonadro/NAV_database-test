@@ -358,3 +358,71 @@ inntekt2022Form.inntekt8.addEventListener('input', e => {
     }
     getNewInvalids();
 })
+
+//-------------------------------------------Forms dropdown listeners-------------------------------------------
+
+grunnleggendeDataForm.status.addEventListener('input', e => {
+    // let element = grunnleggendeDataForm.status;
+    // let option = element.value;
+    // if(option){
+    //     console.log("Invalid detected");
+    // }
+    // getNewInvalidDropdowns();
+    getNewInvalids();
+})
+
+grunnleggendeDataForm.ekteskap.addEventListener('input', e => {
+    getNewInvalids();
+})
+
+livssituasjonForm.alvorligSyk.addEventListener('input', e => {
+    getNewInvalids();
+})
+
+livssituasjonForm.flyktning.addEventListener('input', e => {
+    getNewInvalids();
+})
+
+livssituasjonForm.gravid.addEventListener('input', e => {
+    getNewInvalids();
+})
+
+NAVForm.medlem.addEventListener('input', e => {
+    getNewInvalids();
+})
+
+NAVForm.ufor.addEventListener('input', e => {
+    getNewInvalids();
+})
+
+NAVForm.pensjonist.addEventListener('input', e => {
+    getNewInvalids();
+})
+
+NAVForm.yrkesskade.addEventListener('input', e => {
+    getNewInvalids();
+})
+
+NAVForm.dagpenger.addEventListener('input', e => {
+    getNewInvalids();
+})
+
+lånekassenForm.stipend.addEventListener('input', e => {
+    getNewInvalids();
+})
+
+lånekassenForm.studiested.addEventListener('input', e => {
+    getNewInvalids();
+})
+
+arbeidsForholdForm.freelancer.addEventListener('input', e => {
+    getNewInvalids();
+})
+
+arbeidsForholdForm.forholdStatus.addEventListener('input', e => {
+    getNewInvalids();
+})
+
+arbeidsForholdForm.sektor.addEventListener('input', e => {
+    getNewInvalids();
+})

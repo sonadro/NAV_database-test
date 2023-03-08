@@ -7,14 +7,6 @@ let dropdowns = Array.from(document.querySelectorAll('.userInfoDropdown'));
 let ugyldigIndex = 0;
 
 function getNewInvalids() {
-
-    //TODO: Dropdowns som viser default verdi blir markert med ugyldig når forms blir sendt inn
-    dropdowns.forEach((dropdown) => {
-        //console.log('Test', dropdown.children);
-        Array.from(dropdown.childNodes).forEach((child) => {
-            console.log(child.textContent);
-        })
-    })
     invalidInputs = Array.from(document.querySelectorAll('.ugyldig'));
 
     allInputs = Array.from(document.querySelectorAll('.userInfoInput'));
@@ -26,6 +18,10 @@ function getNewInvalids() {
     });
 
     if (!invalidInputs.length) return;
+
+    if (submitted) {
+        getNewInvalidDropdowns();
+    }
 
     if (submitted) {
         try {
@@ -44,8 +40,21 @@ function getNewInvalids() {
     }
 }
 
+function getNewInvalidDropdowns(){
+    //Select and update the dropdowns with a default value
+    dropdowns.forEach((dropdown) => {
+        if(dropdown.value === "default"){
+            console.log("Invalid field detected");
+            dropdown.classList.add("ugyldig");
+        }else{
+            dropdown.classList.remove("ugyldig");
+        }
+    })
+}
+
 // Form event listener
 submitBtn.addEventListener('click', e => {
+    getNewInvalidDropdowns();
     if (!invalidInputs === 'nothing-yet') {
         invalidInputs[ugyldigIndex].classList.add('popupHighlight');
         invalidInputs[ugyldigIndex].scrollIntoView();

@@ -722,6 +722,7 @@ let dropDowns = Array.from(document.querySelectorAll("form select"));
             }else{
                 dropdown.classList.remove("ugyldig");
             }
+            getNewInvalids();
         });
     })
 })

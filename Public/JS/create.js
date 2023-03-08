@@ -20,7 +20,7 @@ async function register() {
 
         console.log(query.empty);
         console.log(query2.empty);
-        console.log(query2);
+        // console.log(query2);
 
         if (query.empty && query2.empty) {
 
@@ -51,14 +51,13 @@ async function register() {
             };
     
             console.log(details);
-            // console.log(details);
             
             
-                // db.collection("adminCol").add(details).then(() => {
-                //   console.log("User Added!");
-                // }).catch(err => {
-                //   console.log(err)
-                // });
+                db.collection("adminCol").add(details).then(() => {
+                  console.log("User Added!");
+                }).catch(err => {
+                  console.log(err)
+                });
 
         }
         else {

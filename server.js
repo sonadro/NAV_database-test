@@ -177,6 +177,10 @@ server.post('/login', (req, res) => {
                 console.log("Error getting documents: ", error);
             });
 
+            res.status(400).send({
+                status: "recieved", message: "Wrong user details. "
+            })
+            
             console.log(userLoggedIn);
 
             console.log(parcel);

@@ -2,7 +2,7 @@ const popup = document.querySelector('.ugyldigInputPopup');
 
 let submitted = false;
 
-let invalidInputs;
+let invalidInputs = 0;
 let dropdowns = Array.from(document.querySelectorAll('.userInfoDropdown'));
 let ugyldigIndex = 0;
 
@@ -44,7 +44,7 @@ function getNewInvalidDropdowns(){
     //Select and update the dropdowns with a default value
     dropdowns.forEach((dropdown) => {
         if(dropdown.value === "default"){
-            console.log("Invalid field detected");
+            // console.log("Invalid field detected");
             dropdown.classList.add("ugyldig");
         }else{
             dropdown.classList.remove("ugyldig");
@@ -54,21 +54,25 @@ function getNewInvalidDropdowns(){
 
 // Form event listener
 submitBtn.addEventListener('click', e => {
+
+    // finn nye ugyldige inputs
+    getNewInvalids();
     getNewInvalidDropdowns();
-    if (!invalidInputs === 'nothing-yet') {
+
+    // endre highlight
+    if (invalidInputs != 0) {
         invalidInputs[ugyldigIndex].classList.add('popupHighlight');
         invalidInputs[ugyldigIndex].scrollIntoView();
         scrollBy(0, -150);
     }
 
     submitted = true;
-
     popup.classList.add('hidden');
 
-    if (typeof invalidInputs === 'array') {
+    if (invalidInputs) {
         popup.classList.remove('hidden');
-        console.log(invalidInputs);
     } else {
+        popup.classList.add('hidden');
         onSubmit();
     }
 });
@@ -85,6 +89,8 @@ nextBtn.addEventListener('click', () => {
 });
 
 function handleIndexChange(increment) {
+    console.log('indexchange');
+
     ugyldigIndex += increment;
 
     if (ugyldigIndex < 0) {

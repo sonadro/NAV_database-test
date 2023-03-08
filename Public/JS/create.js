@@ -51,6 +51,7 @@ async function register() {
             };
     
             console.log(details);
+            // console.log(details);
             
             
                 // db.collection("adminCol").add(details).then(() => {

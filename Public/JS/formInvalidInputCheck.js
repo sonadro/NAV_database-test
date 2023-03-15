@@ -19,26 +19,13 @@ class Popup {
         if (this.invalidIndex > this.invalidInputFields.length - 1) this.invalidIndex = 0;
         console.log(this.invalidIndex);
 
-        // forrige index
-        let prevIndex;
-        if (this.invalidIndex - 1 < 0) {
-            prevIndex = this.invalidInputFields.length - 1;
-        } else {
-            prevIndex = this.invalidIndex - 1;
-        }
+        // fjern class fra forrige highlight
+        this.invalidInputFields.forEach(inputField => {
+            inputField.classList.remove('popupHighlight');
+        });
 
-        // neste index
-        let nextIndex;
-        if (this.invalidIndex + 1 > this.invalidInputFields.length - 1) {
-            nextIndex = 0;
-        } else {
-            nextIndex = this.invalidIndex + 1;
-        }
-
-        // fjern class fra forrige highlight, legg til class til ny highlight
-        this.invalidInputFields[prevIndex].classList.remove('popupHighlight');
+        // legg til class til ny highlight
         this.invalidInputFields[this.invalidIndex].classList.add('popupHighlight');
-        this.invalidInputFields[nextIndex].classList.remove('popupHighlight');
 
         this.invalidInputFields[this.invalidIndex].scrollIntoView();
         scrollBy(0, -150);
@@ -68,12 +55,11 @@ document.querySelector('.submitKnapp').addEventListener('click', e => {
     popup.submitted = true;
     popup.getNewInvalidFields();
 
-    if (popup.invalidInputFields) {
+    if (!popup.invalidInputFields === undefined) {
         popup.element.classList.remove('hidden');
-        console.log('invalid');
     } else {
         popup.element.classList.add('hidden');
-        console.log('valid');
+        onSubmit();
     }
 });
 

@@ -768,7 +768,6 @@ let dropDowns = Array.from(document.querySelectorAll("form select"));
 
 ['input', 'blur'].forEach(event => {
     dropDowns.forEach(dropdown => {
-        console.log(dropdown);
         dropdown.addEventListener(event, (e) => {
             if(dropdown.value === "default"){
                 console.log("Invalid field detected");

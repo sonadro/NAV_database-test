@@ -4,6 +4,7 @@ const db = firebase.firestore();
 // global variables
 let parentList = [];
 let age;
+let childIndex = 1;
 
 // FORMS deklarasjon
 const grunnleggendeDataForm = document.querySelector('.grunnleggendeData');
@@ -24,6 +25,7 @@ let statusFieldDead = document.querySelector("#statusDead");
 let statusChangeField = document.querySelector("#endringStatus");
 let statusChangeFieldLabel = document.querySelector("#endringStatusLabel");
 const countryField = grunnleggendeDataForm.land;
+let childArea = Array.from(document.querySelectorAll("div.childArea input"));
 const childFields = grunnleggendeDataForm.barn.parentElement.parentElement;
 
 // funksjoner
@@ -291,12 +293,15 @@ grunnleggendeDataForm.fodselsdato.addEventListener('input', () => {
 function addChild() {
     // let childFields = grunnleggendeDataForm.barn.parentElement.parentElement;
     console.log(childFields);
+    childIndex++
 
     template = `<div class="inputScalable">
-                    <label class="inputTitle">Nytt barn</label>
-                    <input class="userInfoInput" type="text">
+                    <label class="inputTitle">Barn ${childIndex}</label>
+                    <input class="userInfoInput" type="text" id="barn${childIndex}">
                 </div>`;
     childFields.innerHTML += template;
+    childArea = Array.from(document.querySelectorAll("div.childArea input"));
+    addChildRegex();
 }
 
 // document.getElementById("addBarn").addEventListener("click", function(event){

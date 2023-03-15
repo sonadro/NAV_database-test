@@ -67,18 +67,18 @@ element.classList.remove('popupHighlight');
     popup.getNewInvalidFields();
 })
 
-grunnleggendeDataForm.barn.addEventListener('input', e => {
-    let element = grunnleggendeDataForm.barn
-    let num = element.value;
-    let nameRegex = /^[0-9]+$/;
-    if(nameRegex.test(num) == true){
-        element.classList.remove("ugyldig");
-element.classList.remove('popupHighlight');
-    }else{
-        element.classList.add("ugyldig");
-    }
-    popup.getNewInvalidFields();
-})
+// grunnleggendeDataForm.barn.addEventListener('input', e => {
+//     let element = grunnleggendeDataForm.barn
+//     let num = element.value;
+//     let nameRegex = /^[0-9]+$/;
+//     if(nameRegex.test(num) == true){
+//         element.classList.remove("ugyldig");
+// element.classList.remove('popupHighlight');
+//     }else{
+//         element.classList.add("ugyldig");
+//     }
+//     popup.getNewInvalidFields();
+// })
 
 
 grunnleggendeDataForm.land.addEventListener('input', e => {
@@ -442,18 +442,36 @@ element.classList.remove('popupHighlight');
     popup.getNewInvalidFields();
 })
 
-grunnleggendeDataForm.barn.addEventListener('focusout', e => {
-    let element = grunnleggendeDataForm.barn
-    let num = element.value;
-    let nameRegex = /^[0-9]+$/;
-    if(nameRegex.test(num) == true){
-        element.classList.remove("ugyldig");
-element.classList.remove('popupHighlight');
-    }else{
-        element.classList.add("ugyldig");
-    }
-    popup.getNewInvalidFields();
-})
+// grunnleggendeDataForm.barn.addEventListener('focusout', e => {
+//     let element = grunnleggendeDataForm.barn
+//     let num = element.value;
+//     let nameRegex = /^[0-9]+$/;
+//     if(nameRegex.test(num) == true){
+//         element.classList.remove("ugyldig");
+// element.classList.remove('popupHighlight');
+//     }else{
+//         element.classList.add("ugyldig");
+//     }
+//     popup.getNewInvalidFields();
+// })
+function addChildRegex(){
+    ['input', 'focusout'].forEach(event => {
+        childArea.forEach(child => {
+            console.log(child);
+            child.addEventListener(event, (e) => {
+                let num = child.value;
+                let nameRegex = /^[0-9]+$/;
+                if(nameRegex.test(num) == true){
+                    child.classList.remove("ugyldig");
+                    child.classList.remove('popupHighlight');
+                }else{
+                    child.classList.add("ugyldig");
+                }
+                popup.getNewInvalidFields();
+                });
+        })
+    })
+}
 
 
 grunnleggendeDataForm.land.addEventListener('focusout', e => {
@@ -841,3 +859,6 @@ let dropDowns = Array.from(document.querySelectorAll("form select"));
 // arbeidsForholdForm.sektor.addEventListener('input', e => {
 //     popup.getNewInvalidFields();
 // })
+
+
+addChildRegex();

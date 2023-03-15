@@ -24,6 +24,7 @@ let statusFieldDead = document.querySelector("#statusDead");
 let statusChangeField = document.querySelector("#endringStatus");
 let statusChangeFieldLabel = document.querySelector("#endringStatusLabel");
 const countryField = grunnleggendeDataForm.land;
+const childFields = grunnleggendeDataForm.barn.parentElement.parentElement;
 
 // funksjoner
 const addDoc = function(obj, collection) {
@@ -285,18 +286,23 @@ grunnleggendeDataForm.fodselsdato.addEventListener('input', () => {
     }
 });
 
+
+//Temporary fix: moved the childFields declaration to the top of the file, and call the addChild() as an onclick since with eventlistener it would only run once
 function addChild() {
-    let childFields = grunnleggendeDataForm.barn.parentElement
+    // let childFields = grunnleggendeDataForm.barn.parentElement.parentElement;
     console.log(childFields);
 
-    template = `<input class="userInfoInput" type="text">`
-    childFields.innerHTML += template
+    template = `<div class="inputScalable">
+                    <label class="inputTitle">Nytt barn</label>
+                    <input class="userInfoInput" type="text">
+                </div>`;
+    childFields.innerHTML += template;
 }
 
-document.getElementById("addBarn").addEventListener("click", function(event){
-    addChild();
-    event.preventDefault()
-  });
+// document.getElementById("addBarn").addEventListener("click", function(event){
+//     event.preventDefault();
+//     addChild();
+// });
 
 // kall funksjoner
 getDate();

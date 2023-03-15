@@ -17,7 +17,7 @@
         </div>
     </div>
 
-    <form class="grunnleggendeData formArea">
+    <form class="grunnleggendeData formArea" onsubmit="event.preventDefault()">
         <h3>Grunnleggende data:</h3>
         <div class="quadInputFieldScaleable noBotPadd inputArea">
             <div class="inputScalable">
@@ -81,12 +81,15 @@
 
         </div>
 
-        <div class="oneInputScalable inputArea noTopPadd">
+        <div class="oneInputScalable inputArea noTopPadd childArea">
             <div class="inputScalable">
                 <label for="barn" class="inputTitle">Barn:</label>
                 <input class="userInfoInput" type="text" id="barn">
             </div>
-            <button id="addBarn">test</button>
+            <div class="inputScalable">
+                <div></div>
+                <button class="knapp" id="addBarn" onclick="addChild()">Legg til barn</button>
+            </div>
         </div>
         <div class="quadInputFieldScaleable inputArea">
             <div class="inputScalable">

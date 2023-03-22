@@ -272,21 +272,18 @@ const openAdvancedInfo = id => {
                         break;
                 }
 
-                // indexes
-                let loadIndexes = [];
-
-                if (data.avansertInfo.length === 1) {
-                    // gammel data
-
-                    for (i = 0; i <= 6; i++) {
-                        loadIndexes.push(0);
-                    }
-                } else {
-                    // ny data
-
-                    for (i = 0; i <= 6; i++) {
-                        loadIndexes.push(i);
-                    }
+                // arb. forhold status
+                console.log('arb forhold', data.avansertInfo[4].forholdStatus);
+                switch (data.avansertInfo[4].forholdStatus) {
+                    case "0":
+                        data.avansertInfo[4].forholdStatus = 'Ansatt';
+                        break;
+                    case "1":
+                        data.avansertInfo[4].forholdStatus = 'Opphørt';
+                        break;
+                    default:
+                        data.avansertInfo[4].forholdStatus = 'Ugyldig';
+                        break;
                 }
 
                 // load data -- grunnleggende data
@@ -294,13 +291,29 @@ const openAdvancedInfo = id => {
                 etternavnHeadElm.textContent = data.etternavn;
                 idHeadElm.textContent = id;
 
+                // grunnleggende data
                 fornavnElm.textContent = data.fornavn;
                 etternavnElm.textContent = data.etternavn;
                 fodselsdatoElm.textContent = data.fodselsdato;
                 alderElm.textContent = data.alder;
                 livsstatusElm.textContent = data.status;
+
+                // hvis personen lever, ikke vis endringstatus
+                if (data.status === 'Lever') {
+                    endringStatusElm.parentElement.classList.add('hidden');
+                } else {
+                    endringStatusElm.parentElement.classList.remove('hidden');
+                }
+
                 endringStatusElm.textContent = data.endringStatus;
                 ekteskapElm.textContent = data.ekteskap;
+
+                // hvis ekteskap ikke er gift, ikke vis ektefelle element
+                if (data.ekteskap !== 'Gift') {
+                    ektefelleElm.parentElement.classList.add('hidden');
+                } else {
+                    ektefelleElm.parentElement.classList.remove('hidden');
+                }
                 ektefelleElm.textContent = data.ektefelle;
                 forelder1Elm.textContent = data.foreldre[0];
                 forelder2Elm.textContent = data.foreldre[1];
@@ -310,49 +323,49 @@ const openAdvancedInfo = id => {
                 botidElm.textContent = data.botid;
 
                 // økonomiske forhold
-                bankkontoElm.textContent = data.avansertInfo[loadIndexes[0]].bankkonto;
-                kredittkortElm.textContent = data.avansertInfo[loadIndexes[0]].kredittkort;
-                lanElm.textContent = data.avansertInfo[loadIndexes[0]].lan;
-                datafullMaktElm.textContent = data.avansertInfo[loadIndexes[0]].fullmakt;
+                bankkontoElm.textContent = data.avansertInfo[0].bankkonto;
+                kredittkortElm.textContent = data.avansertInfo[0].kredittkort;
+                lanElm.textContent = data.avansertInfo[0].lan;
+                datafullMaktElm.textContent = data.avansertInfo[0].fullmakt;
 
                 // livssituasjon
-                alvorligSykElm.textContent = data.avansertInfo[loadIndexes[1]].alvorligSyk;
-                flyktningElm.textContent = data.avansertInfo[loadIndexes[1]].flyktning;
-                gravidElm.textContent = data.avansertInfo[loadIndexes[1]].gravid;
+                alvorligSykElm.textContent = data.avansertInfo[1].alvorligSyk;
+                flyktningElm.textContent = data.avansertInfo[1].flyktning;
+                gravidElm.textContent = data.avansertInfo[1].gravid;
 
                 // nav
-                medlemElm.textContent = data.avansertInfo[loadIndexes[2]].medlem;
-                uforElm.textContent = data.avansertInfo[loadIndexes[2]].ufor;
-                pensjonistElm.textContent = data.avansertInfo[loadIndexes[2]].pensjonist;
-                yrkesskadeElm.textContent = data.avansertInfo[loadIndexes[2]].yrkesskade;
-                dagpengerElm.textContent = data.avansertInfo[loadIndexes[2]].dagpenger;
-                sykepengerElm.textContent = data.avansertInfo[loadIndexes[2]].sykepenger;
+                medlemElm.textContent = data.avansertInfo[2].medlem;
+                uforElm.textContent = data.avansertInfo[2].ufor;
+                pensjonistElm.textContent = data.avansertInfo[2].pensjonist;
+                yrkesskadeElm.textContent = data.avansertInfo[2].yrkesskade;
+                dagpengerElm.textContent = data.avansertInfo[2].dagpenger;
+                sykepengerElm.textContent = data.avansertInfo[2].sykepenger;
 
                 // lånekassen
-                stipendElm.textContent = data.avansertInfo[loadIndexes[3]].stipend;
-                studiestedElm.textContent = data.avansertInfo[loadIndexes[3]].studiested;
+                stipendElm.textContent = data.avansertInfo[3].stipend;
+                studiestedElm.textContent = data.avansertInfo[3].studiested;
 
                 // arbeidsforhold
-                freelancerElm.textContent = data.avansertInfo[loadIndexes[4]].freelancer;
-                arbforholdstatusElm.textContent = data.avansertInfo[loadIndexes[4]].forholdStatus;
-                sektorElm.textContent = data.avansertInfo[loadIndexes[4]].sektor;
-                arbtidforrigemanedElm.textContent = data.avansertInfo[loadIndexes[4]].forrigeManed;
-                arbtiddennemanedElm.textContent = data.avansertInfo[loadIndexes[4]].denneManed;
+                freelancerElm.textContent = data.avansertInfo[4].freelancer;
+                arbforholdstatusElm.textContent = data.avansertInfo[4].forholdStatus;
+                sektorElm.textContent = data.avansertInfo[4].sektor;
+                arbtidforrigemanedElm.textContent = data.avansertInfo[4].forrigeManed;
+                arbtiddennemanedElm.textContent = data.avansertInfo[4].denneManed;
 
                 // inntekt fortid
-                inntekt2019Elm.textContent = data.avansertInfo[loadIndexes[5]].inntekt2019;
-                inntekt2020Elm.textContent = data.avansertInfo[loadIndexes[5]].inntekt2020;
-                inntekt2021Elm.textContent = data.avansertInfo[loadIndexes[5]].inntekt2021;
+                inntekt2019Elm.textContent = data.avansertInfo[5].inntekt2019;
+                inntekt2020Elm.textContent = data.avansertInfo[5].inntekt2020;
+                inntekt2021Elm.textContent = data.avansertInfo[5].inntekt2021;
 
                 // inntekt nåtid
-                inntekt1Elm.textContent = data.avansertInfo[loadIndexes[6]].inntekt1;
-                inntekt2Elm.textContent = data.avansertInfo[loadIndexes[6]].inntekt2;
-                inntekt3Elm.textContent = data.avansertInfo[loadIndexes[6]].inntekt3;
-                inntekt4Elm.textContent = data.avansertInfo[loadIndexes[6]].inntekt4;
-                inntekt5Elm.textContent = data.avansertInfo[loadIndexes[6]].inntekt5;
-                inntekt6Elm.textContent = data.avansertInfo[loadIndexes[6]].inntekt6;
-                inntekt7Elm.textContent = data.avansertInfo[loadIndexes[6]].inntekt7;
-                inntekt8Elm.textContent = data.avansertInfo[loadIndexes[6]].inntekt8;
+                inntekt1Elm.textContent = data.avansertInfo[6].inntekt1;
+                inntekt2Elm.textContent = data.avansertInfo[6].inntekt2;
+                inntekt3Elm.textContent = data.avansertInfo[6].inntekt3;
+                inntekt4Elm.textContent = data.avansertInfo[6].inntekt4;
+                inntekt5Elm.textContent = data.avansertInfo[6].inntekt5;
+                inntekt6Elm.textContent = data.avansertInfo[6].inntekt6;
+                inntekt7Elm.textContent = data.avansertInfo[6].inntekt7;
+                inntekt8Elm.textContent = data.avansertInfo[6].inntekt8;
 
                 // hvis et felt i databasen er tomt, gi det en verdi
                 let allFields = Array.from(document.querySelectorAll('.advInfoField'));
@@ -395,7 +408,7 @@ const getDocs = function() {
             // livsstatus sjekk
             if (data.status === "0") {
                 data.status = 'Død';
-            } else {
+            } else if (data.status === "1") {
                 data.status = 'Lever';
             }
 

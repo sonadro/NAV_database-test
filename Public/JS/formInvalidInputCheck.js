@@ -70,6 +70,6 @@ document.querySelector('.submitKnapp').addEventListener('click', e => {
     } else {
         popup.element.classList.add('hidden');
         console.log('gyldig');
-        // onSubmit();
+        onSubmit();
     }
 });

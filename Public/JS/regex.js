@@ -139,7 +139,7 @@ element.classList.remove('popupHighlight');
     }else{
         element.classList.add("ugyldig");
     }
-    popup.getNewInvalidInputFields();
+    popup.getNewInvalidFields();
 })  
 
 //Økonomiske forhold
@@ -154,7 +154,7 @@ element.classList.remove('popupHighlight');
     }else{
         element.classList.add("ugyldig");
     }
-    popup.getNewInvalidInputFields();
+    popup.getNewInvalidFields();
 })
 
 økonomiskeForholdForm.kredittkort.addEventListener('input', e => {
@@ -167,7 +167,7 @@ element.classList.remove('popupHighlight');
     }else{
         element.classList.add("ugyldig");
     }
-    popup.getNewInvalidInputFields();
+    popup.getNewInvalidFields();
 })
 
 økonomiskeForholdForm.lan.addEventListener('input', e => {
@@ -180,7 +180,7 @@ element.classList.remove('popupHighlight');
     }else{
         element.classList.add("ugyldig");
     }
-    popup.getNewInvalidInputFields();
+    popup.getNewInvalidFields();
 })
 
 økonomiskeForholdForm.fullmakt.addEventListener('input', e => {
@@ -193,7 +193,7 @@ element.classList.remove('popupHighlight');
     }else{
         element.classList.add("ugyldig");
     }
-    popup.getNewInvalidInputFields();
+    popup.getNewInvalidFields();
 })
 
 //NAV
@@ -208,7 +208,7 @@ element.classList.remove('popupHighlight');
     }else{
         element.classList.add("ugyldig");
     }
-    popup.getNewInvalidInputFields();
+    popup.getNewInvalidFields();
 })
 
 //Arbeidsforhold
@@ -223,7 +223,7 @@ element.classList.remove('popupHighlight');
     }else{
         element.classList.add("ugyldig");
     }
-    popup.getNewInvalidInputFields();
+    popup.getNewInvalidFields();
 })
 
 arbeidsForholdForm.denneManed.addEventListener('input', e => {
@@ -236,7 +236,7 @@ element.classList.remove('popupHighlight');
     }else{
         element.classList.add("ugyldig");
     }
-    popup.getNewInvalidInputFields();
+    popup.getNewInvalidFields();
 })
 
 //Inntekt fortid
@@ -251,7 +251,7 @@ element.classList.remove('popupHighlight');
     }else{
         element.classList.add("ugyldig");
     }
-    popup.getNewInvalidInputFields();
+    popup.getNewInvalidFields();
 })
 
 inntektFortidForm.inntekt2020.addEventListener('input', e => {
@@ -264,7 +264,7 @@ element.classList.remove('popupHighlight');
     }else{
         element.classList.add("ugyldig");
     }
-    popup.getNewInvalidInputFields();
+    popup.getNewInvalidFields();
 })
 
 inntektFortidForm.inntekt2021.addEventListener('input', e => {
@@ -277,7 +277,7 @@ element.classList.remove('popupHighlight');
     }else{
         element.classList.add("ugyldig");
     }
-    popup.getNewInvalidInputFields();
+    popup.getNewInvalidFields();
 })
 
 //Inntekt 2022
@@ -292,7 +292,7 @@ element.classList.remove('popupHighlight');
     }else{
         element.classList.add("ugyldig");
     }
-    popup.getNewInvalidInputFields();
+    popup.getNewInvalidFields();
 })
 
 inntekt2022Form.inntekt2.addEventListener('input', e => {
@@ -305,7 +305,7 @@ element.classList.remove('popupHighlight');
     }else{
         element.classList.add("ugyldig");
     }
-    popup.getNewInvalidInputFields();
+    popup.getNewInvalidFields();
 })
 
 inntekt2022Form.inntekt3.addEventListener('input', e => {
@@ -318,7 +318,7 @@ element.classList.remove('popupHighlight');
     }else{
         element.classList.add("ugyldig");
     }
-    popup.getNewInvalidInputFields();
+    popup.getNewInvalidFields();
 })
 
 inntekt2022Form.inntekt4.addEventListener('input', e => {
@@ -331,7 +331,7 @@ element.classList.remove('popupHighlight');
     }else{
         element.classList.add("ugyldig");
     }
-    popup.getNewInvalidInputFields();
+    popup.getNewInvalidFields();
 })
 
 inntekt2022Form.inntekt5.addEventListener('input', e => {
@@ -344,7 +344,7 @@ element.classList.remove('popupHighlight');
     }else{
         element.classList.add("ugyldig");
     }
-    popup.getNewInvalidInputFields();
+    popup.getNewInvalidFields();
 })
 
 inntekt2022Form.inntekt6.addEventListener('input', e => {
@@ -357,7 +357,7 @@ element.classList.remove('popupHighlight');
     }else{
         element.classList.add("ugyldig");
     }
-    popup.getNewInvalidInputFields();
+    popup.getNewInvalidFields();
 })
 
 inntekt2022Form.inntekt7.addEventListener('input', e => {

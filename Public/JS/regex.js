@@ -455,21 +455,24 @@ element.classList.remove('popupHighlight');
 //     popup.getNewInvalidFields();
 // })
 function addChildRegex(){
+    console.log("Line 458", childArea, childIndex);
+    console.log(childArea);
+
+    //Add listeners
     ['input', 'focusout'].forEach(event => {
-        childArea.forEach(child => {
-            console.log(child);
-            child.addEventListener(event, (e) => {
-                let num = child.value;
-                let nameRegex = /^[0-9]+$/;
-                if(nameRegex.test(num) == true){
-                    child.classList.remove("ugyldig");
-                    child.classList.remove('popupHighlight');
-                }else{
-                    child.classList.add("ugyldig");
-                }
-                popup.getNewInvalidFields();
-                });
-        })
+        let child = childArea[childIndex - 1];
+        console.log("Start addEventListener", child, childIndex);
+        child.addEventListener(event, (e) => {
+            let num = child.value;
+            let nameRegex = /^[0-9]+$/;
+            if(nameRegex.test(num) == true){
+                child.classList.remove("ugyldig");
+                child.classList.remove('popupHighlight');
+            }else{
+                child.classList.add("ugyldig");
+            }
+            popup.getNewInvalidFields();
+        });
     })
 }
 

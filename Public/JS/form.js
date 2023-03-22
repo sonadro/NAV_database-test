@@ -289,25 +289,32 @@ grunnleggendeDataForm.fodselsdato.addEventListener('input', () => {
 });
 
 
-//Temporary fix: moved the childFields declaration to the top of the file, and call the addChild() as an onclick since with eventlistener it would only run once
-function addChild() {
-    // let childFields = grunnleggendeDataForm.barn.parentElement.parentElement;
-    console.log(childFields);
+//Legg til nytt input-felt
+async function addChild(event) {
+    console.log("Before", childFields, childArea);
     childIndex++
 
-    template = `<div class="inputScalable">
-                    <label class="inputTitle">Barn ${childIndex}</label>
-                    <input class="userInfoInput" type="text" id="barn${childIndex}">
-                </div>`;
-    childFields.innerHTML += template;
+    let contTemplate = document.createElement("DIV");
+    contTemplate.classList.add("inputScalable");
+
+    let template = `
+        <label class="inputTitle">Barn ${childIndex}</label>
+        <input class="userInfoInput" type="text" id="barn${childIndex}">
+    `;
+
+    contTemplate.innerHTML += template;
+
+    await childFields.appendChild(contTemplate);
+
     childArea = Array.from(document.querySelectorAll("div.childArea input"));
     addChildRegex();
 }
 
-// document.getElementById("addBarn").addEventListener("click", function(event){
-//     event.preventDefault();
-//     addChild();
-// });
+//Kjør når addBarn-knappen blir trykker på
+document.getElementById("addBarn").addEventListener("click", function(event){
+    event.preventDefault();
+    addChild();
+});
 
 // kall funksjoner
 getDate();

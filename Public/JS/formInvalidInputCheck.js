@@ -10,6 +10,16 @@ class Popup {
         this.nextBtn = document.querySelector('.neste');
     }
 
+    addHighlight() {
+        // fjern highlight fra alle elementer
+        this.allInputFields.forEach(inputField => {
+            inputField.classList.remove('popupHighlight');
+        });
+
+        // legg til highlight til nytt element (bare hvis submitted = true)
+        if (this.submitted) this.invalidInputFields[this.invalidIndex].classList.add('popupHighlight');
+    }
+
     indexChange(inc) {
         // increment index
         this.invalidIndex += inc;
@@ -19,13 +29,8 @@ class Popup {
         if (this.invalidIndex > this.invalidInputFields.length - 1) this.invalidIndex = 0;
         console.log(this.invalidIndex);
 
-        // fjern class fra forrige highlight
-        this.invalidInputFields.forEach(inputField => {
-            inputField.classList.remove('popupHighlight');
-        });
-
         // legg til class til ny highlight
-        this.invalidInputFields[this.invalidIndex].classList.add('popupHighlight');
+        this.addHighlight();
 
         this.invalidInputFields[this.invalidIndex].scrollIntoView();
         scrollBy(0, -150);

@@ -21,7 +21,7 @@ grunnleggendeDataForm.fornavn.addEventListener('input', e => {
     let nameRegex = /^[a-zæøåÆØÅ ]{2,}$/i;
     if(nameRegex.test(name) == true){
         element.classList.remove("ugyldig");
-        element.classList.remove('popupHighlight');
+        popup.addHighlight();
     }else{
         element.classList.add("ugyldig");
     }
@@ -34,7 +34,7 @@ grunnleggendeDataForm.etternavn.addEventListener('input', e => {
     let nameRegex = /^.[a-zæøåÆØÅ ]{2,}$/i;
     if(nameRegex.test(name) == true){
         element.classList.remove("ugyldig");
-element.classList.remove('popupHighlight');
+    popup.addHighlight();
     }else{
         element.classList.add("ugyldig");
     }
@@ -47,7 +47,7 @@ grunnleggendeDataForm.forelder1.addEventListener('input', e => {
     let nameRegex = /^[0-9]+$/;
     if(nameRegex.test(num) == true){
         element.classList.remove("ugyldig");
-element.classList.remove('popupHighlight');
+    popup.addHighlight();
     }else{
         element.classList.add("ugyldig");
     }
@@ -60,7 +60,7 @@ grunnleggendeDataForm.forelder2.addEventListener('input', e => {
     let nameRegex = /^[0-9]+$/;
     if(nameRegex.test(num) == true){
         element.classList.remove("ugyldig");
-element.classList.remove('popupHighlight');
+    popup.addHighlight();
     }else{
         element.classList.add("ugyldig");
     }
@@ -73,7 +73,7 @@ element.classList.remove('popupHighlight');
 //     let nameRegex = /^[0-9]+$/;
 //     if(nameRegex.test(num) == true){
 //         element.classList.remove("ugyldig");
-// element.classList.remove('popupHighlight');
+//         popup.addHighlight();
 //     }else{
 //         element.classList.add("ugyldig");
 //     }
@@ -90,7 +90,7 @@ grunnleggendeDataForm.land.addEventListener('input', e => {
         if(nameRegex.test(name) == true && landArray[i].navn == name){
             selectedLand = landArray[i];
             element.classList.remove("ugyldig");
-element.classList.remove('popupHighlight');
+            popup.addHighlight();
             grunnleggendeDataForm.postnummer.removeAttribute('disabled');
             break;
         }else{
@@ -109,7 +109,7 @@ grunnleggendeDataForm.postnummer.addEventListener('input', e => {
     let nameRegex = new RegExp(`${temp}`);// /^[0-9]+$/;
     if(nameRegex.test(num) == true){
         element.classList.remove("ugyldig");
-element.classList.remove('popupHighlight');
+        popup.addHighlight();
     }else{
         element.classList.add("ugyldig");
     }
@@ -122,7 +122,7 @@ grunnleggendeDataForm.land.addEventListener('input', e => {
     let nameRegex = /^[a-zæøåÆØÅ ]{2,}$/i;
     if(nameRegex.test(name) == true){
         element.classList.remove("ugyldig");
-element.classList.remove('popupHighlight');
+        popup.addHighlight();
     }else{
         element.classList.add("ugyldig");
     }
@@ -135,7 +135,7 @@ grunnleggendeDataForm.botid.addEventListener('input', e => {
     let nameRegex = /^[0-9]+$/;
     if(nameRegex.test(num) == true){
         element.classList.remove("ugyldig");
-element.classList.remove('popupHighlight');
+        popup.addHighlight();
     }else{
         element.classList.add("ugyldig");
     }
@@ -150,7 +150,7 @@ element.classList.remove('popupHighlight');
     let nameRegex = /^[0-9]+$/;
     if(nameRegex.test(num) == true){
         element.classList.remove("ugyldig");
-element.classList.remove('popupHighlight');
+        popup.addHighlight();
     }else{
         element.classList.add("ugyldig");
     }
@@ -163,7 +163,7 @@ element.classList.remove('popupHighlight');
     let nameRegex = /^[0-9]+$/;
     if(nameRegex.test(num) == true){
         element.classList.remove("ugyldig");
-element.classList.remove('popupHighlight');
+        popup.addHighlight();
     }else{
         element.classList.add("ugyldig");
     }
@@ -176,7 +176,7 @@ element.classList.remove('popupHighlight');
     let nameRegex = /^[0-9]+$/;
     if(nameRegex.test(num) == true){
         element.classList.remove("ugyldig");
-element.classList.remove('popupHighlight');
+        popup.addHighlight();
     }else{
         element.classList.add("ugyldig");
     }
@@ -189,7 +189,7 @@ element.classList.remove('popupHighlight');
     let nameRegex =/^[0-9]+$/;
     if(nameRegex.test(num) == true){
         element.classList.remove("ugyldig");
-element.classList.remove('popupHighlight');
+        popup.addHighlight();
     }else{
         element.classList.add("ugyldig");
     }
@@ -204,7 +204,7 @@ NAVForm.sykepenger.addEventListener('input', e => {
     let nameRegex =/^[0-9]+$/;
     if(nameRegex.test(num) == true){
         element.classList.remove("ugyldig");
-element.classList.remove('popupHighlight');
+        popup.addHighlight();
     }else{
         element.classList.add("ugyldig");
     }
@@ -219,7 +219,7 @@ arbeidsForholdForm.forrigeManed.addEventListener('input', e => {
     let nameRegex =/^[0-9]+$/;
     if(nameRegex.test(num) == true){
         element.classList.remove("ugyldig");
-element.classList.remove('popupHighlight');
+        popup.addHighlight();
     }else{
         element.classList.add("ugyldig");
     }
@@ -232,7 +232,7 @@ arbeidsForholdForm.denneManed.addEventListener('input', e => {
     let nameRegex =/^[0-9]+$/;
     if(nameRegex.test(num) == true){
         element.classList.remove("ugyldig");
-element.classList.remove('popupHighlight');
+        popup.addHighlight();
     }else{
         element.classList.add("ugyldig");
     }
@@ -247,7 +247,7 @@ inntektFortidForm.inntekt2019.addEventListener('input', e => {
     let nameRegex =/^[0-9]+$/;
     if(nameRegex.test(num) == true){
         element.classList.remove("ugyldig");
-element.classList.remove('popupHighlight');
+        popup.addHighlight();
     }else{
         element.classList.add("ugyldig");
     }
@@ -260,7 +260,7 @@ inntektFortidForm.inntekt2020.addEventListener('input', e => {
     let nameRegex =/^[0-9]+$/;
     if(nameRegex.test(num) == true){ 
         element.classList.remove("ugyldig");
-element.classList.remove('popupHighlight');
+        popup.addHighlight();
     }else{
         element.classList.add("ugyldig");
     }
@@ -273,7 +273,7 @@ inntektFortidForm.inntekt2021.addEventListener('input', e => {
     let nameRegex =/^[0-9]+$/;
     if(nameRegex.test(num) == true){
         element.classList.remove("ugyldig");
-element.classList.remove('popupHighlight');
+        popup.addHighlight();
     }else{
         element.classList.add("ugyldig");
     }
@@ -288,7 +288,7 @@ inntekt2022Form.inntekt1.addEventListener('input', e => {
     let nameRegex =/^[0-9]+$/;
     if(nameRegex.test(num) == true){
         element.classList.remove("ugyldig");
-element.classList.remove('popupHighlight');
+        popup.addHighlight();
     }else{
         element.classList.add("ugyldig");
     }
@@ -301,7 +301,7 @@ inntekt2022Form.inntekt2.addEventListener('input', e => {
     let nameRegex =/^[0-9]+$/;
     if(nameRegex.test(num) == true){
         element.classList.remove("ugyldig");
-element.classList.remove('popupHighlight');
+        popup.addHighlight();
     }else{
         element.classList.add("ugyldig");
     }
@@ -314,7 +314,7 @@ inntekt2022Form.inntekt3.addEventListener('input', e => {
     let nameRegex =/^[0-9]+$/;
     if(nameRegex.test(num) == true){
         element.classList.remove("ugyldig");
-element.classList.remove('popupHighlight');
+        popup.addHighlight();
     }else{
         element.classList.add("ugyldig");
     }
@@ -327,7 +327,7 @@ inntekt2022Form.inntekt4.addEventListener('input', e => {
     let nameRegex =/^[0-9]+$/;
     if(nameRegex.test(num) == true){
         element.classList.remove("ugyldig");
-element.classList.remove('popupHighlight');
+        popup.addHighlight();
     }else{
         element.classList.add("ugyldig");
     }
@@ -340,7 +340,7 @@ inntekt2022Form.inntekt5.addEventListener('input', e => {
     let nameRegex =/^[0-9]+$/;
     if(nameRegex.test(num) == true){
         element.classList.remove("ugyldig");
-element.classList.remove('popupHighlight');
+        popup.addHighlight();
     }else{
         element.classList.add("ugyldig");
     }
@@ -353,7 +353,7 @@ inntekt2022Form.inntekt6.addEventListener('input', e => {
     let nameRegex =/^[0-9]+$/;
     if(nameRegex.test(num) == true){
         element.classList.remove("ugyldig");
-element.classList.remove('popupHighlight');
+        popup.addHighlight();
     }else{
         element.classList.add("ugyldig");
     }
@@ -366,7 +366,7 @@ inntekt2022Form.inntekt7.addEventListener('input', e => {
     let nameRegex =/^[0-9]+$/;
     if(nameRegex.test(num) == true){
         element.classList.remove("ugyldig");
-element.classList.remove('popupHighlight');
+        popup.addHighlight();
     }else{
         element.classList.add("ugyldig");
     }
@@ -379,7 +379,7 @@ inntekt2022Form.inntekt8.addEventListener('input', e => {
     let nameRegex =/^[0-9]+$/;
     if(nameRegex.test(num) == true){
         element.classList.remove("ugyldig");
-element.classList.remove('popupHighlight');
+        popup.addHighlight();
     }else{
         element.classList.add("ugyldig");
     }
@@ -396,7 +396,7 @@ grunnleggendeDataForm.fornavn.addEventListener('focusout', e => {
     let nameRegex = /^[a-zæøåÆØÅ ]{2,}$/i;
     if(nameRegex.test(name) == true){
         element.classList.remove("ugyldig");
-element.classList.remove('popupHighlight');
+        popup.addHighlight();
     }else{
         element.classList.add("ugyldig");
     }
@@ -409,7 +409,7 @@ grunnleggendeDataForm.etternavn.addEventListener('focusout', e => {
     let nameRegex = /^.[a-zæøåÆØÅ ]{2,}$/i;
     if(nameRegex.test(name) == true){
         element.classList.remove("ugyldig");
-element.classList.remove('popupHighlight');
+        popup.addHighlight();
     }else{
         element.classList.add("ugyldig");
     }
@@ -422,7 +422,7 @@ grunnleggendeDataForm.forelder1.addEventListener('focusout', e => {
     let nameRegex = /^[0-9]+$/;
     if(nameRegex.test(num) == true){
         element.classList.remove("ugyldig");
-element.classList.remove('popupHighlight');
+        popup.addHighlight();
     }else{
         element.classList.add("ugyldig");
     }
@@ -435,7 +435,7 @@ grunnleggendeDataForm.forelder2.addEventListener('focusout', e => {
     let nameRegex = /^[0-9]+$/;
     if(nameRegex.test(num) == true){
         element.classList.remove("ugyldig");
-element.classList.remove('popupHighlight');
+        popup.addHighlight();
     }else{
         element.classList.add("ugyldig");
     }
@@ -448,7 +448,7 @@ element.classList.remove('popupHighlight');
 //     let nameRegex = /^[0-9]+$/;
 //     if(nameRegex.test(num) == true){
 //         element.classList.remove("ugyldig");
-// element.classList.remove('popupHighlight');
+//         popup.addHighlight();
 //     }else{
 //         element.classList.add("ugyldig");
 //     }
@@ -486,7 +486,7 @@ grunnleggendeDataForm.land.addEventListener('focusout', e => {
         if(nameRegex.test(name) == true && landArray[i].navn == name){
             selectedLand = landArray[i];
             element.classList.remove("ugyldig");
-element.classList.remove('popupHighlight');
+            popup.addHighlight();
             grunnleggendeDataForm.postnummer.removeAttribute('disabled');
             break;
         }else{
@@ -505,7 +505,7 @@ grunnleggendeDataForm.postnummer.addEventListener('focusout', e => {
     let nameRegex = new RegExp(`${temp}`);// /^[0-9]+$/;
     if(nameRegex.test(num) == true){
         element.classList.remove("ugyldig");
-element.classList.remove('popupHighlight');
+        popup.addHighlight();
     }else{
         element.classList.add("ugyldig");
     }
@@ -518,7 +518,7 @@ grunnleggendeDataForm.land.addEventListener('focusout', e => {
     let nameRegex = /^[a-zæøåÆØÅ ]{2,}$/i;
     if(nameRegex.test(name) == true){
         element.classList.remove("ugyldig");
-element.classList.remove('popupHighlight');
+        popup.addHighlight();
     }else{
         element.classList.add("ugyldig");
     }
@@ -531,7 +531,7 @@ grunnleggendeDataForm.botid.addEventListener('focusout', e => {
     let nameRegex = /^[0-9]+$/;
     if(nameRegex.test(num) == true){
         element.classList.remove("ugyldig");
-element.classList.remove('popupHighlight');
+        popup.addHighlight();
     }else{
         element.classList.add("ugyldig");
     }
@@ -546,7 +546,7 @@ element.classList.remove('popupHighlight');
     let nameRegex = /^[0-9]+$/;
     if(nameRegex.test(num) == true){
         element.classList.remove("ugyldig");
-element.classList.remove('popupHighlight');
+        popup.addHighlight();
     }else{
         element.classList.add("ugyldig");
     }
@@ -559,7 +559,7 @@ element.classList.remove('popupHighlight');
     let nameRegex = /^[0-9]+$/;
     if(nameRegex.test(num) == true){
         element.classList.remove("ugyldig");
-element.classList.remove('popupHighlight');
+        popup.addHighlight();
     }else{
         element.classList.add("ugyldig");
     }
@@ -572,7 +572,7 @@ element.classList.remove('popupHighlight');
     let nameRegex = /^[0-9]+$/;
     if(nameRegex.test(num) == true){
         element.classList.remove("ugyldig");
-element.classList.remove('popupHighlight');
+        popup.addHighlight();
     }else{
         element.classList.add("ugyldig");
     }
@@ -585,7 +585,7 @@ element.classList.remove('popupHighlight');
     let nameRegex =/^[0-9]+$/;
     if(nameRegex.test(num) == true){
         element.classList.remove("ugyldig");
-element.classList.remove('popupHighlight');
+        popup.addHighlight();
     }else{
         element.classList.add("ugyldig");
     }
@@ -600,7 +600,7 @@ NAVForm.sykepenger.addEventListener('focusout', e => {
     let nameRegex =/^[0-9]+$/;
     if(nameRegex.test(num) == true){
         element.classList.remove("ugyldig");
-element.classList.remove('popupHighlight');
+        popup.addHighlight();
     }else{
         element.classList.add("ugyldig");
     }
@@ -615,7 +615,7 @@ arbeidsForholdForm.forrigeManed.addEventListener('focusout', e => {
     let nameRegex =/^[0-9]+$/;
     if(nameRegex.test(num) == true){
         element.classList.remove("ugyldig");
-element.classList.remove('popupHighlight');
+        popup.addHighlight();
     }else{
         element.classList.add("ugyldig");
     }
@@ -628,7 +628,7 @@ arbeidsForholdForm.denneManed.addEventListener('focusout', e => {
     let nameRegex =/^[0-9]+$/;
     if(nameRegex.test(num) == true){
         element.classList.remove("ugyldig");
-element.classList.remove('popupHighlight');
+        popup.addHighlight();
     }else{
         element.classList.add("ugyldig");
     }
@@ -643,7 +643,7 @@ inntektFortidForm.inntekt2019.addEventListener('focusout', e => {
     let nameRegex =/^[0-9]+$/;
     if(nameRegex.test(num) == true){
         element.classList.remove("ugyldig");
-element.classList.remove('popupHighlight');
+        popup.addHighlight();
     }else{
         element.classList.add("ugyldig");
     }
@@ -656,7 +656,7 @@ inntektFortidForm.inntekt2020.addEventListener('focusout', e => {
     let nameRegex =/^[0-9]+$/;
     if(nameRegex.test(num) == true){ 
         element.classList.remove("ugyldig");
-element.classList.remove('popupHighlight');
+        popup.addHighlight();
     }else{
         element.classList.add("ugyldig");
     }
@@ -669,7 +669,7 @@ inntektFortidForm.inntekt2021.addEventListener('focusout', e => {
     let nameRegex =/^[0-9]+$/;
     if(nameRegex.test(num) == true){
         element.classList.remove("ugyldig");
-element.classList.remove('popupHighlight');
+        popup.addHighlight();
     }else{
         element.classList.add("ugyldig");
     }
@@ -684,7 +684,7 @@ inntekt2022Form.inntekt1.addEventListener('focusout', e => {
     let nameRegex =/^[0-9]+$/;
     if(nameRegex.test(num) == true){
         element.classList.remove("ugyldig");
-element.classList.remove('popupHighlight');
+        popup.addHighlight();
     }else{
         element.classList.add("ugyldig");
     }
@@ -697,7 +697,7 @@ inntekt2022Form.inntekt2.addEventListener('focusout', e => {
     let nameRegex =/^[0-9]+$/;
     if(nameRegex.test(num) == true){
         element.classList.remove("ugyldig");
-element.classList.remove('popupHighlight');
+        popup.addHighlight();
     }else{
         element.classList.add("ugyldig");
     }
@@ -710,7 +710,7 @@ inntekt2022Form.inntekt3.addEventListener('focusout', e => {
     let nameRegex =/^[0-9]+$/;
     if(nameRegex.test(num) == true){
         element.classList.remove("ugyldig");
-element.classList.remove('popupHighlight');
+        popup.addHighlight();
     }else{
         element.classList.add("ugyldig");
     }
@@ -723,7 +723,7 @@ inntekt2022Form.inntekt4.addEventListener('focusout', e => {
     let nameRegex =/^[0-9]+$/;
     if(nameRegex.test(num) == true){
         element.classList.remove("ugyldig");
-element.classList.remove('popupHighlight');
+        popup.addHighlight();
     }else{
         element.classList.add("ugyldig");
     }
@@ -736,7 +736,7 @@ inntekt2022Form.inntekt5.addEventListener('focusout', e => {
     let nameRegex =/^[0-9]+$/;
     if(nameRegex.test(num) == true){
         element.classList.remove("ugyldig");
-element.classList.remove('popupHighlight');
+        popup.addHighlight();
     }else{
         element.classList.add("ugyldig");
     }
@@ -749,7 +749,7 @@ inntekt2022Form.inntekt6.addEventListener('focusout', e => {
     let nameRegex =/^[0-9]+$/;
     if(nameRegex.test(num) == true){
         element.classList.remove("ugyldig");
-element.classList.remove('popupHighlight');
+        popup.addHighlight();
     }else{
         element.classList.add("ugyldig");
     }
@@ -762,7 +762,7 @@ inntekt2022Form.inntekt7.addEventListener('focusout', e => {
     let nameRegex =/^[0-9]+$/;
     if(nameRegex.test(num) == true){
         element.classList.remove("ugyldig");
-element.classList.remove('popupHighlight');
+        popup.addHighlight();
     }else{
         element.classList.add("ugyldig");
     }
@@ -775,7 +775,7 @@ inntekt2022Form.inntekt8.addEventListener('focusout', e => {
     let nameRegex =/^[0-9]+$/;
     if(nameRegex.test(num) == true){
         element.classList.remove("ugyldig");
-element.classList.remove('popupHighlight');
+        popup.addHighlight();
     }else{
         element.classList.add("ugyldig");
     }

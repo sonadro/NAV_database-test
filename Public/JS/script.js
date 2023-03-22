@@ -5,10 +5,14 @@ const infoDisplay = document.querySelector('#infoDisplay');
 const advancedInfoCard = document.querySelector(".advancedInfoCard");
 const advancedInfoCardContainer = document.querySelector(".advInfoCardContainer");
 const body = document.querySelector("body");
+const barnContain = advancedInfoCard.querySelector('#advInfo-barn');
 
 // funksjoner
 let closeAdvancedInfo = () => {
     advancedInfoCard.style.display = 'none';
+
+    barnContain.innerHTML = "";
+
     body.classList.toggle("noScroll");
     advancedInfoCardContainer.style.zIndex = "-1";
     advancedInfoCardContainer.style.backgroundColor = "rgb(0, 0, 0, 0)";
@@ -38,7 +42,7 @@ const openAdvancedInfo = id => {
     const ektefelleElm = advancedInfoCard.querySelector('#advInfo-ektefelle');
     const forelder1Elm = advancedInfoCard.querySelector('#advInfo-forelder1');
     const forelder2Elm = advancedInfoCard.querySelector('#advInfo-forelder2');
-    const barnElm = advancedInfoCard.querySelector('#advInfo-barn');
+    // const barnContain = advancedInfoCard.querySelector('#advInfo-barn');
     const postnummerElm = advancedInfoCard.querySelector('#advInfo-postnummer');
     const landElm = advancedInfoCard.querySelector('#advInfo-land');
     const botidElm = advancedInfoCard.querySelector('#advInfo-botid');
@@ -317,7 +321,20 @@ const openAdvancedInfo = id => {
                 ektefelleElm.textContent = data.ektefelle;
                 forelder1Elm.textContent = data.foreldre[0];
                 forelder2Elm.textContent = data.foreldre[1];
-                barnElm.textContent = data.barn;
+
+                let barn = Array.from(data.barn);
+                console.log(barn);
+                let barnIndex = 1;
+                barn.forEach(barn => {
+                    let template = `
+                    <li>Barn ${barnIndex}: <span class="advInfoField" id="advInfo-barn${barnIndex}">${barn}</span></li>
+                    `;
+
+                    barnContain.innerHTML += template;
+                    barnIndex++;
+                })
+
+                //barnElm.textContent = data.barn;
                 postnummerElm.textContent = data.postnummer;
                 landElm.textContent  = data.land;
                 botidElm.textContent = data.botid;

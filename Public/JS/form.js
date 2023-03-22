@@ -136,6 +136,18 @@ function addParents(){
 
 // ON SUBMIT FUNKSJON -------------------------------
 function onSubmit() {
+
+    let barn = [];
+
+    console.log(childFields);
+    let childrenToSend = Array.from(childFields.children);
+    console.log(childrenToSend);
+    childrenToSend.forEach(child => {
+        let selectedValue = child.lastElementChild.value;
+        barn.push(selectedValue);
+    })
+
+
     // fødselsdato
     const args = grunnleggendeDataForm.fodselsdato.value.split('-');
 
@@ -215,7 +227,7 @@ function onSubmit() {
         ekteskap: grunnleggendeDataForm.ekteskap.value,
         ektefelle: grunnleggendeDataForm.ektefelle.value,
         foreldre,
-        barn: grunnleggendeDataForm.barn.value,
+        barn,
         postnummer: grunnleggendeDataForm.postnummer.value,
         land: grunnleggendeDataForm.land.value,
         botid: grunnleggendeDataForm.botid.value,
@@ -307,6 +319,12 @@ async function addChild(event) {
 
     childArea = Array.from(document.querySelectorAll("div.childArea input"));
     addChildRegex();
+    console.log(childFields);
+    let childrenToSend = Array.from(childFields.children);
+    console.log(childrenToSend);
+    childrenToSend.forEach(child => {
+        console.log(child.lastElementChild.value);
+    })
 }
 
 //Kjør når addBarn-knappen blir trykker på

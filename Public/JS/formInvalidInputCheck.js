@@ -41,6 +41,15 @@ class Popup {
 
         // finn nye ugyldige inputs
         this.invalidInputFields = Array.from(document.querySelectorAll('.ugyldig'));
+
+        // hvis form er submittet, vis popup
+        if (this.submitted) {
+            if (this.invalidInputFields.length === 0) {
+                this.element.classList.add('hidden');
+            } else {
+                this.element.classList.remove('hidden');
+            }
+        }
     }
 }
 
@@ -55,12 +64,12 @@ document.querySelector('.submitKnapp').addEventListener('click', e => {
     popup.submitted = true;
     popup.getNewInvalidFields();
 
-    if (!popup.invalidInputFields === undefined) {
+    if (popup.invalidInputFields.length !== 0) {
         popup.element.classList.remove('hidden');
+        console.log('ugyldig');
     } else {
         popup.element.classList.add('hidden');
-        onSubmit();
+        console.log('gyldig');
+        // onSubmit();
     }
 });
-
-// TODO: handleindexchange (Scroll), hide popup når ingenting er ugyldig

@@ -438,7 +438,7 @@ function addChildRegex(){
             let nameRegex = /^[0-9]+$/;
             if(nameRegex.test(num) == true){
                 child.classList.remove("ugyldig");
-                child.classList.remove('popupHighlight');
+                popup.addHighlight();
             }else{
                 child.classList.add("ugyldig");
             }

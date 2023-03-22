@@ -35,7 +35,6 @@ const addDoc = function(obj, collection) {
         snapshot.docs.forEach(doc => {
             const data = doc.data();
             counter = data.count + 1;
-            console.log(counter);
         });
     });
 

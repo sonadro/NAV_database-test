@@ -1,96 +1,83 @@
-const popup = document.querySelector('.ugyldigInputPopup');
-
-let submitted = false;
-
-let invalidInputs;
-let dropdowns = Array.from(document.querySelectorAll('.userInfoDropdown'));
-let ugyldigIndex = 0;
-
-function getNewInvalids() {
-
-    //TODO: Dropdowns som viser default verdi blir markert med ugyldig når forms blir sendt inn
-    dropdowns.forEach((dropdown) => {
-        //console.log('Test', dropdown.children);
-        Array.from(dropdown.childNodes).forEach((child) => {
-            console.log(child.textContent);
-        })
-    })
-    invalidInputs = Array.from(document.querySelectorAll('.ugyldig'));
-
-    allInputs = Array.from(document.querySelectorAll('.userInfoInput'));
-
-    allInputs.forEach(input => {
-        if (!input.classList.contains('ugyldig')) {
-            input.classList.remove('popupHighlight');
-        }
-    });
-
-    if (!invalidInputs.length) return;
-
-    if (submitted) {
-        try {
-            invalidInputs[ugyldigIndex].classList.add('popupHighlight');
-        } catch (err) {
-            console.error(err)
-        }
+class Popup {
+    constructor() {
+        this.element = document.querySelector('.ugyldigInputPopup');
+        this.submitted = false;
+        this.invalidIndex = -1;
+        this.allDropdowns = Array.from(document.querySelectorAll('.userInfoDropdown'));
+        this.invalidInputFields = Array.from(document.querySelectorAll('.ugyldig'));
+        this.allInputFields = Array.from(document.querySelectorAll('.userInfoInput'));
+        this.prevBtn = document.querySelector('.forrige');
+        this.nextBtn = document.querySelector('.neste');
     }
 
-    if (submitted) {
-        if (invalidInputs.length) {
-            popup.classList.remove('hidden');
-        } else {
-            popup.classList.add('hidden');
-        }
-    }
-}
+    addHighlight() {
+        // oppdater array med alle input felter
+        this.allInputFields = Array.from(document.querySelectorAll('.userInfoInput'));
 
-// Form event listener
-submitBtn.addEventListener('click', e => {
-    if (!invalidInputs === 'nothing-yet') {
-        invalidInputs[ugyldigIndex].classList.add('popupHighlight');
-        invalidInputs[ugyldigIndex].scrollIntoView();
+        // fjern highlight fra alle elementer
+        this.allInputFields.forEach(inputField => {
+            inputField.classList.remove('popupHighlight');
+        });
+
+        // legg til highlight til nytt element (bare hvis submitted = true)
+        if (this.submitted) this.invalidInputFields[this.invalidIndex].classList.add('popupHighlight');
+    }
+
+    indexChange(inc) {
+        // increment index
+        this.invalidIndex += inc;
+
+        // index er mellom 0 og lengden på invalidInputFields array
+        if (this.invalidIndex < 0) this.invalidIndex = this.invalidInputFields.length - 1;
+        if (this.invalidIndex > this.invalidInputFields.length - 1) this.invalidIndex = 0;
+        console.log(this.invalidIndex);
+
+        // legg til class til ny highlight
+        this.addHighlight();
+
+        this.invalidInputFields[this.invalidIndex].scrollIntoView();
         scrollBy(0, -150);
     }
 
-    submitted = true;
+    getNewInvalidFields() {
+        // oppdater classes
+        this.allInputFields.forEach(field => {
+            if (!field.classList.contains('ugyldig') && field.value === null) {
+                field.classList.add('ugyldig');
+            }
+        });
 
-    popup.classList.add('hidden');
+        // finn nye ugyldige inputs
+        this.invalidInputFields = Array.from(document.querySelectorAll('.ugyldig'));
 
-    if (typeof invalidInputs === 'array') {
-        popup.classList.remove('hidden');
-        console.log(invalidInputs);
+        // hvis form er submittet, vis popup
+        if (this.submitted) {
+            if (this.invalidInputFields.length === 0) {
+                this.element.classList.add('hidden');
+            } else {
+                this.element.classList.remove('hidden');
+            }
+        }
+    }
+}
+
+const popup = new Popup();
+
+popup.getNewInvalidFields();
+
+// submit listener
+document.querySelector('.submitKnapp').addEventListener('click', e => {
+    e.preventDefault();
+
+    popup.submitted = true;
+    popup.getNewInvalidFields();
+
+    if (popup.invalidInputFields.length !== 0) {
+        popup.element.classList.remove('hidden');
+        console.log('ugyldig');
     } else {
+        popup.element.classList.add('hidden');
+        console.log('gyldig');
         onSubmit();
     }
 });
-
-const prevBtn = document.querySelector('.forrige');
-const nextBtn = document.querySelector('.neste');
-
-prevBtn.addEventListener('click', () => {
-    handleIndexChange(-1);
-});
-
-nextBtn.addEventListener('click', () => {
-    handleIndexChange(1);
-});
-
-function handleIndexChange(increment) {
-    ugyldigIndex += increment;
-
-    if (ugyldigIndex < 0) {
-        ugyldigIndex = invalidInputs.length - 1;
-    } else if (ugyldigIndex > invalidInputs.length - 1) {
-        ugyldigIndex = 0;
-    }
-
-    // remove highlight
-    invalidInputs.forEach(elm => {
-        elm.classList.remove('popupHighlight');
-    });
-
-    // add highlight & scroll
-    invalidInputs[ugyldigIndex].classList.add('popupHighlight');
-    invalidInputs[ugyldigIndex].scrollIntoView();
-    scrollBy(0, -150);
-}

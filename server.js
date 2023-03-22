@@ -44,13 +44,7 @@ server.listen(port);
 console.log(`Listening for request on port ${port}`);
 
 // redirects
-
 server.use(authRoutes)
-
-// server.get('/om-siden', (req, res) => res.render('om'));
-
-// server.get('/admin', (req, res) => res.render('adminPages/admin'));
-// server.get('/form', (req, res) => res.render('adminPages/form'));
 
 
 const createToken = (id, maxAge) => {
@@ -177,6 +171,10 @@ server.post('/login', (req, res) => {
                 console.log("Error getting documents: ", error);
             });
 
+            res.status(400).send({
+                status: "recieved", message: "Wrong user details. "
+            })
+            
             console.log(userLoggedIn);
 
             console.log(parcel);

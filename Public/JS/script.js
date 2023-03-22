@@ -5,17 +5,21 @@ const infoDisplay = document.querySelector('#infoDisplay');
 const advancedInfoCard = document.querySelector(".advancedInfoCard");
 const advancedInfoCardContainer = document.querySelector(".advInfoCardContainer");
 const body = document.querySelector("body");
+const barnContain = advancedInfoCard.querySelector('#advInfo-barn');
 
 // funksjoner
+
+// lukker avanserte infokort
 let closeAdvancedInfo = () => {
     advancedInfoCard.style.display = 'none';
+    barnContain.innerHTML = "";
     body.classList.toggle("noScroll");
     advancedInfoCardContainer.style.zIndex = "-1";
     advancedInfoCardContainer.style.backgroundColor = "rgb(0, 0, 0, 0)";
     advInfoCheck = false;
 }
 
-// function for opening the advanced info cards
+// åpner avanserte infokort og henter ut de relevante verdiene
 let advInfoCheck;
 const openAdvancedInfo = id => {
     // show card
@@ -38,7 +42,7 @@ const openAdvancedInfo = id => {
     const ektefelleElm = advancedInfoCard.querySelector('#advInfo-ektefelle');
     const forelder1Elm = advancedInfoCard.querySelector('#advInfo-forelder1');
     const forelder2Elm = advancedInfoCard.querySelector('#advInfo-forelder2');
-    const barnElm = advancedInfoCard.querySelector('#advInfo-barn');
+    // const barnContain = advancedInfoCard.querySelector('#advInfo-barn');
     const postnummerElm = advancedInfoCard.querySelector('#advInfo-postnummer');
     const landElm = advancedInfoCard.querySelector('#advInfo-land');
     const botidElm = advancedInfoCard.querySelector('#advInfo-botid');
@@ -88,7 +92,7 @@ const openAdvancedInfo = id => {
     const inntekt7Elm = advancedInfoCard.querySelector('#advInfo-inntekt7');
     const inntekt8Elm = advancedInfoCard.querySelector('#advInfo-inntekt8');
 
-    // Prevent further scrolling
+    // Hindre at man kan scrolle på siden
     body.classList.toggle("noScroll");
 
     // fetch data
@@ -97,8 +101,6 @@ const openAdvancedInfo = id => {
             // fetch correct document
             if (doc.id === id) {
                 const data = doc.data();
-
-                console.log(data);
 
                 // sjekkene under er for å passe på at dataen vises riktig, f.eks død/lever i stedet for 0/1. så spares litt lagringsplass i databasen
 
@@ -272,21 +274,17 @@ const openAdvancedInfo = id => {
                         break;
                 }
 
-                // indexes
-                let loadIndexes = [];
-
-                if (data.avansertInfo.length === 1) {
-                    // gammel data
-
-                    for (i = 0; i <= 6; i++) {
-                        loadIndexes.push(0);
-                    }
-                } else {
-                    // ny data
-
-                    for (i = 0; i <= 6; i++) {
-                        loadIndexes.push(i);
-                    }
+                // arb. forhold status
+                switch (data.avansertInfo[4].forholdStatus) {
+                    case "0":
+                        data.avansertInfo[4].forholdStatus = 'Ansatt';
+                        break;
+                    case "1":
+                        data.avansertInfo[4].forholdStatus = 'Opphørt';
+                        break;
+                    default:
+                        data.avansertInfo[4].forholdStatus = 'Ugyldig';
+                        break;
                 }
 
                 // load data -- grunnleggende data
@@ -294,65 +292,94 @@ const openAdvancedInfo = id => {
                 etternavnHeadElm.textContent = data.etternavn;
                 idHeadElm.textContent = id;
 
+                // grunnleggende data
                 fornavnElm.textContent = data.fornavn;
                 etternavnElm.textContent = data.etternavn;
                 fodselsdatoElm.textContent = data.fodselsdato;
                 alderElm.textContent = data.alder;
                 livsstatusElm.textContent = data.status;
+
+                // hvis personen lever, ikke vis endringstatus
+                if (data.status === 'Lever') {
+                    endringStatusElm.parentElement.classList.add('hidden');
+                } else {
+                    endringStatusElm.parentElement.classList.remove('hidden');
+                }
+
                 endringStatusElm.textContent = data.endringStatus;
                 ekteskapElm.textContent = data.ekteskap;
+
+                // hvis ekteskap ikke er gift, ikke vis ektefelle element
+                if (data.ekteskap !== 'Gift') {
+                    ektefelleElm.parentElement.classList.add('hidden');
+                } else {
+                    ektefelleElm.parentElement.classList.remove('hidden');
+                }
                 ektefelleElm.textContent = data.ektefelle;
                 forelder1Elm.textContent = data.foreldre[0];
                 forelder2Elm.textContent = data.foreldre[1];
-                barnElm.textContent = data.barn;
+
+                // hent ut barn fra databasen, og opprett nok felt for å vise alle
+                let barn = Array.from(data.barn);
+                let barnIndex = 1;
+                barn.forEach(barn => {
+                    let template = `
+                    <li>Barn ${barnIndex}: <span class="advInfoField" id="advInfo-barn${barnIndex}">${barn}</span></li>
+                    `;
+
+                    barnContain.innerHTML += template;
+                    barnIndex++;
+                })
+
+                //barnElm.textContent = data.barn;
                 postnummerElm.textContent = data.postnummer;
                 landElm.textContent  = data.land;
                 botidElm.textContent = data.botid;
 
                 // økonomiske forhold
-                bankkontoElm.textContent = data.avansertInfo[loadIndexes[0]].bankkonto;
-                kredittkortElm.textContent = data.avansertInfo[loadIndexes[0]].kredittkort;
-                lanElm.textContent = data.avansertInfo[loadIndexes[0]].lan;
-                datafullMaktElm.textContent = data.avansertInfo[loadIndexes[0]].fullmakt;
+                bankkontoElm.textContent = data.avansertInfo[0].bankkonto;
+                kredittkortElm.textContent = data.avansertInfo[0].kredittkort;
+                lanElm.textContent = data.avansertInfo[0].lan;
+                datafullMaktElm.textContent = data.avansertInfo[0].fullmakt;
 
                 // livssituasjon
-                alvorligSykElm.textContent = data.avansertInfo[loadIndexes[1]].alvorligSyk;
-                flyktningElm.textContent = data.avansertInfo[loadIndexes[1]].flyktning;
-                gravidElm.textContent = data.avansertInfo[loadIndexes[1]].gravid;
+                alvorligSykElm.textContent = data.avansertInfo[1].alvorligSyk;
+                flyktningElm.textContent = data.avansertInfo[1].flyktning;
+                gravidElm.textContent = data.avansertInfo[1].gravid;
 
                 // nav
-                medlemElm.textContent = data.avansertInfo[loadIndexes[2]].medlem;
-                uforElm.textContent = data.avansertInfo[loadIndexes[2]].ufor;
-                pensjonistElm.textContent = data.avansertInfo[loadIndexes[2]].pensjonist;
-                yrkesskadeElm.textContent = data.avansertInfo[loadIndexes[2]].yrkesskade;
-                dagpengerElm.textContent = data.avansertInfo[loadIndexes[2]].dagpenger;
-                sykepengerElm.textContent = data.avansertInfo[loadIndexes[2]].sykepenger;
+                medlemElm.textContent = data.avansertInfo[2].medlem;
+                uforElm.textContent = data.avansertInfo[2].ufor;
+                pensjonistElm.textContent = data.avansertInfo[2].pensjonist;
+                yrkesskadeElm.textContent = data.avansertInfo[2].yrkesskade;
+                dagpengerElm.textContent = data.avansertInfo[2].dagpenger;
+                sykepengerElm.textContent = data.avansertInfo[2].sykepenger;
 
                 // lånekassen
-                stipendElm.textContent = data.avansertInfo[loadIndexes[3]].stipend;
-                studiestedElm.textContent = data.avansertInfo[loadIndexes[3]].studiested;
+                stipendElm.textContent = data.avansertInfo[3].stipend;
+                studiestedElm.textContent = data.avansertInfo[3].studiested;
 
                 // arbeidsforhold
-                freelancerElm.textContent = data.avansertInfo[loadIndexes[4]].freelancer;
-                arbforholdstatusElm.textContent = data.avansertInfo[loadIndexes[4]].forholdStatus;
-                sektorElm.textContent = data.avansertInfo[loadIndexes[4]].sektor;
-                arbtidforrigemanedElm.textContent = data.avansertInfo[loadIndexes[4]].forrigeManed;
-                arbtiddennemanedElm.textContent = data.avansertInfo[loadIndexes[4]].denneManed;
+                freelancerElm.textContent = data.avansertInfo[4].freelancer;
+                arbforholdstatusElm.textContent = data.avansertInfo[4].forholdStatus;
+                sektorElm.textContent = data.avansertInfo[4].sektor;
+                arbtidforrigemanedElm.textContent = data.avansertInfo[4].forrigeManed;
+                arbtiddennemanedElm.textContent = data.avansertInfo[4].denneManed;
 
                 // inntekt fortid
-                inntekt2019Elm.textContent = data.avansertInfo[loadIndexes[5]].inntekt2019;
-                inntekt2020Elm.textContent = data.avansertInfo[loadIndexes[5]].inntekt2020;
-                inntekt2021Elm.textContent = data.avansertInfo[loadIndexes[5]].inntekt2021;
+                inntekt2019Elm.textContent = data.avansertInfo[5].inntekt2019;
+                inntekt2020Elm.textContent = data.avansertInfo[5].inntekt2020;
+                inntekt2021Elm.textContent = data.avansertInfo[5].inntekt2021;
 
                 // inntekt nåtid
-                inntekt1Elm.textContent = data.avansertInfo[loadIndexes[6]].inntekt1;
-                inntekt2Elm.textContent = data.avansertInfo[loadIndexes[6]].inntekt2;
-                inntekt3Elm.textContent = data.avansertInfo[loadIndexes[6]].inntekt3;
-                inntekt4Elm.textContent = data.avansertInfo[loadIndexes[6]].inntekt4;
-                inntekt5Elm.textContent = data.avansertInfo[loadIndexes[6]].inntekt5;
-                inntekt6Elm.textContent = data.avansertInfo[loadIndexes[6]].inntekt6;
-                inntekt7Elm.textContent = data.avansertInfo[loadIndexes[6]].inntekt7;
-                inntekt8Elm.textContent = data.avansertInfo[loadIndexes[6]].inntekt8;
+                inntekt1Elm.textContent = data.avansertInfo[6].inntekt1;
+                inntekt2Elm.textContent = data.avansertInfo[6].inntekt2;
+                inntekt3Elm.textContent = data.avansertInfo[6].inntekt3;
+                inntekt4Elm.textContent = data.avansertInfo[6].inntekt4;
+                inntekt5Elm.textContent = data.avansertInfo[6].inntekt5;
+                inntekt6Elm.textContent = data.avansertInfo[6].inntekt6;
+                inntekt7Elm.textContent = data.avansertInfo[6].inntekt7;
+                inntekt8Elm.textContent = data.avansertInfo[6].inntekt8;
 
                 // hvis et felt i databasen er tomt, gi det en verdi
                 let allFields = Array.from(document.querySelectorAll('.advInfoField'));
@@ -365,10 +392,9 @@ const openAdvancedInfo = id => {
         });
     });
     advInfoCheck = true;
-    //console.log(advInfoCheck);
 }
 
-// HTML-injection
+// HTML-injection for infokort
 const genTemplate = function(obj, id) {
     const template = `
         <div class="userCardContainer" id="${id}">
@@ -386,7 +412,6 @@ const genTemplate = function(obj, id) {
 // Fetch dokumenter
 const getDocs = function() {
     db.collection(`brukere`).get().then(snapshot => {
-        // console.log(snapshot);
         let dataArr = [];
         snapshot.forEach(doc => {
             let data = doc.data();
@@ -395,7 +420,7 @@ const getDocs = function() {
             // livsstatus sjekk
             if (data.status === "0") {
                 data.status = 'Død';
-            } else {
+            } else if (data.status === "1") {
                 data.status = 'Lever';
             }
 
@@ -422,29 +447,21 @@ infoDisplay.addEventListener('click', e => {
 // eventlistener for toggling user information inside advanced info cards
 advancedInfoCard.addEventListener('click', e => {
     let target = e.target;
-    //console.log(target);
     if(target.classList.contains('advInfoCatSelect')){
-        //console.log(e.target.nextElementSibling);
         e.target.nextElementSibling.classList.toggle('hidden');
         e.target.lastChild.classList.toggle('rotateArrow');
     }
-    /*if(target == advInfoButtonGrunnleggende){
-        advancedInfoGrunnleggende.classList.toggle('hidden');
-    }*/
-
 })
 
+// lukk avanserte infokort hvis brukeren trykker på bakgrunnen eller trykker escape
 advancedInfoCardContainer.addEventListener('click', e => {
-    //console.log(e.target);
     if (e.target == advancedInfoCardContainer){
         closeAdvancedInfo();
     }
 });
 
 window.addEventListener('keydown', e => {
-    //console.log(e.key);
     if(e.key == 'Escape' && advInfoCheck == true){
-        //console.log(e.key);
         closeAdvancedInfo();
     }
 })

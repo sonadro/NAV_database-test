@@ -4,6 +4,7 @@ const db = firebase.firestore();
 // global variables
 let parentList = [];
 let age;
+let childIndex = 1;
 
 // FORMS deklarasjon
 const grunnleggendeDataForm = document.querySelector('.grunnleggendeData');
@@ -24,15 +25,18 @@ let statusFieldDead = document.querySelector("#statusDead");
 let statusChangeField = document.querySelector("#endringStatus");
 let statusChangeFieldLabel = document.querySelector("#endringStatusLabel");
 const countryField = grunnleggendeDataForm.land;
+let childArea = Array.from(document.querySelectorAll("div.childArea input"));
+const childFields = grunnleggendeDataForm.barn.parentElement.parentElement;
 
 // funksjoner
+
+// legg til person i databasen
 const addDoc = function(obj, collection) {
     let counter = 0;
     db.collection('databaseValues').get().then(snapshot => {
         snapshot.docs.forEach(doc => {
             const data = doc.data();
             counter = data.count + 1;
-            console.log(counter);
         });
     });
 
@@ -134,6 +138,16 @@ function addParents(){
 
 // ON SUBMIT FUNKSJON -------------------------------
 function onSubmit() {
+
+    let barn = [];
+
+    let childrenToSend = Array.from(childFields.children);
+    childrenToSend.forEach(child => {
+        let selectedValue = child.lastElementChild.value;
+        barn.push(selectedValue);
+    })
+
+
     // fødselsdato
     const args = grunnleggendeDataForm.fodselsdato.value.split('-');
 
@@ -213,7 +227,7 @@ function onSubmit() {
         ekteskap: grunnleggendeDataForm.ekteskap.value,
         ektefelle: grunnleggendeDataForm.ektefelle.value,
         foreldre,
-        barn: grunnleggendeDataForm.barn.value,
+        barn,
         postnummer: grunnleggendeDataForm.postnummer.value,
         land: grunnleggendeDataForm.land.value,
         botid: grunnleggendeDataForm.botid.value,
@@ -226,7 +240,6 @@ function onSubmit() {
 
 // event listeners
 statusField.addEventListener("input", e => {
-    //console.log(e);
     if(statusField.value == statusFieldDead.value){
         statusChangeField.classList.remove("hidden");
         statusChangeFieldLabel.classList.remove("hidden");
@@ -239,7 +252,6 @@ statusField.addEventListener("input", e => {
 // ektefelle felt bare vises hvis personen er gift
 grunnleggendeDataForm.ekteskap.addEventListener('input', e => {
     const label = document.querySelector('.ektefelleLabel');
-    //console.log(grunnleggendeDataForm.ekteskap.value);
     if (grunnleggendeDataForm.ekteskap.value === '1') {
         label.classList.remove('hidden');
         grunnleggendeDataForm.ektefelle.classList.remove('hidden');
@@ -283,6 +295,33 @@ grunnleggendeDataForm.fodselsdato.addEventListener('input', () => {
     if (bornMonth >= currentMonth && bornDay >= currentDay) {
         age++;
     }
+});
+
+
+//Legg til nytt input-felt
+async function addChild(event) {
+    childIndex++
+
+    let contTemplate = document.createElement("DIV");
+    contTemplate.classList.add("inputScalable");
+
+    let template = `
+        <label class="inputTitle">Barn ${childIndex}</label>
+        <input class="userInfoInput" type="text" id="barn${childIndex}">
+    `;
+
+    contTemplate.innerHTML += template;
+
+    await childFields.appendChild(contTemplate);
+
+    childArea = Array.from(document.querySelectorAll("div.childArea input"));
+    addChildRegex();
+}
+
+//Kjør når addBarn-knappen blir trykker på
+document.getElementById("addBarn").addEventListener("click", function(event){
+    event.preventDefault();
+    addChild();
 });
 
 // kall funksjoner

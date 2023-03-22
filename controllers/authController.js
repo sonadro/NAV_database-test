@@ -2,6 +2,10 @@ module.exports.home_get = (req, res) => {
     res.render('index');
 }
 
+module.exports.form_get = (req, res) => {
+    res.render('form');
+}
+
 module.exports.om_get = (req, res) => {
     res.render('om');
 }
@@ -11,7 +15,7 @@ module.exports.adminMain_get = (req, res) => {
 }
 
 module.exports.adminForm_get = (req, res) => {
-    res.render('adminPages/form');
+    res.render('adminPages/adminForm');
 }
 
 module.exports.login_get = (req, res) => {

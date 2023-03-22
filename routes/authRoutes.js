@@ -5,6 +5,7 @@ const {requireAuth} = require('../middleware/authMiddleware')
 const router = Router();
 
 router.get('/', authController.home_get);
+router.get('/form', authController.form_get)
 router.get('/om-siden', authController.om_get);
 router.get('/admin', authController.adminMain_get);
 router.get('/admin/form', authController.adminForm_get);

@@ -44,13 +44,7 @@ server.listen(port);
 console.log(`Listening for request on port ${port}`);
 
 // redirects
-
 server.use(authRoutes)
-
-// server.get('/om-siden', (req, res) => res.render('om'));
-
-// server.get('/admin', (req, res) => res.render('adminPages/admin'));
-// server.get('/form', (req, res) => res.render('adminPages/form'));
 
 
 const createToken = (id, maxAge) => {

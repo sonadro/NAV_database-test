@@ -67,20 +67,6 @@ grunnleggendeDataForm.forelder2.addEventListener('input', e => {
     popup.getNewInvalidFields();
 })
 
-// grunnleggendeDataForm.barn.addEventListener('input', e => {
-//     let element = grunnleggendeDataForm.barn
-//     let num = element.value;
-//     let nameRegex = /^[0-9]+$/;
-//     if(nameRegex.test(num) == true){
-//         element.classList.remove("ugyldig");
-//         popup.addHighlight();
-//     }else{
-//         element.classList.add("ugyldig");
-//     }
-//     popup.getNewInvalidFields();
-// })
-
-
 grunnleggendeDataForm.land.addEventListener('input', e => {
     let element = grunnleggendeDataForm.land
     let name = element.value;
@@ -442,26 +428,11 @@ grunnleggendeDataForm.forelder2.addEventListener('focusout', e => {
     popup.getNewInvalidFields();
 })
 
-// grunnleggendeDataForm.barn.addEventListener('focusout', e => {
-//     let element = grunnleggendeDataForm.barn
-//     let num = element.value;
-//     let nameRegex = /^[0-9]+$/;
-//     if(nameRegex.test(num) == true){
-//         element.classList.remove("ugyldig");
-//         popup.addHighlight();
-//     }else{
-//         element.classList.add("ugyldig");
-//     }
-//     popup.getNewInvalidFields();
-// })
-function addChildRegex(){
-    console.log("Line 458", childArea, childIndex);
-    console.log(childArea);
 
+function addChildRegex(){
     //Add listeners
     ['input', 'focusout'].forEach(event => {
         let child = childArea[childIndex - 1];
-        console.log("Start addEventListener", child, childIndex);
         child.addEventListener(event, (e) => {
             let num = child.value;
             let nameRegex = /^[0-9]+$/;
@@ -785,7 +756,6 @@ inntekt2022Form.inntekt8.addEventListener('focusout', e => {
 //-------------------------------------------Forms dropdown listeners-------------------------------------------
 
 let dropDowns = Array.from(document.querySelectorAll("form select"));
-//let func = popup.getNewInvalidFields();
 
 ['input', 'blur'].forEach(event => {
     dropDowns.forEach(dropdown => {
@@ -800,67 +770,5 @@ let dropDowns = Array.from(document.querySelectorAll("form select"));
         });
     })
 })
-
-
-// grunnleggendeDataForm.status.addEventListener('input', e => {
-//     popup.getNewInvalidFields();
-// })
-
-// grunnleggendeDataForm.ekteskap.addEventListener('input', e => {
-//     popup.getNewInvalidFields();
-// })
-
-// livssituasjonForm.alvorligSyk.addEventListener('input', e => {
-//     popup.getNewInvalidFields();
-// })
-
-// livssituasjonForm.flyktning.addEventListener('input', e => {
-//     popup.getNewInvalidFields();
-// })
-
-// livssituasjonForm.gravid.addEventListener('input', e => {
-//     popup.getNewInvalidFields();
-// })
-
-// NAVForm.medlem.addEventListener('input', e => {
-//     popup.getNewInvalidFields();
-// })
-
-// NAVForm.ufor.addEventListener('input', e => {
-//     popup.getNewInvalidFields();
-// })
-
-// NAVForm.pensjonist.addEventListener('input', e => {
-//     popup.getNewInvalidFields();
-// })
-
-// NAVForm.yrkesskade.addEventListener('input', e => {
-//     popup.getNewInvalidFields();
-// })
-
-// NAVForm.dagpenger.addEventListener('input', e => {
-//     popup.getNewInvalidFields();
-// })
-
-// lånekassenForm.stipend.addEventListener('input', e => {
-//     popup.getNewInvalidFields();
-// })
-
-// lånekassenForm.studiested.addEventListener('input', e => {
-//     popup.getNewInvalidFields();
-// })
-
-// arbeidsForholdForm.freelancer.addEventListener('input', e => {
-//     popup.getNewInvalidFields();
-// })
-
-// arbeidsForholdForm.forholdStatus.addEventListener('input', e => {
-//     popup.getNewInvalidFields();
-// })
-
-// arbeidsForholdForm.sektor.addEventListener('input', e => {
-//     popup.getNewInvalidFields();
-// })
-
 
 addChildRegex();

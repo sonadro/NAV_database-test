@@ -29,6 +29,8 @@ let childArea = Array.from(document.querySelectorAll("div.childArea input"));
 const childFields = grunnleggendeDataForm.barn.parentElement.parentElement;
 
 // funksjoner
+
+// legg til person i databasen
 const addDoc = function(obj, collection) {
     let counter = 0;
     db.collection('databaseValues').get().then(snapshot => {
@@ -139,9 +141,7 @@ function onSubmit() {
 
     let barn = [];
 
-    console.log(childFields);
     let childrenToSend = Array.from(childFields.children);
-    console.log(childrenToSend);
     childrenToSend.forEach(child => {
         let selectedValue = child.lastElementChild.value;
         barn.push(selectedValue);
@@ -240,7 +240,6 @@ function onSubmit() {
 
 // event listeners
 statusField.addEventListener("input", e => {
-    //console.log(e);
     if(statusField.value == statusFieldDead.value){
         statusChangeField.classList.remove("hidden");
         statusChangeFieldLabel.classList.remove("hidden");
@@ -253,7 +252,6 @@ statusField.addEventListener("input", e => {
 // ektefelle felt bare vises hvis personen er gift
 grunnleggendeDataForm.ekteskap.addEventListener('input', e => {
     const label = document.querySelector('.ektefelleLabel');
-    //console.log(grunnleggendeDataForm.ekteskap.value);
     if (grunnleggendeDataForm.ekteskap.value === '1') {
         label.classList.remove('hidden');
         grunnleggendeDataForm.ektefelle.classList.remove('hidden');
@@ -302,7 +300,6 @@ grunnleggendeDataForm.fodselsdato.addEventListener('input', () => {
 
 //Legg til nytt input-felt
 async function addChild(event) {
-    console.log("Before", childFields, childArea);
     childIndex++
 
     let contTemplate = document.createElement("DIV");
@@ -319,12 +316,6 @@ async function addChild(event) {
 
     childArea = Array.from(document.querySelectorAll("div.childArea input"));
     addChildRegex();
-    console.log(childFields);
-    let childrenToSend = Array.from(childFields.children);
-    console.log(childrenToSend);
-    childrenToSend.forEach(child => {
-        console.log(child.lastElementChild.value);
-    })
 }
 
 //Kjør når addBarn-knappen blir trykker på

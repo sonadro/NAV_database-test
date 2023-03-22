@@ -8,18 +8,18 @@ const body = document.querySelector("body");
 const barnContain = advancedInfoCard.querySelector('#advInfo-barn');
 
 // funksjoner
+
+// lukker avanserte infokort
 let closeAdvancedInfo = () => {
     advancedInfoCard.style.display = 'none';
-
     barnContain.innerHTML = "";
-
     body.classList.toggle("noScroll");
     advancedInfoCardContainer.style.zIndex = "-1";
     advancedInfoCardContainer.style.backgroundColor = "rgb(0, 0, 0, 0)";
     advInfoCheck = false;
 }
 
-// function for opening the advanced info cards
+// åpner avanserte infokort og henter ut de relevante verdiene
 let advInfoCheck;
 const openAdvancedInfo = id => {
     // show card
@@ -92,7 +92,7 @@ const openAdvancedInfo = id => {
     const inntekt7Elm = advancedInfoCard.querySelector('#advInfo-inntekt7');
     const inntekt8Elm = advancedInfoCard.querySelector('#advInfo-inntekt8');
 
-    // Prevent further scrolling
+    // Hindre at man kan scrolle på siden
     body.classList.toggle("noScroll");
 
     // fetch data
@@ -101,8 +101,6 @@ const openAdvancedInfo = id => {
             // fetch correct document
             if (doc.id === id) {
                 const data = doc.data();
-
-                console.log(data);
 
                 // sjekkene under er for å passe på at dataen vises riktig, f.eks død/lever i stedet for 0/1. så spares litt lagringsplass i databasen
 
@@ -277,7 +275,6 @@ const openAdvancedInfo = id => {
                 }
 
                 // arb. forhold status
-                console.log('arb forhold', data.avansertInfo[4].forholdStatus);
                 switch (data.avansertInfo[4].forholdStatus) {
                     case "0":
                         data.avansertInfo[4].forholdStatus = 'Ansatt';
@@ -322,8 +319,8 @@ const openAdvancedInfo = id => {
                 forelder1Elm.textContent = data.foreldre[0];
                 forelder2Elm.textContent = data.foreldre[1];
 
+                // hent ut barn fra databasen, og opprett nok felt for å vise alle
                 let barn = Array.from(data.barn);
-                console.log(barn);
                 let barnIndex = 1;
                 barn.forEach(barn => {
                     let template = `
@@ -395,10 +392,9 @@ const openAdvancedInfo = id => {
         });
     });
     advInfoCheck = true;
-    //console.log(advInfoCheck);
 }
 
-// HTML-injection
+// HTML-injection for infokort
 const genTemplate = function(obj, id) {
     const template = `
         <div class="userCardContainer" id="${id}">
@@ -416,7 +412,6 @@ const genTemplate = function(obj, id) {
 // Fetch dokumenter
 const getDocs = function() {
     db.collection(`brukere`).get().then(snapshot => {
-        // console.log(snapshot);
         let dataArr = [];
         snapshot.forEach(doc => {
             let data = doc.data();
@@ -452,29 +447,21 @@ infoDisplay.addEventListener('click', e => {
 // eventlistener for toggling user information inside advanced info cards
 advancedInfoCard.addEventListener('click', e => {
     let target = e.target;
-    //console.log(target);
     if(target.classList.contains('advInfoCatSelect')){
-        //console.log(e.target.nextElementSibling);
         e.target.nextElementSibling.classList.toggle('hidden');
         e.target.lastChild.classList.toggle('rotateArrow');
     }
-    /*if(target == advInfoButtonGrunnleggende){
-        advancedInfoGrunnleggende.classList.toggle('hidden');
-    }*/
-
 })
 
+// lukk avanserte infokort hvis brukeren trykker på bakgrunnen eller trykker escape
 advancedInfoCardContainer.addEventListener('click', e => {
-    //console.log(e.target);
     if (e.target == advancedInfoCardContainer){
         closeAdvancedInfo();
     }
 });
 
 window.addEventListener('keydown', e => {
-    //console.log(e.key);
     if(e.key == 'Escape' && advInfoCheck == true){
-        //console.log(e.key);
         closeAdvancedInfo();
     }
 })

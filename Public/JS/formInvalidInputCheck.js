@@ -11,6 +11,9 @@ class Popup {
     }
 
     addHighlight() {
+        // oppdater array med alle input felter
+        this.allInputFields = Array.from(document.querySelectorAll('.userInfoInput'));
+
         // fjern highlight fra alle elementer
         this.allInputFields.forEach(inputField => {
             inputField.classList.remove('popupHighlight');

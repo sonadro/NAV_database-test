@@ -101,7 +101,7 @@ const getDocs = function() {
                     id: doc.id,
                     name: `${data.fornavn} ${data.etternavn}`
                 });
-                parentList.sort((a, b) => a - b);
+                parentList.sort((a, b) => a.id - b.id);
             }
         });
         addParents();

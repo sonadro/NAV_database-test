@@ -96,7 +96,7 @@ const getDocs = function() {
             let data = doc.data();
             data.id = doc.id;
             dataArr.push(data);
-            if(data.barn){
+            if(data.barn != 0){
                 parentList.push({
                     id: doc.id,
                     name: `${data.fornavn} ${data.etternavn}`

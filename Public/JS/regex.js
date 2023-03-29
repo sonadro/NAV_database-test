@@ -73,11 +73,11 @@ addRegexEventListeners(grunnleggendeDataForm.botid, /^[0-9]+$/);
 // Økonomiske forhold
 addRegexEventListeners(økonomiskeForholdForm.bankkonto, /^[0-9]+$/);
 addRegexEventListeners(økonomiskeForholdForm.kredittkort, /^[0-9]+$/);
-addRegexEventListeners(økonomiskeForholdForm.lan, /^[0-9]+$/);
-addRegexEventListeners(økonomiskeForholdForm.fullmakt, /^[0-9]+$/);
+addRegexEventListeners(økonomiskeForholdForm.lan, /^[0-9]{0,}$/);
+addRegexEventListeners(økonomiskeForholdForm.fullmakt, /^[0-9]{0,}$/);
 
 // NAV
-addRegexEventListeners(NAVForm.sykepenger, /^[0-9]+$/);
+addRegexEventListeners(NAVForm.sykepenger, /^[0-9]{0,}$/);
 
 // Arbeidsforhold
 addRegexEventListeners(arbeidsForholdForm.forrigeManed, /^[0-9]+$/);
@@ -104,7 +104,7 @@ function addChildRegex() {
         let child = childArea[childIndex - 1];
         child.addEventListener(event, (e) => {
             let num = child.value;
-            let nameRegex = /^[0-9]+$/;
+            let nameRegex = /^[0-9]{0,}$/;
             if (nameRegex.test(num) == true) {
                 child.classList.remove('ugyldig');
                 popup.addHighlight();

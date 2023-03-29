@@ -22,21 +22,21 @@
         <div class="quadInputFieldScaleable noBotPadd inputArea">
             <div class="inputScalable">
                 <label for="fornavn" class="inputTitle">Fornavn:</label>
-                <input class="userInfoInput" type="text" id="fornavn">
+                <input class="userInfoInput required" type="text" id="fornavn">
             </div>
             <div class="inputScalable">
                 <label for="etternavn" class="inputTitle">Etternavn:</label>
-                <input class="userInfoInput" type="text" id="etternavn">
+                <input class="userInfoInput required" type="text" id="etternavn">
             </div>
             <div class="inputScalable">
                 <label for="fodselsdato" class="inputTitle">Fødselsdato:</label>
-                <input class="userInfoInput" type="date" id="fodselsdato">
+                <input class="userInfoInput required" type="date" id="fodselsdato">
             </div>
         </div>
         <div class="quadInputFieldScaleable inputArea">
             <div class="inputScalable">
                 <label for="status" class="inputTitle">Livsstatus:</label>
-                <select autocomplete="off" class="userInfoInput userInfoDropdown" type="text" id="status">
+                <select autocomplete="off" class="userInfoInput userInfoDropdown required" type="text" id="status">
                     <option disabled selected value="default">Velg...</option>
                     <option value="1">Levende</option>
                     <option value="0" id="statusDead">Død</option>
@@ -48,7 +48,7 @@
             </div>
             <div class="inputScalable">
                 <label for="ekteskap" class="inputTitle">Ekteskap:</label>
-                <select autocomplete="off" class="userInfoInput userInfoDropdown" type="text" id="ekteskap">
+                <select autocomplete="off" class="userInfoInput userInfoDropdown required" type="text" id="ekteskap">
                     <option disabled selected value="default">Velg...</option>
                     <option value="0">Enslig</option>
                     <option value="1">Gift</option>
@@ -63,7 +63,7 @@
         <div class="duoInputFieldScaleable inputArea noBotPadd">
             <div class="inputScalableSelection">
                 <label for="forelder1" class="inputTitle">Forelder 1:</label>
-                <input id="forelder1" class="forelder1Input userInfoInput" type="text">
+                <input id="forelder1" class="forelder1Input userInfoInput required" type="text">
                 <div class="suggestions1Contain">
                     <button class="suggestions1DropBtn">toggle1</button>
                     <div class="suggestions1 hidden"></div>
@@ -72,7 +72,7 @@
 
             <div class="inputScalableSelection">
                 <label for="forelder2" class="inputTitle">Forelder 2:</label>
-                <input id="forelder2" class="forelder2Input userInfoInput" type="text">
+                <input id="forelder2" class="forelder2Input userInfoInput required" type="text">
                 <div class="suggestions2Contain">
                     <button class="suggestions2DropBtn">toggle2</button>
                     <div class="suggestions2 hidden"></div>
@@ -91,15 +91,15 @@
         <div class="quadInputFieldScaleable inputArea">
             <div class="inputScalable">
                 <label for="land" class="inputTitle">Land:</label>
-                <input class="userInfoInput" type="text" id="land" value="Norge">
+                <input class="userInfoInput required" type="text" id="land" value="Norge">
             </div>
             <div class="inputScalable">
                 <label for="postnummer" class="inputTitle">Bosted post-nummer:</label>
-                <input class="userInfoInput" type="text" id="postnummer">
+                <input class="userInfoInput required" type="text" id="postnummer">
             </div>
             <div class="inputScalable">
                 <label for="botid" class="inputTitle">Botid:</label>
-                <input class="userInfoInput" type="text" id="botid">
+                <input class="userInfoInput required" type="text" id="botid">
             </div>
         </div>
     </form>
@@ -110,11 +110,11 @@
         <div class="quadInputFieldScaleable inputArea">
             <div class="inputScalable">
                 <label for="bankkonto" class="inputTitle">Bankkonto:</label>
-                <input class="userInfoInput" type="text" id="bankkonto">
+                <input class="userInfoInput required" type="text" id="bankkonto">
             </div>
             <div class="inputScalable">
                 <label for="kredittkort" class="inputTitle">Kredittkort:</label>
-                <input class="userInfoInput" type="text" id="kredittkort">
+                <input class="userInfoInput required" type="text" id="kredittkort">
             </div>
             <div class="inputScalable">
                 <label for="lan" class="inputTitle">Lån:</label>
@@ -132,7 +132,7 @@
         <div class="quadInputFieldScaleable inputArea">
             <div class="inputScalable">
                 <label for="alvorligSyk" class="inputTitle">Er alvorlig syk:</label>
-                <select autocomplete="off" class="userInfoInput userInfoDropdown" type="text" id="alvorligSyk">
+                <select autocomplete="off" class="userInfoInput userInfoDropdown required" type="text" id="alvorligSyk">
                     <option disabled selected value="default">Velg...</option>
                     <option value="1">Ja</option>
                     <option value="0">Nei</option>
@@ -140,7 +140,7 @@
             </div>
             <div class="inputScalable">
                 <label for="flyktning" class="inputTitle">Flyktning:</label>
-                <select autocomplete="off" class="userInfoInput userInfoDropdown" type="text" id="flyktning">
+                <select autocomplete="off" class="userInfoInput userInfoDropdown required" type="text" id="flyktning">
                     <option disabled selected value="default">Velg...</option>
                     <option value="1">Ja</option>
                     <option value="0">Nei</option>
@@ -148,7 +148,7 @@
             </div>
             <div class="inputScalable">
                 <label for="gravid" class="inputTitle">Gravid:</label>
-                <select autocomplete="off" class="userInfoInput userInfoDropdown" type="text" id="gravid">
+                <select autocomplete="off" class="userInfoInput userInfoDropdown required" type="text" id="gravid">
                     <option disabled selected value="default">Velg...</option>
                     <option value="1">Ja</option>
                     <option value="0">Nei</option>
@@ -162,7 +162,7 @@
 
         <div class="oneInputField inputArea">
             <label for="medlem" class="inputTitle">Medlem:</label>
-            <select autocomplete="off" class="userInfoInput userInfoDropdown" type="text" id="medlem">
+            <select autocomplete="off" class="userInfoInput userInfoDropdown required" type="text" id="medlem">
                 <option disabled selected value="default">Velg...</option>
                 <option value="1">Ja</option>
                 <option value="0">Nei</option>
@@ -171,7 +171,7 @@
         <div class="duoInputFieldScaleable inputArea">
             <div class="inputScalable">
                 <label for="ufor" class="inputTitle">Ufør:</label>
-                <select autocomplete="off" class="userInfoInput userInfoDropdown" type="text" id="ufor">
+                <select autocomplete="off" class="userInfoInput userInfoDropdown required" type="text" id="ufor">
                     <option disabled selected value="default">Velg...</option>
                     <option value="1">Ja</option>
                     <option value="0">Nei</option>
@@ -179,7 +179,7 @@
             </div>
             <div class="inputScalable">
                 <label for="pensjonist" class="inputTitle">Pensjonist:</label>
-                <select autocomplete="off" class="userInfoInput userInfoDropdown" type="text" id="pensjonist">
+                <select autocomplete="off" class="userInfoInput userInfoDropdown required" type="text" id="pensjonist">
                     <option disabled selected value="default">Velg...</option>
                     <option value="1">Ja</option>
                     <option value="0">Nei</option>
@@ -189,7 +189,7 @@
         <div class="quadInputFieldScaleable inputArea">
             <div class="inputScalable">
                 <label for="yrkesskade" class="inputTitle">Yrkesskade:</label>
-                <select autocomplete="off" class="userInfoInput userInfoDropdown" type="text" id="yrkesskade">
+                <select autocomplete="off" class="userInfoInput userInfoDropdown required" type="text" id="yrkesskade">
                     <option disabled selected value="default">Velg...</option>
                     <option value="1">Ja</option>
                     <option value="0">Nei</option>
@@ -197,7 +197,7 @@
             </div>
             <div class="inputScalable">
                 <label for="dagpenger" class="inputTitle">Dagpenger:</label>
-                <select autocomplete="off" class="userInfoInput userInfoDropdown" type="text" id="dagpenger">
+                <select autocomplete="off" class="userInfoInput userInfoDropdown required" type="text" id="dagpenger">
                     <option disabled selected value="default">Velg...</option>
                     <option value="1">Ja</option>
                     <option value="0">Nei</option>
@@ -215,7 +215,7 @@
         <div class="duoInputFieldScaleable inputArea">
             <div class="inputScalable">
                 <label for="stipend" class="inputTitle">Stipend:</label>
-                <select autocomplete="off" class="userInfoInput userInfoDropdown" type="text" id="stipend">
+                <select autocomplete="off" class="userInfoInput userInfoDropdown required" type="text" id="stipend">
                     <option disabled selected value="default">Velg...</option>
                     <option value="1">Ja</option>
                     <option value="0">Nei</option>
@@ -223,7 +223,7 @@
             </div>
             <div class="inputScalable">
                 <label for="studiested" class="inputTitle">Studiested EU:</label>
-                <select autocomplete="off" class="userInfoInput userInfoDropdown" type="text" id="studiested">
+                <select autocomplete="off" class="userInfoInput userInfoDropdown required" type="text" id="studiested">
                     <option disabled selected value="default">Velg...</option>
                     <option value="1">Ja</option>
                     <option value="0">Nei</option>
@@ -236,7 +236,7 @@
         <h3>Arbeidsforhold:</h3>
         <div class="oneInputField inputArea">
             <label for="freelancer" class="inputTitle">Freelancer:</label>
-            <select autocomplete="off" class="userInfoInput userInfoDropdown" type="text" id="freelancer">
+            <select autocomplete="off" class="userInfoInput userInfoDropdown required" type="text" id="freelancer">
                 <option disabled selected value="default">Velg...</option>
                 <option value="1">Ja</option>
                 <option value="0">Nei</option>
@@ -261,11 +261,11 @@
             </div>
             <div class="inputScalable">
                 <label for="forrigeManed" class="inputTitle">Arbeidstid forrige måned:</label>
-                <input class="userInfoInput" type="text" id="forrigeManed">
+                <input class="userInfoInput required" type="text" id="forrigeManed">
             </div>
             <div class="inputScalable">
                 <label for="denneManed" class="inputTitle">Arbeidstid denne måned</label>
-                <input class="userInfoInput" type="text" id="denneManed">
+                <input class="userInfoInput required" type="text" id="denneManed">
             </div>
         </div>
     </form>
@@ -276,15 +276,15 @@
         <div class="quadInputFieldScaleable inputArea">
             <div class="inputScalable">
                 <label for="inntekt2019" class="inputTitle">Inntekt 2019:</label>
-                <input class="userInfoInput" type="text" id="inntekt2019">
+                <input class="userInfoInput required" type="text" id="inntekt2019">
             </div>
             <div class="inputScalable">
                 <label for="inntekt2020" class="inputTitle">Inntekt 2020:</label>
-                <input class="userInfoInput" type="text" id="inntekt2020">
+                <input class="userInfoInput required" type="text" id="inntekt2020">
             </div>
             <div class="inputScalable">
                 <label for="inntekt2021" class="inputTitle">Inntekt 2021:</label>
-                <input class="userInfoInput" type="text" id="inntekt2021">
+                <input class="userInfoInput required" type="text" id="inntekt2021">
             </div>
         </div>
     </form>
@@ -295,35 +295,35 @@
         <div class="quadInputFieldScaleable inputArea">
             <div class="inputScalable">
                 <label for="inntekt1" class="inputTitle">Inntekt 1:</label>
-                <input class="userInfoInput" type="text" id="inntekt1">
+                <input class="userInfoInput required" type="text" id="inntekt1">
             </div>
             <div class="inputScalable">
                 <label for="inntekt2" class="inputTitle">Inntekt 2:</label>
-                <input class="userInfoInput" type="text" id="inntekt2">
+                <input class="userInfoInput required" type="text" id="inntekt2">
             </div>
             <div class="inputScalable">
                 <label for="inntekt3" class="inputTitle">Inntekt 3:</label>
-                <input class="userInfoInput" type="text" id="inntekt3">
+                <input class="userInfoInput required" type="text" id="inntekt3">
             </div>
             <div class="inputScalable">
                 <label for="inntekt4" class="inputTitle">Inntekt 4:</label>
-                <input class="userInfoInput" type="text" id="inntekt4">
+                <input class="userInfoInput required" type="text" id="inntekt4">
             </div>
             <div class="inputScalable">
                 <label for="inntekt5" class="inputTitle">Inntekt 5:</label>
-                <input class="userInfoInput" type="text" id="inntekt5">
+                <input class="userInfoInput required" type="text" id="inntekt5">
             </div>
             <div class="inputScalable">
                 <label for="inntekt6" class="inputTitle">Inntekt 6:</label>
-                <input class="userInfoInput" type="text" id="inntekt6">
+                <input class="userInfoInput required" type="text" id="inntekt6">
             </div>
             <div class="inputScalable">
                 <label for="inntekt7" class="inputTitle">Inntekt 7:</label>
-                <input class="userInfoInput" type="text" id="inntekt7">
+                <input class="userInfoInput required" type="text" id="inntekt7">
             </div>
             <div class="inputScalable">
                 <label for="inntekt8" class="inputTitle">Inntekt 8:</label>
-                <input class="userInfoInput" type="text" id="inntekt8">
+                <input class="userInfoInput required" type="text" id="inntekt8">
             </div>
         </div>
     </form>

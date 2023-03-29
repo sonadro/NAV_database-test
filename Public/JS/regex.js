@@ -135,6 +135,7 @@ grunnleggendeDataForm.land.addEventListener('focusout', e => {
     let element = grunnleggendeDataForm.land;
     let name = element.value;
     let nameRegex = /^[a-zæøåÆØÅ ]{2,}$/i;
+
     for(i = 0; i < landArray.length; i++) {
         grunnleggendeDataForm.postnummer.value = '';
         if (nameRegex.test(name) == true && landArray[i].navn == name) {

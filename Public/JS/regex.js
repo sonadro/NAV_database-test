@@ -40,7 +40,7 @@ const addRegexEventListeners = function(element, regex) {
 
 // Grunnleggende data
 addRegexEventListeners(grunnleggendeDataForm.fornavn, /^[a-zæøåÆØÅ ]{2,}$/i);
-addRegexEventListeners(grunnleggendeDataForm.etternavn, /^.[a-zæøåÆØÅ ]{2,}$/i);
+addRegexEventListeners(grunnleggendeDataForm.etternavn, /^[a-zæøåÆØÅ ]{2,}$/i);
 addRegexEventListeners(grunnleggendeDataForm.forelder1, /^[0-9]+$/);
 addRegexEventListeners(grunnleggendeDataForm.forelder2, /^[0-9]+$/);
 

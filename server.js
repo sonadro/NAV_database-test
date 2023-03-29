@@ -153,7 +153,8 @@ server.post('/login', (req, res) => {
 
                         if (userLoggedIn == true) {
                         const jwt = createToken(userDetails.username);
-                        res.cookie("jwt", jwt, {httpOnly: true, maxAge: 12*60*60 * 1000})
+                        // res.cookie("jwt", jwt, {httpOnly: true, maxAge: 12*60*60 * 1000})
+                        res.cookie("jwt", jwt, {httpOnly: true})
                         res.status(200).send({
                             status: "recieved", userLoggedIn
                         })

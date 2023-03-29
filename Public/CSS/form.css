@@ -90,6 +90,7 @@
 /* Firefox */
 .userInfoInput[type=number] {
   -moz-appearance: textfield;
+  appearance: textfield;
 }
 
 .userInfoInput:hover{

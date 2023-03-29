@@ -66,21 +66,7 @@ grunnleggendeDataForm.land.addEventListener('input', e => {
     popup.getNewInvalidFields();
 })
 
-// postnummer regex (er annerledes)
-grunnleggendeDataForm.postnummer.addEventListener('input', e => {
-    let element = grunnleggendeDataForm.postnummer
-    let num = element.value;
-    let temp = `^${selectedLand.post}$`;
-    let nameRegex = new RegExp(`${temp}`); // /^[0-9]+$/;
-    if(nameRegex.test(num) == true){
-        element.classList.remove('ugyldig');
-        popup.addHighlight();
-    }else{
-        element.classList.add('ugyldig');
-    }
-    popup.getNewInvalidFields();
-})
-
+addRegexEventListeners(grunnleggendeDataForm.postnummer, /^[0-9]{4}$/);
 addRegexEventListeners(grunnleggendeDataForm.land, /^[a-zæøåÆØÅ ]{2,}$/i);
 addRegexEventListeners(grunnleggendeDataForm.botid, /^[0-9]+$/);
 
@@ -149,21 +135,6 @@ grunnleggendeDataForm.land.addEventListener('focusout', e => {
             element.classList.add('ugyldig');
             grunnleggendeDataForm.postnummer.setAttribute('disabled', true);
         };
-    };
-    popup.getNewInvalidFields();
-});
-
-// postnummer regex (er annerledes)
-grunnleggendeDataForm.postnummer.addEventListener('focusout', e => {
-    let element = grunnleggendeDataForm.postnummer;
-    let num = element.value;
-    let temp = `^${selectedLand.post}$`;
-    let nameRegex = new RegExp(`${temp}`);// /^[0-9]+$/;
-    if (nameRegex.test(num) == true) {
-        element.classList.remove('ugyldig');
-        popup.addHighlight();
-    } else {
-        element.classList.add('ugyldig');
     };
     popup.getNewInvalidFields();
 });

@@ -97,7 +97,10 @@ const getDocs = function() {
             data.id = doc.id;
             dataArr.push(data);
             if(data.barn){
-                parentList.push(doc.id);
+                parentList.push({
+                    id: doc.id,
+                    name: `${data.fornavn} ${data.etternavn}`
+                });
                 parentList.sort((a, b) => a - b);
             }
         });
@@ -113,11 +116,12 @@ function addParents(){
     //console.log(parentField1.innerHTML);
     for(i = 0; i < parentList.length; i++){
         //console.log(parentList);
-        let parentID = parentList[i];
+        let parentID = parentList[i].id;
+        let parentName = parentList[i].name;
         //console.log(parentID);
         let html = `
         <div class="suggestion">
-            <button id="${parentID}">${parentID}</button>
+            <button id="${parentID}">${parentID} - ${parentName}</button>
         </div>
         `
         parentField1.innerHTML += html;

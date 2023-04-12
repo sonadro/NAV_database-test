@@ -27,7 +27,12 @@ function grabIdInfo() {
 
         fornavn.value = doc.data().fornavn
         etternavn.value = doc.data().etternavn
-        fodselsdato.value = doc.data().fodselsdato
+
+        splitResult = doc.data().fodselsdato.split(".")
+        console.log(splitResult);
+        let dob = `${splitResult[2]}-${splitResult[1]}-${splitResult[0]}`
+        fodselsdato.value = dob
+
         livsstatus.value = doc.data().status
         endringStatus.value = doc.data().endringStatus
         ekteskap.value = doc.data().ekteskap
@@ -37,6 +42,14 @@ function grabIdInfo() {
     }).catch((error) => {
         console.log("Error getting cached document:", error);
     });
+}
+
+function test() {
+    let testy = "20.02.2020"
+    splitResult = testy.split(".")
+    console.log(splitResult);
+    let dob = `${splitResult[2]}-${splitResult[1]}-${splitResult[0]}`
+    console.log("DOB: "+dob);
 }
 
 livsstatus.addEventListener("input", e => {

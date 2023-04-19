@@ -78,10 +78,11 @@ const getDocs = function() {
         });
         dataArr.sort((a, b) => a.id - b.id);
         console.log(dataArr);
-        // Filtrer array slik at det bare blir 6 personer
     }).then(() => {
+        // Filtrer array slik at det bare blir 6 personer
         for(i=0; i < 6; i++){
             let selectedPerson = Math.floor(Math.random() * dataArr.length);
+            // TODO: Gjør at arrayet ikke kan ha dupliserte verdier (to av samme person)
             console.log(dataArr[selectedPerson]);
             filterArr.push(dataArr[selectedPerson]);
         }
@@ -92,12 +93,12 @@ const getDocs = function() {
     }).catch(err => console.error(err));
 }
 
-function grabIdInfo() {
-    let id = document.getElementById("testInput").value
-    console.log(id);
+function grabIdInfo(id) {
+    let personid = id
+    console.log(personid);
     var docRef = db.collection("brukere")
     
-    docRef.doc(id).get().then((doc) => {
+    docRef.doc(personid).get().then((doc) => {
         // Document was found in the cache. If no cached document exists,
         // an error will be returned to the 'catch' block below.
         console.table(doc.data());
@@ -145,5 +146,15 @@ livsstatus.addEventListener("input", e => {
         console.log("hiding");
     }
 })
+
+sampleContainer.addEventListener('click', e => {
+    if (e.target.getAttribute('class') === 'sampleBox'){
+        grabIdInfo(e.target.getAttribute('id'));
+    }else if(e.target.parentElement.getAttribute('class') === 'sampleBox'){
+        grabIdInfo(e.target.getAttribute('id'));
+    }else if(e.target.parentElement.parentElement.getAttribute('class') === 'sampleBox'){
+        grabIdInfo(e.target.getAttribute('id'));
+    }
+});
 
 getDocs();

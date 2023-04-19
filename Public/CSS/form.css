@@ -226,6 +226,29 @@
     border-radius: 6px;
 }
 
+
+.sampleContain{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    padding: 20px;
+    background-color: rgb(85, 73, 64);
+    border-radius: 7px;
+}
+.sampleBox{
+    background-color: beige;
+    border-radius: 7px;
+    border-style: solid;
+    padding: 10px;
+    transition-duration: 0.05s;
+}
+.sampleBox:hover{
+    box-shadow: 10px 10px 5px rgb(68, 68, 68);
+    transform: scale(1.1);
+    transition-duration: 0.05s;
+}
+
 /*Mindre, begrensede stiler*/
 
 .ugyldig{

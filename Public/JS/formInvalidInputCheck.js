@@ -44,8 +44,8 @@ class Popup {
         this.allInputFields.forEach(field => {
             if (!field.classList.contains('ugyldig') && field.value == '' && !field.classList.contains('hidden')) {
                 field.classList.add('ugyldig');
-                console.log('ugyldig');
-                console.log(field);
+                //console.log('ugyldig');
+                //console.log(field);
             }
         });
 

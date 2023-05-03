@@ -41,8 +41,6 @@ const land = document.getElementById("land")
 const botid = document.getElementById("botid")
 
 let fields = [fornavn, etternavn, fodselsdato, livsstatus, endringStatus, ekteskap, ektefelle, forelder1, forelder2]
-console.log(fields);
-
 
 // HTML-injection for samplekort
 const genSample = function(obj, id) {
@@ -77,13 +75,10 @@ const getDocs = function() {
             dataArr.push(data);
         });
         dataArr.sort((a, b) => a.id - b.id);
-        console.log(dataArr);
     }).then(() => {
         // Filtrer array slik at det bare blir 6 personer
         for(i=0; i < 6; i++){
             let selectedPerson = Math.floor(Math.random() * dataArr.length);
-            // TODO: Gjør at arrayet ikke kan ha dupliserte verdier (to av samme person)
-            console.log(dataArr[selectedPerson]);
             filterArr.push(dataArr[selectedPerson]);
             dataArr.splice(selectedPerson, 1);
         }

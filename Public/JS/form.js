@@ -1,31 +1,5 @@
-const db = firebase.firestore(); // Databasen vår
-
 // deklarasjoner
 const sampleContainer = document.querySelector("div.sampleContain");
-
-let parentList = [];
-let age;
-let childIndex = 1;
-
-const grunnleggendeDataForm = document.querySelector('.grunnleggendeData');
-const økonomiskeForholdForm = document.querySelector('.okonomiskeForhold');
-const livssituasjonForm = document.querySelector('.livsSituasjon');
-const NAVForm = document.querySelector('.NAV');
-const lånekassenForm = document.querySelector('.lanekassen');
-const arbeidsForholdForm = document.querySelector('.arbeidsForhold');
-const inntektFortidForm = document.querySelector('.inntektFortid');
-const inntekt2022Form = document.querySelector('.inntekt2022');
-
-const submitBtn = document.querySelector('.submitKnapp');
-const toggle1Btn = document.querySelector('.suggestions1DropBtn');
-const toggle2Btn = document.querySelector('.suggestions2DropBtn');
-let statusField = document.querySelector("#status");
-let statusFieldDead = document.querySelector("#statusDead");
-let statusChangeField = document.querySelector("#endringStatus");
-let statusChangeFieldLabel = document.querySelector("#endringStatusLabel");
-const countryField = grunnleggendeDataForm.land;
-let childArea = Array.from(document.querySelectorAll("div.childArea input"));
-const childFields = grunnleggendeDataForm.barn.parentElement.parentElement;
 
 const fornavn = document.getElementById("fornavn")
 const etternavn = document.getElementById("etternavn")

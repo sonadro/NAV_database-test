@@ -97,26 +97,26 @@ function grabIdInfo(id) {
     docRef.doc(personid).get().then((doc) => {
         // Document was found in the cache. If no cached document exists,
         // an error will be returned to the 'catch' block below.
-        console.table(doc.data());
-        console.log(doc.data().fornavn);
+        const data = doc.data();
 
-        fornavn.value = doc.data().fornavn
-        etternavn.value = doc.data().etternavn
+        fornavn.value = data.fornavn;
+        etternavn.value = data.etternavn;
 
-        splitResult = doc.data().fodselsdato.split(".")
+        splitResult = data.fodselsdato.split(".");
         console.log(splitResult);
-        let dob = `${splitResult[2]}-${splitResult[1]}-${splitResult[0]}`
-        fodselsdato.value = dob
+        let dob = `${splitResult[2]}-${splitResult[1]}-${splitResult[0]}`;
+        fodselsdato.value = dob;
 
-        livsstatus.value = doc.data().status
-        endringStatus.value = doc.data().endringStatus
-        ekteskap.value = doc.data().ekteskap
-        ektefelle.value = doc.data().ektefelle
-        forelder1.value = doc.data().foreldre[0]
-        forelder2.value = doc.data().foreldre[1]
-        barn.value = doc.data().barn
-        land.value = doc.data().land
-        botid.value = doc.data().botid
+        livsstatus.value = data.status;
+        endringStatus.value = data.endringStatus;
+        ekteskap.value = data.ekteskap;
+        ektefelle.value = data.ektefelle;
+        forelder1.value = data.foreldre[0];
+        forelder2.value = data.foreldre[1];
+        barn.value = data.barn;
+        land.value = data.land;
+        botid.value = data.botid;
+        postnummer.value = data.postnummer;
 
         // etter dataen har lastet, finn nye ugyldige felt
         popup.getNewInvalidFields();

@@ -55,12 +55,10 @@ grunnleggendeDataForm.land.addEventListener('input', e => {
             selectedLand = landArray[i];
             element.classList.remove('ugyldig');
             popup.addHighlight();
-            grunnleggendeDataForm.postnummer.removeAttribute('disabled');
             break;
         }else{
             selectedLand = undefined;
             element.classList.add('ugyldig');
-            grunnleggendeDataForm.postnummer.setAttribute('disabled', true);
         }
     }
     popup.getNewInvalidFields();
@@ -128,12 +126,10 @@ grunnleggendeDataForm.land.addEventListener('focusout', e => {
             selectedLand = landArray[i];
             element.classList.remove('ugyldig');
             popup.addHighlight();
-            grunnleggendeDataForm.postnummer.removeAttribute('disabled');
             break;
         } else {
             selectedLand = undefined;
             element.classList.add('ugyldig');
-            grunnleggendeDataForm.postnummer.setAttribute('disabled', true);
         };
     };
     popup.getNewInvalidFields();

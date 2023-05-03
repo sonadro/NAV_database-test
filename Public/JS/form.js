@@ -85,6 +85,7 @@ const getDocs = function() {
             // TODO: Gjør at arrayet ikke kan ha dupliserte verdier (to av samme person)
             console.log(dataArr[selectedPerson]);
             filterArr.push(dataArr[selectedPerson]);
+            dataArr.splice(selectedPerson, 1);
         }
     }).then(() => {
         filterArr.forEach(dat => {

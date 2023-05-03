@@ -65,8 +65,6 @@ class Popup {
 
 const popup = new Popup();
 
-popup.getNewInvalidFields();
-
 // submit listener
 document.querySelector('.submitKnapp').addEventListener('click', e => {
     e.preventDefault();

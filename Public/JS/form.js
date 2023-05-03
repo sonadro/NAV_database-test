@@ -37,6 +37,48 @@ const barn = document.getElementById("barn")
 const land = document.getElementById("land")
 const botid = document.getElementById("botid")
 
+const bankkonto = document.getElementById("bankkonto")
+const kredittkort = document.getElementById("kredittkort")
+const lan = document.getElementById("lan")
+const fullmakt = document.getElementById("fullmakt")
+
+const alvorligSyk = document.getElementById("alvorligSyk")
+const flyktning = document.getElementById("flyktning")
+const gravid = document.getElementById("gravid")
+
+const medlem = document.getElementById("medlem")
+const ufor = document.getElementById("ufor")
+const pensjonist = document.getElementById("pensjonist")
+const yrkesskade = document.getElementById("yrkesskade")
+const dagpenger = document.getElementById("dagpenger")
+const sykepenger = document.getElementById("sykepenger")
+
+const stipend = document.getElementById("stipend")
+const studiested = document.getElementById("studiested")
+
+const freelancer = document.getElementById("freelancer")
+const forholdStatus = document.getElementById("forholdStatus")
+const sektor = document.getElementById("sektor")
+const forrigeManed = document.getElementById("forrigeManed")
+const denneManed = document.getElementById("denneManed")
+
+const inntekt2019 = document.getElementById("inntekt2019")
+const inntekt2020 = document.getElementById("inntekt2020")
+const inntekt2021 = document.getElementById("inntekt2021")
+
+const inntekt1 = document.getElementById("inntekt1")
+const inntekt2 = document.getElementById("inntekt2")
+const inntekt3 = document.getElementById("inntekt3")
+const inntekt4 = document.getElementById("inntekt4")
+const inntekt5 = document.getElementById("inntekt5")
+const inntekt6 = document.getElementById("inntekt6")
+const inntekt7 = document.getElementById("inntekt7")
+const inntekt8 = document.getElementById("inntekt8")
+
+
+
+
+
 let fields = [fornavn, etternavn, fodselsdato, livsstatus, endringStatus, ekteskap, ektefelle, forelder1, forelder2]
 console.log(fields);
 
@@ -69,6 +111,45 @@ function grabIdInfo() {
         barn.value = doc.data().barn
         land.value = doc.data().land
         botid.value = doc.data().botid
+
+        bankkonto.value = doc.data().avansertInfo[0].bankkonto
+        kredittkort.value = doc.data().avansertInfo[0].kredittkort
+        lan.value = doc.data().avansertInfo[0].lan
+        fullmakt.value = doc.data().avansertInfo[0].fullmakt
+
+        alvorligSyk.value = doc.data().avansertInfo[1].alvorligSyk
+        flyktning.value = doc.data().avansertInfo[1].flyktning
+        gravid.value = doc.data().avansertInfo[1].gravid
+
+        medlem.value = doc.data().avansertInfo[2].medlem
+        ufor.value = doc.data().avansertInfo[2].ufor
+        pensjonist.value = doc.data().avansertInfo[2].pensjonist
+        yrkesskade.value = doc.data().avansertInfo[2].yrkesskade
+        dagpenger.value = doc.data().avansertInfo[2].dagpenger
+        sykepenger.value = doc.data().avansertInfo[2].sykepenger
+
+        stipend.value = doc.data().avansertInfo[3].stipend
+        studiested.value = doc.data().avansertInfo[3].studiested
+
+        freelancer.value = doc.data().avansertInfo[4].freelancer
+        forholdStatus.value = doc.data().avansertInfo[4].forholdStatus
+        sektor.value = doc.data().avansertInfo[4].sektor
+        forrigeManed.value = doc.data().avansertInfo[4].forrigeManed
+        denneManed.value = doc.data().avansertInfo[4].denneManed
+
+        inntekt2019.value = doc.data().avansertInfo[5].inntekt2019
+        inntekt2020.value = doc.data().avansertInfo[5].inntekt2020
+        inntekt2021.value = doc.data().avansertInfo[5].inntekt2021
+
+        inntekt1.value = doc.data().avansertInfo[6].inntekt1
+        inntekt2.value = doc.data().avansertInfo[6].inntekt2
+        inntekt3.value = doc.data().avansertInfo[6].inntekt3
+        inntekt4.value = doc.data().avansertInfo[6].inntekt4
+        inntekt5.value = doc.data().avansertInfo[6].inntekt5
+        inntekt6.value = doc.data().avansertInfo[6].inntekt6
+        inntekt7.value = doc.data().avansertInfo[6].inntekt7
+        inntekt8.value = doc.data().avansertInfo[6].inntekt8
+
 
     }).catch((error) => {
         console.log("Error getting cached document:", error);

@@ -123,6 +123,9 @@ function grabIdInfo(id) {
         land.value = doc.data().land
         botid.value = doc.data().botid
 
+        // etter dataen har lastet, finn nye ugyldige felt
+        popup.getNewInvalidFields();
+
     }).catch((error) => {
         console.log("Error getting cached document:", error);
     });
@@ -155,7 +158,7 @@ sampleContainer.addEventListener('click', e => {
         grabIdInfo(e.target.getAttribute('id'));
     }else if(e.target.parentElement.parentElement.getAttribute('class') === 'sampleBox'){
         grabIdInfo(e.target.getAttribute('id'));
-    }
+    };
 });
 
 getDocs();

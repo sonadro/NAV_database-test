@@ -1,12 +1,3 @@
 {
-  "type": "service_account",
-  "project_id": "navdatabasetest",
-  "private_key_id": "8d8e7baf6e865b2c79288c020e06f8d3a617d17f",
-  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQCx5b8G5sAJ8itH\nmNMh01iPNtPt/Ip16Oa5/C7oKBphrgX6WQSETI7aCL3JJfugD6plbN1aPJ97rM8K\n+70+vaxbFyuEZWafJerMyLj8ja4B4cvcp8I+o2L2BLDllX19V6oDjpJPi9LP6cIB\nX93e2N2FPV00kWisdWlLSi4v8XjAxXYE0Wo4DBUVYVzgZyvYF2ylKhLTy1y8jyfP\njnG/Ufm8nWu30tzblJg8aYyNtwel4VsLTKLuEU4/vAfI1fwuM5mn0KnOjJnejhLI\ng6vPNmx/cF5Hz7tOTvNAHIaL9ucyUQKgN/BI0rf2oQjlBLAnzTkb6xn6CX/DdqTB\n3FK0J1xpAgMBAAECggEATZdn9NIjU5M5Fk7NU9UTLM/cqtH58Einjdo0+VQ4gX8+\nIz29Txj3O5kRchDriZobl4Zem3OSmgY6/c7j8WAYM1jNRb9WfbazjSNFL/55tV9v\nI+xVuC1aRfSw1UoZBFj+kfOW1DQnvEB4OlI+euq639judLWxYnsJdGnD8GxRXz5l\nDeSc4OHf0zxVoeIvb/nFj+tHkoECo7lAQYT1oUiHJFF7n76ohAiGypZYeSVmRAx2\nEWWmQgAfs2fozhRe1u5NASl99Nrt/jCsGchfh6Io1TuXyjUYyjDYpmnwgUYoE9PL\nEo17tUI7SponVQwH3E2578DrZw8TUUr2vV+S9FfF4wKBgQD0GvQElkdklXPvj8bn\nrpPVgQxa45ilsgqkAyUPs7Lxj1zjo9ubaTeHTf8iAfXHtLon7bUTQkJAOakwETSr\nvtHxGM92jR5JBQ3vigbeq0WLfJCZvcx7aRrBAJ+Wy5s8bJhlZ2awIEEmhkBK2bl9\n1GV9LODxBzdK6K68DwQplutnGwKBgQC6kOU41sj1pbKR65Ur51ZEyjNDExuDcaw2\nSYYQHDJ6ZbIOnbI2VvZrbNqY5/4sT6Y4XpePUOcpilw5tVqQM/Cc9gdo+pvRUQUi\ne7XVje2Iwr763zPG9OuXmqY8xlSI9+uOZHDrKQoS5eXSvCSHwfTCtGAWAclghleV\ncQd0K31uywKBgHapS4mXS+k3RX5k0/n3wWF+M/VSwfd6DvYfmTqCzi/i0vLNyolH\nonihj66GaWXFEuEqCmXsRaxW20nEc2gxgHjE6MTmYJx6WoXhAOnpNAtUaC50Nxye\nwSSlGu8A1tuOpp5Un3RqmYESrdo08JicUSGCWW6RZW2Cor5ERm+5L4GVAoGANQ6s\nAcQjlqiu5gzHeZrqz9lpRrQSaQlU3oN+WuqJ+IEfaES0v/tvTRHCASZJBLUKIpHU\nLG/nrcqpe8f1n3kF/r2BUfujgJ24BhyEk90vJmusAJClmvlgXtceW75ToDhRh0dN\nTbN4J/O1rn7PLMSeJRlDEj8j1A2gruFcK0+K9o0CgYEAw5yagpBPlciiEYjutZW1\nCoPAhC4nsIMfWMRBzlCQW2dqYn3Ba3/k95i5NG6iu2UObu6LdUCN78QLgSwEpdkP\nRJvFARj6nQo3mS6s5rsfsyu+7a+8oq9NaWfE0NlCEC+uVrdTg5eUSM2n7dG8RvoE\nD5VyDDCYnPGV8dfTtzBvJQI=\n-----END PRIVATE KEY-----\n",
-  "client_email": "firebase-adminsdk-54zrf@navdatabasetest.iam.gserviceaccount.com",
-  "client_id": "103066526267511980518",
-  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
-  "token_uri": "https://oauth2.googleapis.com/token",
-  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
-  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/firebase-adminsdk-54zrf%40navdatabasetest.iam.gserviceaccount.com"
+  "private_key": "ikke her"
 }
